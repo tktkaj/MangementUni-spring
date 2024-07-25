@@ -11,6 +11,7 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
+<<<<<<< Updated upstream
 <p>you!!아아아!</p>
 <p>hong!</p>
 <p>choi!</p>
@@ -18,6 +19,9 @@
 <<<<<<< HEAD
 1919919
 =======
+=======
+<p>TESTtest</p>
+>>>>>>> Stashed changes
 
 >>>>>>> 495450cc22cdbc8961d325be54adf0ba3ecc2011
 </body>
