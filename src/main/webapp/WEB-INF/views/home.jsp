@@ -12,8 +12,9 @@
 	<P>The time on the server is ${serverTime}.</P>
 	<p>TEST</p>
 	<p>you!!아아아!</p>
-	<p>you!!!파이팅</p>
 	<p>hong!</p>
 	<p>choi!</p>
+	<p>TESTtest</p>
+
 </body>
 </html>
