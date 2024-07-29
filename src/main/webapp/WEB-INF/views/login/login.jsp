@@ -30,7 +30,7 @@
 
 	
 	<!--  html 전체 영역을 지정하는 container -->
-	<div id="container">
+	<div id="container"style="height: 300px">
 		<!--  login 폼 영역을 : loginBox -->
 		<div id="loginBox">
 
@@ -52,11 +52,12 @@
 				</div>
 				<div class="button-login-box">
 					<button type="submit" class="btn btn-primary btn-xs"
-						style="width: 100%">비밀번호 찾기</button>
+						style="width: 100%" >비밀번호 찾기</button>
 				</div>
 				
 			</div>
 </form>
+<button onclick="location.href='management'">확인용</button>
 		</div>
 	</div>
 </section>
@@ -67,4 +68,5 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
+	
 	<jsp:include	page="/WEB-INF/views/common/footer.jsp" />

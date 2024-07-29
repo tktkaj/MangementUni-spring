@@ -35,10 +35,15 @@ public class HomeController {
 		
 		return "home";
 	}
-	
+
+//	확인용
 	@RequestMapping("/login")
-	public String index() {
+	public String login() {
 		return "login/login";
 	}
 	
+	@RequestMapping("/management")
+	public String management() {
+		return "student/management";
+	}
 }
