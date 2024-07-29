@@ -52,6 +52,111 @@ header .menu {
 
 /* homepage */
 
+header ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+header li {
+    list-style: none;
+
+}
+
+header a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+header a:hover{
+    color: #024C86;
+}
+
+header .login-col {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+header #login {
+    padding: 5px 10px;
+    outline: none;
+    background: #024C86;
+    color: white;
+    border-radius: 5px;
+    border: #024C86;
+}
+
+header .menu {
+    margin-top: 20px;
+    padding: 10px 0px;
+    border-top: 4px solid #024C86;
+    border-bottom: 4px solid #024C86;
+}
+
+/* homepage */
+
+.news{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.news a{
+    text-decoration: none;
+    color:black
+}
+
+main .top{
+    border-top: 6px solid #024C86;
+}
+main h1{
+    margin-bottom: 100px;
+}
+
+main .article{
+    padding: 20px 20px;
+    background-color: #eee;
+}
+main .main-news img{
+    margin: 0px;
+
+}
+main .readmore{
+    margin-top: 150px;
+}
+.news .readmore a{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+main .sub-menu{
+    margin-top: 20px;
+
+}
+main .sub-article1{
+    height: 300px;
+    padding-right: 20px;
+    padding-top: 50px;
+
+}
+main .sub-article2{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+main .sub-article1{
+    padding-right: 20px;
+    padding-top: 50px;
+
+}
+
+main .sub-news{
+    margin-bottom: 20px;
+}
+
 /* footer */
 
 footer {
