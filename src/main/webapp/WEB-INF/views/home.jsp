@@ -7,12 +7,8 @@
 <title>Home</title>
 </head>
 <body>
-	<h1>Hello world!</h1>
-
-	<P>The time on the server is ${serverTime}.</P>
-	<p>you!!아아아!</p>
-	<p>hong!</p>
-	<p>choi!</p>
-	
+<jsp:include page="common/header.jsp"/>
+<div style="height: 100vh">대충 내용</div>
+<jsp:include page="common/footer.jsp"/>
 </body>
 </html>
