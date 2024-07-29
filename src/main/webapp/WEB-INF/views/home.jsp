@@ -10,5 +10,6 @@
 <jsp:include page="common/header.jsp"/>
 <div style="height: 100vh">대충 내용</div>
 <jsp:include page="common/footer.jsp"/>
+
 </body>
 </html>
