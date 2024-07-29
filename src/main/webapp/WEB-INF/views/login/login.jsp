@@ -50,13 +50,14 @@
 					<button type="submit" class="btn btn-primary btn-xs"
 						style="width: 100%">로그인</button>
 				</div>
+</form>
 				<div class="button-login-box">
-					<button type="submit" class="btn btn-primary btn-xs"
-						style="width: 100%" >비밀번호 찾기</button>
+					<button type="button" class="btn btn-primary btn-xs"
+						style="width: 100%"
+						onclick="location.href='Find_Passwords'" >비밀번호 찾기</button>
 				</div>
 				
 			</div>
-</form>
 <button onclick="location.href='management'">확인용</button>
 		</div>
 	</div>

@@ -46,4 +46,9 @@ public class HomeController {
 	public String management() {
 		return "student/management";
 	}
+	
+	@RequestMapping("/Find_Passwords")
+	public String Find_Passwords() {
+		return "login/Find_Passwords";
+	}
 }
