@@ -5,9 +5,14 @@
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
+
     <title>Home</title>
+
 </head>
+
 <body>
+
+
 <jsp:include page="common/header.jsp"/>
 <main class="container news">
     <h1 align="center">미르 Today</h1>
@@ -71,6 +76,7 @@
 </main>
 
 <jsp:include page="common/footer.jsp"/>
+
 
 </body>
 </html>
