@@ -3,15 +3,6 @@
          pageEncoding="UTF-8" %>
 <%@ page session="false" %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
-<html>
-<head>
-
-    <title>Home</title>
-
-</head>
-
-<body>
-
 
 <jsp:include page="common/header.jsp"/>
 <main class="container news">
