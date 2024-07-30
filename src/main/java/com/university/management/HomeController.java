@@ -78,4 +78,5 @@ public class HomeController {
 	public String passwordchange() {
 		return "login/passwordchange";
 	}
+}
 
