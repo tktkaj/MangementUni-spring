@@ -30,5 +30,15 @@ public class StudentContoller {
 	public String popup() {
 		return "student/popup";
 	}
+	
+	@RequestMapping("/MyCoursesList")
+	public String MyCoursesList() {
+		return "courses/MyCoursesList";
+	}
+	
+	@RequestMapping("/MyCoursesPage")
+	public String MyCoursesPage() {
+		return "courses/MyCoursesPage";
+	}
 
 }

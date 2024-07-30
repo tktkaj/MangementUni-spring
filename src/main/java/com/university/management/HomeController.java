@@ -25,25 +25,6 @@ public class HomeController {
 		return "home";
 	}
 	
-<<<<<<< HEAD
-	@RequestMapping("/management")
-	public String management() {
-		return "student/management";
-	}
-	
-	@RequestMapping("/passwordchange")
-	public String passwordchange() {
-		return "login/passwordchange";
-	}
-	@RequestMapping("/MyCoursesList")
-	public String MyCoursesList() {
-		return "courses/MyCoursesList";
-	}
-	@RequestMapping("/MyCoursesPage")
-	public String MyCoursesPage() {
-		return "courses/MyCoursesPage";
-	}
-=======
->>>>>>> master
+
 }
 
