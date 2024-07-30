@@ -40,5 +40,17 @@ public class HomeController {
 	public String index() {
 		return "login/login";
 	}
+	@RequestMapping("/findpasswords")
+	public String Find_Passwords() {
+		return "login/findpasswords";
+	}
+	@RequestMapping("/askpresident")
+	public String askpresident() {
+		return "professor/askpresident";
+	}
+	@RequestMapping("/popup")
+	public String popup() {
+		return "professor/popup";
+	}
 	
 }
