@@ -1,16 +1,27 @@
 @charset "UTF-8";
 
+
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON%20Lv1%20Gothic%20OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
+    font-family: 'NEXON Lv1 Gothic OTF';
+    font-weight: 400px;
+    height: 100%;
 }
 
 /* header */
 header ul {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 
 header li {
@@ -18,11 +29,10 @@ header li {
 }
 
 header a {
-	color: #5F6F9C;
 	text-decoration: none;
 	font-size: 20px;
 	font-weight: bold;
-	
+	color: black;
 }
 
 header a:hover {
@@ -50,8 +60,6 @@ header .menu {
 	border-top: 4px solid #024C86;
 	border-bottom: 4px solid #024C86;
 }
-
-/* homepage */
 
 .news {
 	margin-top: 100px;
@@ -116,6 +124,52 @@ main .sub-news {
 	margin-bottom: 20px;
 }
 
+main .article {
+	padding: 20px 20px;
+	background-color: #eee;
+}
+
+main .main-news img {
+	margin: 0px;
+}
+
+main .readmore {
+	margin-top: 150px;
+}
+
+.news .readmore a {
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+}
+
+main .sub-menu {
+	margin-top: 20px;
+}
+
+main .sub-article1 {
+	height: 300px;
+	padding-right: 20px;
+	padding-top: 50px;
+}
+
+main .sub-article2 {
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main .sub-article1 {
+	padding-right: 20px;
+	padding-top: 50px;
+}
+
+main .sub-news {
+	margin-bottom: 20px;
+}
+
+
 /* footer */
 footer {
 	background-color: #464646;
@@ -159,3 +213,4 @@ footer .address {
 footer #copyright {
 	color: #838383;
 }
+
