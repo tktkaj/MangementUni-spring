@@ -17,8 +17,7 @@
 <!-- 나의 스타일 추가 -->
 <link rel="stylesheet" href="${path}/resources/css/login.css"
 	type="text/css">
-<link rel="stylesheet" href="${path}/resources/css/style.css"
-	type="text/css">
+
 <c:if test="${not empty msg }">
 
 	<script>
@@ -32,7 +31,7 @@
 	<!--  html 전체 영역을 지정하는 container -->
 	<div id="container" style="height: 300px">
 		<!--  login 폼 영역을 : loginBox -->
-		<div id="loginBox">
+		<div id="loginBox" ">
 
 			<!-- 로그인 페이지 타이틀 -->
 			<div id="loginBoxTitle">학사관리 로그인</div>
@@ -51,11 +50,12 @@
 						교직원 <input type='radio' name='login' value='Employee' />
 						 학생<input	type='radio' name='login' value='Student' />
 					</div>
-						<button type="submit" class="btn btn-primary btn-xs"
-							style="width: 100%">로그인</button>
+						<button type="submit" class="btn btn-xs"
+							style="width: 100%;background-color:  #024C86;color: white;">로그인</button>
 			<div class="button-login-box">
-				<button type="button" class="btn btn-primary btn-xs"
-					style="width: 100%" onclick="location.href='findpassword'">비밀번호
+
+				<button type="button" class="btn btn-xs"
+					style="width: 100%; background-color:  #024C86;color: white;" onclick="location.href='findpassword'">비밀번호
 					찾기</button>
 			</div>
 					</div>
