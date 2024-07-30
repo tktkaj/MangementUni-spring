@@ -24,24 +24,6 @@ public class HomeController {
 		
 		return "home";
 	}
-
-//	확인용
-	@RequestMapping("/login")
-	public String login() {
-		return "login/login";
-	}
-	@RequestMapping("/findpassword")
-	public String Find_Passwords() {
-		return "login/findpassword";
-	}
-	@RequestMapping("/askpresident")
-	public String askpresident() {
-		return "professor/askpresident";
-	}
-	@RequestMapping("/popup")
-	public String popup() {
-		return "professor/popup";
-	}
 	
 }
 
