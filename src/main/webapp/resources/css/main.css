@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+<<<<<<< HEAD
 /* @font-face {
 	font-family: 'NanumSquareNeoBold';
 	src:
@@ -26,14 +27,26 @@ body {
     font-family: 'NEXON Lv1 Gothic OTF';
     font-weight: 400px;
     height: 100%;
+=======
+body {
+	margin: 0;
+	padding: 0;
+>>>>>>> 0d782701afb891f92ef81af4cc71d102d289dde3
 }
 
 /* header */
 header ul {
+<<<<<<< HEAD
 	margin: 0;
 	padding: 0;
 	display: flex;
 	justify-content: space-between;
+=======
+	margin: 0px;
+	padding: 0px;
+	display: flex;
+	justify-content: space-around;
+>>>>>>> 0d782701afb891f92ef81af4cc71d102d289dde3
 }
 
 header li {
@@ -41,10 +54,18 @@ header li {
 }
 
 header a {
+<<<<<<< HEAD
 	text-decoration: none;
 	font-size: 20px;
 	font-weight: bold;
 	color: black;
+=======
+	color: #5F6F9C;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	
+>>>>>>> 0d782701afb891f92ef81af4cc71d102d289dde3
 }
 
 header a:hover {
@@ -74,6 +95,7 @@ header .menu {
 }
 
 /* homepage */
+<<<<<<< HEAD
 header ul {
 	margin: 0;
 	padding: 0;
@@ -135,6 +157,70 @@ main .top {
 
 main h1 {
 	margin-bottom: 100px;
+=======
+
+.news {
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+.news a {
+	text-decoration: none;
+	color: black
+}
+
+main .top {
+	border-top: 6px solid #024C86;
+}
+
+main h1 {
+	margin-bottom: 100px;
+}
+
+main .article {
+	padding: 20px 20px;
+	background-color: #eee;
+}
+
+main .main-news img {
+	margin: 0px;
+}
+
+main .readmore {
+	margin-top: 150px;
+}
+
+.news .readmore a {
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+}
+
+main .sub-menu {
+	margin-top: 20px;
+}
+
+main .sub-article1 {
+	height: 300px;
+	padding-right: 20px;
+	padding-top: 50px;
+}
+
+main .sub-article2 {
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main .sub-article1 {
+	padding-right: 20px;
+	padding-top: 50px;
+}
+
+main .sub-news {
+	margin-bottom: 20px;
+>>>>>>> 0d782701afb891f92ef81af4cc71d102d289dde3
 }
 
 main .article {
@@ -225,4 +311,8 @@ footer .address {
 
 footer #copyright {
 	color: #838383;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 0d782701afb891f92ef81af4cc71d102d289dde3

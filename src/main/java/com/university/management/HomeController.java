@@ -1,4 +1,4 @@
-package com.university.management;
+ package com.university.management;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -32,7 +32,26 @@ public class HomeController {
 		
 		return "home";
 	}
+
+//	확인용
+	@RequestMapping("/login")
+	public String login() {
+		return "login/login";
+	}
+	@RequestMapping("/findpasswords")
+	public String Find_Passwords() {
+		return "login/findpasswords";
+	}
+	@RequestMapping("/askpresident")
+	public String askpresident() {
+		return "professor/askpresident";
+	}
+	@RequestMapping("/popup")
+	public String popup() {
+		return "professor/popup";
+	}
 	
+<<<<<<< HEAD
 	@RequestMapping(value = "/courses/MyCoursesList", method = RequestMethod.GET)
 	public String MyCoursesList() {
 		logger.info("MyCoursesList");
@@ -49,4 +68,15 @@ public class HomeController {
 		return "courses/MyCoursesPage";
 	}
 	
+=======
+	@RequestMapping("/management")
+	public String management() {
+		return "student/management";
+	}
+	
+	@RequestMapping("/passwordchange")
+	public String passwordchange() {
+		return "login/passwordchange";
+	}
+>>>>>>> 0d782701afb891f92ef81af4cc71d102d289dde3
 }
