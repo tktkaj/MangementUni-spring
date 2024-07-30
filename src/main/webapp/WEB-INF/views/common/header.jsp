@@ -18,6 +18,7 @@
 	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 	crossorigin="anonymous"></script>
 <link href="${path}/resources/css/main.css" rel="stylesheet" />
+<link href="${path}/resources/css/home.css" rel="stylesheet" />
 <script defer src="${path}/resources/js/jQuery-3.7.1min.jsmain.js"></script>
 </head>
 <header>
