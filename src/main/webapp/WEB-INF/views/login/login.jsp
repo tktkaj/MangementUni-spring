@@ -38,26 +38,6 @@
 			<div id="loginBoxTitle">학사관리 로그인</div>
 			<!-- 아이디, 비번, 버튼 박스 -->
 			<form action="${path}/member/loginPro.do" method="post">
-<<<<<<< HEAD
-			<div id="inputBox">
-				<div class="input-form-box">
-					<span>아이디 </span><input type="text" id="loginId" name="id" class="form-control">
-				</div>
-				<div class="input-form-box">
-					<span>비밀번호 </span><input type="password" id="loginPassword" name="password"
-						class="form-control">
-				</div>
-				<div class="button-login-box">
-					<button type="submit" class="btn btn-primary btn-xs"
-						style="width: 100%">로그인</button>
-				</div>
-				<div class="button-login-box">
-					<button type="button" class="btn btn-primary btn-xs"
-						style="width: 100%"
-						onclick="location.href='findpasswords'">비밀번호 찾기</button>
-				</div>
-				
-=======
 				<div id="inputBox">
 					<div class="input-form-box">
 						<span>아이디 </span><input type="text" id="loginId" name="id"
@@ -77,7 +57,6 @@
 				<button type="button" class="btn btn-primary btn-xs"
 					style="width: 100%" onclick="location.href='Find_Passwords'">비밀번호
 					찾기</button>
->>>>>>> master
 			</div>
 					</div>
 			</form>
@@ -94,10 +73,5 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
-<<<<<<< HEAD
-	
-	<jsp:include	page="/WEB-INF/views/common/footer.jsp" />
-=======
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />
->>>>>>> master

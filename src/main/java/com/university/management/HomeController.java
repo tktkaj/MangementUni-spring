@@ -1,4 +1,4 @@
-package com.university.management;
+ package com.university.management;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -59,8 +59,8 @@ public class HomeController {
 		return "student/management";
 	}
 	
-	@RequestMapping("/Find_Passwords")
-	public String Find_Passwords() {
-		return "login/Find_Passwords";
+	@RequestMapping("/passwordchange")
+	public String passwordchange() {
+		return "login/passwordchange";
 	}
 }
