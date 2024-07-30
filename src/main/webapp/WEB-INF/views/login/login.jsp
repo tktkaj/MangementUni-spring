@@ -53,6 +53,7 @@
 						<button type="submit" class="btn btn-xs"
 							style="width: 100%;background-color:  #024C86;color: white;">로그인</button>
 			<div class="button-login-box">
+
 				<button type="button" class="btn btn-xs"
 					style="width: 100%; background-color:  #024C86;color: white;" onclick="location.href='findpassword'">비밀번호
 					찾기</button>
@@ -61,7 +62,6 @@
 			</form>
 
 		</div>
-		<button onclick="location.href='management'">확인용</button>
 	</div>
 	</div>
 </section>
