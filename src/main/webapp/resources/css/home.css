@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/* ideology */
+
+.school-ideology{
+	margin-bottom: 100px;
+}
+.school-ideology .title{
+    margin: 100px auto;
+    text-align: center;
+}
+.school-ideology .title h2{
+    margin-bottom: 10px;
+}
+.goal-row{
+    margin-bottom: 30px;
+}
+.goal{
+    border-bottom: 3px solid #b8b8b8;
+    padding-bottom: 10px;
+}
+
+.goal-row h2{
+    font-weight: bold;
+    color: #024C86;
+}
+.goal-row p, h5{
+    margin: 0;
+}
+.school-ideology .goal{
+    margin: auto;
+    display: flex;
+    gap: 10px;
+}
