@@ -38,9 +38,9 @@ public class HomeController {
 	public String login() {
 		return "login/login";
 	}
-	@RequestMapping("/findpasswords")
+	@RequestMapping("/findpassword")
 	public String Find_Passwords() {
-		return "login/findpasswords";
+		return "login/findpassword";
 	}
 	@RequestMapping("/askpresident")
 	public String askpresident() {
