@@ -20,37 +20,12 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
+	public String home() {
 		
 		return "home";
 	}
-
-//	확인용
-	@RequestMapping("/login")
-	public String login() {
-		return "login/login";
-	}
-	@RequestMapping("/findpassword")
-	public String Find_Passwords() {
-		return "login/findpassword";
-	}
-	@RequestMapping("/askpresident")
-	public String askpresident() {
-		return "professor/askpresident";
-	}
-	@RequestMapping("/popup")
-	public String popup() {
-		return "professor/popup";
-	}
 	
+<<<<<<< HEAD
 	@RequestMapping("/management")
 	public String management() {
 		return "student/management";
@@ -68,5 +43,7 @@ public class HomeController {
 	public String MyCoursesPage() {
 		return "courses/MyCoursesPage";
 	}
+=======
+>>>>>>> master
 }
 
