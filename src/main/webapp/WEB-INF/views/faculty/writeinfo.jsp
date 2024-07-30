@@ -33,7 +33,7 @@
 
 			<!-- title view -->
 			<div id="pageTitle">
-				<h1>공자사항 작성</h1>
+				<h1>공지사항 작성</h1>
 			</div>
 
 			<!-- content view -->
