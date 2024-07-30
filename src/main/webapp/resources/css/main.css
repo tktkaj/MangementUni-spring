@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 @font-face {
     font-family: 'NEXON Lv1 Gothic OTF';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON%20Lv1%20Gothic%20OTF.woff') format('woff');
@@ -13,55 +14,9 @@ body {
     font-family: 'NEXON Lv1 Gothic OTF';
     font-weight: 400px;
     height: 100%;
+}
 
 /* header */
-header ul {
-
-	margin: 0px;
-	padding: 0px;
-	display: flex;
-	justify-content: space-around;
-}
-
-header li {
-	list-style: none;
-}
-
-header a {
-	color: #5F6F9C;
-	text-decoration: none;
-	font-size: 20px;
-	font-weight: bold;
-	
-}
-
-header a:hover {
-	color: #024C86;
-}
-
-header .login-col {
-	display: flex;
-	justify-content: end;
-	align-items: center;
-}
-
-header #login {
-	padding: 5px 10px;
-	outline: none;
-	background: #024C86;
-	color: white;
-	border-radius: 5px;
-	border: #024C86;
-}
-
-header .menu {
-	margin-top: 20px;
-	padding: 10px 0px;
-	border-top: 4px solid #024C86;
-	border-bottom: 4px solid #024C86;
-}
-
-/* homepage */
 header ul {
 	margin: 0;
 	padding: 0;
@@ -106,7 +61,6 @@ header .menu {
 	border-bottom: 4px solid #024C86;
 }
 
-/* homepage */
 .news {
 	margin-top: 100px;
 	margin-bottom: 100px;
@@ -259,5 +213,4 @@ footer .address {
 footer #copyright {
 	color: #838383;
 }
-
 

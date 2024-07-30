@@ -51,24 +51,6 @@ public class HomeController {
 		return "professor/popup";
 	}
 	
-
-	@RequestMapping(value = "/courses/MyCoursesList", method = RequestMethod.GET)
-	public String MyCoursesList() {
-		logger.info("MyCoursesList");
-		
-		
-		return "courses/MyCoursesList";
-	}
-	
-	@RequestMapping(value = "/courses/MyCoursesPage", method = RequestMethod.GET)
-	public String MyCoursesPage() {
-		logger.info("MyCoursesPage");
-		
-		
-		return "courses/MyCoursesPage";
-	}
-	
-
 	@RequestMapping("/management")
 	public String management() {
 		return "student/management";
