@@ -1,5 +1,7 @@
+<%@page import="javax.servlet.jsp.tagext.TagLibraryInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
@@ -11,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
-    <link href="${path}/resources/css/main.css" rel="stylesheet"/>
+   <link href="${path}/resources/css/main.css" rel="stylesheet"/>
     <script defer src="${path}/resources/js/jQuery-3.7.1min.jsmain.js"></script>
 </head>
 <header>
