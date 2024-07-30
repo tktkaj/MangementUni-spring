@@ -60,5 +60,13 @@ public class HomeController {
 	public String passwordchange() {
 		return "login/passwordchange";
 	}
+	@RequestMapping("/MyCoursesList")
+	public String MyCoursesList() {
+		return "courses/MyCoursesList";
+	}
+	@RequestMapping("/MyCoursesPage")
+	public String MyCoursesPage() {
+		return "courses/MyCoursesPage";
+	}
 }
 
