@@ -27,7 +27,8 @@
 		</div>
 	</div>
 	<div class="container" style="height: 500px;">
-
+<div class="row">
+<div class="col-12">
 		<div id="content">
 
 			<!-- title view -->
@@ -72,7 +73,8 @@
 		<!-- content div -->
 	</div>
 	<!-- container div -->
-
+		</div>
+	</div>
 </body>
 </html>
 <jsp:include page="../common/footer.jsp" />

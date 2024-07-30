@@ -40,7 +40,9 @@
 
 			<div class="box">
 				<div class="box_1">
+				<div class="information_title">
 					<Strong>&gt; </Strong><label><strong> 기본정보</strong></label>
+					</div>
 					<div style="background-color: #e3f8ff;">
 						<div class="box_2">
 							<div class="row">
@@ -75,7 +77,9 @@
 					</div>
 				</div>
 				<div class="box_3">
+				<div  class="information_title">
 					<Strong>&gt; </Strong><label><Strong> 등록정보</Strong></label>
+					</div>
 					<div style="background-color: #e3f8ff">
 						<div class="box_2">
 							<div class="row">
