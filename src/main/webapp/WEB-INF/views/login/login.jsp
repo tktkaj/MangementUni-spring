@@ -46,19 +46,20 @@
 					<div class="input-form-box">
 						<span>비밀번호 </span><input type="password" id="loginPassword"
 							name="password" class="form-control"> 
-					<!-- 		교직원 <input type='radio' name='login' value='admin' />
-							학생<input type='radio'  name='login' value='student' /> -->
 					</div>
-					<div class="button-login-box">
+					<div>
+						교직원 <input type='radio' name='login' value='admin' />
+						 학생<input	type='radio' name='login' value='student' />
+					</div>
 						<button type="submit" class="btn btn-primary btn-xs"
 							style="width: 100%">로그인</button>
-					</div>
-			</form>
 			<div class="button-login-box">
 				<button type="button" class="btn btn-primary btn-xs"
 					style="width: 100%" onclick="location.href='Find_Passwords'">비밀번호
 					찾기</button>
 			</div>
+					</div>
+			</form>
 
 		</div>
 		<button onclick="location.href='management'">확인용</button>
