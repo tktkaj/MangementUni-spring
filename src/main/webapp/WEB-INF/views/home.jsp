@@ -8,11 +8,11 @@
 
 <main class="container news">
 	<div class="col col-12">
-		<img class="top" src="${path}/resources/img/mainpage.jpg" width="100%"
-			height="500px" style="margin: 50px 0px 100px 0px;">
+		<img src="${path}/resources/img/mainpage.jpg" width="100%"
+			height="500px" style="margin: 0px 0px 100px 0px;">
 	</div>
 	<h1 align="center">
-		<strong>미르 Today</strong>
+		<strong>MR Today</strong>
 	</h1>
 	<div class="row"></div>
 	<div class="row">
