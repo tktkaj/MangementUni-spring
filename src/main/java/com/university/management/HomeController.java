@@ -50,7 +50,7 @@ public class HomeController {
 	public String popup() {
 		return "professor/popup";
 	}
-	
+
 	@RequestMapping("/management")
 	public String management() {
 		return "student/management";
@@ -59,6 +59,16 @@ public class HomeController {
 	@RequestMapping("/passwordchange")
 	public String passwordchange() {
 		return "login/passwordchange";
+	}
+	
+	@RequestMapping("/myCoursesList")
+	public String myCoursesList() {
+		return "courses/myCoursesList";
+	}
+	
+	@RequestMapping("/myCoursesPage")
+	public String myCoursesPage() {
+		return "courses/myCoursesPage";
 	}
 }
 
