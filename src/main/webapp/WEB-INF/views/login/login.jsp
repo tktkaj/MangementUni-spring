@@ -48,8 +48,8 @@
 							name="password" class="form-control"> 
 					</div>
 					<div>
-						교직원 <input type='radio' name='login' value='admin' />
-						 학생<input	type='radio' name='login' value='student' />
+						교직원 <input type='radio' name='login' value='Employee' />
+						 학생<input	type='radio' name='login' value='Student' />
 					</div>
 						<button type="submit" class="btn btn-primary btn-xs"
 							style="width: 100%">로그인</button>
