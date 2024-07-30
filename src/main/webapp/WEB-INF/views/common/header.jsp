@@ -25,7 +25,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col col-3">
-			<a href="/management"><img src="${path}/resources/img/logo.png" width="100" height="100"></a>
+			<a href="/"><img src="${path}/resources/img/logo.png" width="100" height="100"></a>
 			</div>
 			<div class="col col-9 login-col">
 				<button id="login" onclick="location.href='login'">LOGIN</button>
