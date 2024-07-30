@@ -51,7 +51,7 @@ public class HomeController {
 		return "professor/popup";
 	}
 	
-<<<<<<< HEAD
+
 	@RequestMapping(value = "/courses/MyCoursesList", method = RequestMethod.GET)
 	public String MyCoursesList() {
 		logger.info("MyCoursesList");
@@ -68,7 +68,7 @@ public class HomeController {
 		return "courses/MyCoursesPage";
 	}
 	
-=======
+
 	@RequestMapping("/management")
 	public String management() {
 		return "student/management";
@@ -78,5 +78,4 @@ public class HomeController {
 	public String passwordchange() {
 		return "login/passwordchange";
 	}
->>>>>>> 0d782701afb891f92ef81af4cc71d102d289dde3
-}
+
