@@ -37,7 +37,7 @@
 				<div class="col col-4">
 					<ul>
 						<li style="margin-left: 50px"><a href="#">대학소개</a></li>
-						<li><a href="#">공지사항</a></li>
+						<li><a href="${path}/infoboard">공지사항</a></li>
 						<li><a href="#">에타게시판</a></li>
 					</ul>
 				</div>

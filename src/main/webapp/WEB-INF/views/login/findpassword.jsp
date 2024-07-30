@@ -60,7 +60,7 @@
 			</form>
 
 		</div>
-		<button onclick="location.href='management'">확인용</button>
+		
 	</div>
 	</div>
 </section>
