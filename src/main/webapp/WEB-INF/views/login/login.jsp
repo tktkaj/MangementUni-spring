@@ -30,7 +30,7 @@
 			<!-- 로그인 페이지 타이틀 -->
 			<div id="loginBoxTitle">학사관리 로그인</div>
 			<!-- 아이디, 비번, 버튼 박스 -->
-			<form action="MyCoursesPage" method="post">
+			<form action="myCoursesPage" method="post">
 				<div id="inputBox">
 					<div class="input-form-box">
 						<span>아이디 </span><input type="text" id="loginId" name="id"

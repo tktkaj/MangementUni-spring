@@ -52,7 +52,7 @@
 							<tr>
 								<th scope="row">1</th>
 								<td>Mark</td>
-								<td><a href="MyCoursesList">Otto</a></td>
+								<td><a href="myCoursesList">Otto</a></td>
 								<td>@mdo</td>
 								<td>@mdo</td>
 
