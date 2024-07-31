@@ -16,7 +16,7 @@
 <script defer src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script defer src="${path}/resources/js/homepage.js"></script>
 <link href="${path}/resources/css/main.css" rel="stylesheet" />
-<link href="${path}/resources/css/home.css" rel="stylesheet" />
+<link href="${path}/resources/css/home.css?힣" rel="stylesheet" />
 </head>
 <div class="header">
 	<div class="opq-header">
