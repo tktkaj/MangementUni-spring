@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class StudentContoller {
+public class StudentController {
 
 	@RequestMapping("/askpresident")
 	public String askpresident() {
@@ -31,14 +31,24 @@ public class StudentContoller {
 		return "student/popup";
 	}
 	
-	@RequestMapping("/MyCoursesList")
+	@RequestMapping("/myCoursesList")
 	public String MyCoursesList() {
-		return "courses/MyCoursesList";
+		return "courses/myCoursesList";
 	}
 	
-	@RequestMapping("/MyCoursesPage")
+	@RequestMapping("/myCoursesPage")
 	public String MyCoursesPage() {
-		return "courses/MyCoursesPage";
+		return "courses/myCoursesPage";
+	}
+	
+	@RequestMapping("/objection")
+	public String objection() {
+		return "objection/objection";
+	}
+	
+	@RequestMapping("/objectionWrite")
+	public String objectionWrite() {
+		return "objection/objectionWrite";
 	}
 
 }

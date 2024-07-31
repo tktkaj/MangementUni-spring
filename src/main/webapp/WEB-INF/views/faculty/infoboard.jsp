@@ -17,7 +17,7 @@
 					<li><a href="passwordchange">사용자 정보 관리</a></li>
 				<li><a href="#">학적 및 성적관리</a></li>
 				<li><a href="management">등록관리</a></li>
-				<li><a href="MyCoursesPage">나의 수강 페이지</a></li>
+				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
 				<li><a href="askpresident">총장님께 바랍니다</a></li>
 				<li><a href="#">시간표</a></li>
 				<li><a href="#">학생증</a></li>
