@@ -18,7 +18,7 @@
 				<li><a href="passwordchange">사용자 정보 관리</a></li>
 				<li><a href="#">학적 및 성적관리</a></li>
 				<li><a href="studentinfo">등록관리</a></li>
-				<li><a href="MyCoursesPage">나의 수강 페이지</a></li>
+				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
 				<li><a href="askpresident">총장님께 바랍니다</a></li>
 				<li><a href="#">시간표</a></li>
 				<li><a href="#">학생증</a></li>
@@ -38,7 +38,7 @@
 			<div id="pageContent">
 				<div id="improtant">총 조회 건수 ${ count }건</div>
 				<div class="table-responsive">
-					<table class="table">
+					<table class="table-group-divider">
 						<thead>
 							<tr>
 								<th scope="col"></th>
@@ -52,7 +52,7 @@
 							<tr>
 								<th scope="row">1</th>
 								<td>Mark</td>
-								<td><a href="MyCoursesList">Otto</a></td>
+								<td><a href="myCoursesList">Otto</a></td>
 								<td>@mdo</td>
 								<td>@mdo</td>
 
