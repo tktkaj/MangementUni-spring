@@ -7,6 +7,7 @@
 <jsp:include page="common/homeheader.jsp"/>
 <img src="${path}/resources/img/mainpage.jpg" width="100%"
      height="700px" style="margin: 0px 0px 100px 0px;">
+
 <main class="container news">
     <h1 align="center">
         <strong>MR Today</strong>
