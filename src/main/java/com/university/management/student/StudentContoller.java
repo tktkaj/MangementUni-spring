@@ -11,9 +11,9 @@ public class StudentContoller {
 		return "student/askpresident";
 	}
 
-	@RequestMapping("/management")
+	@RequestMapping("/studentinfo")
 	public String management() {
-		return "student/management";
+		return "student/studentinfo";
 	}
 
 	@RequestMapping("/sechedule")
