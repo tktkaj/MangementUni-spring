@@ -1,23 +1,23 @@
 @charset "UTF-8";
 
-
 @font-face {
-    font-family: 'NEXON Lv1 Gothic OTF';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON%20Lv1%20Gothic%20OTF.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'NEXON Lv1 Gothic OTF';
+	src:
+		url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON%20Lv1%20Gothic%20OTF.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'NEXON Lv1 Gothic OTF';
-    font-weight: 400;
-    height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'NEXON Lv1 Gothic OTF';
+	font-weight: 400;
+	height: 100%;
 }
 
 /* header */
-
 header ul {
 	margin: 0;
 	padding: 0;
@@ -63,42 +63,50 @@ header .menu {
 }
 
 /* homeheader */
-homeheader{
+.header {
 	z-index: 9999;
 	position: absolute;
 	width: 100%;
 }
-homeheader .opq-header{
+
+.header .opq-header {
 	padding: 20px 0px;
-	background-color: rgba(0,0,0,.2);
-}
-homeheader .opq-header:hover{
-	background-color: white;
+	background-color: rgba(0, 0, 0, .2);	
 }
 
-homeheader ul {
+.header .opq-header:hover {
+	background-color: white;
+	transition: 300ms;
+}
+
+.header ul {
 	margin: 0;
 	padding: 0;
 	display: flex;
-	justify-content: space-between;
+	gap: 30px;
 }
 
-homeheader li {
+.header li {
 	list-style: none;
 	margin-left: 20px;
 }
 
-homeheader a {
+.header a {
 	text-decoration: none;
 	font-size: 20px;
 	font-weight: bold;
-	color: white;
+	color:white;
 }
-homeheader .opq-header .col{
+
+.header .opq-header .col {
 	display: flex;
 	justify-content: end;
 }
 
+#login-btn {
+	background-color: #024C86;
+	border: #024C86;
+}
 
 /* footer */
 footer {
@@ -143,4 +151,3 @@ footer .address {
 footer #copyright {
 	color: #838383;
 }
-
