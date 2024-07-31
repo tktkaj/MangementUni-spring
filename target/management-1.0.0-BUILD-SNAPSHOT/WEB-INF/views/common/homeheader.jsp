@@ -31,7 +31,7 @@
 						</ul>
 					</div>
 					<div class="col col-1">
-						<button id="login-btn">LOGIN</button>
+						<button id="login-btn" onclick="location.href='login'">LOGIN</button>
 					</div>
 				</div>
 			</div>
