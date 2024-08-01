@@ -12,7 +12,7 @@
   <script defer src="${path}/resources/js/scrollbtn.js"></script>
 </head>
 <main class="container school-ideology">
-<p class="top_scrollbtn" onclick="scrollbtn('scroll_start')">TOP</p>
+<p class="top_scrollbtn" onclick="location.href='#'">TOP</p>
 	<div class="row">
 		<div id="scroll_start" class="col col-5 title">
 			<h2>
