@@ -37,44 +37,43 @@
 			<!-- content view -->
 			<div id="pageContent">
 				<div id="improtant">총 조회 건수 ${ count }건</div>
-				<div class="table-responsive">
-					<table class="table-group-divider">
-						<thead>
-							<tr>
-								<th scope="col"></th>
-								<th scope="col">학과</th>
-								<th scope="col">강좌명</th>
-								<th scope="col">교수명</th>
-								<th scope="col">교시</th>
-							</tr>
-						</thead>
-						<tbody class="table-group-divider">
-							<tr>
-								<th scope="row">1</th>
-								<td>Mark</td>
-								<td><a href="myCoursesList">Otto</a></td>
-								<td>@mdo</td>
-								<td>@mdo</td>
-
-							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>Jacob</td>
-								<td>Thornton</td>
-								<td>@mdo</td>
-								<td>@mdo</td>
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<td>@twitter</td>
-								<td>@twitter</td>
-								<td>@twitter</td>
-								<td>@twitter</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<!-- table-responsive div -->
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col"></th>
+									<th scope="col">학과</th>
+									<th scope="col">강좌명</th>
+									<th scope="col">교수명</th>
+									<th scope="col">교시</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>Mark</td>
+									<td><a href="myCoursesList">Otto</a></td>
+									<td>@mdo</td>
+									<td>@mdo</td>
+	
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>Jacob</td>
+									<td>Thornton</td>
+									<td>@mdo</td>
+									<td>@mdo</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td>@twitter</td>
+									<td>@twitter</td>
+									<td>@twitter</td>
+									<td>@twitter</td>
+								</tr>
+							</tbody>
+						</table>
+				</div>	<!-- table-responsive div -->
 			</div>
 			<!-- pageContent div -->
 		</div>
