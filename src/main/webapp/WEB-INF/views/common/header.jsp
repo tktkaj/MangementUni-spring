@@ -21,6 +21,7 @@
     <link href="${path}/resources/css/home.css?야소" rel="stylesheet"/>
     <script defer src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script defer src="${path}/resources/js/homepage.js"></script>
+   
 </head>
 <header>
     <div class="container">
