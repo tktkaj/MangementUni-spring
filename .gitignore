@@ -173,3 +173,61 @@ fabric.properties
 !.idea/runConfigurations
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all,intellij
+
+# 빌드 결과물
+/target/
+
+# Maven의 로컬 저장소
+.m2/
+
+# IDE 설정 파일
+/.idea/
+/*.iml
+/.classpath
+/.project
+/.settings/
+
+# 운영 체제별 파일
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# 로그 파일
+*.log
+
+# 환경 설정 파일
+.env
+*.env
+
+# IntelliJ IDEA
+/.idea/
+/*.iws
+/*.iml
+/*.ipr
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# VS Code
+.vscode/
+
+# OS별 파일
+.DS_Store
+Thumbs.db
+
+# 기타
+# Maven wrapper files
+.mvn/
+mvnw
+mvnw.cmd
