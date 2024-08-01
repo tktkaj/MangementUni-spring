@@ -8,10 +8,10 @@
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <html>
 <head>
-<link href="${path}/resources/css/courses.css" rel="stylesheet" />
+<link href="${path}/resources/css/objection.css" rel="stylesheet" />
 <link href="${path}/resources/css/writeinfo.css" rel="stylesheet" />
 </head>
-<body>
+<body>	
 	<jsp:include page="../common/header.jsp" />
 	<div id="menuBar">
 		<div id="sub-menuBar">

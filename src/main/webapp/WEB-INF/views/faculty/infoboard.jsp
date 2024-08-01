@@ -8,6 +8,7 @@
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <html>
 <head>
+
 <link href="${path}/resources/css/courses.css" rel="stylesheet" />
 </head>
 <body>

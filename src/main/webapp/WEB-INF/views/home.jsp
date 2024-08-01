@@ -4,8 +4,11 @@
 <%@ page session="false" %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <jsp:include page="/WEB-INF/views/common/homeheader.jsp"/>
-
+<link href="${path}/resources/css/scrollbtn.css" rel="stylesheet" />
+  <script defer src="${path}/resources/js/scrollbtn.js"></script>
 <body>
+<p class="top_scrollbtn" onclick="scrollbtn('main-img')">TOP</p>
+
 <img id="main-img" src="${path}/resources/img/main_img.jpg"
      width="100%" height="750px">
 <div id="section1">

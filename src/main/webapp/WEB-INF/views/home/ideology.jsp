@@ -8,10 +8,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="${path}/resources/css/scrollbtn.css" rel="stylesheet" />
+  <script defer src="${path}/resources/js/scrollbtn.js"></script>
 </head>
 <main class="container school-ideology">
+<p class="top_scrollbtn" onclick="scrollbtn('scroll_start')">TOP</p>
 	<div class="row">
-		<div class="col col-5 title">
+		<div id="scroll_start" class="col col-5 title">
 			<h2>
 				<strong>학교 이념</strong>
 			</h2>
