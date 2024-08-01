@@ -16,8 +16,9 @@
 		<div id="sub-menuBar">
 			<ul id="menulist">
 				<li><a href="passwordchange">사용자 정보 관리</a></li>
-				<li><a href="#">학적 및 성적관리</a></li>
-				<li><a href="studentinfo">등록관리</a></li>
+				<li><a href="studentStatus">학적 관리</a></li>
+				<li><a href="studentinfo">등록 관리</a></li>
+				<li><a href="objection">성적 관리</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
 				<li><a href="askpresident">총장님께 바랍니다</a></li>
 				<li><a href="#">시간표</a></li>
@@ -38,7 +39,7 @@
 			<div id="pageContent">
 				<div id="improtant">총 조회 건수 ${ count }건</div>
 				<div class="table-responsive">
-					<table class="table-group-divider">
+					<table class="table">
 						<thead>
 							<tr>
 								<th scope="col"></th>

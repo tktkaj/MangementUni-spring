@@ -1,10 +1,11 @@
 @charset "UTF-8";
+/* objection */
 #sub-menubar {
 	margin-left: 50px;
 	background-color: #024C86;
 	margin-top: 110px;
 	width: 200px;
-	height: 200px;
+	height: 330px;
 	float: left;
 }
 
@@ -45,6 +46,15 @@
 	margin-top: 40px;
 	vertical-align: middle;
 	text-align: center;
+}
+
+#tableList{
+	margin-bottom:60px;
+}
+
+#midTitle {
+	text-align: left;
+	font-weight: bold;
 }
 
 .btn {
