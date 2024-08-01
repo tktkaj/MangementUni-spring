@@ -98,7 +98,7 @@ h1 {
 		<div id="content">
 			<!-- title view -->
 			<div id="pageTitle">
-				<h1>사용자 정보 관리</h1>
+				<h1>총장님께 부탁드립니다</h1>
 			</div>
 			<div class="custom">
 				<h5 class="mt-4" style="text-align: left; color: red;">이 글은
