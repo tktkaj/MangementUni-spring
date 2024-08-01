@@ -29,5 +29,10 @@ public class FacultyController {
 		
 		return "faculty/updateinfo";
 	}
+	
+	@RequestMapping("/objectionList")
+	public String objectionList() {
+		return "objection/objectionList";
+	}
 
 }

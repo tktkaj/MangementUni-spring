@@ -14,13 +14,17 @@
 		<div id="menuBar">
 			<div id="sub-menuBar">
 				<ul id="menulist">
-					<li><a href="#">사용자 정보 관리</a></li>
-					<li><a href="#">학적 및 성적관리</a></li>
-					<li><a href="#">등록관리</a></li>
-					<li><a href="#">나의 수강 페이지</a></li>
-					<li><a href="#">총장님께 바랍니다</a></li>
-					<li><a href="#">시간표</a></li>
-					<li><a href="#">학생증</a></li>
+					<li><a href="passwordchange">사용자 정보 관리</a></li>
+				<li><a href="#">학적 및 성적관리</a></li>
+				<li><a href="management">등록관리</a></li>
+<<<<<<< HEAD
+				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
+=======
+				<li><a href="MyCoursesPage">나의 수강 페이지</a></li>
+>>>>>>> origin/hm
+				<li><a href="askpresident">총장님께 바랍니다</a></li>
+				<li><a href="#">시간표</a></li>
+				<li><a href="#">학생증</a></li>
 				</ul>
 			</div>
 		</div>
