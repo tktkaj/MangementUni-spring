@@ -104,6 +104,8 @@ h1 {
 	width: 100px;
 	height: 40px;
 	margin-right: 500px;
+	margin-top:10px;
+	margin-bottom:10px;
 	
 }
 
@@ -214,15 +216,7 @@ h1 {
 	font-size: 18px;
 }
 
-.downbtn1 {
-	display: flex;
-	align-items: center;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	margin-left:
-	width: 700px; 
-	
-}
+
 
 .horizontal-container {
 	display: flex;
@@ -421,15 +415,16 @@ margin-left:50px;
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="downbtn1">
+			
+			
 				<button type="button" class="btn4">
 					<img src="${path}/resources/img/글목록.png" width="20" height="20">
 					&nbsp;글 목록
 				</button>
+				</div>
 			</div>
 		</div>
-	</div>
+	
 
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
