@@ -7,6 +7,6 @@
 <title>학적 관리</title>
 </head>
 <body>
-
+	학적관리 페이지입니다!
 </body>
 </html>
