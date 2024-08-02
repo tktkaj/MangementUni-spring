@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -11,6 +13,7 @@
 <link
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 	rel="stylesheet">
+<link href="${path}/resources/css/courses.css" rel="stylesheet" />
 <style>
 .card-text {
 	margin-bottom: 0.25rem;
@@ -86,8 +89,21 @@ img {
 }
 </style>
 </head>
-
+<jsp:include page="../common/header.jsp" />
 <body>
+	<div id="menuBar">
+		<div id="sub-menuBar">
+			<ul id="menulist">
+				<li><a href="passwordchange">사용자 정보 관리</a></li>
+				<li><a href="studentstatus">학적 관리</a></li>
+				<li><a href="studentinfo">등록 관리</a></li>
+				<li><a href="objection">성적 관리</a></li>
+				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
+				<li><a href="askpresident">총장님께 바랍니다</a></li>
+				<li><a href="idcard">학생증</a></li>
+			</ul>
+		</div>
+	</div>
 	<div class="card mb-3" style="max-width: 540px;">
 		<div class="background">
 			<div class="row no-gutters">
@@ -125,6 +141,7 @@ img {
 		</div>
 	</div>
 
+
 	<!-- Bootstrap JS and dependencies -->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script
@@ -132,5 +149,5 @@ img {
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
+<jsp:include page="../common/footer.jsp" />
 </html>
