@@ -21,292 +21,306 @@
 
 
 <style>
-        .menuBar {
-            height: 100px;
-        }
 
-        .input-group-text {
-            background-color: #f8f9fa;
-            border-color: black;
-        }
 
-        .form-control {
-            width: 750px;
-        }
+}
+.menuBar {
+	height: 100px;
+}
 
-        .custom {
-            max-width: 1100px;
-            margin: 0 auto;
-            text-align: center;
-        }
+.input-group-text {
+	background-color: #f8f9fa;
+	border-color: black;
+}
 
-        .custom-button {
-            background-color: rgb(2, 76, 134);
-            color: #ffffff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 300px;
-        }
+.form-control {
+	width: 750px;
+}
 
-        .custom-container {
-            max-width: 900px;
-        }
+.custom {
+	max-width: 1100px;
+	margin: 0 auto;
+	text-align: center;
+}
 
-        h1 {
-            width: 700px;
-        }
+.custom-button {
+	background-color: rgb(2, 76, 134);
+	color: #ffffff;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 300px;
+}
 
-        .list-group {
-            border: 4px;
-            border-color: black;
-            border-left: none;
-            border-right: none;
-        }
+.custom-container {
+	max-width: 900px;
+}
 
-        .btn1 {
-            background-color: rgb(2, 76, 134);
-            color: #ffffff;
-            border: none;
+h1 {
+	width: 700px;
+}
 
-            font-size: 14px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 90px;
-            height: 40px;
-            text-align: center;
-            display: block;
-            margin: 10px auto;
-            margin-left: 30px;
-        }
+.list-group {
+	border: 4px;
+	border-color: black;
+	border-left: none;
+	border-right: none;
+}
 
-        .btn2 {
-            background-color: rgb(2, 76, 134);
-            color: #ffffff;
-            border: none;
-            padding: 5px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 120px;
-        }
+.btn1 {
+	background-color: rgb(2, 76, 134);
+	color: #ffffff;
+	border: none;
+	font-size: 14px;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 90px;
+	height: 40px;
+	text-align: center;
+	display: block;
+	margin: 10px auto;
+	margin-left: 30px;
+}
 
-        .btn3 {
-            background-color: rgb(2, 76, 134);
-            color: #ffffff;
-            font-size: 14px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 90px;
-            height: 40px;
-            text-align: center;
-            display: block;
+.btn2 {
+	background-color: rgb(2, 76, 134);
+	color: #ffffff;
+	border: none;
+	padding: 5px 20px;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 120px;
+}
 
-        }
+.btn4 {
+	background-color: rgb(2, 76, 134);
+	color: #ffffff;
+	font-size: 14px;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 100px;
+	height: 40px;
+	margin-right: 500px;
+	
+}
 
-        .box {
-            background-color: rgb(2, 76, 134);
-            color: white;
-            border: none;
-            width: 1000px;
-            height: 80px;
-            font-size: 40px;
-            font-weight: bold;
-            pointer-events: none;
-        }
+.box {
+	background-color: rgb(2, 76, 134);
+	color: white;
+	border: none;
+	width: 1000px;
+	height: 80px;
+	font-size: 40px;
+	font-weight: bold;
+	pointer-events: none;
+}
 
-        .form-control1,
-        .form-control2,
-        .form-control3 {
-            border: none;
-            background-color: #ffffff;
-            pointer-events: none;
-        }
+.form-control1, .form-control2, .form-control3 {
+	border: none;
+	background-color: #ffffff;
+	pointer-events: none;
+}
 
-        .form-control1 {
-            height: 80px;
-            width: 1000px;
-            font-size: 20px;
-        }
+.form-control1 {
+	height: 80px;
+	width: 1000px;
+	font-size: 20px;
+}
 
-        .form-control2 {
-            height: 600px;
-            width: 1000px;
-            font-size: 20px;
-        }
+.form-control2 {
+	height: auto;
+	width: 1000px;
+	font-size: 20px;
+}
 
-        .form-control3 {
-            height: 100px;
-            width: 1000px;
-            font-size: 15px;
-            border-top: none;
+.form-control3 {
+	height: 100px;
+	width: 1000px;
+	font-size: 15px;
+	border-top: none;
+}
 
-        }
+.file-upload-button, .custom-submit-button {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 15px;
+	color: #ffffff;
+	background-color: rgb(2, 76, 134);
+	border: 1px solid rgb(2, 76, 134);
+	border-radius: 5px;
+	cursor: pointer;
+	text-align: center;
+	user-select: none;
+	margin-right: 30px;
+}
 
-        .file-upload-button,
-        .custom-submit-button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #ffffff;
-            background-color: rgb(2, 76, 134);
-            border: 1px solid rgb(2, 76, 134);
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-            user-select: none;
-            margin-right: 10px;
-        }
+.file-upload-button:hover, .custom-submit-button:hover {
+	background-color: #0056b3;
+	border-color: #0056b3;
+}
 
-        .file-upload-button:hover,
-        .custom-submit-button:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
+.file-upload-button input[type="file"] {
+	display: none;
+}
 
-        .file-upload-button input[type="file"] {
-            display: none;
-        }
+.file-upload-path {
+	display: inline-block;
+	vertical-align: middle;
+	color: #333;
+	font-size: 14px;
+	margin-left: 10px;
+}
 
-        .file-upload-path {
-            display: inline-block;
-            vertical-align: middle;
-            color: #333;
-            font-size: 14px;
-            margin-left: 10px;
-        }
+.form-controls-container2 {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px;
+	background-color: #c9c9c9;
+	width: 1000px;
+}
 
-        .form-controls-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px;
-            background-color: #c9c9c9;
-            border-top: none;
-            width: 1000px;
-        }
+.form-controls-container .file-upload-section {
+	display: flex;
+	align-items: center;
+	width: 80%;
+}
 
-        .form-controls-container .file-upload-section {
-            display: flex;
-            align-items: center;
-            width: 80%;
-        }
+.form-controls-container .form-check {
+	margin-left: 30px;
+}
 
-        .form-controls-container .form-check {
-            margin-left: 20px;
-        }
+.form-controls-container .btn {
+	margin-left: 20px;
+}
 
-        .form-controls-container .btn {
-            margin-left: 20px;
-        }
+.form-check-input {
+	width: 20px;
+	height: 20px;
+	border: 2px solid rgb(2, 76, 134);
+	background-color: #fff;
+}
 
-        .form-check-input {
-            width: 20px;
-            height: 20px;
-            border: 2px solid rgb(2, 76, 134);
-            background-color: #fff;
-        }
+.form-check-input:checked {
+	background-color: rgb(2, 76, 134);
+	border-color: rgb(2, 76, 134);
+}
 
-        .form-check-input:checked {
-            background-color: rgb(2, 76, 134);
-            border-color: rgb(2, 76, 134);
-        }
+.form-check-label {
+	font-weight: bold;
+	font-size: 18px;
+}
 
-        .form-check-label {
-            font-weight: bold;
-            font-size: 18px;
-        }
+.downbtn1 {
+	display: flex;
+	align-items: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-left:
+	width: 700px; 
+	
+}
 
-        .downbtn {
-            display: flex;
-            align-items: center;
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
+.horizontal-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding-top: 10px;
+}
 
-        .horizontal-container {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding-top: 10px;
-        }
+.profile-section {
+	display: flex;
+	align-items: center;
+	margin-right: 20px;
+}
 
-        .profile-section {
-            display: flex;
-            align-items: center;
-            margin-right: 20px;
-        }
+.profile-section .프로필사진 {
+	margin-right: 10px;
+}
 
-        .profile-section .프로필사진 {
-            margin-right: 10px;
-        }
+.stats-section {
+	display: flex;
+	align-items: center;
+}
 
-        .stats-section {
-            display: flex;
-            align-items: center;
-        }
+.stat-item {
+	display: flex;
+	align-items: center;
+	margin-left: 20px;
+}
 
-        .stat-item {
-            display: flex;
-            align-items: center;
-            margin-left: 20px;
-        }
+.button-img {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	margin-right: 5px;
+}
 
-        .button-img {
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
-            margin-right: 5px;
-        }
+.button-img.clicked {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
 
-        .button-img.clicked {
-            cursor: not-allowed;
-            opacity: 0.5;
-        }
+.counter {
+	font-size: 16px;
+}
 
-        .counter {
-            font-size: 16px;
-        }
+.프로필사진 {
+	width: 40px;
+	height: 40px;
+}
 
-        .프로필사진 {
-            width: 40px;
-            height: 40px;
-        }
+.detailchang {
+	margin-left: 400px;
+	;
+}
 
-        .detailchang {
-            margin-left: 400px;
-            height: 100vh;
-            
-        }
+.container {
+	margin-right: 240px;
+}
 
-        .container {
-            margin-right: 240px;
-        }
+.header2 {
+	padding-bottom: 11px;
+}
 
-        .header2 {
-            padding-bottom: 11px;
-        }
-    </style>
+.rightside {
+	display: flex;
+	align-items: center;
+	margin-left: 10px;
+}
+
+#commentInput {
+	width: 750px;
+}
+
+.form-check {
+	margin-right: 10px;
+}
+.detailchang2{
+margin-left:50px;
+}
+</style>
 
 </head>
 
 <body>
 	<jsp:include page="../common/header.jsp" />
 
-	
-		<div id="menuBar">
-			<div id="sub-menuBar" style="height: 150px;">
-				<ul id="menulist">
-					<li><a href="etmainpage">자유게시판</a></li>
-					<li><a href="etmypage">내글 보기</a></li>
-					<li><a href="ethot">HOT게시판</a></li>
-				</ul>
-			</div>
+
+	<div id="menuBar">
+		<div id="sub-menuBar" style="height: 150px;">
+			<ul id="menulist">
+				<li><a href="etmainpage">자유게시판</a></li>
+				<li><a href="etmypage">내글 보기</a></li>
+				<li><a href="ethot">HOT게시판</a></li>
+			</ul>
 		</div>
-<div class="main-container">
-		<div class="container">
+	</div>
+	<div class="main-container">
+		<div class="detailchang">
 			<div type="box" id="content" class="header2">
 				<input type="text" id="Box" class="box" value="&nbsp;자유게시판" readonly>
 
@@ -334,100 +348,82 @@
 				</div>
 				<hr style="width: 1000px;">
 			</div>
-		</div>
 
-		<div class="detailchang">
-			<div class="input-group mb-0">
-				<input type="text" class="form-control2" value="정훈아 졸려죽겄다" readonly>
-			</div>
-			<hr style="width: 1000px;">
-			<div id="commentsContainer">
-				<div class="comment">
-					<div class="horizontal-container">
-						<div class="profile-section">
-							<img src="${path}/resources/img/프로필사진.png" class="프로필사진"
-								alt="Profile Image"> <span class="username">익명</span>
-						</div>
-						<div class="stats-section">
-							<div class="stat-item">
-								<img src="${path}/resources/img/추천버튼.png"
-									class="button-img recommend-button">
-								<div class="counter">0</div>
+
+			<div class="detailchang2">
+				<div class="input-group mb-0">
+					<input type="text" class="form-control2" value="정훈아 졸려죽겄다" readonly>
+				</div>
+				<hr style="width: 1000px;">
+				<div id="commentsContainer">
+					<div class="comment">
+						<div class="horizontal-container">
+							<div class="profile-section">
+								<img src="${path}/resources/img/프로필사진.png" class="프로필사진"
+									alt="Profile Image"> <span class="username">익명</span>
+							</div>
+							<div class="stats-section">
+								<div class="stat-item">
+									<img src="${path}/resources/img/추천버튼.png"
+										class="button-img recommend-button">
+									<div class="counter">0</div>
+								</div>
 							</div>
 						</div>
+
+						<div class="input-group mb-0">
+							<input type="text" class="form-control3" value="정훈아 졸려죽겄다 나좀살려줘"
+								readonly>
+						</div>
+						<hr style="width: 1000px;">
 					</div>
 
-					<div class="input-group mb-0">
-						<input type="text" class="form-control3" value="정훈아 졸려죽겄다 나좀살려줘"
-							readonly>
-					</div>
-					<hr style="width: 1000px;">
-				</div>
-				<div class="comment">
-					<div class="horizontal-container">
-						<div class="profile-section">
-							<img src="${path}/resources/img/프로필사진.png" class="프로필사진"
-								alt="Profile Image"> <span class="username">기민경</span>
-						</div>
-						<div class="stats-section">
-							<div class="stat-item">
-								<img src="${path}/resources/img/추천버튼.png"
-									class="button-img recommend-button">
-								<div class="counter">0</div>
+					<div class="comment">
+						<div class="horizontal-container">
+							<div class="profile-section">
+								<img src="${path}/resources/img/프로필사진.png" class="프로필사진"
+									alt="Profile Image"> <span class="username">김희망</span>
+							</div>
+							<div class="stats-section">
+								<div class="stat-item">
+									<img src="${path}/resources/img/추천버튼.png"
+										class="button-img recommend-button">
+									<div class="counter">0</div>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="input-group mb-0">
-						<input type="text" class="form-control3" value="정훈아 졸려죽겄다 나좀살려줘"
-							readonly>
+						<div class="input-group mb-0">
+							<input type="text" class="form-control3" value="정훈아 졸려죽겄다 나좀살려줘"
+								readonly>
+						</div>
+						<hr style="width: 1000px;">
 					</div>
-					<hr style="width: 1000px;">
 				</div>
-				<div class="comment">
-					<div class="horizontal-container">
-						<div class="profile-section">
-							<img src="${path}/resources/img/프로필사진.png" class="프로필사진"
-								alt="Profile Image"> <span class="username">김희망</span>
-						</div>
-						<div class="stats-section">
-							<div class="stat-item">
-								<img src="${path}/resources/img/추천버튼.png"
-									class="button-img recommend-button">
-								<div class="counter">0</div>
-							</div>
-						</div>
-					</div>
 
-					<div class="input-group mb-0">
-						<input type="text" class="form-control3" value="정훈아 졸려죽겄다 나좀살려줘"
-							readonly>
+				<div class="form-controls-container2">
+					<div class="file-upload-section">
+						<form>
+							<textarea id="commentInput" class="form-control" rows="2"
+								placeholder="댓글 작성"></textarea>
+						</form>
 					</div>
-					<hr style="width: 1000px;">
+					<div class="rightside">
+						<div class="form-check d-inline">
+							<input class="form-check-input" style="font-weight: bolder;"
+								type="checkbox" value="" id="flexCheckDefault"> <label
+								class="form-check-label" style="font-weight: bolder;"
+								for="flexCheckDefault">익명</label>
+						</div>
+						<div class="d-flex align-items-center">
+							<button class="custom-submit-button" type="button"
+								id="postCommentButton">글 작성</button>
+						</div>
+					</div>
 				</div>
 			</div>
-
-			<div class="form-controls-container">
-				<div class="file-upload-section">
-					<form>
-						<textarea id="commentInput" class="form-control" rows="1"
-							placeholder="댓글 작성"></textarea>
-					</form>
-				</div>
-
-				<div class="form-check d-inline">
-					<input class="form-check-input" style="font-weight: bolder;"
-						type="checkbox" value="" id="flexCheckDefault"> <label
-						class="form-check-label" style="font-weight: bolder;"
-						for="flexCheckDefault">익명</label>
-				</div>
-				<div class="d-flex align-items-center">
-					<button class="custom-submit-button" type="button"
-						id="postCommentButton">글 작성</button>
-				</div>
-			</div>
-			<div class="downbtn">
-				<button type="button" class="btn3">
+			<div class="downbtn1">
+				<button type="button" class="btn4">
 					<img src="${path}/resources/img/글목록.png" width="20" height="20">
 					&nbsp;글 목록
 				</button>
