@@ -1,10 +1,9 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page session="false"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="kr">
 
@@ -12,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>everytimemain</title>
-    <link rel="stylesheet" href="everytime.css">
+    <link href="${path}/resources/css/everytime.css" rel="stylesheet"/> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
@@ -22,13 +21,13 @@
     <div id="menuBar">
         <div id="sub-menuBar" style="height: 150px;">
             <ul id="menulist">
-                  <li><a href="etmainpage">자유게시판</a></li>
+                <li><a href="etmainpage">자유게시판</a></li>
                 <li><a href="etmypage">내글 보기</a></li>
                 <li><a href="ethot">HOT게시판</a></li>
             </ul>
         </div>
     </div>
-    <div class="container" style="height: 500px;">
+    <div class="container">
         <div id="content">
             <div class="list-group">
                 <div class="dropdown-container">
@@ -59,7 +58,7 @@
                 <a href="#" class="list-group-item list-group-item-action list-group-item-small2 disabled">
                     <div style="display: flex; align-items: center;">
                         <div style="padding: 1px; margin-right: 5px; font-size: 15px;">1초전</div>
-                        <img src="msg.png" width="15" height="15">
+                        <img src="${path}/resources/img/msg.png" width="15" height="15">
                         <div style="padding: 1px; margin-right: 5px; font-size: 15px;">20</div>
                     </div>
                 </a>
@@ -73,7 +72,7 @@
                 <a href="#" class="list-group-item list-group-item-action list-group-item-small2 disabled">
                     <div style="display: flex; align-items: center;">
                         <div style="padding: 1px; margin-right: 5px; font-size: 15px;">1초전</div>
-                        <img src="msg.png" width="15" height="15">
+                        <img src="${path}/resources/img/msg.png" width="15" height="15">
                         <div style="padding: 1px; margin-right: 5px; font-size: 15px;">20</div>
                     </div>
                 </a>
@@ -87,7 +86,7 @@
                 <a href="#" class="list-group-item list-group-item-action list-group-item-small2 disabled">
                     <div style="display: flex; align-items: center;">
                         <div style="padding: 1px; margin-right: 5px; font-size: 15px;">1초전</div>
-                        <img src="msg.png" width="15" height="15">
+                        <img src="${path}/resources/img/msg.png" width="15" height="15">
                         <div style="padding: 1px; margin-right: 5px; font-size: 15px;">20</div>
                     </div>
                 </a>

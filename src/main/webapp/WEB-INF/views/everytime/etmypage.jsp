@@ -1,10 +1,9 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page session="false"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="kr">
 
@@ -13,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>everytimemain</title>
 
-<link rel="stylesheet" href="everytime.css">
+<link href="${path}/resources/css/everytime.css" rel="stylesheet" />
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -33,7 +32,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="container" style="height: 500px;">
+	<div class="container">
 		<div id="content">
 			<!-- title view -->
 			<div class="list-group">
@@ -61,7 +60,7 @@
 					class="list-group-item list-group-item-action list-group-item-small2 disabled">
 					<div style="display: flex; align-items: center;">
 						<div style="padding: 1px; margin-right: 5px; font-size: 15px;">1초전</div>
-						<img src="msg.png" width="15" height="15">
+						<img src="${path}/resources/img/msg.png" width="15" height="15">
 						<div style="padding: 1px; margin-right: 5px; font-size: 15px;">20</div>
 					</div>
 				</a>
@@ -76,7 +75,7 @@
 					class="list-group-item list-group-item-action list-group-item-small2 disabled">
 					<div style="display: flex; align-items: center;">
 						<div style="padding: 1px; margin-right: 5px; font-size: 15px;">1초전</div>
-						<img src="msg.png" width="15" height="15">
+						<img src="${path}/resources/img/msg.png" width="15" height="15">
 						<div style="padding: 1px; margin-right: 5px; font-size: 15px;">20</div>
 					</div>
 				</a>
@@ -91,7 +90,7 @@
 					class="list-group-item list-group-item-action list-group-item-small2 disabled">
 					<div style="display: flex; align-items: center;">
 						<div style="padding: 1px; margin-right: 5px; font-size: 15px;">1초전</div>
-						<img src="msg.png" width="15" height="15">
+						<img src="${path}/resources/img/msg.png" width="15" height="15">
 						<div style="padding: 1px; margin-right: 5px; font-size: 15px;">20</div>
 					</div>
 				</a>
@@ -101,7 +100,8 @@
 				<button type="button" class="btn1">▼&nbsp;더보기</button>
 				<div class="btn-list">
 					<button type="button" class="btn3">
-						<img src="글목록.png" width="25" height="25">&nbsp;글 목록
+						<img src="${path}/resources/img/글목록.png" width="25" height="25">&nbsp;글
+						목록
 					</button>
 				</div>
 			</div>
@@ -127,8 +127,7 @@
 	</script>
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+	<jsp:include page="../common/footer.jsp" />
 </body>
 
 </html>
-
-<jsp:include page="../common/footer.jsp" />
