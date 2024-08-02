@@ -19,7 +19,7 @@
 	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
 	crossorigin="anonymous">
 
-<style>
+
 <style>
         .menuBar {
             height: 100px;
@@ -289,13 +289,13 @@
             padding-bottom: 11px;
         }
     </style>
-</style>
+
 </head>
 
 <body>
 	<jsp:include page="../common/header.jsp" />
 
-	<div class="main-container">
+	
 		<div id="menuBar">
 			<div id="sub-menuBar" style="height: 150px;">
 				<ul id="menulist">
@@ -305,7 +305,7 @@
 				</ul>
 			</div>
 		</div>
-
+<div class="main-container">
 		<div class="container">
 			<div type="box" id="content" class="header2">
 				<input type="text" id="Box" class="box" value="&nbsp;자유게시판" readonly>
@@ -429,7 +429,7 @@
 			<div class="downbtn">
 				<button type="button" class="btn3">
 					<img src="${path}/resources/img/글목록.png" width="20" height="20">
-					>&nbsp;글 목록
+					&nbsp;글 목록
 				</button>
 			</div>
 		</div>
