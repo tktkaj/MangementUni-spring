@@ -22,9 +22,9 @@
     <div id="menuBar">
         <div id="sub-menuBar" style="height: 150px;">
             <ul id="menulist">
-                <li><a href="passwordchange">자유게시판</a></li>
-                <li><a href="#">내글 보기</a></li>
-                <li><a href="management">HOT게시판</a></li>
+                  <li><a href="etmainpage">자유게시판</a></li>
+                <li><a href="etmypage">내글 보기</a></li>
+                <li><a href="ethot">HOT게시판</a></li>
             </ul>
         </div>
     </div>
