@@ -184,9 +184,6 @@
 		</dependency>
 
 
-
-
-
 		<!-- 스프링에서 사용하는 이메일 라이브러리 스프링부트는 다른것 사용한다. 3버전. -->
 		<dependency>
 			<groupId>javax.mail</groupId>
@@ -200,15 +197,6 @@
 			<artifactId>spring-context-support</artifactId>
 			<version>5.3.10</version>
 		</dependency>
-
-
-
-
-
-
-
-
-
 
 
 
