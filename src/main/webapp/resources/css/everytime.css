@@ -1,0 +1,964 @@
+@charset "UTF-8";
+
+/* courses.css */
+#sub-menuBar {
+    margin-left: 50px;
+    background-color: #024C86;
+    margin-top: 110px;
+    width: 200px;
+    height: 160px;
+    float: left;
+}
+
+#menulist {
+    text-decoration: none;
+    list-style: none;
+    font-weight: bold;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#menulist a {
+    text-decoration: none;
+    color: white;
+}
+
+#menulist a:hover {
+    border-bottom: 1px solid;
+    border-bottom-color: white;
+}
+
+#menulist li {
+    margin: 20px 0px;
+}
+
+/* content */
+#content {
+    padding: 50px;
+}
+
+#improtant {
+    text-align: right;
+}
+
+#pageTitle {
+    border-bottom: 3px solid;
+    border-bottom-color: #024C86;
+}
+
+#pageContent {
+    margin-top: 20px;
+}
+
+.table {
+    text-align: center;
+    position: static;
+}
+
+/* courses - MyCourseList */
+#improtant2 {
+    text-align: left;
+    margin-top: 50px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: RGB(231, 240, 254);
+    padding: 30px;
+}
+
+#pageTitle {
+    border-bottom: 3px solid;
+    border-bottom-color: #024C86;
+}
+
+#pageContent {
+    margin-top: 20px;
+}
+
+#atten {
+    margin-top: 50px;
+}
+
+.present {
+    text-align: center;
+}
+
+progress {
+    width: 100%;
+    height: 35px;
+    background-color: #024C86;
+    border-radius: 50%;
+}
+
+progress::-webkit-progress-bar {
+    background-color: RGB(230, 230, 230);
+    border-radius: 18px;
+}
+
+progress::-webkit-progress-value {
+    border-radius: 18px;
+    background-image: linear-gradient(60deg, RGB(206, 225, 253), RGB(168, 198, 247));
+}
+
+progress::-moz-progress-bar {
+    border-radius: 18px;
+    background-image: linear-gradient(60deg, RGB(206, 225, 253), RGB(168, 198, 247));
+}
+
+#comm {
+    padding: 10px;
+    margin-top: 60px;
+    border-bottom: 3px solid #024C86;
+}
+
+#onlineList a {
+    text-decoration: none;
+    color: black;
+}
+
+#online {
+    padding: 30px;
+    border-bottom: 2px solid #024C86;
+}
+
+#online-title {
+    font-weight: bold;
+}
+
+#onlien-cont {
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.icon {
+    vertical-align: middle;
+}
+
+/* main.css */
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON%20Lv1%20Gothic%20OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'NEXON Lv1 Gothic OTF';
+    font-weight: 400px;
+    height: 100%;
+}
+
+/* header */
+header ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+header li {
+    list-style: none;
+}
+
+header a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+header a:hover {
+    color: #024C86;
+}
+
+header .login-col {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+header #login {
+    padding: 5px 10px;
+    outline: none;
+    background: #024C86;
+    color: white;
+    border-radius: 5px;
+    border: #024C86;
+}
+
+header .menu {
+    margin-top: 20px;
+    padding: 10px 0px;
+    border-top: 4px solid #024C86;
+    border-bottom: 4px solid #024C86;
+}
+
+.news {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.news a {
+    text-decoration: none;
+    color: black;
+}
+
+main .top {
+    border-top: 6px solid #024C86;
+}
+
+main h1 {
+    margin-bottom: 100px;
+}
+
+main .article {
+    padding: 20px 20px;
+    background-color: #eee;
+}
+
+main .main-news img {
+    margin: 0px;
+}
+
+main .readmore {
+    margin-top: 150px;
+}
+
+.news .readmore a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+main .sub-menu {
+    margin-top: 20px;
+}
+
+main .sub-article1 {
+    height: 300px;
+    padding-right: 20px;
+    padding-top: 50px;
+}
+
+main .sub-article2 {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .sub-article1 {
+    padding-right: 20px;
+    padding-top: 50px;
+}
+
+main .sub-news {
+    margin-bottom: 20px;
+}
+
+/* footer */
+footer {
+    background-color: #464646;
+    color: #ffffff;
+}
+
+footer .footer-nav {
+    padding: 10px 0px;
+}
+
+footer ul {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer li {
+    list-style: none;
+}
+
+footer a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+footer .hr {
+    background-color: #333333;
+    height: 1px;
+}
+
+footer .footer-detail {
+    padding: 50px 0px;
+}
+
+footer .address {
+    color: #838383;
+}
+
+footer #copyright {
+    color: #838383;
+}
+
+/* inline styles moved */
+.menuBar {
+    height: 100px;
+}
+
+.input-group-text {
+    background-color: #f8f9fa;
+    border-color: black;
+}
+
+.form-control {
+    border-color: black;
+}
+
+.custom {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.btn-wide {
+    width: 30%;
+}
+
+.custom-button {
+    background-color: rgb(2, 76, 134);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 300px;
+}
+
+.custom-container {
+    max-width: 900px;
+}
+
+h1 {
+    width: 700px;
+}
+
+.list-group {
+    border: 4px;
+    border-color: black;
+    border-left: none;
+    border-right: none;
+}
+
+.btn1 {
+    background-color: rgb(2, 76, 134);
+    color: #ffffff;
+    border: none;
+    padding: 5px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 120px;
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+}
+
+.box {
+    background-color: rgb(2, 76, 134);
+    color: white;
+    border: none;
+    width: 100%;
+    height: 80px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.form-control1 {
+    height: 80px;
+    width: 1200px;
+    border-color: rgb(2, 76, 134);
+    font-size: 20px;
+    border-top: none;
+}
+
+.form-control2 {
+    height: 600px;
+    width: 1200px;
+    border-color: rgb(2, 76, 134);
+    font-size: 20px;
+    padding-bottom: 500px;
+    border-top: none;
+}
+
+.file-upload-button,
+.custom-submit-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: rgb(2, 76, 134);
+    border: 1px solid rgb(2, 76, 134);
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+    margin-right: 10px;
+}
+
+.file-upload-button:hover,
+.custom-submit-button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.file-upload-button input[type="file"] {
+    display: none;
+}
+
+.file-upload-path {
+    display: inline-block;
+    vertical-align: middle;
+    color: #333;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.form-controls-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 2px solid rgb(2, 76, 134);
+    background-color: #f8f9fa;
+    border-top: none;
+}
+
+.form-controls-container .file-upload-section {
+    display: flex;
+    align-items: center;
+}
+
+.form-controls-container .form-check {
+    margin-left: 20px;
+}
+
+.form-controls-container .btn {
+    margin-left: 20px;
+}
+
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(2, 76, 134);
+    background-color: #fff;
+}
+
+.form-check-input:checked {
+    background-color: rgb(2, 76, 134);
+    border-color: rgb(2, 76, 134);
+}
+
+.form-check-label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* New styles from etdetailview login.html */
+.btn2 {
+    background-color: rgb(2, 76, 134);
+    color: #ffffff;
+    border: none;
+    padding: 5px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 120px;
+}
+
+.btn3 {
+    background-color: rgb(2, 76, 134);
+    color: #ffffff;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 90px;
+    height: 40px;
+    text-align: center;
+    display: block;
+}
+
+.form-control3 {
+    height: 100px;
+    width: 1000px;
+    font-size: 15px;
+    border-top: none;
+    border: none;
+    background-color: #ffffff;
+    pointer-events: none;
+}
+
+.downbtn {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.horizontal-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.profile-section .프로필사진 {
+    margin-right: 10px;
+}
+
+.stats-section {
+    display: flex;
+    align-items: center;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.button-img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.counter {
+    font-size: 16px;
+}
+
+.프로필사진 {
+    width: 40px;
+    height: 40px;
+}
+
+.detailchang {
+    margin-left: 400px;
+}
+
+.header2 {
+    padding-bottom: 11px;
+}
+
+/* Styles from etmypage.html */
+.list-group-item-small {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    border-bottom: none;
+    border-top: none;
+}
+
+.list-group-item-small2 {
+    font-size: 2rem;
+    padding: 0.75rem 1.25rem;
+    font-weight: bolder;
+}
+
+.list-group-item-medium {
+    background-color: rgb(2, 76, 134);
+    font-size: 2rem;
+    padding: 0.25rem 0.5rem;
+    font-weight: bolder;
+    color: #ffffff;
+}
+
+.list-group-item-large {
+    font-size: 2.7rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: none;
+}
+
+.list-group-item+.list-group-item {
+    border-top: none;
+}
+
+.btn3 {
+    background-color: rgb(2, 76, 134);
+    color: #ffffff;
+    border: none;
+    padding: 10px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 110px;
+    height: 40px;
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+}
+
+.dropdown-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: rgb(2, 76, 134);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    z-index: 1;
+    text-align: center;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.search-box {
+    padding: 14px;
+    width: 500px;
+    font-size: 16px;
+    color: grey;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-list {
+    display: flex;
+    align-items: center;
+}
+
+.btn-list img {
+    margin-left: 10px;
+}
+
+/* Styles from etnew.html and etmywrite.html */
+.box-etnew {
+    background-color: rgb(2, 76, 134);
+    color: white;
+    border: none;
+    width: 100%;
+    height: 80px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.form-control1-etnew {
+    height: 80px;
+    width: 1200px;
+    border-color: rgb(2, 76, 134);
+    font-size: 20px;
+    border-top: none;
+}
+
+.form-control2-etnew {
+    height: 600px;
+    width: 1200px;
+    border-color: rgb(2, 76, 134);
+    font-size: 20px;
+    padding-bottom: 500px;
+    border-top: none;
+}
+
+.file-upload-button-etnew,
+.custom-submit-button-etnew {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: rgb(2, 76, 134);
+    border: 1px solid rgb(2, 76, 134);
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+    margin-right: 10px;
+}
+
+.file-upload-button-etnew:hover,
+.custom-submit-button-etnew:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.file-upload-button-etnew input[type="file"] {
+    display: none;
+}
+
+.file-upload-path-etnew {
+    display: inline-block;
+    vertical-align: middle;
+    color: #333;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.form-controls-container-etnew {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 2px solid rgb(2, 76, 134);
+    background-color: #f8f9fa;
+    border-top: none;
+}
+
+.form-controls-container-etnew .file-upload-section {
+    display: flex;
+    align-items: center;
+}
+
+.form-controls-container-etnew .form-check {
+    margin-left: 20px;
+}
+
+.form-controls-container-etnew .btn {
+    margin-left: 20px;
+}
+
+.form-check-input-etnew {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(2, 76, 134);
+    background-color: #fff;
+}
+
+.form-check-input-etnew:checked {
+    background-color: rgb(2, 76, 134);
+    border-color: rgb(2, 76, 134);
+}
+
+.form-check-label-etnew {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.list-group-item-small-etnew {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    border-bottom: none;
+    border-top: none;
+}
+
+.list-group-item-small2-etnew {
+    font-size: 2rem;
+    padding: 0.75rem 1.25rem;
+    font-weight: bolder;
+}
+
+.list-group-item-medium-etnew {
+    background-color: rgb(2, 76, 134);
+    font-size: 2rem;
+    padding: 0.25rem 0.5rem;
+    font-weight: bolder;
+    color: #ffffff;
+}
+
+.list-group-item-large-etnew {
+    font-size: 2.7rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: none;
+}
+
+.list-group-item+.list-group-item-etnew {
+    border-top: none;
+}
+
+.btn1-etnew {
+    background-color: rgb(2, 76, 134);
+    color: #ffffff;
+    border: none;
+    padding: 5px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 120px;
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+}
+
+.box-etmywrite {
+    background-color: rgb(2, 76, 134);
+    color: white;
+    border: none;
+    width: 100%;
+    height: 80px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.form-control1-etmywrite {
+    height: 80px;
+    width: 1200px;
+    border-color: rgb(2, 76, 134);
+    font-size: 20px;
+    border-top: none;
+}
+
+.form-control2-etmywrite {
+    height: 600px;
+    width: 1200px;
+    border-color: rgb(2, 76, 134);
+    font-size: 20px;
+    padding-bottom: 500px;
+    border-top: none;
+}
+
+.file-upload-button-etmywrite,
+.custom-submit-button-etmywrite {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: rgb(2, 76, 134);
+    border: 1px solid rgb(2, 76, 134);
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+    margin-right: 10px;
+}
+
+.file-upload-button-etmywrite:hover,
+.custom-submit-button-etmywrite:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.file-upload-button-etmywrite input[type="file"] {
+    display: none;
+}
+
+.file-upload-path-etmywrite {
+    display: inline-block;
+    vertical-align: middle;
+    color: #333;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.form-controls-container-etmywrite {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 2px solid rgb(2, 76, 134);
+    background-color: #f8f9fa;
+    border-top: none;
+}
+
+.form-controls-container-etmywrite .file-upload-section {
+    display: flex;
+    align-items: center;
+}
+
+.form-controls-container-etmywrite .form-check {
+    margin-left: 20px;
+}
+
+.form-controls-container-etmywrite .btn {
+    margin-left: 20px;
+}
+
+.form-check-input-etmywrite {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(2, 76, 134);
+    background-color: #fff;
+}
+
+.form-check-input-etmywrite:checked {
+    background-color: rgb(2, 76, 134);
+    border-color: rgb(2, 76, 134);
+}
+
+.form-check-label-etmywrite {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.list-group-item-small-etmywrite {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    border-bottom: none;
+    border-top: none;
+}
+
+.list-group-item-small2-etmywrite {
+    font-size: 2rem;
+    padding: 0.75rem 1.25rem;
+    font-weight: bolder;
+}
+
+.list-group-item-medium-etmywrite {
+    background-color: rgb(2, 76, 134);
+    font-size: 2rem;
+    padding: 0.25rem 0.5rem;
+    font-weight: bolder;
+    color: #ffffff;
+}
+
+.list-group-item-large-etmywrite {
+    font-size: 2.7rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: none;
+}
+
+.list-group-item+.list-group-item-etmywrite {
+    border-top: none;
+}
+
+.btn1-etmywrite {
+    background-color: rgb(2, 76, 134);
+    color: #ffffff;
+    border: none;
+    padding: 5px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 120px;
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+}
