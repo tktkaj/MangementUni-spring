@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자유게시판</title>
+    <title>ìì ê²ìí</title>
     <link rel="stylesheet" href="everytime.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
@@ -13,30 +13,30 @@
     <div id="menuBar">
         <div id="sub-menuBar" style="height: 150px;">
             <ul id="menulist">
-                <li><a href="passwordchange">자유게시판</a></li>
-                <li><a href="#">내글 보기</a></li>
-                <li><a href="management">HOT게시판</a></li>
+             <li><a href="etmainpage">자유게시판</a></li>
+                <li><a href="etmypage">내글 보기</a></li>
+                <li><a href="ethot">HOT게시판</a></li>
             </ul>
         </div>
     </div>
     <div class="container">
         <div type="box" id="content" class="header2">
-            <input type="text" id="Box" class="box" value="&nbsp;자유게시판" readonly>
+            <input type="text" id="Box" class="box" value="&nbsp;ìì ê²ìí" readonly>
             <div class="input-group mb-0">
-                <input type="text" class="form-control1" value="졸립다" readonly>
+                <input type="text" class="form-control1" value="ì¡¸ë¦½ë¤" readonly>
             </div>
             <div class="horizontal-container">
                 <div class="profile-section">
-                    <img src="프로필사진.png" class="프로필사진" alt="Profile Image">
+                    <img src="íë¡íì¬ì§.png" class="íë¡íì¬ì§" alt="Profile Image">
                     <span class="username">ghdgns82</span>
                 </div>
                 <div class="stats-section">
                     <div class="stat-item">
-                        <img src="조회수.png" class="button-img" id="contentButton1">
+                        <img src="ì¡°íì.png" class="button-img" id="contentButton1">
                         <div class="counter" id="contentCounter1">0</div>
                     </div>
                     <div class="stat-item">
-                        <img src="추천버튼.png" class="button-img" id="contentButton2">
+                        <img src="ì¶ì²ë²í¼.png" class="button-img" id="contentButton2">
                         <div class="counter" id="contentCounter2">0</div>
                     </div>
                 </div>
@@ -46,61 +46,61 @@
     </div>
     <div class="detailchang">
         <div class="input-group mb-0">
-            <input type="text" class="form-control2" value="정훈아 졸려죽겄다" readonly>
+            <input type="text" class="form-control2" value="ì íì ì¡¸ë ¤ì£½ê²ë¤" readonly>
         </div>
         <hr style="width: 1000px;">
         <div>
             <div class="comment">
                 <div class="horizontal-container">
                     <div class="profile-section">
-                        <img src="프로필사진.png" class="프로필사진" alt="Profile Image">
-                        <span class="username">유제욱</span>
+                        <img src="íë¡íì¬ì§.png" class="íë¡íì¬ì§" alt="Profile Image">
+                        <span class="username">ì ì ì±</span>
                     </div>
                     <div class="stats-section">
                         <div class="stat-item">
-                            <img src="추천버튼.png" class="button-img" id="contentButton2">
+                            <img src="ì¶ì²ë²í¼.png" class="button-img" id="contentButton2">
                             <div class="counter" id="contentCounter2">0</div>
                         </div>
                     </div>
                 </div>
                 <div class="input-group mb-0">
-                    <input type="text" class="form-control3" value="정훈아 졸려죽겄다 나좀살려줘" readonly>
+                    <input type="text" class="form-control3" value="ì íì ì¡¸ë ¤ì£½ê²ë¤ ëì¢ì´ë ¤ì¤" readonly>
                 </div>
                 <hr style="width: 1000px;">
             </div>
             <div class="comment">
                 <div class="horizontal-container">
                     <div class="profile-section">
-                        <img src="프로필사진.png" class="프로필사진" alt="Profile Image">
-                        <span class="username">기민경</span>
+                        <img src="íë¡íì¬ì§.png" class="íë¡íì¬ì§" alt="Profile Image">
+                        <span class="username">ê¸°ë¯¼ê²½</span>
                     </div>
                     <div class="stats-section">
                         <div class="stat-item">
-                            <img src="추천버튼.png" class="button-img" id="contentButton2">
+                            <img src="ì¶ì²ë²í¼.png" class="button-img" id="contentButton2">
                             <div class="counter" id="contentCounter2">0</div>
                         </div>
                     </div>
                 </div>
                 <div class="input-group mb-0">
-                    <input type="text" class="form-control3" value="정훈아 졸려죽겄다 나좀살려줘" readonly>
+                    <input type="text" class="form-control3" value="ì íì ì¡¸ë ¤ì£½ê²ë¤ ëì¢ì´ë ¤ì¤" readonly>
                 </div>
                 <hr style="width: 1000px;">
             </div>
             <div class="comment">
                 <div class="horizontal-container">
                     <div class="profile-section">
-                        <img src="프로필사진.png" class="프로필사진" alt="Profile Image">
-                        <span class="username">김희망</span>
+                        <img src="íë¡íì¬ì§.png" class="íë¡íì¬ì§" alt="Profile Image">
+                        <span class="username">ê¹í¬ë§</span>
                     </div>
                     <div class="stats-section">
                         <div class="stat-item">
-                            <img src="추천버튼.png" class="button-img" id="contentButton2">
+                            <img src="ì¶ì²ë²í¼.png" class="button-img" id="contentButton2">
                             <div class="counter" id="contentCounter2">0</div>
                         </div>
                     </div>
                 </div>
                 <div class="input-group mb-0">
-                    <input type="text" class="form-control3" value="정훈아 졸려죽겄다 나좀살려줘" readonly>
+                    <input type="text" class="form-control3" value="ì íì ì¡¸ë ¤ì£½ê²ë¤ ëì¢ì´ë ¤ì¤" readonly>
                 </div>
                 <hr style="width: 1000px;">
             </div>
@@ -109,36 +109,36 @@
             <div class="file-upload-section">
                 <form>
                 </form>
-                <span id="file-path" class="file-upload-path">로그인 해주세요</span>
+                <span id="file-path" class="file-upload-path">ë¡ê·¸ì¸ í´ì£¼ì¸ì</span>
             </div>
             <div class="d-flex align-items-center">
-                <button class="custom-submit-button" type="button" id="loginButton">로그인</button>
+                <button class="custom-submit-button" type="button" id="loginButton">ë¡ê·¸ì¸</button>
             </div>
         </div>
         <div class="downbtn">
-            <button type="button" class="btn3"><img src="글목록.png" width="20" height="20">&nbsp;글 목록</button>
+            <button type="button" class="btn3"><img src="ê¸ëª©ë¡.png" width="20" height="20">&nbsp;ê¸ ëª©ë¡</button>
         </div>
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
-        // 로그인 상태 관리
+        // ë¡ê·¸ì¸ ìí ê´ë¦¬
         let loggedIn = false;
 
-        // 로그인 버튼 클릭 이벤트 핸들러
+        // ë¡ê·¸ì¸ ë²í¼ í´ë¦­ ì´ë²¤í¸ í¸ë¤ë¬
         document.getElementById('loginButton').addEventListener('click', function () {
             loggedIn = true;
             updateUI();
         });
 
-        // UI 업데이트 함수
+        // UI ìë°ì´í¸ í¨ì
         function updateUI() {
             if (loggedIn) {
-                document.getElementById('file-path').textContent = '댓글을 작성하세요';
+                document.getElementById('file-path').textContent = 'ëê¸ì ìì±íì¸ì';
                 enableCommentFields();
             }
         }
 
-        // 댓글 작성 필드 활성화 함수
+        // ëê¸ ìì± íë íì±í í¨ì
         function enableCommentFields() {
             const commentFields = document.querySelectorAll('.form-control3');
             commentFields.forEach(field => {

@@ -12,7 +12,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>everytimemain</title>
-
 <link rel="stylesheet" href="everytime.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -32,51 +31,46 @@
 			</ul>
 		</div>
 	</div>
-
 	<div class="container" style="height: 500px;">
 		<div id="content">
-			<input type="text" id="Box" class="box-etnew" value="&nbsp;글 작성">
-
+			<input type="text" id="Box" class="box" value="&nbsp;글 수정">
 			<div class="input-group mb-0">
-				<input type="text" class="form-control1-etnew"
+				<input type="text" class="form-control1"
 					placeholder="&nbsp;&nbsp;글 제목을 작성해주세요"
 					aria-label="Recipient's username" aria-describedby="button-addon2">
 			</div>
-
 			<div class="input-group mb-0">
-				<input type="text" class="form-control2-etnew"
+				<input type="text" class="form-control2"
 					placeholder="&nbsp;&nbsp;글 내용을 작성해주세요"
 					aria-label="Recipient's username" aria-describedby="button-addon2">
 			</div>
-
-			<div class="form-controls-container-etnew">
+			<div class="form-controls-container">
 				<div class="file-upload-section">
 					<form>
-						<label for="file-upload" class="file-upload-button-etnew">
-							<span src="첨부표시.png">첨부파일</span> <input type="file"
-							id="file-upload" name="file-upload" onchange="updateFilePath()">
+						<label for="file-upload" class="file-upload-button"> <span>첨부파일</span>
+							<input type="file" id="file-upload" name="file-upload"
+							onchange="updateFilePath()">
 						</label>
 					</form>
-					<span id="file-path" class="file-upload-path-etnew">첨부된 파일이
-						없습니다</span>
+					<span id="file-path" class="file-upload-path">첨부된 파일이 없습니다</span>
 				</div>
-
 				<div class="form-check d-inline" style="margin-left: 600px;">
-					<input class="form-check-input-etnew" style="font-weight: bolder;"
+					<input class="form-check-input" style="font-weight: bolder;"
 						type="checkbox" value="" id="flexCheckDefault"> <label
-						class="form-check-label-etnew" style="font-weight: bolder;"
+						class="form-check-label" style="font-weight: bolder;"
 						for="flexCheckDefault">익명</label>
 				</div>
 				<div class="d-flex align-items-center">
-					<button class="custom-submit-button-etnew" type="button"
-						id="button-addon2">글작성</button>
+					<button class="custom-submit-button" type="button"
+						id="button-addon2">글수정</button>
 				</div>
 			</div>
-
-			<button type="button" class="btn1-etnew" onclick="location.href='etmypage'">뒤로가기</button>
+			<div class="downbtn">
+				<button type="button" class="btn2">글삭제</button>
+				<button type="button" class="btn1" onclick="location.href='etmainpage'">뒤로가기</button>
+			</div>
 		</div>
 	</div>
-
 	<script>
 		function updateFilePath() {
 			const fileInput = document.getElementById('file-upload');
@@ -88,8 +82,9 @@
 			}
 		}
 	</script>
-
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 	<jsp:include page="../common/footer.jsp" />
 </body>
+
+</html>

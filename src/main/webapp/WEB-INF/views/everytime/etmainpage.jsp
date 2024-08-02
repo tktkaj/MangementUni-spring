@@ -22,9 +22,9 @@
     <div id="menuBar">
         <div id="sub-menuBar" style="height: 150px;">
             <ul id="menulist">
-                <li><a href="passwordchange">자유게시판</a></li>
-                <li><a href="#">내글 보기</a></li>
-                <li><a href="management">HOT게시판</a></li>
+                <li><a href="etmainpage">자유게시판</a></li>
+                <li><a href="etmypage">내글 보기</a></li>
+                <li><a href="ethot">HOT게시판</a></li>
             </ul>
         </div>
     </div>
@@ -35,7 +35,8 @@
                     <div class="dropdown">
                         <button class="dropbtn">제목&nbsp;&nbsp;▼</button>
                         <div class="dropdown-content">
-                            <a href="#">제목</a>
+                        <%-- 제욱씨 밑에 a태그는 무엇이죠???????--%>
+                            <a href="#">제목</a>			
                             <a href="#">작성자</a>
                             <a href="#">내용</a>
                         </div>
@@ -48,10 +49,10 @@
             <div class="input-group mb-0" style="margin-top: 5px;">
                 <input type="text" class="form-control" placeholder="새 게시글을 작성해주세요" aria-label="Recipient's username"
                     aria-describedby="button-addon2">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">글작성</button>
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="location.href='etnew'">글작성</button>
             </div>
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action list-group-item-large" aria-current="true"
+                <a href="etdetailview" class="list-group-item list-group-item-action list-group-item-large" aria-current="true"
                     style="margin-top: 5px;">제목이었던 것</a>
                 <a href="#"
                     class="list-group-item list-group-item-action list-group-item-small disabled">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내용이었던

@@ -27,8 +27,8 @@
 					<div class="col col-11">
 						<ul>
 							<li id="uni-detail"><a href="#">대학소개</a></li>
-							<li><a href="${path}/infoboard">공지사항</a></li>
-							<li><a href="#">에타게시판</a></li>
+							<li><a href="infoboard">공지사항</a></li>
+							<li><a href="etmainpage">에타게시판</a></li>
 						</ul>
 					</div>
 					<div class="col col-1">
