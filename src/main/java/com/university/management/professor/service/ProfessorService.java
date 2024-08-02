@@ -14,9 +14,11 @@ public class ProfessorService {
 	@Autowired
 	private ProfessorMapper mapper;
 	
-	public List<Professor> proselect() {
+	public List<Professor> proselect(String department) {
 	System.out.println("ProfessorService실행");
-		return mapper.proselect();
+		return mapper.proselect(department);
 	}
+
+
 
 }

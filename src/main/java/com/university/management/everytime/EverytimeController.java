@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+<<<<<<< HEAD:src/main/java/com/university/management/everytime/EverytimeContorller.java
 public class EverytimeContorller {
 	
 	@RequestMapping("/etmainpage")
@@ -40,5 +41,8 @@ public class EverytimeContorller {
 	public String etnew() {
 		return "everytime/etnew";
 	}
+=======
+public class EverytimeController {
+>>>>>>> hong:src/main/java/com/university/management/everytime/EverytimeController.java
 
 }
