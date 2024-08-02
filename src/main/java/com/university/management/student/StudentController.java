@@ -16,11 +16,11 @@ public class StudentController {
 		return "student/studentinfo";
 	}
 
-	@RequestMapping("/sechedule")
-	public String sechedule() {
-		return "student/sechedule";
+	@RequestMapping("/studentstatus")
+	public String studentstatus() {
+		return "student/studentstatus";
 	}
-
+	
 	@RequestMapping("/idcard")
 	public String idcard() {
 		return "student/idcard";
@@ -30,22 +30,22 @@ public class StudentController {
 	public String popup() {
 		return "student/popup";
 	}
-	
+
 	@RequestMapping("/myCoursesList")
 	public String MyCoursesList() {
 		return "courses/myCoursesList";
 	}
-	
+
 	@RequestMapping("/myCoursesPage")
 	public String MyCoursesPage() {
 		return "courses/myCoursesPage";
 	}
-	
+
 	@RequestMapping("/objection")
 	public String objection() {
 		return "objection/objection";
 	}
-	
+
 	@RequestMapping("/objectionWrite")
 	public String objectionWrite() {
 		return "objection/objectionWrite";
