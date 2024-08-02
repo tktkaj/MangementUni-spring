@@ -12,9 +12,10 @@
 </head>
 <body>
 
-	<form action="${path}/department" method="get">
+	<form action="${path}/department" method="post">
 		<select name="department" id="department"
 			onchange="this.form.submit()">
+			<option value="" ${department==''? 'selected' :''}>전체</option>
 			<option value="COMP" ${department=='COMP'? 'selected' :''}>컴퓨터공학과</option>
 			<option value="CHEM" ${department =='CHEM'? 'selected' :''}>화학공학과</option>
 			<option value="INSE" ${department =='INSE'? 'selected' :''}>정보보호</option>
@@ -26,7 +27,7 @@
 		</select>
 	</form>
 	<c:forEach var="deptlist" items="${list}">
-	   <p>${deptlist.DEPT_IMG }</p>
+		<p>${deptlist.DEPT_IMG }</p>
 		<p>${deptlist.DEPT_NAME }</p>
 		<p>${ deptlist.DEPT_COM}</p>
 	</c:forEach>

@@ -5,7 +5,7 @@
 <select id="deptselect" parameterType="String" resultType="com.university.management.department.dto.Department">
 select *
 from department
-	<if test="department != null">
+	<if test="department != null and !department.equals('')">
 where DEPT_CODE='${department}'
 </if>
 </select>
