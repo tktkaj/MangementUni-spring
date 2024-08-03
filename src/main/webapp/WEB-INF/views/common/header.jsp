@@ -19,33 +19,51 @@
             crossorigin="anonymous"></script>
     <link href="${path}/resources/css/main.css?힛" rel="stylesheet"/>
     <link href="${path}/resources/css/home.css?야소" rel="stylesheet"/>
+    <link href="${path}/resources/css/courses.css" rel="stylesheet"/>
     <script defer src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script defer src="${path}/resources/js/homepage.js"></script>
-   
+
 </head>
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="col col-3">
-                <a href="/management"><img src="${path}/resources/img/logo.png" width="100" height="100"></a>
-            </div>
-            <div class="col col-9 login-col">
-                <button id="login" onclick="location.href='login'">LOGIN</button>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="menu">
-            <div class="row">
-                <div class="col col-4">
-                    <ul>
-                        <li style="margin-left: 50px"><a href="#">대학소개</a></li>
-                        <li><a href="${path}/infoboard">공지사항</a></li>
-                        <li><a href="#">에타게시판</a></li>
-                    </ul>
+<div class="header">
+    <div class="opq-header" style="background-color: white">
+        <div class="container">
+            <div class="menu">
+                <div class="row">
+                    <div class="col col-11">
+                        <ul>
+                            <li id="uni-detail"><a href="#">대학소개</a></li>
+                            <li><a href="infoboard">공지사항</a></li>
+                            <li><a href="etmainpage">에타게시판</a></li>
+                        </ul>
+                    </div>
+                    <div class="col col-1">
+                        <c:if test="${loginname == null}">
+                            <button id="login-btn" onclick="location.href='login'">LOGIN</button>
+                        </c:if>
+
+                        <c:if test="${loginname != null}">
+                            <label>${loginname }님 환영</label><button id="logout" onclick="location.href='logout'" >로그아웃</button>
+                        </c:if>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</header>
+    <div class="opq-header-sub">
+        <div class="container">
+            <div class="menu">
+                <div class="row">
+                    <div class="col col-12">
+                        <ul>
+                            <li><a href="#">오시는길</a></li>
+                            <li><a href="ideology">학교이념</a></li>
+                            <li><a href="professor">교수진 소개</a></li>
+                            <li><a href="department">학과 소개</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </html>

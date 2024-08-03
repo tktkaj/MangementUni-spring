@@ -20,6 +20,8 @@ public class Professor {
 	private String PROF_EMPLOYMENT_DATE ;//입사일
 	private String DEPT_NAME;//학과
 	private String SUB_NAME; //과목명
+	private String DEPT_CODE; //과목명
+
 	
 
 }

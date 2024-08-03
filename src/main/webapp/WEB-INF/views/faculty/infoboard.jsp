@@ -8,8 +8,6 @@
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <html>
 <head>
-
-<link href="${path}/resources/css/courses.css" rel="stylesheet" />
 </head>
 <body>
 	<jsp:include page="../common/header.jsp" />
@@ -18,21 +16,6 @@
 	<c:if test="${empty searchType }">
 		<c:set var="searchType" value="${'title'}" />
 	</c:if>
-
-	<div id="menuBar">
-		<div id="sub-menuBar">
-			<ul id="menulist">
-				<li><a href="passwordchange">사용자 정보 관리</a></li>
-				<li><a href="studentStatus">학적 관리</a></li>
-				<li><a href="studentinfo">등록 관리</a></li>
-				<li><a href="objection">성적 관리</a></li>
-				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
-				<li><a href="askpresident">총장님께 바랍니다</a></li>
-				<li><a href="#">시간표</a></li>
-				<li><a href="#">학생증</a></li>
-			</ul>
-		</div>
-	</div>
 	<div class="container" style="height: 500px;">
 
 		<div id="content">

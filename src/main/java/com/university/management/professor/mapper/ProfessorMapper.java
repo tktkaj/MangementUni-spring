@@ -11,5 +11,7 @@ public interface ProfessorMapper {
 	//교수 전체 조회
 	List<Professor> proselect();
 
+	List<Professor> proselect(String department);
+
 }
 

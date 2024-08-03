@@ -2,12 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.university.management.professor.mapper.ProfessorMapper">
 
-<select id="proselect" resultType="com.university.management.professor.dto.Professor">
-select p.PROF_IMG,p.PROF_NAME,d.DEPT_NAME,p.PROF_JOB,p.PROF_PHONE,s.SUB_NAME,p.PROF_EMAIL
+<select id="proselect" parameterType="String" resultType="com.university.management.professor.dto.Professor">
+select p.PROF_IMG,p.PROF_NAME,d.DEPT_NAME,p.PROF_JOB,p.PROF_PHONE,s.SUB_NAME,p.PROF_EMAIL,d.DEPT_CODE
 from subject s
 join DEPARTMENT d on(s.DEPT_CODE=d.DEPT_CODE)
 join PROFESSOR p on(s.PROF_NO=p.PROF_NO)
-where d.DEPT_NAME='수학과'
+<if test="department == null">
+where d.DEPT_CODE='COMP'
+</if>
+	<if test="department != null">
+where d.DEPT_CODE='${department}'
+</if>
 </select>
 
 </mapper>
