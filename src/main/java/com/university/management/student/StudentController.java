@@ -54,7 +54,7 @@ public class StudentController {
 
 		return "student/studentinfo";
 	}
-
+	
 	@RequestMapping("/studentstatus")
 	public String studentstatus() {
 		return "student/studentstatus";

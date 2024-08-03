@@ -17,8 +17,8 @@
 		<div id="sub-menubar">
 			<ul id="menulist">
 				<li><a href="#">공지사항 관리</a></li>
-				<li><a href="scholarList">장학금 관리</a></li>
-				<li><a href="objection">성적 관리</a></li>
+				<li><a href="scholarlist">장학금 관리</a></li>
+				<li><a href="objectionlist">성적 관리</a></li>
 				<li><a href="">학사 일정</a></li>
 			</ul>
 		</div>
@@ -62,7 +62,7 @@
 								<option value="" disabled selected>학년 선택</option>
 								<option value="1">1학년</option>
 								<option value="2">2학년</option>
-								<option value="3">3힉년</option>
+								<option value="3">3학년</option>
 								<option value="4">4학년</option>
 							</select>
 						</form>

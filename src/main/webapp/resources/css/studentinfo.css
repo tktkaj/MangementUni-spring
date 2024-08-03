@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+#sub-menuBar {
+	margin-left: 50px;
+	background-color: #024C86;
+	margin-top: 110px;
+	width: 200px;
+	height: 330px;
+	float: left;
+}
+
+#menulist {
+	text-decoration: none;
+	list-style: none;
+	font-weight: bold;
+	align-items: center;
+	margin-top: 10px;
+}
+
+#menulist a {
+	text-decoration: none;
+	color: white;
+}
+
+#menulist a:hover {
+	border-bottom: 1px solid;
+	border-bottom-color: white;
+}
+
+#menulist li {
+	margin: 20px 0px;
+}
+
+/* content */
+#content {
+	padding: 50px;
+}
+
+#improtant {
+	text-align: right;
+}
+
+#pagetitle {
+	border-bottom: 3px solid;
+	border-bottom-color: #024C86;
+}
+
+/*statuscard*/
+.card {
+	border-radius: 10px;
+	padding: 20px;
+	margin: 20px auto;
+	display: flex;
+	align-items: center;
+}
+
+.card img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin: 20px;
+}
+
+.card-body {
+	border: none;
+}
+
+.card .info {
+	flex: 1;
+}
+
+.info h2 {
+	margin-top: 0;
+}
+
+.info table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.info th {
+	padding: 5px;
+	width:150px;
+	text-align: left;
+} 
+
+.info td {
+	padding: 5px;
+	width:400px;
+	text-align: left;
+}
+
+.card-footer {
+	margin-top: 20px;
+}
+
+/* table */
+#courselist1, #courselist2 {
+	margin-top: 30px;
+	margin-bottm : 30px;
+}
