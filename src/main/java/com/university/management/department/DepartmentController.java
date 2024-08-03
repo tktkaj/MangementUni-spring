@@ -27,7 +27,7 @@ public class DepartmentController {
 		 System.out.println(deptlist); 
 		model.addAttribute("list",deptlist);
 		model.addAttribute("department",department);
-		return "department/department";
+		return "home/departmentinfo";
 	}
 	
 	
