@@ -24,15 +24,15 @@
 
 </head>
 <div class="header">
-    <div class="opq-header" style="background-color: white;">
+    <div class="opq-header" style="background-color: white">
         <div class="container">
             <div class="menu">
                 <div class="row">
                     <div class="col col-11">
                         <ul>
-                            <li id="uni-detail"><a href="#" style="color: black">대학소개</a></li>
-                            <li><a href="infoboard" style="color: black">공지사항</a></li>
-                            <li><a href="etmainpage" style="color: black">에타게시판</a></li>
+                            <li id="uni-detail"><a href="#">대학소개</a></li>
+                            <li><a href="infoboard">공지사항</a></li>
+                            <li><a href="etmainpage">에타게시판</a></li>
                         </ul>
                     </div>
                     <div class="col col-1">
@@ -41,8 +41,7 @@
                         </c:if>
 
                         <c:if test="${loginname != null}">
-                            <label>${loginname }님 환영</label>
-                            <button id="logou">로그아웃</button>
+                            <label>${loginname }님 환영</label><button id="logout" >로그아웃</button>
                         </c:if>
                     </div>
                 </div>
