@@ -7,6 +7,13 @@
 <link href="${path}/resources/css/scrollbtn.css" rel="stylesheet" />
   <script defer src="${path}/resources/js/scrollbtn.js"></script>
 <body>
+<c:if test="${not empty msg }">
+
+	<script>
+		alert('${msg}');
+	</script>
+	<c:remove var=" msg" />
+</c:if>
 <p class="top_scrollbtn" onclick="scrollbtn('main-img')">TOP</p>
 
 <img id="main-img" src="${path}/resources/img/main_img.jpg"

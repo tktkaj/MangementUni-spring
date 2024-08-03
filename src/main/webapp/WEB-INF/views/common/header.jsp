@@ -30,7 +30,13 @@
                 <a href="/management"><img src="${path}/resources/img/logo.png" width="100" height="100"></a>
             </div>
             <div class="col col-9 login-col">
+            	<c:if test="${loginname == null}">
                 <button id="login" onclick="location.href='login'">LOGIN</button>
+                </c:if>
+             <c:if test="${loginname != null}">
+         			    <label>${loginname }님 환영</label><button  id="logout">로그아웃</button>
+                </c:if>   
+             
             </div>
         </div>
     </div>

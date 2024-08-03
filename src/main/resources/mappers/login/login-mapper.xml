@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.university.management.login.mapper.Loginmapper">
+
+<select id="emplogin" parameterType="map" resultType="com.university.management.employee.dto.Employee">
+
+select * from employee
+where EMP_NAME =#{loginid}and EMP_PASSWORD =#{loginPassword};
+
+
+</select>
+
+<select id="studentLogin" parameterType="map" resultType="com.university.management.student.dto.Student">
+
+select * from student
+where STU_NO =#{loginid}and STU_PASSWORD =#{loginPassword};
+
+
+</select>
+
+
+
+</mapper>
