@@ -52,8 +52,8 @@
 						<ul>
 							<li><a href="#">오시는길</a></li>
 							<li><a href="ideology">학교이념</a></li>
-							<li><a href="#">교수진 소개</a></li>
-							<li><a href="#">학과 소개</a></li>
+							<li><a href="professor">교수진 소개</a></li>
+							<li><a href="department">학과 소개</a></li>
 						</ul>
 					</div>
 				</div>
