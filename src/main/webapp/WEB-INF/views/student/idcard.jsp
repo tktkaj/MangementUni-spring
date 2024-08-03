@@ -17,6 +17,7 @@
 <style>
 .card-text {
 	margin-bottom: 0.25rem;
+	margin-top: 0.25rem;
 	position: relative;
 	z-index: 2;
 }
@@ -26,7 +27,7 @@
 }
 
 .logo-img {
-	width: auto;
+	width: 2.5rem;
 	height: 2rem;
 	margin-left: 0.5rem;
 	position: relative;
@@ -37,7 +38,8 @@
 	width: 2.5rem;
 	height: auto;
 	position: absolute;
-	right: 7px;
+	right: 1px;
+	
 }
 
 .barcode-img {
@@ -87,6 +89,7 @@ img {
 	margin: 0;
 	padding: 0;
 }
+
 </style>
 </head>
 <jsp:include page="../common/header.jsp" />
@@ -104,11 +107,13 @@ img {
 			</ul>
 		</div>
 	</div>
+	<!-- 카드 -->
 	<div class="card mb-3" style="max-width: 540px;">
 		<div class="background">
 			<div class="row no-gutters">
 				<div class="col-md-4">
-					<img src="./img/유제욱.jpg" class="img-fluid rounded-start" alt="설명">
+				<img src="${path}/resources/img/유제욱.jpg"
+					 class="img-fluid rounded-start" alt="설명">
 				</div>
 				<div class="col-md-6">
 					<div class="card-body">
@@ -122,10 +127,10 @@ img {
 							<p class="card-text">04/30</p>
 						</div>
 						<div class="title-container">
-							<img src="./img/logo.png"
+							<img src="${path}/resources/img/logo.png"
 								class="img-fluid rounded-start logo-img" alt="설명">
 							<h5 class="card-title mb-0">미르대학교학생처장</h5>
-							<img src="./img/dragon-312035_640.png"
+							<img src="${path}/resources/img/dragon-312035_640.png"
 								class="img-fluid rounded-start dragon-img" alt="설명">
 						</div>
 						<div class="text-container">
@@ -133,7 +138,7 @@ img {
 								<small class="text-muted">mirruniversity</small>
 							</p>
 						</div>
-						<img src="./img/바코드.png"
+						<img src="${path}/resources/img//바코드.png"
 							class="img-fluid rounded-start barcode-img" alt="설명">
 					</div>
 				</div>
