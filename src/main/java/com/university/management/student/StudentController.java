@@ -15,6 +15,11 @@ public class StudentController {
 	public String management() {
 		return "student/studentinfo";
 	}
+	
+	@RequestMapping("/studentstatus")
+	public String studentstatus() {
+		return "student/studentstatus";
+	}
 
 	@RequestMapping("/sechedule")
 	public String sechedule() {

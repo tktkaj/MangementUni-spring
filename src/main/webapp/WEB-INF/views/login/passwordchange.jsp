@@ -67,10 +67,11 @@
 	<div id="menuBar">
 		<div id="sub-menuBar">
 			<ul id="menulist">
-				<li><a href="passwordchange">사용자 정보 관리</a></li>
-				<li><a href="#">학적 및 성적관리</a></li>
-				<li><a href="management">등록관리</a></li>
-				<li><a href="MyCoursesPage">나의 수강 페이지</a></li>
+				<li><a href="studentstatus">학적 조회</a></li>
+				<li><a href="studentinfo">학생 정보 조회</a></li>
+				<li><a href="passwordchange">학생 정보 변경</a></li>
+				<li><a href="objection">성적 조회</a></li>
+				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
 				<li><a href="askpresident">총장님께 바랍니다</a></li>
 				<li><a href="#">시간표</a></li>
 				<li><a href="#">학생증</a></li>
@@ -81,7 +82,7 @@
 		<div id="content">
 			<!-- title view -->
 			<div id="pageTitle">
-				<h1>사용자 정보 관리</h1>
+				<h1>학생 정보 변경</h1>
 			</div>
 			<div id="pageContent">
 				<!-- content view -->

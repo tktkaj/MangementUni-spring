@@ -15,10 +15,10 @@
 	<div id="menuBar">
 		<div id="sub-menuBar">
 			<ul id="menulist">
-				<li><a href="passwordchange">사용자 정보 관리</a></li>
-				<li><a href="studentStatus">학적 관리</a></li>
-				<li><a href="studentinfo">등록 관리</a></li>
-				<li><a href="objection">성적 관리</a></li>
+				<li><a href="studentstatus">학적 조회</a></li>
+				<li><a href="studentinfo">학생 정보 조회</a></li>
+				<li><a href="passwordchange">학생 정보 변경</a></li>
+				<li><a href="objection">성적 조회</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
 				<li><a href="askpresident">총장님께 바랍니다</a></li>
 				<li><a href="#">시간표</a></li>
@@ -32,7 +32,7 @@
 
 			<!-- title view -->
 			<div id="pageTitle">
-				<h1>등록관리</h1>
+				<h1>학생 정보 조회</h1>
 			</div>
 
 			<!-- content view -->
@@ -40,8 +40,8 @@
 
 			<div class="box">
 				<div class="box_1">
-				<div class="information_title">
-					<Strong>&gt; </Strong><label><strong> 기본정보</strong></label>
+					<div class="information_title">
+						<Strong>&gt; </Strong><label><strong> 기본정보</strong></label>
 					</div>
 					<div style="background-color: #e3f8ff;">
 						<div class="box_2">
@@ -77,8 +77,8 @@
 					</div>
 				</div>
 				<div class="box_3">
-				<div  class="information_title">
-					<Strong>&gt; </Strong><label><Strong> 등록정보</Strong></label>
+					<div class="information_title">
+						<Strong>&gt; </Strong><label><Strong> 등록정보</Strong></label>
 					</div>
 					<div style="background-color: #e3f8ff">
 						<div class="box_2">

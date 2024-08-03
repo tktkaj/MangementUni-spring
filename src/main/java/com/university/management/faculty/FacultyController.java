@@ -1,10 +1,21 @@
 package com.university.management.faculty;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.university.management.faculty.service.FacultyService;
 
 @Controller
 public class FacultyController {
+	
+	@Autowired
+    private FacultyService service;
 
 	@RequestMapping("/infoboard")
 	public String infoboard() {
@@ -34,10 +45,22 @@ public class FacultyController {
 	public String objectionList() {
 		return "objection/objectionList";
 	}
+	
+	// 성적이의신청 데이터 목록 받아오기
+	/*
+	 * @PostMapping("/objectionSearch")
+	 * 
+	 * @ResponseBody public List<> filterData(@RequestParam String
+	 * department, @RequestParam String subject, @RequestParam String grade) {
+	 * return service.objectionFilterData(department, subject, grade); }
+	 */
+	
 
 	@RequestMapping("/scholarList")
 	public String scholarList() {
 		return "scholarship/scholarList";
 	}
+	
+	
 
 }
