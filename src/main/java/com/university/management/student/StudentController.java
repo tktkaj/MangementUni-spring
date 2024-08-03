@@ -48,7 +48,8 @@ public class StudentController {
            
         } else {
           	System.out.println("노실행");
-            model.addAttribute("message", "로그인 정보가 없습니다.");
+            model.addAttribute("msg", "로그인 정보가 없습니다.");
+        	return "login/login";
         }
 
 		return "student/studentinfo";
