@@ -1,0 +1,84 @@
+/* introduce2.css */
+
+.spacer {
+    width: 100%;
+    height: 800px;
+    background-color: aqua;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.minititle {
+    font-size: 25px;
+    font-weight: 900;
+    margin-left: 20px;
+}
+hr {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    border: 1px solid #024C86; 
+}
+.filters {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;
+}
+#professor-select {
+    padding: 5px;
+    font-size: 18px;
+    margin-left: 10px;
+}
+.professor-list {
+    width: 1150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.professor-card {
+    display: flex;
+    background-color: RGB(231, 240, 254);
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    
+}
+
+.professor-photo {
+    width: 200px; 
+    height: 150px; 
+    background-color: #ccc;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.professor-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.professor-info h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.professor-info p {
+    font-size: 16px;
+    color: #333;
+    margin: 0; 
+}

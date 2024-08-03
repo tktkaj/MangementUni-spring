@@ -1,0 +1,108 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.minititle {
+    font-size: 25px;
+    font-weight: 900;
+    margin-left: 20px;
+}
+
+hr {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    border: 1px solid #024C86; 
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filters {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.filters label {
+    margin-right: 10px;
+}
+
+#professor-select {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.professor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    width: 100%;
+}
+
+.professor-card {
+    display: flex;
+    background-color: RGB(231, 240, 254);
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 500px;
+    margin: 10px;
+}
+
+.professor-card:nth-child(2n) {
+    margin-left: 50px; /* 짝수번째 카드에 margin-left: 20px 적용 */
+}
+
+.professor-photo {
+    width: 120px;
+    height: 160px;
+    background-color: #ccc;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.professor-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.professor-info h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.professor-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.professor-details p {
+    width: 50%;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
