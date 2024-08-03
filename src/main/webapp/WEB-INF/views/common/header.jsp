@@ -19,6 +19,7 @@
             crossorigin="anonymous"></script>
     <link href="${path}/resources/css/main.css?힛" rel="stylesheet"/>
     <link href="${path}/resources/css/home.css?야소" rel="stylesheet"/>
+    <link href="${path}/resources/css/courses.css" rel="stylesheet"/>
     <script defer src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script defer src="${path}/resources/js/homepage.js"></script>
 
@@ -56,8 +57,8 @@
                         <ul>
                             <li><a href="#">오시는길</a></li>
                             <li><a href="ideology">학교이념</a></li>
-                            <li><a href="#">교수진 소개</a></li>
-                            <li><a href="#">학과 소개</a></li>
+                            <li><a href="professor">교수진 소개</a></li>
+                            <li><a href="department">학과 소개</a></li>
                         </ul>
                     </div>
                 </div>

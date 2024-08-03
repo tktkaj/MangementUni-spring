@@ -17,21 +17,21 @@ import com.university.management.professor.service.ProfessorService;
 public class ProfessorController {
 
 
-	@Autowired 
-	private ProfessorService proService;
+    @Autowired
+    private ProfessorService proService;
 
-	
-	@RequestMapping("/professor")
-	public String professor(Model model,String department) {
-		System.out.println("실행");
-		System.out.println("옵션값"+ department);
-		 List<Professor> prolist= proService.proselect(department); 
-		
-		 System.out.println(prolist); 
-		model.addAttribute("list",prolist);
-		model.addAttribute("department",department);
-		return "professor/professorlist";
-	}
-	
+
+    @RequestMapping("/professor")
+    public String professor(Model model, String department) {
+        System.out.println("실행");
+        System.out.println("옵션값" + "COMP");
+        List<Professor> prolist = proService.proselect(department);
+
+        System.out.println(prolist);
+        model.addAttribute("list", prolist);
+        model.addAttribute("department", department);
+        return "home/professorinfo";
+    }
+
 
 }

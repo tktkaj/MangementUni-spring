@@ -27,7 +27,7 @@
 		</select>
 	</form>
 	<c:forEach var="deptlist" items="${list}">
-		<p>${deptlist.DEPT_IMG }</p>
+		<p><img src="${path}/resources/img/${deptlist.DEPT_IMG}" width="100px" height="60px"/></p>
 		<p>${deptlist.DEPT_NAME }</p>
 		<p>${ deptlist.DEPT_COM}</p>
 	</c:forEach>
