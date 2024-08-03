@@ -32,7 +32,13 @@
 						</ul>
 					</div>
 					<div class="col col-1">
-						<button id="login-btn" onclick="location.href='login'">LOGIN</button>
+					<c:if test="${loginname == null}">
+                <button id="login-btn" onclick="location.href='login'">LOGIN</button>
+                </c:if>
+                
+             <c:if test="${loginname != null}">
+         			    <label>${loginname }님 환영</label><button id="logout" >로그아웃</button>
+                </c:if>   
 					</div>
 				</div>
 			</div>
