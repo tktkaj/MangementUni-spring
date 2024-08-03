@@ -36,20 +36,20 @@
             <!-- 교수 정보 카드 -->
             <c:forEach var="prolist" items="${list}">
                 <div class="professor-card">
-                    <div class="professor-photo">${prolist.PROF_NAME}</div>
+                    <div class="professor-photo"><img src="${path}/resources/img/${prolist.PROF_IMG}"/></div>
                     <div class="professor-info">
-                        <h2>교수이름1</h2>
+                        <h2>${prolist.PROF_NAME}</h2>
                         <div class="professor-details">
-                            <p>Eleanor Pena</p>
-                            <p>Eleanor Pena</p>
-                            <p>Eleanor Pena</p>
-                            <p>Eleanor Pena</p>
+                            <p>부서명</p>
+                            <p>${prolist.DEPT_NAME}</p>
+                            <p>담당과목명</p>
+                            <p>${prolist.SUB_NAME}</p>
                         </div>
                         <div class="professor-details">
-                            <p>Eleanor Pena</p>
-                            <p>Eleanor Pena</p>
-                            <p>Eleanor Pena</p>
-                            <p>Eleanor Pena</p>
+                            <p>이메일</p>
+                            <p>${prolist.PROF_EMAIL}</p>
+                            <p>전화번호</p>
+                            <p>${prolist.PROF_PHONE}</p>
                         </div>
                     </div>
                 </div>
