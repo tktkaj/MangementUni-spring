@@ -30,18 +30,18 @@
 			<!-- 로그인 페이지 타이틀 -->
 			<div id="loginBoxTitle">학사관리 로그인</div>
 			<!-- 아이디, 비번, 버튼 박스 -->
-			<form action="myCoursesPage" method="post">
+			<form action="${path}/loginpro" method="post">
 				<div id="inputBox">
 					<div class="input-form-box">
-						<span>아이디 </span><input type="text" id="loginId" name="id"
+						<span>아이디 </span><input type="text" id="loginId" name="loginid"
 							class="form-control">
 					</div>
 					<div class="input-form-box">
 						<span>비밀번호 </span><input type="password" id="loginPassword"
-							name="password" class="form-control"> 
+							name="loginPassword" class="form-control"> 
 					</div>
 					<div>
-						교직원 <input type='radio' name='login' value='Employee' />
+						교직원 <input type='radio' name='login' value='Employee'  checked="checked"/>
 						 학생<input	type='radio' name='login' value='Student' />
 					</div>
 						<button type="submit" class="btn btn-xs"

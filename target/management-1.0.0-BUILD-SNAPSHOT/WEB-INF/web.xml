@@ -29,5 +29,31 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+<!--  1. 인코딩 세팅 편리하게 설정하는 방법 
+		Spring에서 제공하는 필터를 통해서 간단히
+		설정할 수 있다. 
+	-->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter
+		</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
+	<!--  필터 설정 이외에 
+		Session설정,error-page ,
+		welcome 처음 들어왔을 때 보여지는
+		페이지!
+	 -->
 </web-app>

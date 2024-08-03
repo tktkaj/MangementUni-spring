@@ -33,7 +33,7 @@
 					</div>
 					<div class="col col-1">
 					<c:if test="${loginname == null}">
-                <button id="login" onclick="location.href='login'">LOGIN</button>
+                <button id="login-btn" onclick="location.href='login'">LOGIN</button>
                 </c:if>
                 
              <c:if test="${loginname != null}">
