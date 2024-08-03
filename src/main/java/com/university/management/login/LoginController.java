@@ -48,6 +48,7 @@ public class LoginController {
 			Student student = loginService.studentLogin(params);
 			if (student != null && student.getSTU_PASSWORD().equals(loginPassword)) {
 				session.setAttribute("loginname", student.getSTU_NAME());
+				session.setAttribute("studentno", student.getSTU_NO());
 				model.addAttribute("msg", student.getSTU_NAME() + "학생 로그인 되었습니다.");
 				return "home";
 			} else {
@@ -58,6 +59,19 @@ public class LoginController {
 
 		return "home";
 	}
+	
+	
+	 @RequestMapping("/logout")
+	    public String logout(HttpSession session, Model model) {
+	        // 세션 무효화
+	        session.invalidate();
+	        
+	        // 로그아웃 메시지
+	        model.addAttribute("msg", "로그아웃 되었습니다.");
+	        
+	        // 로그인 페이지로 리디렉션
+	        return "home";
+	    }
 
 	@RequestMapping("/findpassword")
 	public String findPasswords() {

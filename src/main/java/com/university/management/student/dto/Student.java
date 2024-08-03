@@ -7,6 +7,7 @@ public class Student {
 
 	private int  STU_NO; // 학번
 	private String DEPT_CODE; // 학과코드
+	private String DEPT_NAME;// 학과명
 	private String STU_NAME; // 이름
 	private String STU_PHONE; // 핸드폰 번호
 	private String STU_ADDRESS; // 주소
@@ -27,13 +28,14 @@ public class Student {
 		super();
 	}
 
-	public Student(int sTU_NO, String dEPT_CODE, String sTU_NAME, String sTU_PHONE, String sTU_ADDRESS,
-			String sTU_JUMIN, String sTU_EMAIL, String sTU_IMG, String sTU_ADMISSION_DATE, String sTU_ADMISSION,
-			String sTU_GRADE, String sTU_PASSWORD, String sTU_BK_NUM, String sCH_DISCOUNT, String yEAR, int sMT,
-			String r_STATUS) {
+	public Student(int sTU_NO, String dEPT_CODE, String dEPT_NAME, String sTU_NAME, String sTU_PHONE,
+			String sTU_ADDRESS, String sTU_JUMIN, String sTU_EMAIL, String sTU_IMG, String sTU_ADMISSION_DATE,
+			String sTU_ADMISSION, String sTU_GRADE, String sTU_PASSWORD, String sTU_BK_NUM, String sCH_DISCOUNT,
+			String yEAR, int sMT, String r_STATUS) {
 		super();
 		STU_NO = sTU_NO;
 		DEPT_CODE = dEPT_CODE;
+		DEPT_NAME = dEPT_NAME;
 		STU_NAME = sTU_NAME;
 		STU_PHONE = sTU_PHONE;
 		STU_ADDRESS = sTU_ADDRESS;
@@ -65,6 +67,14 @@ public class Student {
 
 	public void setDEPT_CODE(String dEPT_CODE) {
 		DEPT_CODE = dEPT_CODE;
+	}
+
+	public String getDEPT_NAME() {
+		return DEPT_NAME;
+	}
+
+	public void setDEPT_NAME(String dEPT_NAME) {
+		DEPT_NAME = dEPT_NAME;
 	}
 
 	public String getSTU_NAME() {
@@ -189,15 +199,14 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student [STU_NO=" + STU_NO + ", DEPT_CODE=" + DEPT_CODE + ", STU_NAME=" + STU_NAME + ", STU_PHONE="
-				+ STU_PHONE + ", STU_ADDRESS=" + STU_ADDRESS + ", STU_JUMIN=" + STU_JUMIN + ", STU_EMAIL=" + STU_EMAIL
-				+ ", STU_IMG=" + STU_IMG + ", STU_ADMISSION_DATE=" + STU_ADMISSION_DATE + ", STU_ADMISSION="
-				+ STU_ADMISSION + ", STU_GRADE=" + STU_GRADE + ", STU_PASSWORD=" + STU_PASSWORD + ", STU_BK_NUM="
-				+ STU_BK_NUM + ", SCH_DISCOUNT=" + SCH_DISCOUNT + ", YEAR=" + YEAR + ", SMT=" + SMT + ", R_STATUS="
-				+ R_STATUS + "]";
+		return "Student [STU_NO=" + STU_NO + ", DEPT_CODE=" + DEPT_CODE + ", DEPT_NAME=" + DEPT_NAME + ", STU_NAME="
+				+ STU_NAME + ", STU_PHONE=" + STU_PHONE + ", STU_ADDRESS=" + STU_ADDRESS + ", STU_JUMIN=" + STU_JUMIN
+				+ ", STU_EMAIL=" + STU_EMAIL + ", STU_IMG=" + STU_IMG + ", STU_ADMISSION_DATE=" + STU_ADMISSION_DATE
+				+ ", STU_ADMISSION=" + STU_ADMISSION + ", STU_GRADE=" + STU_GRADE + ", STU_PASSWORD=" + STU_PASSWORD
+				+ ", STU_BK_NUM=" + STU_BK_NUM + ", SCH_DISCOUNT=" + SCH_DISCOUNT + ", YEAR=" + YEAR + ", SMT=" + SMT
+				+ ", R_STATUS=" + R_STATUS + "]";
 	}
 	
 	
-	
-	
-}
+	}
+

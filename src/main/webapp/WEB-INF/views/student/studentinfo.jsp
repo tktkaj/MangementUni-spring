@@ -10,6 +10,13 @@
 <link href="${path}/resources/css/courses.css" rel="stylesheet" />
 <link href="${path}/resources/css/management.css" rel="stylesheet" />
 </head>
+<c:if test="${not empty message }">
+
+	<script>
+		alert('${message}');
+	</script>
+	<c:remove var=" message" />
+</c:if>
 <body>
 	<jsp:include page="../common/header.jsp" />
 	<div id="menuBar">
@@ -38,6 +45,7 @@
 
 
 			<div class="box">
+					<c:forEach var="stuinfo" items="${studentInfo}">
 				<div class="box_1">
 				<div class="information_title">
 					<Strong>&gt; </Strong><label><strong> 기본정보</strong></label>
@@ -46,29 +54,29 @@
 						<div class="box_2">
 							<div class="row">
 								<div class="col-6">
-									<span>학번</span><input type="text" placeholder="2015072"
+									<span>학번</span><input type="text" placeholder="${ stuinfo.STU_NO}"
 										readonly />
 								</div>
 								<div class="col-6">
-									<span>학과</span><input type="text" placeholder="컴퓨터공학" readonly />
+									<span>학과</span><input type="text" placeholder="${ stuinfo.DEPT_NAME}" readonly />
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-6">
-									<span>이름</span><input type="text" placeholder="홍길동" readonly />
+									<span>이름</span><input type="text" placeholder="${ stuinfo.STU_NAME}" readonly />
 								</div>
 								<div class="col-6">
-									<span>학적상태</span><input type="text" placeholder="재학생" readonly />
+									<span>학적상태</span><input type="text" placeholder="더미데이터 생성후 추가" readonly />
 								</div>
 							</div>
 
 							<div class="row">
 								<div class="col-6">
-									<span>전화번호</span><input type="text" placeholder="010-2482-6425"
+									<span>전화번호</span><input type="text" placeholder="${ stuinfo.STU_PHONE}"
 										readonly />
 								</div>
 								<div class="col-6">
-									<span>학년</span><input type="text" placeholder="4학년" readonly />
+									<span>학년</span><input type="text" placeholder="${ stuinfo.STU_GRADE}" readonly />
 								</div>
 							</div>
 
@@ -83,29 +91,29 @@
 						<div class="box_2">
 							<div class="row">
 								<div class="col-6">
-									<span>가상계좌번호</span><input type="text" placeholder="1002-215-21"
+									<span>가상계좌번호</span><input type="text" placeholder="${ stuinfo.STU_BK_NUM}"
 										readonly />
 								</div>
 								<div class="col-6">
-									<span>입학금</span><input type="text" placeholder="1,000,000원"
+									<span>입학금</span><input type="text" placeholder="${ stuinfo.STU_ADMISSION}"
 										readonly />
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-6">
-									<span>기타장학금액</span><input type="text" placeholder="" readonly />
+									<span>기타장학금액</span><input type="text" placeholder="${stuinfo.SCH_DISCOUNT} " readonly />
 								</div>
 								<div class="col-6">
-									<span>입학날짜</span><input type="text" placeholder="2000-03-03"
+									<span>입학날짜</span><input type="text" placeholder="${  stuinfo.STU_ADMISSION_DATE}"
 										readonly />
 								</div>
 							</div>
 						</div>
+
+</c:forEach>
 					</div>
 				</div>
 			</div>
-
-
 
 			<!-- pageContent div -->
 		</div>

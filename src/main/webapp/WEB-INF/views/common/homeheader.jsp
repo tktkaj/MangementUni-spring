@@ -37,7 +37,7 @@
                 </c:if>
                 
              <c:if test="${loginname != null}">
-         			    <label>${loginname }님 환영</label><button id="logout" >로그아웃</button>
+         			    <label>${loginname }님 환영</label><button id="logout" onclick="location.href='logout'" >로그아웃</button>
                 </c:if>   
 					</div>
 				</div>
