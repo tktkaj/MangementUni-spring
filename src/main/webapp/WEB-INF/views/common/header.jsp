@@ -23,20 +23,29 @@
     <script defer src="${path}/resources/js/homepage.js"></script>
 
 </head>
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="col col-3">
-                <a href="/management"><img src="${path}/resources/img/logo.png" width="100" height="100"></a>
-            </div>
-            <div class="col col-9 login-col">
-            	<c:if test="${loginname == null}">
-                <button id="login" onclick="location.href='login'">LOGIN</button>
-                </c:if>
-             <c:if test="${loginname != null}">
-         			    <label>${loginname }님 환영</label><button  id="logout">로그아웃</button>
-                </c:if>   
-             
+<div class="header">
+    <div class="opq-header" style="background-color: white;">
+        <div class="container">
+            <div class="menu">
+                <div class="row">
+                    <div class="col col-11">
+                        <ul>
+                            <li id="uni-detail"><a href="#" style="color: black">대학소개</a></li>
+                            <li><a href="infoboard" style="color: black">공지사항</a></li>
+                            <li><a href="etmainpage" style="color: black">에타게시판</a></li>
+                        </ul>
+                    </div>
+                    <div class="col col-1">
+                        <c:if test="${loginname == null}">
+                            <button id="login-btn" onclick="location.href='login'">LOGIN</button>
+                        </c:if>
+
+                        <c:if test="${loginname != null}">
+                            <label>${loginname }님 환영</label>
+                            <button id="logou">로그아웃</button>
+                        </c:if>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
