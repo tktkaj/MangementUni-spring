@@ -1,9 +1,102 @@
-@charset "UTF-8";
+/* etdetailview.jsp에서 가져온 스타일, 중복된 경우 이름 변경 */
+.btn2-et {
+    background-color: rgb(2, 76, 134);
+    color: #ffffff;
+    border: none;
+    padding: 5px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 120px;
+}
 
-/* courses.css */
+.btn3-et {
+    background-color: rgb(2, 76, 134);
+    color: #ffffff;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 90px;
+    height: 40px;
+    text-align: center;
+    display: block;
+}
 
+.form-control3-et {
+    height: 100px;
+    width: 1000px;
+    font-size: 15px;
+    border-top: none;
+    border: none;
+    background-color: #ffffff;
+    pointer-events: none;
+}
 
+.downbtn-et {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
+.horizontal-container-et {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.profile-section-et {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.profile-section-et .프로필사진-et {
+    margin-right: 10px;
+}
+
+.stats-section-et {
+    display: flex;
+    align-items: center;
+}
+
+.stat-item-et {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.button-img-et {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.counter-et {
+    font-size: 16px;
+}
+
+.container-et {
+    margin-right: 240px;
+}
+
+.header2-et {
+    padding-bottom: 11px;
+}
+
+.rightside-et {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+#commentInput-et {
+    width: 750px;
+}
+
+/* 기존의 스타일 */
 #sub-menuBar {
     margin-left: 50px;
     background-color: #024C86;
@@ -315,17 +408,13 @@ footer #copyright {
 }
 
 .form-control {
-    border-color: black;
+    width: 750px;
 }
 
 .custom {
     max-width: 1100px;
     margin: 0 auto;
     text-align: center;
-}
-
-.btn-wide {
-    width: 30%;
 }
 
 .custom-button {
@@ -358,683 +447,6 @@ h1 {
     background-color: rgb(2, 76, 134);
     color: #ffffff;
     border: none;
-    padding: 5px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 120px;
-    text-align: center;
-    display: block;
-    margin: 20px auto;
-}
-
-.box {
-    background-color: rgb(2, 76, 134);
-    color: white;
-    border: none;
-    width: 100%;
-    height: 80px;
-    font-size: 40px;
-    font-weight: bold;
-}
-
-.form-control1 {
-    height: 80px;
-    width: 1200px;
-    border-color: rgb(2, 76, 134);
-    font-size: 20px;
-    border-top: none;
-}
-
-.form-control2 {
-    height: 600px;
-    width: 1200px;
-    border-color: rgb(2, 76, 134);
-    font-size: 20px;
-    padding-bottom: 500px;
-    border-top: none;
-}
-
-.file-upload-button,
-.custom-submit-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: rgb(2, 76, 134);
-    border: 1px solid rgb(2, 76, 134);
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    user-select: none;
-    margin-right: 10px;
-}
-
-.file-upload-button:hover,
-.custom-submit-button:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-.file-upload-button input[type="file"] {
-    display: none;
-}
-
-.file-upload-path {
-    display: inline-block;
-    vertical-align: middle;
-    color: #333;
-    font-size: 14px;
-    margin-left: 10px;
-}
-
-.form-controls-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    border: 2px solid rgb(2, 76, 134);
-    background-color: #f8f9fa;
-    border-top: none;
-}
-
-.form-controls-container .file-upload-section {
-    display: flex;
-    align-items: center;
-}
-
-.form-controls-container .form-check {
-    margin-left: 20px;
-}
-
-.form-controls-container .btn {
-    margin-left: 20px;
-}
-
-.form-check-input {
-    width: 20px;
-    height: 20px;
-    border: 2px solid rgb(2, 76, 134);
-    background-color: #fff;
-}
-
-.form-check-input:checked {
-    background-color: rgb(2, 76, 134);
-    border-color: rgb(2, 76, 134);
-}
-
-.form-check-label {
-    font-weight: bold;
-    font-size: 18px;
-}
-
-/* New styles from etdetailview login.html */
-.btn2 {
-    background-color: rgb(2, 76, 134);
-    color: #ffffff;
-    border: none;
-    padding: 5px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 120px;
-}
-
-.btn3 {
-    background-color: rgb(2, 76, 134);
-    color: #ffffff;
-    font-size: 14px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 90px;
-    height: 40px;
-    text-align: center;
-    display: block;
-}
-
-.form-control3 {
-    height: 100px;
-    width: 1000px;
-    font-size: 15px;
-    border-top: none;
-    border: none;
-    background-color: #ffffff;
-    pointer-events: none;
-}
-
-.downbtn {
-    display: flex;
-    align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.horizontal-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 10px;
-}
-
-.profile-section {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-}
-
-.profile-section .프로필사진 {
-    margin-right: 10px;
-}
-
-.stats-section {
-    display: flex;
-    align-items: center;
-}
-
-.stat-item {
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-}
-
-.button-img {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    margin-right: 5px;
-}
-
-.counter {
-    font-size: 16px;
-}
-
-.프로필사진 {
-    width: 40px;
-    height: 40px;
-}
-
-.detailchang {
-    margin-left: 400px;
-}
-
-.header2 {
-    padding-bottom: 11px;
-}
-
-/* Styles from etmypage.html */
-.list-group-item-small {
-    font-size: 0.8rem;
-    padding: 0.25rem 0.5rem;
-    border-bottom: none;
-    border-top: none;
-}
-
-.list-group-item-small2 {
-    font-size: 2rem;
-    padding: 0.75rem 1.25rem;
-    font-weight: bolder;
-}
-
-.list-group-item-medium {
-    background-color: rgb(2, 76, 134);
-    font-size: 2rem;
-    padding: 0.25rem 0.5rem;
-    font-weight: bolder;
-    color: #ffffff;
-}
-
-.list-group-item-large {
-    font-size: 2.7rem;
-    padding: 0.75rem 1.25rem;
-    border-bottom: none;
-}
-
-.list-group-item+.list-group-item {
-    border-top: none;
-}
-
-.btn3 {
-    background-color: rgb(2, 76, 134);
-    color: #ffffff;
-    border: none;
-    padding: 10px 10px;
-    font-size: 14px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 110px;
-    height: 40px;
-    text-align: center;
-    display: block;
-    margin: 20px auto;
-}
-
-.dropdown-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 50px;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropbtn {
-    background-color: rgb(2, 76, 134);
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    width: 100px;
-    border: none;
-    cursor: pointer;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 100px;
-    z-index: 1;
-    text-align: center;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.search-box {
-    padding: 14px;
-    width: 500px;
-    font-size: 16px;
-    color: grey;
-}
-
-.btn-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.btn-list {
-    display: flex;
-    align-items: center;
-}
-
-.btn-list img {
-    margin-left: 10px;
-}
-
-/* Styles from etnew.html and etmywrite.html */
-.box-etnew {
-    background-color: rgb(2, 76, 134);
-    color: white;
-    border: none;
-    width: 100%;
-    height: 80px;
-    font-size: 40px;
-    font-weight: bold;
-}
-
-.form-control1-etnew {
-    height: 80px;
-    width: 1200px;
-    border-color: rgb(2, 76, 134);
-    font-size: 20px;
-    border-top: none;
-}
-
-.form-control2-etnew {
-    height: 600px;
-    width: 1200px;
-    border-color: rgb(2, 76, 134);
-    font-size: 20px;
-    padding-bottom: 500px;
-    border-top: none;
-}
-
-.file-upload-button-etnew,
-.custom-submit-button-etnew {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: rgb(2, 76, 134);
-    border: 1px solid rgb(2, 76, 134);
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    user-select: none;
-    margin-right: 10px;
-}
-
-.file-upload-button-etnew:hover,
-.custom-submit-button-etnew:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-.file-upload-button-etnew input[type="file"] {
-    display: none;
-}
-
-.file-upload-path-etnew {
-    display: inline-block;
-    vertical-align: middle;
-    color: #333;
-    font-size: 14px;
-    margin-left: 10px;
-}
-
-.form-controls-container-etnew {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    border: 2px solid rgb(2, 76, 134);
-    background-color: #f8f9fa;
-    border-top: none;
-}
-
-.form-controls-container-etnew .file-upload-section {
-    display: flex;
-    align-items: center;
-}
-
-.form-controls-container-etnew .form-check {
-    margin-left: 20px;
-}
-
-.form-controls-container-etnew .btn {
-    margin-left: 20px;
-}
-
-.form-check-input-etnew {
-    width: 20px;
-    height: 20px;
-    border: 2px solid rgb(2, 76, 134);
-    background-color: #fff;
-}
-
-.form-check-input-etnew:checked {
-    background-color: rgb(2, 76, 134);
-    border-color: rgb(2, 76, 134);
-}
-
-.form-check-label-etnew {
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.list-group-item-small-etnew {
-    font-size: 0.8rem;
-    padding: 0.25rem 0.5rem;
-    border-bottom: none;
-    border-top: none;
-}
-
-.list-group-item-small2-etnew {
-    font-size: 2rem;
-    padding: 0.75rem 1.25rem;
-    font-weight: bolder;
-}
-
-.list-group-item-medium-etnew {
-    background-color: rgb(2, 76, 134);
-    font-size: 2rem;
-    padding: 0.25rem 0.5rem;
-    font-weight: bolder;
-    color: #ffffff;
-}
-
-.list-group-item-large-etnew {
-    font-size: 2.7rem;
-    padding: 0.75rem 1.25rem;
-    border-bottom: none;
-}
-
-.list-group-item+.list-group-item-etnew {
-    border-top: none;
-}
-
-.btn1-etnew {
-    background-color: rgb(2, 76, 134);
-    color: #ffffff;
-    border: none;
-    padding: 5px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 120px;
-    text-align: center;
-    display: block;
-    margin: 20px auto;
-}
-
-.box-etmywrite {
-    background-color: rgb(2, 76, 134);
-    color: white;
-    border: none;
-    width: 100%;
-    height: 80px;
-    font-size: 40px;
-    font-weight: bold;
-}
-
-.form-control1-etmywrite {
-    height: 80px;
-    width: 1200px;
-    border-color: rgb(2, 76, 134);
-    font-size: 20px;
-    border-top: none;
-}
-
-.form-control2-etmywrite {
-    height: 600px;
-    width: 1200px;
-    border-color: rgb(2, 76, 134);
-    font-size: 20px;
-    padding-bottom: 500px;
-    border-top: none;
-}
-
-.file-upload-button-etmywrite,
-.custom-submit-button-etmywrite {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: rgb(2, 76, 134);
-    border: 1px solid rgb(2, 76, 134);
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    user-select: none;
-    margin-right: 10px;
-}
-
-.file-upload-button-etmywrite:hover,
-.custom-submit-button-etmywrite:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-.file-upload-button-etmywrite input[type="file"] {
-    display: none;
-}
-
-.file-upload-path-etmywrite {
-    display: inline-block;
-    vertical-align: middle;
-    color: #333;
-    font-size: 14px;
-    margin-left: 10px;
-}
-
-.form-controls-container-etmywrite {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    border: 2px solid rgb(2, 76, 134);
-    background-color: #f8f9fa;
-    border-top: none;
-}
-
-.form-controls-container-etmywrite .file-upload-section {
-    display: flex;
-    align-items: center;
-}
-
-.form-controls-container-etmywrite .form-check {
-    margin-left: 20px;
-}
-
-.form-controls-container-etmywrite .btn {
-    margin-left: 20px;
-}
-
-.form-check-input-etmywrite {
-    width: 20px;
-    height: 20px;
-    border: 2px solid rgb(2, 76, 134);
-    background-color: #fff;
-}
-
-.form-check-input-etmywrite:checked {
-    background-color: rgb(2, 76, 134);
-    border-color: rgb(2, 76, 134);
-}
-
-.form-check-label-etmywrite {
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.list-group-item-small-etmywrite {
-    font-size: 0.8rem;
-    padding: 0.25rem 0.5rem;
-    border-bottom: none;
-    border-top: none;
-}
-
-.list-group-item-small2-etmywrite {
-    font-size: 2rem;
-    padding: 0.75rem 1.25rem;
-    font-weight: bolder;
-}
-
-.list-group-item-medium-etmywrite {
-    background-color: rgb(2, 76, 134);
-    font-size: 2rem;
-    padding: 0.25rem 0.5rem;
-    font-weight: bolder;
-    color: #ffffff;
-}
-
-.list-group-item-large-etmywrite {
-    font-size: 2.7rem;
-    padding: 0.75rem 1.25rem;
-    border-bottom: none;
-}
-
-.list-group-item+.list-group-item-etmywrite {
-    border-top: none;
-}
-
-.btn1-etmywrite {
-    background-color: rgb(2, 76, 134);
-    color: #ffffff;
-    border: none;
-    padding: 5px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 120px;
-    text-align: center;
-    display: block;
-    margin: 20px auto;
-}
-.menuBar1 {
-    height: 100px;
-}
-
-.input-group-text1 {
-    background-color: #f8f9fa;
-    border-color: black;
-}
-
-.form-control1-1, .form-control2-1, .form-control3-1 {
-    border: none;
-    background-color: #ffffff;
-    pointer-events: none;
-}
-
-.form-control1-1 {
-    height: 80px;
-    width: 1000px;
-    font-size: 20px;
-}
-
-.form-control2-1 {
-    height: auto;
-    width: 1000px;
-    font-size: 20px;
-}
-
-.form-control3-1 {
-    height: 100px;
-    width: 1000px;
-    font-size: 15px;
-    border-top: none;
-}
-
-.custom1 {
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.custom-button1 {
-    background-color: rgb(2, 76, 134);
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 300px;
-}
-
-.custom-container1 {
-    max-width: 900px;
-}
-
-h1-1 {
-    width: 700px;
-}
-
-.list-group1 {
-    border: 4px;
-    border-color: black;
-    border-left: none;
-    border-right: none;
-}
-
-.btn1-1 {
-    background-color: rgb(2, 76, 134);
-    color: #ffffff;
-    border: none;
     font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
@@ -1046,7 +458,7 @@ h1-1 {
     margin-left: 30px;
 }
 
-.btn2-1 {
+.btn2-et {
     background-color: rgb(2, 76, 134);
     color: #ffffff;
     border: none;
@@ -1057,7 +469,19 @@ h1-1 {
     width: 120px;
 }
 
-.btn4 {
+.btn3-et {
+    background-color: rgb(2, 76, 134);
+    color: #ffffff;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 90px;
+    height: 40px;
+    text-align: center;
+    display: block;
+}
+
+.btn4-et {
     background-color: rgb(2, 76, 134);
     color: #ffffff;
     font-size: 14px;
@@ -1065,9 +489,12 @@ h1-1 {
     cursor: pointer;
     width: 100px;
     height: 40px;
+    margin-right: 500px;
+    margin-top:10px;
+    margin-bottom:10px;
 }
 
-.box1 {
+.box-et {
     background-color: rgb(2, 76, 134);
     color: white;
     border: none;
@@ -1078,7 +505,32 @@ h1-1 {
     pointer-events: none;
 }
 
-.file-upload-button1, .custom-submit-button1 {
+.form-control1-et, .form-control2-et, .form-control3-et {
+    border: none;
+    background-color: #ffffff;
+    pointer-events: none;
+}
+
+.form-control1-et {
+    height: 80px;
+    width: 1000px;
+    font-size: 20px;
+}
+
+.form-control2-et {
+    height: auto;
+    width: 1000px;
+    font-size: 20px;
+}
+
+.form-control3-et {
+    height: 100px;
+    width: 1000px;
+    font-size: 15px;
+    border-top: none;
+}
+
+.file-upload-button-et, .custom-submit-button-et {
     display: inline-block;
     padding: 10px 20px;
     font-size: 15px;
@@ -1092,16 +544,16 @@ h1-1 {
     margin-right: 30px;
 }
 
-.file-upload-button1:hover, .custom-submit-button1:hover {
+.file-upload-button-et:hover, .custom-submit-button-et:hover {
     background-color: #0056b3;
     border-color: #0056b3;
 }
 
-.file-upload-button1 input[type="file"] {
+.file-upload-button-et input[type="file"] {
     display: none;
 }
 
-.file-upload-path1 {
+.file-upload-path-et {
     display: inline-block;
     vertical-align: middle;
     color: #333;
@@ -1109,7 +561,7 @@ h1-1 {
     margin-left: 10px;
 }
 
-.form-controls-container2-1 {
+.form-controls-container-et {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1118,88 +570,104 @@ h1-1 {
     width: 1000px;
 }
 
-.form-check1 {
-    margin-left: 10px;
-}
-
-.downbtn1 {
+.form-controls-container .file-upload-section {
     display: flex;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    justify-content: flex-start; /* 왼쪽 정렬 */
-    width: 100%; /* 부모 요소의 전체 너비 사용 */
-    margin-left: 400px;
+    width: 80%;
 }
 
-.horizontal-container1 {
+.form-controls-container .form-check {
+    margin-left: 30px;
+}
+
+.form-controls-container .btn {
+    margin-left: 20px;
+}
+
+.form-check-input-et {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(2, 76, 134);
+    background-color: #fff;
+}
+
+.form-check-input-et:checked {
+    background-color: rgb(2, 76, 134);
+    border-color: rgb(2, 76, 134);
+}
+
+.form-check-label-et {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.horizontal-container-et {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding-top: 10px;
 }
 
-.profile-section1 {
+.profile-section-et {
     display: flex;
     align-items: center;
     margin-right: 20px;
 }
 
-.profile-section1 .프로필사진1 {
+.profile-section-et .프로필사진-et {
     margin-right: 10px;
 }
 
-.stats-section1 {
+.stats-section-et {
     display: flex;
     align-items: center;
 }
 
-.stat-item1 {
+.stat-item-et {
     display: flex;
     align-items: center;
     margin-left: 20px;
 }
 
-.button-img1 {
+.button-img-et {
     width: 30px;
     height: 30px;
     cursor: pointer;
     margin-right: 5px;
 }
 
-.button-img1.clicked {
+.button-img-et.clicked {
     cursor: not-allowed;
     opacity: 0.5;
 }
 
-.counter1 {
+.counter-et {
     font-size: 16px;
 }
 
-.프로필사진1 {
+.프로필사진-et {
     width: 40px;
     height: 40px;
 }
 
-.detailchang1 {
+.detailchang {
     margin-left: 400px;
-    ;
 }
 
-.container1 {
+.container-et {
     margin-right: 240px;
 }
 
-.header21 {
+.header2-et {
     padding-bottom: 11px;
 }
 
-.rightside1 {
+.rightside-et {
     display: flex;
     align-items: center;
     margin-left: 10px;
 }
 
-#commentInput1 {
+#commentInput-et {
     width: 750px;
 }
