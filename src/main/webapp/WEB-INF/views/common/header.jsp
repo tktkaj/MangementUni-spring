@@ -21,7 +21,7 @@
     <link href="${path}/resources/css/home.css?야소" rel="stylesheet"/>
     <script defer src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script defer src="${path}/resources/js/homepage.js"></script>
-   
+
 </head>
 <header>
     <div class="container">
@@ -40,18 +40,21 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="menu">
-            <div class="row">
-                <div class="col col-4">
-                    <ul>
-                        <li style="margin-left: 50px"><a href="#">대학소개</a></li>
-                        <li><a href="${path}/infoboard">공지사항</a></li>
-                        <li><a href="#">에타게시판</a></li>
-                    </ul>
+    <div class="opq-header-sub">
+        <div class="container">
+            <div class="menu">
+                <div class="row">
+                    <div class="col col-12">
+                        <ul>
+                            <li><a href="#">오시는길</a></li>
+                            <li><a href="ideology">학교이념</a></li>
+                            <li><a href="#">교수진 소개</a></li>
+                            <li><a href="#">학과 소개</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</header>
+</div>
 </html>

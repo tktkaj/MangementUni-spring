@@ -70,13 +70,12 @@ header .menu {
 }
 
 .header .opq-header {
-	padding: 20px 0px;
-	background-color: rgba(0, 0, 0, .2);	
-}
-
-.header .opq-header:hover {
-	background-color: white;
-	transition: 300ms;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 15px 0px;
+	background-color: rgba(0, 0, 0, .2);
 }
 
 .header ul {
@@ -87,6 +86,7 @@ header .menu {
 }
 
 .header li {
+	padding-top: 5px;
 	list-style: none;
 	margin-left: 20px;
 }
@@ -95,7 +95,7 @@ header .menu {
 	text-decoration: none;
 	font-size: 20px;
 	font-weight: bold;
-	color:white;
+	color: white;
 }
 
 .header .opq-header .col {
@@ -104,8 +104,32 @@ header .menu {
 }
 
 #login-btn {
+	padding: 5px 10px;
 	background-color: #024C86;
+	border-radius: 5px;
 	border: #024C86;
+}
+
+#login-btn {
+	padding: 5px 10px;
+	background-color: #024C86;
+	border-radius: 5px;
+	border: #024C86;
+}
+
+.opq-header-sub {
+	position: fixed;
+	top: 6.7%;
+	left: 0;
+	right: 0;
+	display: none;
+	padding: 15px 0px;
+	background: white;
+	border-top: 2px solid #eee;
+}
+
+.opq-header-sub a {
+	color: black;
 }
 
 /* footer */
