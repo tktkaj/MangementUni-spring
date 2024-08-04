@@ -25,7 +25,8 @@
             </div>
             <div class="stations">
                 <div class="left">
-                    <h3>버스 이용시(강남역 하차)</h3>
+             
+                     <h3><img src="resources/img/버스.png" alt="버스 이미지">버스 이용시(강남역 하차)</h3>
                     <p><span class="line blue">144</span> <span class="line blue">145</span> <span class="line blue">3008</span></p>
                     <p>
                         <span class="line red">1006</span> 
@@ -40,7 +41,7 @@
                     <p><span class="line green">4312</span> <span class="line green">서초03</span> <span class="line green">서초09</span></p>
                 </div>
                 <div class="right">
-                    <h3>지하철 이용시</h3>
+                    <h3><img src="resources/img/지하철.png" alt="지하철 이미지">지하철 이용시</h3>
                     <p><span class="line line-sinbundang">신분당선</span> 강남역 5번출구 4분거리</p>
                     <p><span class="line line-sinbundang">신분당선</span> 강남역 6번출구 6분거리</p>
                     <p><span class="line line-3">3호선</span> 양재역 2번출구 18분거리</p>
