@@ -36,7 +36,7 @@
             <!-- 교수 정보 카드 -->
             <c:forEach var="prolist" items="${list}">
                 <div class="professor-card">
-                    <div class="professor-photo"><img src="${path}/resources/img/${prolist.PROF_IMG}"/></div>
+                    <div class="professor-photo"><img src="${path}/resources/img/${prolist.PROF_IMG}" width="100%" height="100%"/></div>
                     <div class="professor-info">
                         <h2>${prolist.PROF_NAME}</h2>
                         <div class="professor-details">
