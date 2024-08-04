@@ -9,12 +9,13 @@
 <footer>
     <div class="container">
         <div class="row footer-nav">
-            <div class="col col-4">
+            <div class="col col-5">
                 <ul>
-                    <li><a href="">오시는 길</a></li>
-                    <li><a href="">학교 이념</a></li>
-                    <li><a href="">교수진 소개</a></li>
-                    <li><a href="">학과 소개</a></li>
+                    <li><a href="ideology">학교 이념</a></li>
+                    <li><a href="department">학과 소개</a></li>
+                    <li><a href="professor">교수진 소개</a></li>
+                    <li><a href="calendar">학사 일정</a></li>
+                    <li><a href="waytocome">오시는 길</a></li>
                 </ul>
             </div>
         </div>
