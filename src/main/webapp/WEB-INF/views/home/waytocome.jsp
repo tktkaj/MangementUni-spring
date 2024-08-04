@@ -25,8 +25,7 @@
             </div>
             <div class="stations">
                 <div class="left">
-             
-                     <h3><img src="resources/img/버스.png" alt="버스 이미지">버스 이용시(강남역 하차)</h3>
+                    <h3><img src="resources/img/버스.png" alt="버스 이미지">버스 이용시(강남역 하차)</h3>
                     <p><span class="line blue">144</span> <span class="line blue">145</span> <span class="line blue">3008</span></p>
                     <p>
                         <span class="line red">1006</span> 
@@ -50,7 +49,8 @@
             </div>
         </div>
     </div>
-   
+    <div class="footercostom">
+        <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+    </div>
 </body>
 </html>
-<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
