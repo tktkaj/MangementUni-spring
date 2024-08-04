@@ -9,6 +9,6 @@ public class OnlineController {
     @RequestMapping("/online")
     public String online(){
 
-        return "/student/onlinevideo";
+        return "student/onlinevideo";
     }
 }
