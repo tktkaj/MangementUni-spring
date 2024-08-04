@@ -28,16 +28,28 @@
 	border-radius: 50px;
 	text-align: top !important;
 }
+
+.contentbox {
+	width: auto !important;
+}
+
+.titlebox {
+	width: auto !important;
+}
+
+.btnbox {
+	margin-right: 250px;
+}
 </style>
 </head>
 <body>
 	<div id="menuBar">
 		<div id="sub-menubar">
 			<ul id="menulist">
-				<li><a href="passwordchange">사용자 정보 관리</a></li>
-				<li><a href="studentStatus">학적 관리</a></li>
-				<li><a href="studentinfo">등록 관리</a></li>
-				<li><a href="objection">성적 관리</a></li>
+				<li><a href="studentstatus">학적 조회</a></li>
+				<li><a href="studentinfo">학생 정보 조회</a></li>
+				<li><a href="passwordchange">학생 정보 변경</a></li>
+				<li><a href="objection">성적 조회</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
 				<li><a href="askpresident">총장님께 바랍니다</a></li>
 				<li><a href="#">시간표</a></li>
@@ -53,44 +65,36 @@
 				<h1>성적 이의 신청</h1>
 			</div>
 
-			<div class="contentView" style="text-align:center;">
+			<div class="contentView"
+				style="margin: 50px; margin-left: 300px; text-align: center; font-size: 20px;">
 				<form action="/" method="post">
 					<div class="row mb-3">
-						<label for="subjectTitle" class="col-sm-2 col-form-label" style="text-align:left;">수강 과목</label>
-						<div class="col-sm-10">
-							<label for="subjectTitle" style="text-align:left;">C언어 프로그래밍 활용</label>
+						<label for="subjectTitle" class="col-sm-2 col-form-label"
+							style="text-align: left;"><b>&gt; 수강 과목</b></label>
+						<div class="col-sm-10 titlebox">
+							<label for="subjectTitle"
+								style="text-align: left; margin-top: 5px;">C언어 프로그래밍 활용</label>
 						</div>
 					</div>
 					<div class="row mb-3">
-						<label for="inputPassword3" class="col-sm-2 col-form-label" style="text-align:left;">이의 신청 내용</label>
-						<div class="col-sm-10">
-							<textarea rows="5" cols="60" style="width:500px;" placeholder="내용을 입력하세요"
-									name="detail"></textarea>
+						<label for="inputPassword3" class="col-sm-2 col-form-label"
+							style="text-align: left; font-weight: 700;"><b>&gt;
+								신청 내용</b></label>
+						<div class="col-sm-10 contentbox">
+							<textarea rows="5" cols="60" style="width: 500px;"
+								placeholder="이의 신청 내용을 입력하세요" name="detail"></textarea>
 						</div>
 					</div>
-					<!-- <tr>
-							<th width="150">과목명</th>
-							<td><label for="subjectTitle" name="subjectTitle">C언어
-									활용</label></td>
-						</tr>
-						<tr>
-							<th width="150"><span>이의 신청 내용</span></th>
-							<td><textarea rows="5" cols="40" placeholder="내용을 입력하세요"
-									name="detail"></textarea></td>
-						</tr>
 
-						<tr class="table-secondary">
-							<td colspan="3" align="center"><input
-								class="btn btn-outline-primary btn-sm" type="submit" value="등록"
-								style="font-size: 13px; background-color: #024C86; color: white; text-align: center;" />
-								<input class="btn btn-outline-danger btn-sm" type="reset"
-								value="다시쓰기"
-								style="font-size: 13px; background-color: #024C86; color: white; padding: 10px;" />
-								<input class="btn btn-outline-warning btn-sm" type="button"
-								value="돌아가기"
-								style="font-size: 13px; background-color: #024C86; color: white; text-align: center;"
-								onclick="history.back()" /></td>
-						</tr> -->
+					<div class="btnbox">
+						<button type="submit" class="btn btn-primary" value="등록"
+							style="font-size: 15px; width: 100px; height: 40px; background-color: #024C86; color: white; text-align: center; border: none !important;">등록</button>
+						<button type="reset" class="btn btn-primary" value="다시쓰기"
+							style="font-size: 15px; width: 100px; height: 40px; background-color: #024C86; color: white; text-align: center; border: none !important;">다시쓰기</button>
+						<button type="button" class="btn btn-primary" value="돌아가기"
+							onclick="history.back()"
+							style="font-size: 15px; width: 100px; height: 40px; background-color: #024C86; color: white; text-align: center; border: none !important;">돌아가기</button>
+					</div>
 				</form>
 			</div>
 			<!-- contentView -->
