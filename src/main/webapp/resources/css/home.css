@@ -186,6 +186,11 @@ main .sub-news {
     margin-bottom: 100px;
 }
 
+.school-ideology .ideology-img{
+    width: 700px;
+    height: 500px;
+}
+
 .school-ideology .title {
     margin: 100px auto;
     text-align: center;
