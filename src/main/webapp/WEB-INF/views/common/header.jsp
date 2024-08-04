@@ -29,6 +29,7 @@
         <div class="container">
             <div class="menu">
                 <div class="row">
+                    <c:if test="${loginname == null}">
                     <div class="col col-11">
                         <ul>
                             <li id="uni-detail"><a href="#">대학소개</a></li>
@@ -37,12 +38,20 @@
                         </ul>
                     </div>
                     <div class="col col-1">
-                        <c:if test="${loginname == null}">
-                            <button id="login-btn" onclick="location.href='login'">LOGIN</button>
+                        <button id="login-btn" onclick="location.href='login'" style="color: white">LOGIN</button>
                         </c:if>
-
                         <c:if test="${loginname != null}">
-                            <label>${loginname }님 환영</label><button id="logout" onclick="location.href='logout'" >로그아웃</button>
+                            <div class="col col-11">
+                                <ul>
+                                    <li class="uni-detail"><a href="#">대학소개</a></li>
+                                    <li><a href="infoboard">공지사항</a></li>
+                                    <li><a href="etmainpage">에타게시판</a></li>
+                                    <li><a href="myCoursesPage">마이페이지</a></li>
+                                </ul>
+                            </div>
+                            <div class="col col-1">
+                                <button id="login-btn" onclick="location.href='logout'">LOGOUT</button>
+                            </div>
                         </c:if>
                     </div>
                 </div>

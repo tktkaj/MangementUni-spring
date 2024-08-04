@@ -63,13 +63,6 @@ body {
     border: #024C86;
 }
 
-#login-btn {
-    padding: 5px 10px;
-    background-color: #024C86;
-    border-radius: 5px;
-    border: #024C86;
-}
-
 .opq-header-sub {
     position: fixed;
     top: 6.7%;

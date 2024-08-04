@@ -15,9 +15,7 @@
 <link href="${path}/resources/css/courses.css" rel="stylesheet" />
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-	crossorigin="anonymous">
+	rel="stylesheet">
 <style>
 .sub {
 	color: red;
@@ -67,10 +65,10 @@
 	<div id="menuBar">
 		<div id="sub-menuBar">
 			<ul id="menulist">
-				<li><a href="passwordchange">사용자 정보 관리</a></li>
-				<li><a href="studentstatus">학적 관리</a></li>
-				<li><a href="studentinfo">등록 관리</a></li>
-				<li><a href="objection">성적 관리</a></li>
+				<li><a href="studentstatus">학적 조회</a></li>
+				<li><a href="studentinfo">학생 정보 조회</a></li>
+				<li><a href="passwordchange">학생 정보 변경</a></li>
+				<li><a href="objection">성적 조회</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
 				<li><a href="askpresident">총장님께 바랍니다</a></li>
 				<li><a href="idcard">학생증</a></li>
@@ -81,7 +79,7 @@
 		<div id="content">
 			<!-- title view -->
 			<div id="pageTitle">
-				<h1>사용자 정보 관리</h1>
+				<h1>학생 정보 변경</h1>
 			</div>
 			<div id="pageContent">
 				<!-- content view -->

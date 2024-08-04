@@ -17,10 +17,10 @@
 	<div id="menuBar">
 		<div id="sub-menubar">
 			<ul id="menulist">
-				<li><a href="passwordchange">사용자 정보 관리</a></li>
-				<li><a href="studentStatus">학적 관리</a></li>
-				<li><a href="studentinfo">등록 관리</a></li>
-				<li><a href="objection">성적 관리</a></li>
+				<li><a href="studentstatus">학적 조회</a></li>
+				<li><a href="studentinfo">학생 정보 조회</a></li>
+				<li><a href="passwordchange">학생 정보 변경</a></li>
+				<li><a href="objection">성적 조회</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
 				<li><a href="askpresident">총장님께 바랍니다</a></li>
 				<li><a href="#">시간표</a></li>
@@ -29,18 +29,18 @@
 		</div>
 	</div>
 
-	<div class="container" style="height: 800px;">
+	<div class="container" style="height: auto; margin-bottom:50px;">
 
 		<div id="content">
 			<div id="pagetitle">
-				<h1>나의 성적 관리</h1>
+				<h1>성적 조회</h1>
 			</div>
 
-			<div id="selectTable">
-				<div id="tableList">
-					<h5 id="midTitle">&gt; 2024-1학기</h5>
+			<div id="selecttable">
+				<div id="tablelist">
+					<h5 id="midtitle" style="margin-top:40px">&gt; 2024-1학기</h5>
 					<div>
-						<table class="table mt-2 mb-4">
+						<table class="table mt-2 mb-4" style="text-align: center; margin-top:15px;">
 							<thead>
 								<tr>
 									<th scope="col"></th>
@@ -96,9 +96,16 @@
 						</table>
 					</div>
 				</div>
-				<div id="tableList">
-					<h5 id="midTitle">&gt; 2023학년도</h5>
-					<table class="table mt-4 mb-2">
+				<div id="tablelist">
+					<h5 id="midtitle" style="margin-top:40px">&gt; 2023학년도</h5>
+					<form id="select_sem" method="POST">
+						<select name="subject" required style="padding: 5px; margin-top:15px;">
+							<option value="1">1학기</option>
+							<option value="2">2학기</option>
+						</select>
+
+					</form>
+					<table class="table mt-4 mb-2" style="text-align: center;">
 						<thead>
 							<tr>
 								<th scope="col"></th>
