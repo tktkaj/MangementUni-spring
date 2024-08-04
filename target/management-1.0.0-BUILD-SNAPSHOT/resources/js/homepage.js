@@ -32,11 +32,10 @@ $().ready(function () {
     });
 
     // header 벗어나면 헤더 효과 풀림
-    let headerHeight = $('.opq-header').outerHeight();
     let subheaderHeight = $('.opq-header-sub').outerHeight();
-    let totalHeaderHeight = headerHeight + subheaderHeight;
+    let totalHeaderHeight = 65 + subheaderHeight;
 
-    $(document).on('mousemove', function(event) {
+    $(document).on('mousemove', function (event) {
         // 마우스의 Y 좌표가 헤더와 서브헤더의 총 높이보다 클 경우 이벤트 발생
         if (event.clientY > totalHeaderHeight) {
             $('.opq-header').css('background-color', 'rgba(0, 0, 0, .2)');
@@ -44,6 +43,37 @@ $().ready(function () {
             $(".logo-img").attr("src", "resources/img/logo.png");
             $(".opq-header-sub").css("display", "none");
         }
+    });
+
+    // subheader 강조 표시
+    let way = $(".opq-header-sub #way");
+    let ideo = $(".opq-header-sub #ideo");
+    let prof = $(".opq-header-sub #prof");
+    let dept = $(".opq-header-sub #dept");
+
+    way.on('mouseover', function () {
+        way.css("color", "#024C86");
+    });
+    way.on('mouseout', function () {
+        way.css("color", "#333");
+    });
+    ideo.on('mouseover', function () {
+        ideo.css("color", "#024C86");
+    });
+    ideo.on('mouseout', function () {
+        ideo.css("color", "#333");
+    });
+    prof.on('mouseover', function () {
+        prof.css("color", "#024C86");
+    });
+    prof.on('mouseout', function () {
+        prof.css("color", "#333");
+    });
+    dept.on('mouseover', function () {
+        dept.css("color", "#024C86");
+    });
+    dept.on('mouseout', function () {
+        dept.css("color", "#333");
     });
 
 });

@@ -72,10 +72,10 @@
             <div class="row">
                 <div class="col col-12">
                     <ul>
-                        <li class="divide"><a href="#">오시는길</a></li>
-                        <li class="divide"><a href="ideology">학교이념</a></li>
-                        <li class="divide"><a href="professor">교수진 소개</a></li>
-                        <li><a href="department">학과 소개</a></li>
+                        <li class="divide"><a href="#" id="way">오시는길</a></li>
+                        <li class="divide"><a href="ideology" id="ideo">학교이념</a></li>
+                        <li class="divide"><a href="professor" id="prof">교수진 소개</a></li>
+                        <li><a href="department" id="dept">학과 소개</a></li>
                     </ul>
                 </div>
             </div>
