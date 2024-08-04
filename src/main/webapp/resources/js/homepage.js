@@ -50,6 +50,7 @@ $().ready(function () {
     let ideo = $(".opq-header-sub #ideo");
     let prof = $(".opq-header-sub #prof");
     let dept = $(".opq-header-sub #dept");
+    let calendar = $(".opq-header-sub #calendar");
 
     way.on('mouseover', function () {
         way.css("color", "#024C86");
@@ -74,6 +75,12 @@ $().ready(function () {
     });
     dept.on('mouseout', function () {
         dept.css("color", "#333");
+    });
+    calendar.on('mouseover', function () {
+        calendar.css("color", "#024C86");
+    });
+    calendar.on('mouseout', function () {
+        calendar.css("color", "#333");
     });
 
 });
