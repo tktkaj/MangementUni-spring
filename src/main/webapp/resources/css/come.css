@@ -1,137 +1,142 @@
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	
 }
 
 body {
-    justify-content: space-between;
-    background-color: #f0f0f0;
+	justify-content: space-between;
+	background-color: #f0f0f0;
+	
 }
 
-.container {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 1200px;
-    text-align: center;
-    margin: auto;
-    flex: 1;
+.container1 {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	width: 1200px;
+	text-align: center;
+	margin: 190px auto 100px auto;
+	
+	
+	
 }
 
 .map {
-    background-color: #d8d8d8;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    color: #333;
+	background-color: #d8d8d8;
+	height: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2em;
+	color: #333;
+	
+	
 }
 
 .info {
-    padding: 30px;
+	padding: 30px;
 }
 
-.address {
-    display: flex;
-    justify-content: space-between;
-    background-color: RGB(231, 240, 254);
-    border: 1px solid #024C86;
-    border-radius: 5px;
-    padding: 10px 0;
-    font-weight: bolder;
-    margin-bottom: 20px;
+.address1 {
+	display: flex;
+	justify-content: space-between;
+	background-color: RGB(231, 240, 254);
+	border: 1px solid #024C86;
+	border-radius: 5px;
+	padding: 10px 0;
+	font-weight: bolder;
+	margin-bottom: 20px;
 }
 
-.address p {
-    margin: 5px 0;
-    font-size: 1em;
+.address1 p {
+	margin: 5px 0;
+	font-size: 1em;
 }
 
-.left-address, .right-address {
-    width: 50%;
-    text-align: left;
-    padding: 0 20px;
+.left-address1, .right-address1 {
+	width: 50%;
+	text-align: left;
+	padding: 0 20px;
 }
 
 .stations {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
 }
 
 .stations .left, .stations .right {
-    width: 48%;
-    text-align: left;
+	width: 48%;
+	text-align: left;
 }
 
 .stations h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.2em;
+	margin: 0 0 10px 0;
+	font-size: 1.2em;
 }
 
 .stations p {
-    margin: 10px 0;
-    font-size: 1em;
+	margin: 10px 0;
+	font-size: 1em;
 }
 
 .bus-info {
-    margin: 10px 0;
+	margin: 10px 0;
 }
 
 .bus-header {
-    background-color: RGB(231, 240, 254);
-    padding: 2px 8px;
-    border-radius: 3px;
-    color: black;
+	background-color: RGB(231, 240, 254);
+	padding: 2px 8px;
+	border-radius: 3px;
+	color: black;
 }
 
 .line {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 3px;
-    color: white;
-    text-align: center;
-    min-width: 50px;
-    margin: 2px;
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 3px;
+	color: white;
+	text-align: center;
+	min-width: 50px;
+	margin: 2px;
 }
 
 .line-sinbundang {
-    background-color: rgba(255, 0, 0, 0.8);
+	background-color: rgba(255, 0, 0, 0.8);
 }
 
 .line-3 {
-    background-color: rgba(255, 165, 0, 0.8);
+	background-color: rgba(255, 165, 0, 0.8);
 }
 
 .line-2 {
-    background-color: rgba(0, 128, 0, 0.8);
+	background-color: rgba(0, 128, 0, 0.8);
 }
 
 .blue {
-    background-color: rgba(0, 0, 255, 0.8);
+	background-color: rgba(0, 0, 255, 0.8);
 }
 
 .red {
-    background-color: rgba(255, 0, 0, 0.8);
+	background-color: rgba(255, 0, 0, 0.8);
 }
 
 .green {
-    background-color: rgba(0, 128, 0, 0.8);
+	background-color: rgba(0, 128, 0, 0.8);
 }
 
 .orange {
-    background-color: rgba(255, 165, 0, 0.8);
+	background-color: rgba(255, 165, 0, 0.8);
 }
 
 .footercostom {
-    width: 100%; 
-    background-color: transparent;
-    text-align: center;
-    margin: auto; 
-    
-    box-sizing: border-box; /* 패딩과 보더가 너비에 포함되도록 설정 */
+	width: 100%;
+	background-color: transparent;
+	text-align: center;
+	margin: auto;
+	box-sizing: border-box; /* 패딩과 보더가 너비에 포함되도록 설정 */
 }
