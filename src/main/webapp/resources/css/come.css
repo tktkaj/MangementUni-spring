@@ -1,14 +1,14 @@
-/* come.css */
-body {
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column;
+}
+
+body {
+    justify-content: space-between;
     background-color: #f0f0f0;
-    margin-top: 50px;
-    margin-bottom: 50px;
 }
 
 .container {
@@ -17,6 +17,8 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 1200px;
     text-align: center;
+    margin: auto;
+    flex: 1;
 }
 
 .map {
@@ -62,8 +64,8 @@ body {
 }
 
 .stations .left, .stations .right {
-    width: 48%; 
-    text-align: left; 
+    width: 48%;
+    text-align: left;
 }
 
 .stations h3 {
@@ -72,12 +74,12 @@ body {
 }
 
 .stations p {
-    margin: 10px 0; 
+    margin: 10px 0;
     font-size: 1em;
 }
 
 .bus-info {
-    margin: 10px 0; 
+    margin: 10px 0;
 }
 
 .bus-header {
@@ -93,34 +95,43 @@ body {
     border-radius: 3px;
     color: white;
     text-align: center;
-    min-width: 50px; 
-    margin: 2px; 
+    min-width: 50px;
+    margin: 2px;
 }
 
 .line-sinbundang {
-    background-color: rgba(255, 0, 0, 0.8); 
+    background-color: rgba(255, 0, 0, 0.8);
 }
 
 .line-3 {
-    background-color: rgba(255, 165, 0, 0.8); 
+    background-color: rgba(255, 165, 0, 0.8);
 }
 
 .line-2 {
-    background-color: rgba(0, 128, 0, 0.8); 
+    background-color: rgba(0, 128, 0, 0.8);
 }
 
 .blue {
-    background-color: rgba(0, 0, 255, 0.8); 
+    background-color: rgba(0, 0, 255, 0.8);
 }
 
 .red {
-    background-color: rgba(255, 0, 0, 0.8); 
+    background-color: rgba(255, 0, 0, 0.8);
 }
 
 .green {
-    background-color: rgba(0, 128, 0, 0.8); 
+    background-color: rgba(0, 128, 0, 0.8);
 }
 
 .orange {
-    background-color: rgba(255, 165, 0, 0.8); 
+    background-color: rgba(255, 165, 0, 0.8);
+}
+
+.footercostom {
+    width: 100%; 
+    background-color: transparent;
+    text-align: center;
+    margin: auto; 
+    
+    box-sizing: border-box; /* 패딩과 보더가 너비에 포함되도록 설정 */
 }

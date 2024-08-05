@@ -14,14 +14,12 @@
 <main class="container school-ideology">
 <p class="top_scrollbtn" onclick="location.href='#'">TOP</p>
 	<div class="row">
-		<div id="scroll_start" class="col col-5 title">
+		<div id="scroll_start" class="col col-12 title">
 			<h2 style="margin-top: 100px;">
 				<strong>학교 이념</strong>
 			</h2>
 			<div style="width: 70px; height: 5px; background-color: #024C86; margin:0px auto; margin-bottom: 100px;"></div>
-			<div class="ideology-img">
-				<img src="${path}/resources/img/ideology.png" style="margin-bottom: 130px;" width="100%" height="100%" />
-			</div>
+				<img src="${path}/resources/img/ideology.png" style="margin-bottom: 130px;" width="600px" height="600px" />
 			<h2>
 				<strong>미르 정신</strong>
 			</h2>
