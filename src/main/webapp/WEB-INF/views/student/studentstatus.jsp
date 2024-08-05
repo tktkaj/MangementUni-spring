@@ -45,39 +45,40 @@
 						<div class="info">
 							<div class="card-body">
 								<table style="text-align: left;">
-									<tr>
-										<img src="${path}/resources/img/프로필사진.png" alt="student img" />
-									</tr>
-									<tr>
-										<th>이름</th>
-										<td>홍길동</td>
-										<th>생년월일</th>
-										<td>2004-08-01</td>
-									</tr>
-									<tr>
-										<th>학번</th>
-										<td>202410001</td>
-										<th>연락처</th>
-										<td>02-1234-5678</td>
-									</tr>
-									<tr>
-										<th>학적 상태</th>
-										<td>소프트웨어 엔지니어</td>
-										<th>이메일</th>
-										<td>hong.gildong@example.com</td>
-									</tr>
-									<tr>
-										<th>소속 학과</th>
-										<td>개발 팀</td>
-										<th>지도 교수</th>
-										<td>123456</td>
-									</tr>
-									<tr>
-										<th>입학일</th>
-										<td>2022-01-01</td>
-										<th>거주지</th>
-										<td>서울특별시 강남구 테헤란로 123</td>
-									</tr>
+									<c:forEach var="stuinfo" items="${studentInfo}">
+										<tr>
+											<img src="${path}/resources/img/프로필사진.png" alt="student img" />
+										</tr>
+										<tr>
+											<th>이름</th>
+											<td>${stuinfo.STU_NAME}</td>
+											<th>생년월일</th>
+											<td>${stuinfo.STU_JUMIN}</td>
+										</tr>
+										<tr>
+											<th>학번</th>
+											<td>${stuinfo.STU_NO}</td>
+											<th>연락처</th>
+											<td>${stuinfo.STU_PHONE}</td>
+										</tr>
+										<tr>
+											<th>학적 상태</th>
+											<td>미정</td>
+											<th>이메일</th>
+											<td>${stuinfo.STU_EMAIL}</td>
+										</tr>
+										<tr>
+											<th>소속 학과</th>
+											<td>${stuinfo.DEPT_NAME}</td>
+
+											<th>거주지</th>
+											<td>${stuinfo.STU_ADDRESS}</td>
+										</tr>
+										<tr>
+											<th>입학일</th>
+											<td>${stuinfo.STU_ADMISSION_DATE}</td>
+										</tr>
+									</c:forEach>
 								</table>
 							</div>
 
@@ -121,7 +122,7 @@
 					</div>
 				</div>
 				<!-- courselist1 -->
-				
+
 				<div id="courselist2">
 					<h5 id="midtitle">&gt; 이전 수강 과목 조회</h5>
 					<div>
