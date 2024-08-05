@@ -49,6 +49,7 @@ public class LoginController {
 			if (student != null && student.getSTU_PASSWORD().equals(loginPassword)) {
 				session.setAttribute("loginname", student.getSTU_NAME());
 				session.setAttribute("studentno", student.getSTU_NO());
+				session.setAttribute("deptname", student.getDEPT_NAME());
 				model.addAttribute("msg", student.getSTU_NAME() + "학생 로그인 되었습니다.");
 				return "home";
 			} else {
