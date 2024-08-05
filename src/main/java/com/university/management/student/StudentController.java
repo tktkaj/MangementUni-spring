@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.university.management.courseregistrationpage.dto.Courseregistrationpage;
+import com.university.management.courses.service.CoursesService;
 import com.university.management.student.dto.Student;
 import com.university.management.student.service.StudentService;
 
@@ -19,6 +21,11 @@ public class StudentController {
 	
 	 @Autowired
 	 private StudentService stuservice;
+	 @Autowired
+	 private CoursesService courservice;
+	 @Autowired
+	 private Courseregistrationpage cour;
+	 
 	 
 	@RequestMapping("/askpresident")
 	public String askpresident() {
@@ -95,6 +102,12 @@ public class StudentController {
 
 	@RequestMapping("/myCoursesList")
 	public String MyCoursesList() {
+		
+		
+		
+		
+		
+		
 		return "courses/myCoursesList";
 	}
 
@@ -114,7 +127,11 @@ public class StudentController {
 	}
 	
 	@RequestMapping("/courseregistrationpage")
-	public String courseregistrationpage() {
+	public String courseregistrationpage(Model model ) {
+		
+		cour.setDEPT_MAME((String)session.getAttribute("deptname"));
+		
+		
 		return "student/courseregistrationpage";
 	}
 

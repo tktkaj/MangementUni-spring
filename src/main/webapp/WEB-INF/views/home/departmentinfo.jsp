@@ -16,7 +16,7 @@
 <jsp:include page="../common/header.jsp"/>
 
 <!-- Spacer -->
-<div class="spacer"></div>
+<div class="spacer"><img src="${path}/resources/img/학과소개.png"></div>
 
 <!-- Main Content -->
 <div class="main-content">
