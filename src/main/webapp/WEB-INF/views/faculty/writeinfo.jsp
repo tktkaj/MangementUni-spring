@@ -18,7 +18,6 @@
 			<ul id="menulist">
 				<li><a href="passwordchange">사용자 정보 관리</a></li>
 				<li><a href="studentStatus">학적 관리</a></li>
-				<li><a href="studentinfo">등록 관리</a></li>
 				<li><a href="objection">성적 관리</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
 				<li><a href="askpresident">총장님께 바랍니다</a></li>
