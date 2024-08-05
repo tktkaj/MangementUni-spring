@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col col-2 logo">
                         <div class="logo-box">
-                            <a href="/">
+                            <a href="/management">
                                 <img src="${path}/resources/img/logo2.png" width="100%" height="100%"/>
                             </a>
                         </div>
