@@ -8,9 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Courseregistrationpage { 
  
-	private String DEPT_MAME; //학과 이름
+	private String DEPT_NAME; //학과 이름
 	private int SMT; //학기
 	private String STU_GRADE; //학년
-	private String YEAR;  //학년도
-
+	private int YEAR;  //학년도
 }
