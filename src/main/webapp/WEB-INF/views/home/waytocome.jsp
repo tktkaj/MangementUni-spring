@@ -11,7 +11,12 @@
     <link href="${path}/resources/css/come.css" rel="stylesheet"/>
 </head>
 <body>
-  <div>  <jsp:include page="../common/header.jsp"/></div>
+  <div>  <jsp:include page="../common/header.jsp"/>
+      <h2 style="margin-top: 150px; text-align: center">
+          <strong>오시는 길</strong>
+      </h2>
+      <div style="width: 70px; height: 5px; background-color: #024C86; margin:0px auto;"></div>
+  </div>
     <div class="container1">
         <div id="map" class="map">지도 로드 중...</div>
         <div class="info">

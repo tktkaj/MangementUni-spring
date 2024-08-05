@@ -6,17 +6,25 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
+	<jsp:include page="../common/header.jsp" />
 <html>
 <head>
 </head>
 <body>
-	<jsp:include page="../common/header.jsp" />
 	<!-- 만약 아무것도 없다면 checked를 타이틀로 지정하기 위해서 if문을 작성한 것이다.  -->
 	<c:set var="searchType" value="${param.searchType}" />
 	<c:if test="${empty searchType }">
 		<c:set var="searchType" value="${'title'}" />
 	</c:if>
-	<div class="container" style="height: 500px;">
+	<style>
+.container1{
+	width: 1200px;
+	margin: 190px auto 100px auto;
+}
+
+
+</style>
+	<div class="container1" >
 
 		<div id="content">
 

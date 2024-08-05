@@ -3,9 +3,15 @@
          pageEncoding="UTF-8" %>
 <%@ page session="false" %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<head>
+    <title>미르대학교에 오신 걸 환영합니다.</title>
+    <script defer src="${path}/resources/js/scrollbtn.js"></script>
+    <link href="${path}/resources/css/scrollbtn.css" rel="stylesheet"/>
+</head>
 <jsp:include page="/WEB-INF/views/common/homeheader.jsp"/>
-<link href="${path}/resources/css/scrollbtn.css" rel="stylesheet"/>
-<script defer src="${path}/resources/js/scrollbtn.js"></script>
 <body>
 <c:if test="${not empty msg }">
 
@@ -137,3 +143,4 @@
 </div>
 <jsp:include page="common/footer.jsp"/>
 <body>
+</html>
