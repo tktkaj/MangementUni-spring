@@ -46,7 +46,7 @@ th {
 <body>
 	<jsp:include page="../common/header.jsp" />
 	<div class="container1">
-		<h2>학사일정</h2>
+		<h2><strong>학사 일정</strong></h2>
 		<div style="width: 70px; height: 5px; background-color: #024C86; margin:0px auto; margin-bottom: 20px;"></div>
 		<div class="dropdown">
 			<select id="semester" onchange="showSemester()">
