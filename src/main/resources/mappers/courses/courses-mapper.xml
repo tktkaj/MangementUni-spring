@@ -1,1 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper
+	namespace="com.university.management.courses.mapper.CoursesMapper">
+
+	<select id="coursesSelect"
+		parameterType="com.university.management.courseregistrationpage.dto.Courseregistrationpage"
+		resultType="com.university.management.courses.dto.Courses">
+
+		SELECT s.SUB_NAME,p.PROF_NAME,s.CLASS_CAP,s.SUB_ST_TIME,s.SUB_END_TIME ,s.CO_CONTENT,s.SMT,s.YEAR,s.SUB_POINT
+		FROM subject s
+		JOIN department d ON s.dept_code = d.dept_code
+		JOIN PROFESSOR p ON p.PROF_NO = s.prof_no
+		WHERE d.DEPT_NAME = #{DEPT_NAME}
+		AND s.SMT = #{SMT}
+		AND s.YEAR = #{YEAR}
+		AND SUBSTRING(s.SUB_CODE, 8, 1) = #{STU_GRADE}
+
+
+	</select>
+
+</mapper>
