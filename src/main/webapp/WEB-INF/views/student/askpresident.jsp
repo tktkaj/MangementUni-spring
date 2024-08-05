@@ -76,6 +76,9 @@
 h1 {
 	width: 700px;
 }
+.container{
+margin: 190px auto 100px auto;
+}
 </style>
 </head>
 
