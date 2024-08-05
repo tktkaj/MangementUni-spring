@@ -27,7 +27,7 @@
             <section class="video-section">
                 <div class="video-wrapper">
                     <video controls>
-                        <source src="1교시.mp4" type="video/mp4">
+                        <source src="${path}/resources/video/1교시.mp4" type="video/mp4">
                        
                     </video>
                 </div>
