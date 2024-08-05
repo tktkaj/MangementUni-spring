@@ -17,7 +17,7 @@
 	<main>
 		<div class="main-content">
 			<div class="filters">
-				<label for="professor-select" class="minititle">교수진</label>
+				<label for="professor-select" class="minititle"><h2 style="margin: 0;">교수진</h2></label>
 				<form action="professor" method="get">
 					<select name="department" id="professor-select"
 						onchange="this.form.submit()">
