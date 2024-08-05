@@ -89,5 +89,10 @@ public class StudentController {
 	public String objectionWrite() {
 		return "objection/objectionWrite";
 	}
+	
+	@RequestMapping("/courseregistrationpage")
+	public String courseregistrationpage() {
+		return "student/courseregistrationpage";
+	}
 
 }
