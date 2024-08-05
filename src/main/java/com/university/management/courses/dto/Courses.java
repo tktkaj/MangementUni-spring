@@ -16,6 +16,6 @@ public class Courses {
 	private String SUB_END_TIME; // 끝나는 교시
 	private String CO_CONTENT; //강의 계획서 내용
 	private int SMT;  //학기
-	private String YEAR; //학년도
+	private int YEAR; //학년도
 	private int SUB_POINT; //학점
 }
