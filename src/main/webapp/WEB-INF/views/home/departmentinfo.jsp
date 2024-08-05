@@ -21,7 +21,7 @@
 <!-- Main Content -->
 <div class="main-content">
     <div class="filters">
-        <label for="professor-select" class="minititle">학부/학과</label>
+        <label for="professor-select" class="minititle"><h2><strong>학과 소개</strong></h2></label>
         <form action="${path}/department" method="post">
             <select name="department" id="professor-select"
                     onchange="this.form.submit()">

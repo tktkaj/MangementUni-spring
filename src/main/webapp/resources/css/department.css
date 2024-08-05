@@ -45,10 +45,11 @@ hr {
 
 .professor-card {
     display: flex;
-    background-color: RGB(231, 240, 254);
+    background-color: white;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /*border: 1px solid #ccc;*/
+    /*border-radius: 5px;*/
     margin: 10px 0;
     align-items: center;
     width: 100%;
