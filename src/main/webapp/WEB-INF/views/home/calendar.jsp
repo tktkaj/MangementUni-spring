@@ -9,10 +9,19 @@
     <style>
         body {
             width: 1200px;
-            margin: 0 auto;
-            margin-top: 50px;
-            margin-bottom: 50px;
+            
         }
+        .container1 {
+	background-color: #fff;
+	
+	
+	width: 1200px;
+	text-align: center;
+	margin: 190px auto 100px auto;
+	
+	
+	
+}
         table {
             width: 100%;
             border-collapse: collapse;
@@ -40,7 +49,7 @@
 </head>
 <body>
     <jsp:include page="../common/header.jsp"/>
-    
+     <div class="container1">
     <h1>학사일정</h1>
     <hr>
     <div class="dropdown">
@@ -181,7 +190,7 @@
                 <tr>
                     <td rowspan="3">7월</td>
                     <td>1(월)~31(수)</td>
-                    <td>제2학기 정의장학금(면학 및 미래로) 1차 신청</td>
+                    <td>제2학기 정의장학금 1차 신청</td>
                 </tr>
                 <tr>
                     <td>19(금)</td>
@@ -267,7 +276,7 @@
                 </tr>
                 <tr>
                     <td>2(목)~31(금)</td>
-                    <td>제2학기 정의장학금(면학 및 미래로) 2차 신청</td>
+                    <td>제2학기 정의장학금 2차 신청</td>
                 </tr>
                 <tr>
                     <td>3(목)</td>
@@ -330,7 +339,7 @@
                 </tr>
                 <tr>
                     <td>2(목)~31(금)</td>
-                    <td>제1학기 정의장학금(면학 및 미래로) 1차 신청</td>
+                    <td>제1학기 정의장학금 1차 신청</td>
                 </tr>
                 <tr>
                     <td>17(금)</td>
@@ -372,7 +381,8 @@
             </tbody>
         </table>
     </div>
-
+</div>
+</body>
     <script>
         function showSemester() {
             var semester = document.getElementById("semester").value;
@@ -385,6 +395,5 @@
             }
         }
     </script>
-</body>
 </html>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
