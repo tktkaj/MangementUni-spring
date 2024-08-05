@@ -25,35 +25,7 @@ public class StudentController {
 		return "student/askpresident";
 	}
 
-	@RequestMapping("/studentinfo")
-	public String studentinfo(Model  model) {
-		System.out.println("studentinfo실행");
-		
-		
-		  // 세션에서 loginname을 가져옴
-		Integer loginNo = (Integer) session.getAttribute("studentno");
-        System.out.println(loginNo);
-        // 세션에 loginname이 저장되어 있는지 확인
-        if (loginNo != null) {
-        	System.out.println("실행");
-            // 모델에 loginName을 추가
-        List<Student> studentInfo = stuservice.stuInfoSelect(loginNo);
-        
-        if(studentInfo.get(0).getSCH_DISCOUNT()==null) {
-       studentInfo.get(0).setSCH_DISCOUNT("해당없음");
-        }
-        	
-            System.out.println(studentInfo);
-            model.addAttribute("studentInfo", studentInfo);
-           
-        } else {
-          	System.out.println("노실행");
-            model.addAttribute("msg", "로그인 정보가 없습니다.");
-        	return "login/login";
-        }
-
-		return "student/studentinfo";
-	}
+	
 	
 	@RequestMapping("/studentstatus")
 	public String studentstatus(Model  model) {
@@ -73,6 +45,9 @@ public class StudentController {
       if(studentInfo.get(0).getSCH_DISCOUNT()==null) {
      studentInfo.get(0).setSCH_DISCOUNT("해당없음");
       }
+      if(studentInfo.get(0).getSCH_NAME()==null) {
+    	     studentInfo.get(0).setSCH_DISCOUNT("해당없음");
+    	      }
      
       // 주민등록번호에서 앞자리 부분 추출
       String str = studentInfo.get(0).getSTU_JUMIN();

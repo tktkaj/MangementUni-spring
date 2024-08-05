@@ -22,16 +22,30 @@ public class Student {
 	private String SCH_DISCOUNT; // 장학금
 	private String YEAR; // 학년도
 	private int SMT; // 학기
-	private String R_STATUS; // 상태
-	
+	private String R_STATUS; // 상태	
+    private String SCH_NAME;// 장학금 이름
 	public Student() {
 		super();
 	}
 
+
+
+	public String getSCH_NAME() {
+		return SCH_NAME;
+	}
+
+
+
+	public void setSCH_NAME(String sCH_NAME) {
+		SCH_NAME = sCH_NAME;
+	}
+
+
+
 	public Student(int sTU_NO, String dEPT_CODE, String dEPT_NAME, String sTU_NAME, String sTU_PHONE,
 			String sTU_ADDRESS, String sTU_JUMIN, String sTU_EMAIL, String sTU_IMG, String sTU_ADMISSION_DATE,
 			String sTU_ADMISSION, String sTU_GRADE, String sTU_PASSWORD, String sTU_BK_NUM, String sCH_DISCOUNT,
-			String yEAR, int sMT, String r_STATUS) {
+			String yEAR, int sMT, String r_STATUS, String sCH_NAME) {
 		super();
 		STU_NO = sTU_NO;
 		DEPT_CODE = dEPT_CODE;
@@ -51,7 +65,10 @@ public class Student {
 		YEAR = yEAR;
 		SMT = sMT;
 		R_STATUS = r_STATUS;
+		SCH_NAME = sCH_NAME;
 	}
+
+
 
 	public int getSTU_NO() {
 		return STU_NO;
