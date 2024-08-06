@@ -13,7 +13,7 @@
 <link
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 	rel="stylesheet">
-<link href="${path}/resources/css/courses.css" rel="stylesheet" />
+
 <style>
 .card-text {
 	margin-bottom: 0.25rem;
@@ -34,12 +34,16 @@
 	z-index: 2;
 }
 
+<<<<<<< HEAD
 .dragon-img {
 	width: 2.5rem;
 	height: auto;
 	position: absolute;
 	right: 2px;
 }
+=======
+
+>>>>>>> master
 
 .barcode-img {
 	width: auto;
@@ -89,18 +93,25 @@ img {
 	margin: 0;
 	padding: 0;
 }
+<<<<<<< HEAD
+=======
+ body{
+ width:100%;
+ }
+>>>>>>> master
 </style>
 </head>
-<jsp:include page="../common/header.jsp" />
+
 <body>
+	<jsp:include page="../common/header.jsp" />
 	<div id="menuBar">
 		<div id="sub-menuBar">
 			<ul id="menulist">
 				<li><a href="studentstatus">학적 조회</a></li>
-				<li><a href="studentinfo">학생 정보 조회</a></li>
 				<li><a href="passwordchange">학생 정보 변경</a></li>
 				<li><a href="objection">성적 조회</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
+				<li><a href="myCoursesPage">수강신청 페이지</a></li>
 				<li><a href="askpresident">총장님께 바랍니다</a></li>
 				<li><a href="idcard">학생증</a></li>
 			</ul>
@@ -142,6 +153,7 @@ img {
 							</div>
 							<img src="${path}/resources/img//바코드.png"
 								class="img-fluid rounded-start barcode-img" alt="설명">
+
 						</div>
 					</div>
 				</div>
@@ -157,5 +169,5 @@ img {
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-<jsp:include page="../common/footer.jsp" />
 </html>
+<jsp:include page="../common/footer.jsp" />

@@ -43,7 +43,7 @@
 
 .container1 {
 	width: 1200px;
-	margin: 190px auto 100px auto;
+	margin: 150px auto 100px auto;
 }
 
 .sch_smit {

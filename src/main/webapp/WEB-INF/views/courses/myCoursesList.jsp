@@ -71,7 +71,7 @@
 						<p id="online-title">1주차(2022-02-28 ~ 2022-03-01)</p>
 						<div id="onlien-cont">
 							<p>
-								<a href="#"><span class="material-symbols-outlined icon">play_circle
+								<a href="online"><span class="material-symbols-outlined icon">play_circle
 								</span> 1. 동영상 강의 제목</a>
 							</p>
 							<p>
