@@ -34,6 +34,17 @@
 	z-index: 2;
 }
 
+
+
+.dragon-img {
+	width: 2.5rem;
+	height: auto;
+	position: absolute;
+	right: 2px;
+}
+
+
+
 .barcode-img {
 	width: auto;
 	height: 340px;
@@ -83,12 +94,18 @@ img {
 	padding: 0;
 }
 
+
 .d-flex-center {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 70vh;
 }
+
+ body{
+ width:100%;
+ }
+
 </style>
 </head>
 <jsp:include page="../common/header.jsp" />
@@ -106,6 +123,7 @@ img {
 			</ul>
 		</div>
 	</div>
+
 	<div class="container d-flex-center">
 		<!-- 카드 -->
 		<div class="card mb-3" style="max-width: 540px;">
@@ -139,6 +157,7 @@ img {
 							</div>
 							<img src="${path}/resources/img//바코드.png"
 								class="img-fluid rounded-start barcode-img" alt="설명">
+
 						</div>
 					</div>
 				</div>
@@ -155,4 +174,6 @@ img {
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 <jsp:include page="../common/footer.jsp" />
+
 </html>
+

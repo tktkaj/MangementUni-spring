@@ -19,7 +19,7 @@
 				<li><a href="#">공지사항 관리</a></li>
 				<li><a href="scholarlist">장학금 관리</a></li>
 				<li><a href="objectionlist">성적 관리</a></li>
-				<li><a href="">학사 일정</a></li>
+				<li><a href="calendar">학사 일정</a></li>
 			</ul>
 		</div>
 	</div>
