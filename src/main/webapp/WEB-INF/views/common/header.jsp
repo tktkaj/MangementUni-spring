@@ -58,7 +58,7 @@
                             </ul>
                         </div>
                         <div class="col col-1">
-                            <button id="login-btn" onclick="location.href='logout'">LOGOUT</button>
+                            <button id="login-btn" onclick="location.href='logout'" style="color: white">LOGOUT</button>
                         </div>
                     </c:if>
                 </div>
