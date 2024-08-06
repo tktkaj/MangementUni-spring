@@ -21,13 +21,13 @@
 				<li><a href="passwordchange">학생 정보 변경</a></li>
 				<li><a href="objection">성적 조회</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
+				<li><a href="courseregistrationpage">수강신청 페이지</a></li>
 				<li><a href="askpresident">총장님께 바랍니다</a></li>
-				<li><a href="#">시간표</a></li>
-				<li><a href="#">학생증</a></li>
+				<li><a href="idcard">학생증</a></li>
 			</ul>
 		</div>
 	</div>
-	<div class="container" style="height: 500px;">
+	<div class="container" style="height: 1000px; margin-top:100px;">
 
 		<div id="content">
 
@@ -40,7 +40,7 @@
 
 				<!--  학적 카드  -->
 				<div id="statuscard">
-					<div class="card" style="background-color: #e3f8ff;">
+					<div class="card" >
 						<div class="info">
 							<div class="card-body">
 								<table style="text-align: left;">
@@ -161,5 +161,6 @@
 			</div>
 		</div>
 	</div>
+	<jsp:include page="../common/footer.jsp" />
 </body>
 </html>

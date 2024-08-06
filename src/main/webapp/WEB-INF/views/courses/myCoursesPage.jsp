@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page session="false"%>
@@ -8,6 +9,7 @@
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <html>
 <head>
+
 <link href="${path}/resources/css/courses.css" rel="stylesheet" />
 </head>
 <body>
@@ -19,13 +21,13 @@
 				<li><a href="passwordchange">학생 정보 변경</a></li>
 				<li><a href="objection">성적 조회</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
+				<li><a href="courseregistrationpage">수강신청 페이지</a></li>
 				<li><a href="askpresident">총장님께 바랍니다</a></li>
 				<li><a href="idcard">학생증</a></li>
 			</ul>
 		</div>
 	</div>
-	<div class="container" style="height: 500px;">
-
+	<div class="container" style="height: 650px; margin-top:100px;">
 		<div id="content">
 
 			<!-- title view -->
@@ -46,6 +48,7 @@
 								<th scope="col">학과</th>
 								<th scope="col">강좌명</th>
 								<th scope="col">교수명</th>
+<<<<<<< HEAD
 							
 							</tr>
 						</thead>
@@ -60,6 +63,30 @@
 									<td>${list.PROF_NAME}</td>
 								</tr>
 							</c:forEach>
+=======
+							</tr>
+						</thead>
+						<tbody class="table-group-divider">
+							<tr>
+								<th scope="row">1</th>
+								<td>Mark</td>
+								<td><a href="myCoursesList">Otto</a></td>
+								<td>@mdo</td>
+
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>Jacob</td>
+								<td>Thornton</td>
+								<td>@mdo</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>@twitter</td>
+								<td>@twitter</td>
+								<td>@twitter</td>
+							</tr>
+>>>>>>> master
 						</tbody>
 					</table>
 				</div>

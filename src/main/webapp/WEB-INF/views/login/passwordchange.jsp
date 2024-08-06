@@ -11,8 +11,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>비밀번호 변경</title>
-<link rel="stylesheet" href="main.css">
-<link href="${path}/resources/css/courses.css" rel="stylesheet" />
+
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -34,7 +33,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100%;
+	margin-top: 20px;
 }
 
 .custom {
@@ -57,6 +56,17 @@
 	cursor: pointer;
 	width: 300px;
 }
+
+.containerpass {
+	height: 100%;
+	margin-top: 50px;
+}
+
+header, footer {
+	padding: 20px 0;
+}
+
+
 </style>
 </head>
 
@@ -69,12 +79,13 @@
 				<li><a href="passwordchange">학생 정보 변경</a></li>
 				<li><a href="objection">성적 조회</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
+				<li><a href="courseregistrationpage">수강신청 페이지</a></li>
 				<li><a href="askpresident">총장님께 바랍니다</a></li>
 				<li><a href="idcard">학생증</a></li>
 			</ul>
 		</div>
 	</div>
-	<div class="container" style="height: 650px;">
+	<div class="container" style="height: 750px; margin-top:100px;">
 		<div id="content">
 			<!-- title view -->
 			<div id="pageTitle">
@@ -85,7 +96,6 @@
 				<div class="input-background">
 					<div class="container text-center">
 						<div class="row row-cols-1">
-
 							<div class="input-group mb-3">
 								<span class="input-group-text" id="basic-addon1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 								<input type="text" class="form-control"
@@ -133,10 +143,13 @@
 					</div>
 				</div>
 			</div>
-			<div style="height: 50px;"></div>
+
 		</div>
 	</div>
+
+	<footer>
+		<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+	</footer>
 </body>
 
 </html>
-<jsp:include page="/WEB-INF/views/common/footer.jsp" />
