@@ -3,11 +3,19 @@
 <mapper
 	namespace="com.university.management.courses.mapper.CoursesMapper">
 
+<select id="coursesList" parameterType="String" resultType="com.university.management.courses.dto.CoursesList">
+
+select * from COURSES where STU_NO=${loginNo}
+
+</select>
+
+
+
 	<select id="coursesSelect"
 		parameterType="com.university.management.courseregistrationpage.dto.Courseregistrationpage"
 		resultType="com.university.management.courses.dto.Courses">
 
-		SELECT s.SUB_NAME,p.PROF_NAME,s.CLASS_CAP,s.SUB_ST_TIME,s.SUB_END_TIME ,s.CO_CONTENT,s.SMT,s.YEAR,s.SUB_POINT
+		SELECT s.SUB_CODE, s.SUB_NAME,p.PROF_NAME,s.CLASS_CAP,s.SUB_ST_TIME,s.SUB_END_TIME ,s.CO_CONTENT,s.SMT,s.YEAR,s.SUB_POINT,s.SMT,s.YEAR,s.SUB_STATUS
 		FROM subject s
 		JOIN department d ON s.dept_code = d.dept_code
 		JOIN PROFESSOR p ON p.PROF_NO = s.prof_no
@@ -18,5 +26,52 @@
 
 
 	</select>
+
+	<insert id="courInsert"
+		parameterType="com.university.management.courses.dto.Courses"
+		>
+  INSERT INTO UNIVERSITY.COURSES (
+        STU_NO,
+        YEAR,
+        SMT,
+        DEPT_NAME,
+        PROF_NAME,
+        SUB_NAME,
+        CO_CONTENT
+    ) VALUES (
+        #{STU_NO},
+        #{YEAR},
+        #{SMT},
+        #{DEPT_NAME},
+        #{PROF_NAME},
+        #{SUB_NAME},
+        #{CO_CONTENT}
+    )
+	
+
+
+	</insert>
+
+
+
+<update id="coustatusupdate" parameterType="String">
+
+   UPDATE subject
+    SET sub_status = CASE
+      WHEN sub_status = 'n' THEN 'y'
+      WHEN sub_status = 'y' THEN 'n'
+      ELSE sub_status
+    END
+    WHERE sub_code = #{sub_code}
+
+</update>
+
+<delete id="courdelete" parameterType="String">
+
+delete from COURSES where sub_name=#{sub_name}
+
+
+</delete>
+
 
 </mapper>
