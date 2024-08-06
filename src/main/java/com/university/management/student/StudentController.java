@@ -53,6 +53,9 @@ public class StudentController {
 			if (studentInfo.get(0).getSCH_NAME() == null) {
 				studentInfo.get(0).setSCH_DISCOUNT("해당없음");
 			}
+			if (studentInfo.get(0).getR_STATUS() == null) {
+				studentInfo.get(0).setR_STATUS("재학");
+			}
 
 			// 주민등록번호에서 앞자리 부분 추출
 			String str = studentInfo.get(0).getSTU_JUMIN();
@@ -74,10 +77,10 @@ public class StudentController {
 				year = "19" + year;
 			}
 			studentInfo.get(0).setSTU_JUMIN(year + "-" + month + "-" + day);
-
+		    
 			System.out.println(studentInfo);
 			model.addAttribute("studentInfo", studentInfo);
-
+			model.addAttribute("status",studentInfo.get(0).getR_STATUS());
 		} else {
 			System.out.println("노실행");
 			model.addAttribute("msg", "로그인 정보가 없습니다.");
