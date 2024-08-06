@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
-<jsp:include page="/WEB-INF/views/common/header.jsp" />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +20,7 @@
 
 </head>
 <body>
+	<jsp:include page="../common/header.jsp" />
 	<div id="menuBar">
 		<div id="sub-menuBar">
 			<ul id="menulist">
@@ -27,13 +28,13 @@
 				<li><a href="passwordchange">학생 정보 변경</a></li>
 				<li><a href="objection">성적 조회</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
+				<li><a href="myCoursesPage">수강신청 페이지</a></li>
 				<li><a href="askpresident">총장님께 바랍니다</a></li>
 				<li><a href="idcard">학생증</a></li>
 			</ul>
 		</div>
 	</div>
-
-	<div class="container">
+	<div class="container" style="height: 1000px; margin-top: 100px;">
 		<div id="content">
 			<!-- title view -->
 			<div id="pageTitle">

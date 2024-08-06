@@ -40,7 +40,7 @@
 
 				<!--  학적 카드  -->
 				<div id="statuscard">
-					<div class="card" style="background-color: #e3f8ff;">
+					<div class="card" >
 						<div class="info">
 							<div class="card-body">
 								<table style="text-align: left;">

@@ -34,16 +34,16 @@
 	z-index: 2;
 }
 
-<<<<<<< HEAD
+
+
 .dragon-img {
 	width: 2.5rem;
 	height: auto;
 	position: absolute;
 	right: 2px;
 }
-=======
 
->>>>>>> master
+
 
 .barcode-img {
 	width: auto;
@@ -57,7 +57,7 @@
 	display: flex;
 	align-items: center;
 	position: relative;
-	z-index: 2;
+	z-index: 99;
 	margin-top: 15px;
 	transform: translate(25%, -50%);
 }
@@ -93,12 +93,18 @@ img {
 	margin: 0;
 	padding: 0;
 }
-<<<<<<< HEAD
-=======
+
+
+.로고 {
+		width: 80px;
+	height: 20px;
+	
+}
+
  body{
  width:100%;
  }
->>>>>>> master
+
 </style>
 </head>
 
@@ -117,42 +123,46 @@ img {
 			</ul>
 		</div>
 	</div>
-	<div class="container" style="margin: 100px;">
-		<!-- 카드 -->
-		<div class="card mb-3" style="max-width: 540px;">
-			<div class="background">
-				<div class="row no-gutters">
-					<div class="col-md-4">
-						<img src="${path}/resources/img/유제욱.jpg"
-							class="img-fluid rounded-start" alt="설명">
-					</div>
-					<div class="col-md-6">
-						<div class="card-body">
-							<div class="sin">
-								<p class="card-text">유제욱</p>
-								<p class="card-text">20240730</p>
-								<p class="card-text" style="font-size: 18px;">화학과</p>
+
+	<div class="container" style="height: 550px; margin-top: 100px;">
+		<div id="content">
+			<!-- title view -->
+			<div id="pageTitle">
+				<h1>학생증</h1>
+			</div>
+			<!-- 카드 -->
+			<div class="card mb-3" style="max-width: 540px;">
+
+				<div class="background">
+					<div class="row no-gutters">
+						<div class="col-md-4">
+							<img src="${path}/resources/img/유제욱.jpg"
+								class="img-fluid rounded-start" alt="설명">
+						</div>
+						<div class="col-md-6">
+							<div class="card-body">
+								<div class="sin">
+									<p class="card-text">유제욱</p>
+									<p class="card-text">20240730</p>
+									<p class="card-text">화학과</p>
+								</div>
+								<div class="sin1">
+									<p class="card-text">MONTH/YEAR</p>
+									<p class="card-text">04/30</p>
+								</div>
+								<div class="title-container">
+									
+									<h5 class="card-title mb-1">미르대학교학생처장</h5>
+									<%-- <img src="${path}/resources/img/logo2.png" class="로고" alt="설명"> --%>
+								</div>
+								<div class="text-container">
+									<p class="card-text mb-0">
+										<small class="text-muted">mirr university</small>
+									</p>
+								</div>
+								<img src="${path}/resources/img//바코드.png"
+									class="img-fluid rounded-start barcode-img" alt="설명">
 							</div>
-							<div class="sin1">
-								<p class="card-text" style="font-size: 12px;">MONTH/YEAR</p>
-								<p class="card-text" style="font-size: 12px;">04/30</p>
-							</div>
-							<div class="title-container">
-								<h5 class="card-title mb-0">
-									<b>미르대학교 총장</b>
-								</h5>
-								<%-- <img src="${path}/resources/img/dragon-312035_640.png"
-									class="img-fluid rounded-start dragon-img" alt="설명"> --%>
-							</div>
-							<div class="text-container">
-								<!-- 								<p class="card-text mb-0">
-									<small class="text-muted">Mir University</small>
-								</p> -->
-								<img src="${path}/resources/img/logo2.png"
-									class="img-fluid logo2-img" alt="설명">
-							</div>
-							<img src="${path}/resources/img//바코드.png"
-								class="img-fluid rounded-start barcode-img" alt="설명">
 
 						</div>
 					</div>
@@ -160,7 +170,6 @@ img {
 			</div>
 		</div>
 	</div>
-
 
 	<!-- Bootstrap JS and dependencies -->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
