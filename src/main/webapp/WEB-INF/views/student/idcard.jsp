@@ -26,20 +26,31 @@
 	gap: 10px;
 }
 
-.logo-img {
-	width: 2.5rem;
-	height: 2rem;
-	margin-left: 0.5rem;
+.logo2-img {
+	width: 110px;
+	height: 100px;
+	margin-left: 220px;
 	position: relative;
 	z-index: 2;
 }
+
+
+
+.dragon-img {
+	width: 2.5rem;
+	height: auto;
+	position: absolute;
+	right: 2px;
+}
+
+
 
 .barcode-img {
 	width: auto;
 	height: 340px;
 	position: absolute;
 	margin-left: 170px;
-	margin-top: -290px;
+	margin-top: -230px;
 }
 
 .title-container {
@@ -48,6 +59,7 @@
 	position: relative;
 	z-index: 99;
 	margin-top: 15px;
+	transform: translate(25%, -50%);
 }
 
 .background {
@@ -82,11 +94,17 @@ img {
 	padding: 0;
 }
 
+
 .로고 {
 		width: 80px;
 	height: 20px;
 	
 }
+
+ body{
+ width:100%;
+ }
+
 </style>
 </head>
 
@@ -105,6 +123,7 @@ img {
 			</ul>
 		</div>
 	</div>
+
 	<div class="container" style="height: 550px; margin-top: 100px;">
 		<div id="content">
 			<!-- title view -->
@@ -144,6 +163,7 @@ img {
 								<img src="${path}/resources/img//바코드.png"
 									class="img-fluid rounded-start barcode-img" alt="설명">
 							</div>
+
 						</div>
 					</div>
 				</div>
@@ -160,4 +180,3 @@ img {
 </body>
 </html>
 <jsp:include page="../common/footer.jsp" />
-ㄴ
