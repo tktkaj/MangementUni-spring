@@ -62,7 +62,7 @@
 										</tr>
 										<tr>
 											<th>학적 상태</th>
-											<td>미정</td>
+											<td>${status}</td>
 											<th>이메일</th>
 											<td>${stuinfo.STU_EMAIL}</td>
 										</tr>
