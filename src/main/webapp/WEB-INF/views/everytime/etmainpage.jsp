@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="kr">
 
@@ -11,24 +10,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>everytimemain</title>
+
+    <link href="${path}/resources/css/courses.css" rel="stylesheet" />
+    <link href="${path}/resources/css/everytime.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="${path}/resources/css/everytime.css" rel="stylesheet"/> 
+
+    <style>
+        
+    </style>
 </head>
 
 <body>
-   <jsp:include page="../common/header.jsp" />
+    <jsp:include page="/Everytime/header.jsp" />
     <div id="menuBar">
         <div id="sub-menuBar" style="height: 150px;">
             <ul id="menulist">
-                <li><a href="etmainpage">자유게시판</a></li>
-                <li><a href="etmypage">내글 보기</a></li>
-                <li><a href="ethot">HOT게시판</a></li>
+                <li><a href="passwordchange">자유게시판</a></li>
+                <li><a href="#">내글 보기</a></li>
+                <li><a href="management">HOT게시판</a></li>
             </ul>
         </div>
     </div>
-    <div class="container" >
+    <div class="container" style="height: 500px;">
         <div id="content">
+            <!-- title view -->
             <div class="list-group">
                 <div class="dropdown-container">
                     <div class="dropdown">
@@ -44,28 +50,62 @@
                 </div>
                 <input type="text" id="Box" class="box" value="&nbsp;자유게시판">
             </div>
+
             <div class="input-group mb-0" style="margin-top: 5px;">
                 <input type="text" class="form-control" placeholder="새 게시글을 작성해주세요" aria-label="Recipient's username"
                     aria-describedby="button-addon2">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="location.href='etnew'">글작성</button>
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">글작성</button>
             </div>
+
             <div class="list-group">
-                <a href="etdetailview" class="list-group-item list-group-item-action list-group-item-large" aria-current="true"
+                <a href="#" class="list-group-item list-group-item-action list-group-item-large" aria-current="true"
                     style="margin-top: 5px;">제목이었던 것</a>
-                <a href="#"
-                    class="list-group-item list-group-item-action list-group-item-small disabled">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내용이었던
-                    것 내용이었던 것 내용이었던 것 내용이었던 것</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-small disabled">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내용이었던 것 내용이었던 것 내용이었던 것 내용이었던 것
+                </a>
                 <a href="#" class="list-group-item list-group-item-action list-group-item-small2 disabled">
                     <div style="display: flex; align-items: center;">
                         <div style="padding: 1px; margin-right: 5px; font-size: 15px;">1초전</div>
-                        <img src="${path}/resources/img/msg.png" width="15" height="15">
+                        <img src="msg.png" width="15" height="15">
                         <div style="padding: 1px; margin-right: 5px; font-size: 15px;">20</div>
                     </div>
                 </a>
             </div>
+
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action list-group-item-large"
+                    aria-current="true">제목이었던 것</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-small disabled">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내용이었던 것 내용이었던 것 내용이었던 것 내용이었던 것
+                </a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-small2 disabled">
+                    <div style="display: flex; align-items: center;">
+                        <div style="padding: 1px; margin-right: 5px; font-size: 15px;">1초전</div>
+                        <img src="msg.png" width="15" height="15">
+                        <div style="padding: 1px; margin-right: 5px; font-size: 15px;">20</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action list-group-item-large"
+                    aria-current="true">제목이었던 것</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-small disabled">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내용이었던 것 내용이었던 것 내용이었던 것 내용이었던 것
+                </a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-small2 disabled">
+                    <div style="display: flex; align-items: center;">
+                        <div style="padding: 1px; margin-right: 5px; font-size: 15px;">1초전</div>
+                        <img src="msg.png" width="15" height="15">
+                        <div style="padding: 1px; margin-right: 5px; font-size: 15px;">20</div>
+                    </div>
+                </a>
+            </div>
+
             <button type="button" class="btn1">▼&nbsp;더보기</button>
         </div>
     </div>
+
     <script>
         function clearPlaceholder() {
             var searchBox = document.getElementById('searchBox');
@@ -84,7 +124,8 @@
         }
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <jsp:include page="../common/footer.jsp" />
 </body>
 
 </html>
+
+<jsp:include page="/Everytime/footer.jsp" />
