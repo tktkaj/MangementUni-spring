@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Courses {
-
+    private int  STU_NO;//학번
+    private String SUB_CODE; //과목코드
 	private String DEPT_NAME; //학과이름
 	private String SUB_NAME; //과목이름
 	private String PROF_NAME; //교수이름
@@ -18,4 +19,5 @@ public class Courses {
 	private int SMT;  //학기
 	private int YEAR; //학년도
 	private int SUB_POINT; //학점
+	private String SUB_STATUS; //상태값 (y,n)
 }
