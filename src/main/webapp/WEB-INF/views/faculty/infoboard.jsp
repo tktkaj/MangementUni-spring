@@ -59,13 +59,14 @@ a {
 	color: black;
 }
 </style>
+<title>공지사항</title>
 </head>
 <body>
 	<!-- 만약 아무것도 없다면 checked를 타이틀로 지정하기 위해서 if문을 작성한 것이다.  -->
-	<%-- 	<c:set var="searchType" value="${param.searchType}" />
+	<c:set var="searchType" value="${param.searchType}" />
 	<c:if test="${empty searchType }">
 		<c:set var="searchType" value="${'title'}" />
-	</c:if> --%>
+	</c:if>
 
 	<!-- 없는 게시글을 상세 페이지로 이동하기 위해 클릭할 때, alert창 띄우기 위해 코드 작성 -->
 	<c:if test="${not empty msg }">
@@ -75,16 +76,18 @@ a {
 		<c:remove var=" msg" />
 	</c:if>
 
-	<div id="menuBar">
-		<div id="sub-menubar">
-			<ul id="menulist">
-				<li><a href="infoboard">공지사항 관리</a></li>
-				<li><a href="scholarList">장학금 관리</a></li>
-				<li><a href="objection">성적 관리</a></li>
-				<li><a href="calendar">학사 일정</a></li>
-			</ul>
+	<c:if test="${login == 'Employee'}">
+		<div id="menuBar">
+			<div id="sub-menubar">
+				<ul id="menulist">
+					<li><a href="infoboard">공지사항 관리</a></li>
+					<li><a href="scholarList">장학금 관리</a></li>
+					<li><a href="objectionlist">성적 관리</a></li>
+					<li><a href="calendar">학사 일정</a></li>
+				</ul>
+			</div>
 		</div>
-	</div>
+	</c:if>
 
 
 	<div class="container1">
@@ -100,14 +103,15 @@ a {
 			<div id="pageContent">
 
 				<!-- 검색창 시작 -->
-				<form action="${path}/board/list" method="get">
+				<form action="${path}/board/infoboard" method="get">
 					<div style="text-align: center;">
 						<label> <input type="radio" name="searchType"
-							value="title" ${searchType=='title' ? 'checked':''}> 제목
-						</label> <label> <input type="radio" name="searchType"
-							value="content" ${searchType=='content' ? 'checked':''}>
-							내용
-						</label> <span class="blue_window"> <input type="text"
+							value="title" ${searchType=='title' ? 'checked':''}> 제목</label> 
+						<label> <input type="radio" name="searchType"
+							value="writer" ${searchType=='content' ? 'checked':''}>
+							작성자
+						</label> <span class="blue_window"> 
+						<input type="text"
 							id="searchValue" name="searchValue" class="input_text"
 							value="${param.searchValue}" />
 						</span>
@@ -123,8 +127,8 @@ a {
 							<tr>
 								<th scope="col"></th>
 								<th scope="col">제목</th>
-								<th scope="col">작성일</th>
 								<th scope="col">작성자</th>
+								<th scope="col">작성일</th>
 								<th scope="col">조회수</th>
 							</tr>
 						</thead>
@@ -152,11 +156,11 @@ a {
 
 						</tbody>
 					</table>
-					<c:if test="${not empty login}">
+					<c:if test="${login == 'Employee'}">
 						<button onclick="location.href='writeinfo'"
-						style="float: right; width: 80px; background-color: #024C86; color: white; border:none; padding: 5px; border-radius: 10px" >글작성</button>
+							style="float: right; width: 80px; background-color: #024C86; color: white; border: none; padding: 5px; border-radius: 10px">글작성</button>
 					</c:if>
-					
+
 				</div>
 				<!-- table-responsive div -->
 			</div>

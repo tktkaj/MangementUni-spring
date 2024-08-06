@@ -24,7 +24,7 @@
 			<ul id="menulist">
 				<li><a href="infoboard">공지사항 관리</a></li>
 				<li><a href="scholarList">장학금 관리</a></li>
-				<li><a href="objection">성적 관리</a></li>
+				<li><a href="objectionlist">성적 관리</a></li>
 				<li><a href="calendar">학사 일정</a></li>
 			</ul>
 		</div>
@@ -63,7 +63,7 @@
 						<th>첨부파일</th>
 						<td><c:if test="${ !empty board.originalFilename }">
 								<a
-									href="javascript:fileDownload('${board.originalFilename}', '${board.renamedFilename}')">
+									href="javascript:fileDownload('${board.originalFilename}', '${board.originalFilename}')">
 									<img src="${path}/resources/images/file.png" width="20"
 									height="20" /> <c:out value="${board.originalFilename}"></c:out>
 								</a>
