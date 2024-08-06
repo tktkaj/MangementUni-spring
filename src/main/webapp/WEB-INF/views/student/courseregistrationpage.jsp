@@ -21,6 +21,7 @@
 				<li><a href="studentstatus">학적 관리</a></li>
 				<li><a href="objection">성적 관리</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
+				<li><a href="courseregistrationpage">수강신청 페이지</a></li>
 				<li><a href="askpresident">총장님께 바랍니다</a></li>
 				<li><a href="idcard">학생증</a></li>
 			</ul>
