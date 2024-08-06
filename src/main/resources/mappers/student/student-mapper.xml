@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper
+	namespace="com.university.management.student.mapper.StudentMapper">
+
+	<select id="stuInfoSelect" parameterType="int"
+		resultType="com.university.management.student.dto.Student">
+
+	SELECT
+	s.STU_NO ,
+	d.DEPT_NAME ,
+	s.STU_NAME ,
+	s.STU_PHONE ,
+	ss.R_STATUS ,
+	s.STU_GRADE ,
+	s.STU_BK_NUM ,
+	s.STU_JUMIN,
+	s.STU_EMAIL,
+	s.STU_ADMISSION,
+	s.STU_ADDRESS,
+	s.STU_ADMISSION_DATE ,
+	COALESCE(sch.SCH_DISCOUNT, '없음')
+	FROM
+	university.STUDENT s
+	JOIN
+	university.DEPARTMENT d ON s.DEPT_CODE =
+	d.DEPT_CODE
+	LEFT JOIN
+	university.STUDENT_STATUS ss ON s.STU_NO =
+	ss.STU_NO
+	AND ss.YEAR = YEAR(CURDATE())
+	AND ss.SMT = MONTH(CURDATE())
+	DIV 6 + 1
+	LEFT JOIN
+	university.SCHOLARLIST sl ON s.STU_NO = sl.STU_NO
+	LEFT JOIN
+	university.SCHOLARSHIP sch ON sl.SCH_NO = sch.SCH_NO
+	WHERE
+	s.STU_NO = '${loginNo}'
+	</select>
+
+
+
+</mapper>
