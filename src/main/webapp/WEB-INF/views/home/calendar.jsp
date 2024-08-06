@@ -12,7 +12,7 @@
 	background-color: #fff;
 	width: 1200px;
 	text-align: center;
-	margin: 190px auto 100px auto;
+	margin: 100px auto 100px auto;
 }
 
 th, td {
@@ -44,10 +44,14 @@ th {
 </style>
 </head>
 <body>
-	<jsp:include page="../common/header.jsp" />
+	<div>  <jsp:include page="../common/header.jsp"/>
+      <h2 style="margin-top: 150px; text-align: center">
+          <strong>학사 일정</strong>
+      </h2>
+      <div style="width: 70px; height: 5px; background-color: #024C86; margin:0px auto;"></div>
+  </div>
 	<div class="container1">
-		<h2><strong>학사 일정</strong></h2>
-		<div style="width: 70px; height: 5px; background-color: #024C86; margin:0px auto; margin-bottom: 20px;"></div>
+		
 		<div class="dropdown">
 			<select id="semester" onchange="showSemester()">
 				<option value="1">2024년 1학기</option>

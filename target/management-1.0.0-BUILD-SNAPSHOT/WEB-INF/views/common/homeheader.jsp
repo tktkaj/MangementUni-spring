@@ -68,7 +68,7 @@
                 <div class="row">
                     <div class="col col-12">
                         <ul>
-                            <li class="divide"><a href="ideology" id="ideo">학교이념</a></li>
+                            <li class="divide"><a href="ideology" id="ideo" style="margin-left: 40px">학교 이념</a></li>
                             <li class="divide"><a href="department" id="dept">학과 소개</a></li>
                             <li class="divide"><a href="professor" id="prof">교수진 소개</a></li>
                             <li class="divide"><a href="calendar" id="calendar">학사 일정</a></li>

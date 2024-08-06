@@ -39,6 +39,8 @@ public class LoginController {
 			if (employee != null && employee.getEMP_PASSWORD().equals(loginPassword)) {
 				session.setAttribute("loginname", employee.getEMP_NAME());
 				model.addAttribute("msg", loginid + "관리자님 로그인 되었습니다.");
+				
+				session.setAttribute("login",login);
 				return "home";
 			} else {
 				model.addAttribute("msg", "아이디와 비밀번호를 제대로 입력하세요.");
@@ -51,6 +53,8 @@ public class LoginController {
 				session.setAttribute("studentno", student.getSTU_NO());
 				session.setAttribute("stugrade", student.getSTU_GRADE());
 				model.addAttribute("msg", student.getSTU_NAME() + "학생 로그인 되었습니다.");
+				
+				session.setAttribute("login",login);
 				return "home";
 			} else {
 				model.addAttribute("msg", "아이디와 비밀번호를 제대로 입력하세요.");

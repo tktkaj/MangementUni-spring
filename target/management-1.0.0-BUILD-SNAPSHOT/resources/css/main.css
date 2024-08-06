@@ -105,7 +105,7 @@ body {
     gap: 30px;
 }
 .opq-header-sub li{
-    margin-left: 10px;
+    margin-left:    0px;
 }
 
 .opq-header-sub a {
@@ -114,10 +114,9 @@ body {
     color: #333;
 }
 
-
 .opq-header-sub .divide::after {
     color: #024C86;
-    padding-left: 50px;
+    padding-left: 30px;
     content: "|";
 }
 
