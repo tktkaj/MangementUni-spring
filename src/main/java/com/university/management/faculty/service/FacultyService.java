@@ -1,10 +1,12 @@
 package com.university.management.faculty.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.university.management.board.dto.Board;
 import com.university.management.board.mapper.BoardMapper;
@@ -27,6 +29,9 @@ public class FacultyService {
 	 */
 	public List<Board> getBoardList() {
 		System.out.println("FacultyService-getBoardList");
+		
+		List<Board> list = new ArrayList<Board>();
+		
 		return mapper.selectBoardList();
 	}
 
@@ -39,17 +44,9 @@ public class FacultyService {
 		return mapper.readCount(no);
 	}
 
-	public boolean selectLogin(Integer loginNo) {
-
-		boolean res = false;
-
-		int value = mapper.selectLogin(loginNo);
-
-		if (value != 0) {
-			res = true;
-			return res;
-		}
-		return res;
+	// 공지사항 추가
+	public List<Board> boardInfoInsert(String title, String file, String detail) {
+		return mapper.boardInfoInsert(title,file,detail);
 	}
 
 }
