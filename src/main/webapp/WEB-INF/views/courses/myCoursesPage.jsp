@@ -44,7 +44,6 @@
 								<th scope="col">학과</th>
 								<th scope="col">강좌명</th>
 								<th scope="col">교수명</th>
-								<th scope="col">교시</th>
 							</tr>
 						</thead>
 						<tbody class="table-group-divider">
@@ -53,7 +52,6 @@
 								<td>Mark</td>
 								<td><a href="myCoursesList">Otto</a></td>
 								<td>@mdo</td>
-								<td>@mdo</td>
 
 							</tr>
 							<tr>
@@ -61,11 +59,9 @@
 								<td>Jacob</td>
 								<td>Thornton</td>
 								<td>@mdo</td>
-								<td>@mdo</td>
 							</tr>
 							<tr>
 								<th scope="row">3</th>
-								<td>@twitter</td>
 								<td>@twitter</td>
 								<td>@twitter</td>
 								<td>@twitter</td>
