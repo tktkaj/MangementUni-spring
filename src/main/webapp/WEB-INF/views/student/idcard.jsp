@@ -13,7 +13,7 @@
 <link
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 	rel="stylesheet">
-
+<link href="${path}/resources/css/courses.css" rel="stylesheet" />
 <style>
 .card-text {
 	margin-bottom: 0.25rem;
@@ -26,10 +26,10 @@
 	gap: 10px;
 }
 
-.logo-img {
-	width: 2.5rem;
-	height: 2rem;
-	margin-left: 0.5rem;
+.logo2-img {
+	width: 110px;
+	height: 100px;
+	margin-left: 220px;
 	position: relative;
 	z-index: 2;
 }
@@ -39,15 +39,16 @@
 	height: 340px;
 	position: absolute;
 	margin-left: 170px;
-	margin-top: -290px;
+	margin-top: -230px;
 }
 
 .title-container {
 	display: flex;
 	align-items: center;
 	position: relative;
-	z-index: 99;
+	z-index: 2;
 	margin-top: 15px;
+	transform: translate(25%, -50%);
 }
 
 .background {
@@ -82,74 +83,69 @@ img {
 	padding: 0;
 }
 
-.로고 {
-		width: 80px;
-	height: 20px;
-	
+.d-flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
 }
 </style>
 </head>
-
+<jsp:include page="../common/header.jsp" />
 <body>
-	<jsp:include page="../common/header.jsp" />
 	<div id="menuBar">
 		<div id="sub-menuBar">
 			<ul id="menulist">
 				<li><a href="studentstatus">학적 조회</a></li>
+				<li><a href="studentinfo">학생 정보 조회</a></li>
 				<li><a href="passwordchange">학생 정보 변경</a></li>
 				<li><a href="objection">성적 조회</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
-				<li><a href="myCoursesPage">수강신청 페이지</a></li>
 				<li><a href="askpresident">총장님께 바랍니다</a></li>
 				<li><a href="idcard">학생증</a></li>
 			</ul>
 		</div>
 	</div>
-	<div class="container" style="height: 550px; margin-top: 100px;">
-		<div id="content">
-			<!-- title view -->
-			<div id="pageTitle">
-				<h1>학생증</h1>
-			</div>
-			<!-- 카드 -->
-			<div class="card mb-3" style="max-width: 540px;">
-
-				<div class="background">
-					<div class="row no-gutters">
-						<div class="col-md-4">
-							<img src="${path}/resources/img/유제욱.jpg"
-								class="img-fluid rounded-start" alt="설명">
-						</div>
-						<div class="col-md-6">
-							<div class="card-body">
-								<div class="sin">
-									<p class="card-text">유제욱</p>
-									<p class="card-text">20240730</p>
-									<p class="card-text">화학과</p>
-								</div>
-								<div class="sin1">
-									<p class="card-text">MONTH/YEAR</p>
-									<p class="card-text">04/30</p>
-								</div>
-								<div class="title-container">
-									
-									<h5 class="card-title mb-1">미르대학교학생처장</h5>
-									<%-- <img src="${path}/resources/img/logo2.png" class="로고" alt="설명"> --%>
-								</div>
-								<div class="text-container">
-									<p class="card-text mb-0">
-										<small class="text-muted">mirr university</small>
-									</p>
-								</div>
-								<img src="${path}/resources/img//바코드.png"
-									class="img-fluid rounded-start barcode-img" alt="설명">
+	<div class="container d-flex-center">
+		<!-- 카드 -->
+		<div class="card mb-3" style="max-width: 540px;">
+			<div class="background">
+				<div class="row no-gutters">
+					<div class="col-md-4">
+						<img src="${path}/resources/img/유제욱.jpg"
+							class="img-fluid rounded-start" alt="설명">
+					</div>
+					<div class="col-md-6">
+						<div class="card-body">
+							<div class="sin">
+								<p class="card-text">유제욱</p>
+								<p class="card-text">20240730</p>
+								<p class="card-text" style="font-size: 18px;">화학과</p>
 							</div>
+							<div class="sin1">
+								<p class="card-text" style="font-size: 12px;">MONTH/YEAR</p>
+								<p class="card-text" style="font-size: 12px;">04/30</p>
+							</div>
+							<div class="title-container">
+								<h5 class="card-title mb-0">
+									<b>미르대학교 총장</b>
+								</h5>
+
+							</div>
+							<div class="text-container">
+
+								<img src="${path}/resources/img/logo2.png"
+									class="img-fluid logo2-img" alt="설명">
+							</div>
+							<img src="${path}/resources/img//바코드.png"
+								class="img-fluid rounded-start barcode-img" alt="설명">
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
 
 	<!-- Bootstrap JS and dependencies -->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -158,6 +154,5 @@ img {
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-</html>
 <jsp:include page="../common/footer.jsp" />
-ㄴ
+</html>
