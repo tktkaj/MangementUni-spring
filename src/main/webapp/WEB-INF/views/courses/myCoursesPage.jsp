@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page session="false"%>
@@ -8,6 +9,7 @@
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <html>
 <head>
+
 <link href="${path}/resources/css/courses.css" rel="stylesheet" />
 </head>
 <body>
@@ -26,7 +28,6 @@
 		</div>
 	</div>
 	<div class="container" style="height: 650px; margin-top:100px;">
-
 		<div id="content">
 
 			<!-- title view -->
