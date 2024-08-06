@@ -38,7 +38,7 @@
                         <h1>공지사항 작성</h1>
                     </div>
                     <!-- content view -->
-                    <form action="informationboard" method="post">
+                    <form action="informationboard" method="post" style="margin-bottom:20px;">
                         <table>
                             <tr>
                                 <th width="50"><span>제목</span></th>

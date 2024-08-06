@@ -83,26 +83,33 @@ img {
 	margin: 0;
 	padding: 0;
 }
-
+ body{
+ width:100%;
+ }
 </style>
 </head>
-<jsp:include page="../common/header.jsp" />
+
 <body>
+	<jsp:include page="../common/header.jsp" />
 	<div id="menuBar">
 		<div id="sub-menuBar">
 			<ul id="menulist">
-				<li><a href="passwordchange">사용자 정보 관리</a></li>
-				<li><a href="studentstatus">학적 관리</a></li>
-				<li><a href="studentinfo">등록 관리</a></li>
-				<li><a href="objection">성적 관리</a></li>
+				<li><a href="studentstatus">학적 조회</a></li>
+				<li><a href="passwordchange">학생 정보 변경</a></li>
+				<li><a href="objection">성적 조회</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
+				<li><a href="myCoursesPage">수강신청 페이지</a></li>
 				<li><a href="askpresident">총장님께 바랍니다</a></li>
 				<li><a href="idcard">학생증</a></li>
 			</ul>
 		</div>
 	</div>
+	<div class="container" style="height: 800px; margin-top:100px;">
 	<!-- 카드 -->
 	<div class="card mb-3" style="max-width: 540px;">
+	<div id="pageTitle">
+				<h1>학생증</h1>
+			</div>
 		<div class="background">
 			<div class="row no-gutters">
 				<div class="col-md-4">
@@ -148,5 +155,5 @@ img {
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-<jsp:include page="../common/footer.jsp" />
 </html>
+<jsp:include page="../common/footer.jsp" />

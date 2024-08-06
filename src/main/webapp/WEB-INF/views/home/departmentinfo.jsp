@@ -13,15 +13,22 @@
 </head>
 
 <body>
-<jsp:include page="../common/header.jsp"/>
 
+<div>
+		<jsp:include page="../common/header.jsp" />
+		<h2 style="margin-top: 150px; text-align: center">
+			<strong>학과 소개</strong>
+		</h2>
+		<div
+			style="width: 70px; height: 5px; background-color: #024C86; margin: 0px auto;"></div>
+	</div>
 <!-- Spacer -->
 <div class="spacer"><img src="${path}/resources/img/학과소개.png"></div>
 
 <!-- Main Content -->
 <div class="main-content">
     <div class="filters">
-        <label for="professor-select" class="minititle"><h2><strong>학과 소개</strong></h2></label>
+        <label for="professor-select" class="minititle"></label>
         <form action="${path}/department" method="post">
             <select name="department" id="professor-select"
                     onchange="this.form.submit()">

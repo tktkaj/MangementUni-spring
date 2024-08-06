@@ -12,21 +12,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>총장님께 부탁드립니다.</title>
 
-<script type="text/javascript">
-	function popup() {
-		var url = "popup";
-		var name = "popupWindow";
-		var specs = "width=880,height=170,top=300,left=300";
-
-		var popup = window.open(url, name, specs);
-
-		// 팝업 창이 열리지 않으면(팝업 차단기 활성화 시) 경고 메시지 표시
-		if (!popup || popup.closed || typeof popup.closed == 'undefined') {
-			alert('팝업 창이 차단되었습니다. 팝업 차단기를 비활성화 해주세요.');
-		}
-	}
-</script>
-
 <link href="${path}/resources/css/courses.css" rel="stylesheet" />
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -76,8 +61,16 @@
 h1 {
 	width: 700px;
 }
-.containerask{
-margin-top:100px;
+
+.containerask {
+	margin-top: 100px;
+}
+
+.privacy-box {
+	border: 1px solid #ccc;
+	padding: 20px;
+	margin-top: 20px;
+	text-align: left;
 }
 </style>
 </head>
@@ -87,24 +80,36 @@ margin-top:100px;
 	<div id="menuBar">
 		<div id="sub-menuBar">
 			<ul id="menulist">
-				<li><a href="passwordchange">사용자 정보 관리</a></li>
-				<li><a href="studentstatus">학적 관리</a></li>
-				<li><a href="objection">성적 관리</a></li>
+				<li><a href="studentstatus">학적 조회</a></li>
+				<li><a href="passwordchange">학생 정보 변경</a></li>
+				<li><a href="objection">성적 조회</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
+				<li><a href="myCoursesPage">수강신청 페이지</a></li>
 				<li><a href="askpresident">총장님께 바랍니다</a></li>
 				<li><a href="idcard">학생증</a></li>
 			</ul>
 		</div>
 	</div>
-	<div class="containerask" style="height: 650px;">
+	<div class="container" style="height: 1000px; margin-top: 100px;">
 		<div id="content">
 			<!-- title view -->
 			<div id="pageTitle">
 				<h1>총장님께 부탁드립니다</h1>
 			</div>
 			<div class="custom">
-				<h5 class="mt-4" style="text-align: left; color: red;">이 글은
-					익명성이 보장됩니다.</h5>
+				<h5 class="mt-4" style="text-align: left; color: red;">이 글은 익명성이 보장됩니다.</h5>
+				<!-- Privacy Notice Section -->
+				<div class="privacy-box">
+					<h2>개인정보 활용 동의</h2>
+					<p>총장님께 부탁드립니다에 수집된 개인정보는 목적 이외의 용도로는 이용되지 않으며, 수집 목적 외 이용 및 제3자 제공 시에는 사전에 알리고 동의를 받을 예정입니다.</p>
+					<ol>
+						<li>개인정보 수집목적: 제안 의견 처리</li>
+						<li>개인정보 수집항목: 성명, 이메일 주소, 연락처</li>
+						<li>개인정보 보유 및 이용기간: 관련 법령이 정한 기간 동안</li>
+						<li>거부권 및 불이익: 개인정보 수집 이용에 동의하지 않을 권리가 있으며 동의하지 않는 경우에는 '총장님께 바란다' 제안 서비스를 이용하실 수 없습니다.</li>
+					</ol>
+					<p>위와 같이 본인의 개인정보를 수집·이용하는 것에 동의합니다.</p>
+				</div>
 
 				<div class="col input-background">
 					<div class="container text-center">
@@ -112,16 +117,14 @@ margin-top:100px;
 							<div class="row row-cols-1">
 								<div class="col">
 									<div class="input-group mb-3">
-										<span class="input-group-text" id="basic-addon1">제목</span> <input
-											type="text" class="form-control"
-											aria-describedby="basic-addon1">
+										<span class="input-group-text" id="basic-addon1">제목</span>
+										<input type="text" class="form-control" aria-describedby="basic-addon1">
 									</div>
 								</div>
 								<div class="col">
 									<div class="input-group">
 										<span class="input-group-text">내용</span>
-										<textarea class="form-control" aria-label="With textarea"
-											rows="9"></textarea>
+										<textarea class="form-control" aria-label="With textarea" rows="9"></textarea>
 									</div>
 								</div>
 							</div>
@@ -130,16 +133,14 @@ margin-top:100px;
 
 					<div style="height: 20px;"></div>
 
-					<button type="button" class="button btn-wide custom-button"
-						onclick="popup()">글 올리기</button>
+					<button type="button" class="button btn-wide custom-button" onclick="popup()">글 올리기</button>
 				</div>
+
 			</div>
 		</div>
 	</div>
-	
 
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

@@ -11,13 +11,17 @@
 <link href="${path}/resources/css/professor.css" rel="stylesheet" />
 </head>
 <body>
-	<jsp:include page="../common/header.jsp" />
-
-	<!-- Main Content -->
+	<div>  <jsp:include page="../common/header.jsp"/>
+      <h2 style="margin-top: 150px; text-align: center">
+          <strong>교수진 소개</strong>
+      </h2>
+      <div style="width: 70px; height: 5px; background-color: #024C86; margin:0px auto;"></div>
+  </div>
+	
+				
 	<main>
 		<div class="main-content">
 			<div class="filters">
-				<label for="professor-select" class="minititle"><h2 style="margin: 0;"><strong>교수진</strong></h2></label>
 				<form action="professor" method="get">
 					<select name="department" id="professor-select"
 						onchange="this.form.submit()">
