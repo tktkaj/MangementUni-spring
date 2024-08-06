@@ -12,7 +12,8 @@ public interface Loginmapper {
 
 	//직원 로그인 
 	Employee emplogin(Map<String, String> params);
-//학생 로그인
+	
+	//학생 로그인
 	Student studentLogin(Map<String, String> params);
 
 }

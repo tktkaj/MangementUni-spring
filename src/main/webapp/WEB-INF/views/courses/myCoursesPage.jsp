@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page session="false"%>
@@ -8,6 +9,7 @@
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <html>
 <head>
+
 <link href="${path}/resources/css/courses.css" rel="stylesheet" />
 </head>
 <body>
@@ -26,7 +28,6 @@
 		</div>
 	</div>
 	<div class="container" style="height: 650px; margin-top:100px;">
-
 		<div id="content">
 
 			<!-- title view -->
@@ -45,7 +46,6 @@
 								<th scope="col">학과</th>
 								<th scope="col">강좌명</th>
 								<th scope="col">교수명</th>
-								<th scope="col">교시</th>
 							</tr>
 						</thead>
 						<tbody class="table-group-divider">
@@ -54,7 +54,6 @@
 								<td>Mark</td>
 								<td><a href="myCoursesList">Otto</a></td>
 								<td>@mdo</td>
-								<td>@mdo</td>
 
 							</tr>
 							<tr>
@@ -62,11 +61,9 @@
 								<td>Jacob</td>
 								<td>Thornton</td>
 								<td>@mdo</td>
-								<td>@mdo</td>
 							</tr>
 							<tr>
 								<th scope="row">3</th>
-								<td>@twitter</td>
 								<td>@twitter</td>
 								<td>@twitter</td>
 								<td>@twitter</td>

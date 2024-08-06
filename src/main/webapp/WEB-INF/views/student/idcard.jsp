@@ -26,22 +26,31 @@
 	gap: 10px;
 }
 
-.logo-img {
-	width: 2.5rem;
-	height: 2rem;
-	margin-left: 0.5rem;
+.logo2-img {
+	width: 110px;
+	height: 100px;
+	margin-left: 220px;
 	position: relative;
 	z-index: 2;
 }
 
+<<<<<<< HEAD
+.dragon-img {
+	width: 2.5rem;
+	height: auto;
+	position: absolute;
+	right: 2px;
+}
+=======
 
+>>>>>>> master
 
 .barcode-img {
 	width: auto;
 	height: 340px;
 	position: absolute;
 	margin-left: 170px;
-	margin-top: -290px;
+	margin-top: -230px;
 }
 
 .title-container {
@@ -50,6 +59,7 @@
 	position: relative;
 	z-index: 2;
 	margin-top: 15px;
+	transform: translate(25%, -50%);
 }
 
 .background {
@@ -83,9 +93,12 @@ img {
 	margin: 0;
 	padding: 0;
 }
+<<<<<<< HEAD
+=======
  body{
  width:100%;
  }
+>>>>>>> master
 </style>
 </head>
 
@@ -104,43 +117,44 @@ img {
 			</ul>
 		</div>
 	</div>
-	<div class="container" style="height: 800px; margin-top:100px;">
-	<!-- 카드 -->
-	<div class="card mb-3" style="max-width: 540px;">
-	<div id="pageTitle">
-				<h1>학생증</h1>
-			</div>
-		<div class="background">
-			<div class="row no-gutters">
-				<div class="col-md-4">
-				<img src="${path}/resources/img/유제욱.jpg"
-					 class="img-fluid rounded-start" alt="설명">
-				</div>
-				<div class="col-md-6">
-					<div class="card-body">
-						<div class="sin">
-							<p class="card-text">유제욱</p>
-							<p class="card-text">20240730</p>
-							<p class="card-text">화학과</p>
+	<div class="container" style="margin: 100px;">
+		<!-- 카드 -->
+		<div class="card mb-3" style="max-width: 540px;">
+			<div class="background">
+				<div class="row no-gutters">
+					<div class="col-md-4">
+						<img src="${path}/resources/img/유제욱.jpg"
+							class="img-fluid rounded-start" alt="설명">
+					</div>
+					<div class="col-md-6">
+						<div class="card-body">
+							<div class="sin">
+								<p class="card-text">유제욱</p>
+								<p class="card-text">20240730</p>
+								<p class="card-text" style="font-size: 18px;">화학과</p>
+							</div>
+							<div class="sin1">
+								<p class="card-text" style="font-size: 12px;">MONTH/YEAR</p>
+								<p class="card-text" style="font-size: 12px;">04/30</p>
+							</div>
+							<div class="title-container">
+								<h5 class="card-title mb-0">
+									<b>미르대학교 총장</b>
+								</h5>
+								<%-- <img src="${path}/resources/img/dragon-312035_640.png"
+									class="img-fluid rounded-start dragon-img" alt="설명"> --%>
+							</div>
+							<div class="text-container">
+								<!-- 								<p class="card-text mb-0">
+									<small class="text-muted">Mir University</small>
+								</p> -->
+								<img src="${path}/resources/img/logo2.png"
+									class="img-fluid logo2-img" alt="설명">
+							</div>
+							<img src="${path}/resources/img//바코드.png"
+								class="img-fluid rounded-start barcode-img" alt="설명">
+
 						</div>
-						<div class="sin1">
-							<p class="card-text">MONTH/YEAR</p>
-							<p class="card-text">04/30</p>
-						</div>
-						<div class="title-container">
-							<img src="${path}/resources/img/logo.png"
-								class="img-fluid rounded-start logo-img" alt="설명">
-							<h5 class="card-title mb-0">미르대학교학생처장</h5>
-							<img src="${path}/resources/img/dragon-312035_640.png"
-								class="img-fluid rounded-start dragon-img" alt="설명">
-						</div>
-						<div class="text-container">
-							<p class="card-text mb-0">
-								<small class="text-muted">mirruniversity</small>
-							</p>
-						</div>
-						<img src="${path}/resources/img//바코드.png"
-							class="img-fluid rounded-start barcode-img" alt="설명">
 					</div>
 				</div>
 			</div>
