@@ -17,14 +17,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <style>
-
-    </style>
+   
 </head>
 
 <body>
-
-    <div id="menuBar">
+<jsp:include page="../common/header.jsp" />
+	    <div id="menuBar">
         <div id="sub-menuBar" style="height: 150px;">
             <ul id="menulist">
                 <li><a href="passwordchange">자유게시판</a></li>
@@ -33,7 +31,7 @@
             </ul>
         </div>
     </div>
-    <div class="container" style="height: 500px;">
+	<div class="container" style="height: 1000px; margin-top:100px;">
         <div id="content">
             <!-- title view -->
             <div class="list-group">
@@ -126,3 +124,4 @@
 </body>
 
 </html>
+<jsp:include page="../common/footer.jsp" />
