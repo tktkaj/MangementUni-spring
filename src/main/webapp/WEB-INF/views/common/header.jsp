@@ -54,7 +54,7 @@
                                 <li id="uni-detail"><a href="#">대학소개</a></li>
                                 <li><a href="infoboard">공지사항</a></li>
                                 <li><a href="etmainpage">에타게시판</a></li>
-                                <li><a href="myCoursesPage">마이페이지</a></li>
+                                <li><a href="${login eq 'Employee'? 'infoboard':'myCoursesPage' }">마이페이지</a></li>
                             </ul>
                         </div>
                         <div class="col col-1">
