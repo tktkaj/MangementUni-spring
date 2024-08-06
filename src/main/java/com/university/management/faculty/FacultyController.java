@@ -43,7 +43,7 @@ public class FacultyController {
 
 	@RequestMapping("/objectionList")
 	public String objectionList() {
-		return "objection/objectionList";
+		return "objection/objectionlist";
 	}
 	
 	// 성적이의신청 데이터 목록 받아오기

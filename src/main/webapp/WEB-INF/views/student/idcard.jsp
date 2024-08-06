@@ -13,7 +13,7 @@
 <link
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 	rel="stylesheet">
-<link href="${path}/resources/css/courses.css" rel="stylesheet" />
+
 <style>
 .card-text {
 	margin-bottom: 0.25rem;
@@ -34,13 +34,7 @@
 	z-index: 2;
 }
 
-.dragon-img {
-	width: 2.5rem;
-	height: auto;
-	position: absolute;
-	right: 1px;
-	
-}
+
 
 .barcode-img {
 	width: auto;

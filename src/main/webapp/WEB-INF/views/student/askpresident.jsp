@@ -26,7 +26,7 @@
 		}
 	}
 </script>
-<link rel="stylesheet" href="main.css">
+
 <link href="${path}/resources/css/courses.css" rel="stylesheet" />
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -76,8 +76,8 @@
 h1 {
 	width: 700px;
 }
-.container{
-margin: 190px auto 100px auto;
+.containerask{
+margin-top:100px;
 }
 </style>
 </head>
@@ -96,7 +96,7 @@ margin: 190px auto 100px auto;
 			</ul>
 		</div>
 	</div>
-	<div class="container" style="height: 600px;">
+	<div class="containerask" style="height: 650px;">
 		<div id="content">
 			<!-- title view -->
 			<div id="pageTitle">
