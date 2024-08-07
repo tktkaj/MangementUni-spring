@@ -29,79 +29,62 @@ public class FacultyController {
 	@Autowired
 	private FacultyService service;
 
-	@RequestMapping("/infoboard")
-	public String infoboard(Model model) {
-
-		Map<String, String> params = new HashMap<String, String>();
-		
+	// 공지사항 목록처리
+	@GetMapping("/infoboardPro")
+	public String infoboardPro(Model model, @RequestParam Map<String, String> param,
+			@RequestParam(value = "page", defaultValue = "1") int page) {
+		System.out.println("FacultyController-infoboardPro() 실행");
 
 		String login = (String) session.getAttribute("login");
 		System.out.println("login : " + login);
 
-		// 공지사항 총 게시글 수
-		int boardcount = service.getBoardCount(params);
-		System.out.println("boardcount : " + boardcount);
+		Map<String, String> params = new HashMap<String, String>();
+		String searchValue = param.get("searchValue");
+		String searchType = param.get("searchType");
 		
+//		String writer = param.get("writer");
+//		String content = param.get("content");
 
-		PageInfo info = new PageInfo();
-		int page = info.getCurrentPage();
-		PageInfo pageInfo = new PageInfo(page, 5, boardcount, 5);
-		
-		params.put("limit",String.valueOf(info.getListLimit())); 
-		params.put("offset", String.valueOf(info.getOffset()));
-		
-		List<Board> boardinfolist = service.selectBoardListPage(params);
+		if (searchType != null && searchValue != null && !searchValue.trim().isEmpty()) {
+			params.put(searchType, searchValue);
+		} else {
+			model.addAttribute("msg", "다시 선택해주세요");
+		}
 
-		model.addAttribute("boardList", boardinfolist);
-		model.addAttribute("count", boardcount);
-		model.addAttribute("login", login);
-		model.addAttribute("pageInfo", pageInfo);
+		model.addAttribute("param", param);
 
 		return "faculty/infoboard";
 	}
+	
+	@GetMapping("/infoboard")
+	public String infoboard(@RequestParam(defaultValue = "1") int page, Model model) {
+		String login = (String) session.getAttribute("login");
+		System.out.println("login : " + login);
+		
+	    int listLimit = 5; // 한 페이지에 보여질 게시글 수
+	    int totalRowCount = service.getBoardCount(); // 전체 게시글의 수
+	    
+	    
+	    // 페이지네이션 설정
+	    PageInfo pageSettings = new PageInfo();
+	    pageSettings.setCurrentPage(page);
+	    pageSettings.pageSetting(totalRowCount);
+	    int nextPage = pageSettings.getNextPage();
+	    int prevPage = pageSettings.getPrevPage();
 
-	// 공지사항 목록처리
-	/*
-	 * @GetMapping("/infoboard") public String infoboardPro(Model
-	 * model, @RequestParam Map<String, String> param,
-	 * 
-	 * @RequestParam(value = "page", defaultValue = "1") int page) {
-	 * System.out.println("FacultyController-infoboardPro() 실행");
-	 * 
-	 * String login = (String) session.getAttribute("login");
-	 * System.out.println("login : " + login);
-	 * 
-	 * Map<String, String> params = new HashMap<String, String>();
-	 * 
-	 * String searchValue = param.get("searchValue"); String searchType =
-	 * param.get("searchType"); String writer = param.get("writer"); String content
-	 * = param.get("content");
-	 * 
-	 * if (searchType != null && searchValue != null &&
-	 * !searchValue.trim().isEmpty()) { params.put(searchType, searchValue); } else
-	 * { model.addAttribute("msg", "다시 선택해주세요"); }
-	 * 
-	 * // 공지사항 총 게시글 수 int boardcount = service.getBoardCount(params);
-	 * System.out.println("boardcount : " + boardcount);
-	 * 
-	 * PageInfo info = new PageInfo(page, 5, boardcount, 5);
-	 * 
-	 * params.put(searchType, searchValue); params.put("limit",
-	 * String.valueOf(info.getListLimit())); params.put("offset",
-	 * String.valueOf(info.getOffset())); params.put("writer", writer);
-	 * params.put("content", content);
-	 * 
-	 * System.out.println("params : " + params);
-	 * 
-	 * // 페이징 처리할 수 있는 데이터 넘기기 List<Board> boardinfolist =
-	 * service.selectBoardListPage(params);
-	 * 
-	 * model.addAttribute("boardList", boardinfolist); model.addAttribute("count",
-	 * boardcount); model.addAttribute("login", login);
-	 * model.addAttribute("pageInfo", info); model.addAttribute("param", param);
-	 * 
-	 * return "faculty/infoboard"; }
-	 */
+	    // 데이터 가져오기
+	    List<Board> boardList = service.selectBoardListPage(pageSettings.getFirstRow(), listLimit);
+
+	    // 데이터와 페이지 정보 모델에 추가하기
+	    model.addAttribute("login", login);
+	    model.addAttribute("boardList", boardList);
+	    model.addAttribute("prevPage", prevPage);
+	    model.addAttribute("nextPage", nextPage);
+	    model.addAttribute("pageInfo", pageSettings);
+
+	    return "faculty/infoboard";
+	}
+
 
 	// 공지사항 상세 페이지
 	@RequestMapping("/infodetail")

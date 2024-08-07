@@ -1,6 +1,7 @@
 package com.university.management.faculty.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -19,10 +20,14 @@ public class FacultyService {
 	private BoardMapper mapper;
 
 	// 총 게시글 갯수
-	public int getBoardCount(Map<String, String> boardlist) {
-		int list = mapper.selectBoardCount(boardlist);
-		System.out.println("list : " + list);
-		return list;
+	/*
+	 * public int getBoardCount(Map<String, String> boardlist) { int list =
+	 * mapper.selectBoardCount(boardlist); System.out.println("list : " + list);
+	 * return list; }
+	 */
+	
+	public int getBoardCount() {		
+		return mapper.selectBoardCount();
 	}
 
 	// 전체 게시글 중에 첫번째 페이지에서 10개의 게시글 반환
@@ -55,12 +60,17 @@ public class FacultyService {
 	}
 
 	// 공지사항 리스트 추출 및 페이징 처리, 키워드 검색 기능
-	public List<Board> selectBoardListPage(Map<String, String> params) {
-
-		int limit = Integer.parseInt(params.get("limit"));
-		int offset = Integer.parseInt(params.get("offset")); 
-
-		return mapper.selectBoardListPage(limit, offset, params);
+	public List<Board> selectBoardListPage(int firstRow, int listLimit) {
+		System.out.println("firstRow : " + firstRow);
+		System.out.println("listLimit : " + listLimit);
+//		return mapper.selectBoardListPage(firstRow,listLimit);
+		Map params = new HashMap();
+		params.put("firstRow", firstRow);
+		params.put("listLimit", listLimit);
+		
+		return mapper.selectBoardListPage(params);
 	}
+
+
 
 }
