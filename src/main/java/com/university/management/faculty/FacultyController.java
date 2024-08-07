@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.university.management.board.dto.Board;
 import com.university.management.board.dto.PageInfo;
@@ -21,7 +22,7 @@ import com.university.management.faculty.service.FacultyService;
 
 @Controller
 public class FacultyController {
-	
+
 	@Autowired
 	private HttpSession session;
 
@@ -29,23 +30,24 @@ public class FacultyController {
 	private FacultyService service;
 
 	@RequestMapping("/infoboard")
-	public String infoboard(Model model) {
+	public String infoboard(HttpSession session, Model model) {
 		System.out.println("FacultyController-infoboard() 실행");
 
 		Map<String, String> params = new HashMap<>();
 
-//		try {
-//			String searchValue = param.get("searchValue");
-//
-//			if (searchValue != null && searchValue.length() > 0) {
-//				String searchType = param.get("searchType");
-//				params.put(searchType, searchValue);
-//				System.out.println("boardlist : " + params);
-//			}
-//
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
+		String login = (String) session.getAttribute("login");
+		System.out.println("login : " + login);
+
+		/*
+		 * 
+		 * try { String searchValue = param.get("searchValue");
+		 * 
+		 * if (searchValue != null && searchValue.length() > 0) { String searchType =
+		 * param.get("searchType"); params.put(searchType, searchValue);
+		 * System.out.println("boardlist : " + params); }
+		 * 
+		 * } catch (Exception e) { e.printStackTrace(); }
+		 */
 
 		// 공지사항 목록 불러오기
 		List<Board> boardList = service.getBoardList();
@@ -59,9 +61,10 @@ public class FacultyController {
 		 * boardlist);
 		 */
 
-		model.addAttribute("params", params);
+		// model.addAttribute("params", params);
 		model.addAttribute("boardList", boardList);
 		model.addAttribute("count", boardcount);
+		model.addAttribute("login", login);
 
 		return "faculty/infoboard";
 	}
@@ -69,29 +72,17 @@ public class FacultyController {
 	@RequestMapping("/infodetail")
 	public String infodetail(Model model, @RequestParam("bo_no") int no) {
 		System.out.println("FacultyController-infodetail() 실행");
-		
-		/*
-		 * Integer loginNo = (Integer) session.getAttribute("emp");
-		 * System.out.println(loginNo);
-		 */
-		
+
 		/* boolean res = service.selectLogin(loginNo); */
 
 		Board board = service.findByNo(no);
 		System.out.println(board);
 
-		// 조회 수 증가 
+		// 조회 수 증가
 		int readCount = service.readCount(no);
 
-		if (board == null) {
-			model.addAttribute("msg", "로그인 정보가 없습니다.");
-			return "faculty/infoboard";
-		}
-
-		/* model.addAttribute("login",loginNo); */
 		model.addAttribute("board", board);
 		model.addAttribute("readCount", readCount);
-
 		// model.addAttribute("replyList", board.getReplies());
 
 		return "faculty/infodetail";
@@ -103,13 +94,28 @@ public class FacultyController {
 		return "faculty/writeinfo";
 	}
 
+	@RequestMapping("/informationboard")
+	public String informationboard(@RequestParam Map<String, Object> param, Model model) {
+		System.out.println("FacultyController-informationboard() 실행");
+		
+		String title = (String) param.get("title");
+	    String file = (String) param.get("filename");
+	    String detail = (String) param.get("detail");
+
+	    List<Board> formlist = service.boardInfoInsert(title, file, detail);	
+	    System.out.println(formlist);
+	    
+	    model.addAttribute("boardList", formlist);
+		return "faculty/infoboard";
+	}
+
 	@RequestMapping("/updateinfo")
 	public String updateinfo() {
 
 		return "faculty/updateinfo";
 	}
 
-	@RequestMapping("/objectionList")
+	@RequestMapping("/objectionlist")
 	public String objectionList() {
 		return "objection/objectionlist";
 	}

@@ -20,6 +20,7 @@
 		<result property="boLike" column="BO_LIKE" />                  		<!-- 좋아요 버튼 -->
 	</resultMap>
 
+
 	<!-- <resultMap type="Reply" id="boardReplyResultMap"> <id property="no" 
 		column="NO" /> <result property="boardNo" column="BOARD_NO" /> <result property="writerNo" 
 		column="WRITER_NO" /> <result property="writerId" column="ID" /> <result 
@@ -41,20 +42,24 @@
 	<select id="selectBoardList"
 		resultType="com.university.management.board.dto.Board">
 		SELECT B.BO_NO,
-		E.EMP_NAME,B.TITLE,B.CONTENT,B.READCOUNT,B.CREATE_DATE, B.MODIFY_DATE, B.BO_LIKE
+		E.EMP_NAME,B.TITLE,B.CONTENT,B.READCOUNT,B.CREATE_DATE, B.MODIFY_DATE,
+		B.BO_LIKE
 		FROM BOARD B
 		JOIN EMPLOYEE E ON B.EMP_NO = E.EMP_NO
-		WHERE TYPE = "G";
+		WHERE TYPE
+		= "G";
 	</select>
 
 	<!-- 상세페이지 이동을 위한 게시글 번호 조회 -->
 	<select id="findByNo" parameterType="int"
 		resultType="com.university.management.board.dto.Board">
 		SELECT B.BO_NO,
-		E.EMP_NAME,B.TITLE,B.CONTENT,B.READCOUNT,B.CREATE_DATE, B.MODIFY_DATE, B.BO_LIKE
+		E.EMP_NAME,B.TITLE,B.CONTENT,B.READCOUNT,B.CREATE_DATE, B.MODIFY_DATE,
+		B.BO_LIKE
 		FROM BOARD B
 		JOIN EMPLOYEE E ON B.EMP_NO = E.EMP_NO
-		WHERE TYPE = "G" AND BO_NO = ${no};
+		WHERE TYPE
+		= "G" AND BO_NO = ${no};
 	</select>
 
 	<!-- 조회수 -->
@@ -63,12 +68,31 @@
 		= READCOUNT+1
 		WHERE BO_NO = #{bo_no};
 	</update>
-	
-	<!-- 교직원인지 확인 -->
-	<select id="selectLogin" parameterType="int">
-		SELECT COUNT(*) FROM EMPLOYEE
-		WHERE EMP_NO = #{loginNo};
-	</select>
+
+	<insert id="boardInfoInsert" parameterType="Map">
+		INSERT INTO BOARD
+		(EMP_NO, TITLE, CONTENT, TYPE, ORIGINAL_FILENAME, CREATE_DATE) VALUES
+		(#{emp_no},#{title},#{content},'G',#{file})
+	</insert>
+
+<!-- 	<insert id="boardInfoInsert" parameterType="Map">
+		INSERT INTO BOARD
+		<selectKey keyProperty="id" resultType="int" order="BEFORE">
+			SELECT seq_board.NEXTVAL FROM dual
+		</selectKey>
+		<choose>
+			<when test="not empty emp_no">
+				(EMP_NO, TITLE, CONTENT, TYPE, ORIGINAL_FILENAME, CREATE_DATE)
+				VALUES (#{emp_no}, #{title}, #{content}, 'G', #{original_filename})
+			</when>
+			<when test="not empty stu_no">
+				(STU_NO, TITLE, CONTENT, TYPE, ORIGINAL_FILENAME, CREATE_DATE)
+				VALUES (#{stu_no}, #{title}, #{content}, 'G', #{original_filename})
+			</when>
+		</choose>
+	</insert> -->
+
+
 
 
 

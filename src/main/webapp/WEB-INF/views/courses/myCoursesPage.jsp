@@ -43,9 +43,27 @@
 						<thead>
 							<tr>
 								<th scope="col"></th>
+								<th scope="col">학년도</th>
+								<th scope="col">학기</th>
 								<th scope="col">학과</th>
 								<th scope="col">강좌명</th>
 								<th scope="col">교수명</th>
+<<<<<<< HEAD
+							
+							</tr>
+						</thead>
+						<tbody class="table-group-divider">
+							<c:forEach var="list" items="${courlist}" varStatus="status">
+								<tr>
+									<th>${status.index + 1}</th>
+									<td>${list.YEAR}</td>
+									<td>${list.SMT}</td>
+									<td>${list.DEPT_NAME}</td>
+									<td><a href="myCoursesList">${list.SUB_NAME}</a></td>
+									<td>${list.PROF_NAME}</td>
+								</tr>
+							</c:forEach>
+=======
 							</tr>
 						</thead>
 						<tbody class="table-group-divider">
@@ -68,6 +86,7 @@
 								<td>@twitter</td>
 								<td>@twitter</td>
 							</tr>
+>>>>>>> master
 						</tbody>
 					</table>
 				</div>
