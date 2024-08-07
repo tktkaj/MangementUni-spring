@@ -70,6 +70,7 @@
 </style>
 </head>
 <body>
+
     <jsp:include page="../common/header.jsp" />
 
     <c:set var="searchType" value="${param.searchType}" />
@@ -157,5 +158,7 @@
 
      
     </script>
+
+	
 </body>
 </html>

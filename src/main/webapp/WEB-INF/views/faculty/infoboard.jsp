@@ -56,7 +56,7 @@ a {
 	</c:if>
 
 	<!-- 없는 게시글을 상세 페이지로 이동하기 위해 클릭할 때, alert창 띄우기 위해 코드 작성 -->
-	<c:if test="${not empty msg }">
+	<c:if test="${not empty msg}">
 		<script>
 			alert('${msg}');
 		</script>
@@ -85,21 +85,22 @@ a {
 			<!-- content view -->
 			<div id="pageContent">
 				<!-- 검색창 시작 -->
-				<form action="${path}/board/infoboard" method="get">
+				<form action="${path}/infoboardPro" method="get">
 					<div style="text-align: center;">
 						<label> <input type="radio" name="searchType"
-							value="title" ${searchType=='title' ? 'checked':''}> 제목</label> 
-						<label> <input type="radio" name="searchType"
-							value="writer" ${searchType=='content' ? 'checked':''}>
+							value="title" ${searchType == 'title' ? 'checked' : ''}>
+							제목
+						</label> <label> <input type="radio" name="searchType"
+							value="writer" ${searchType == 'writer' ? 'checked' : ''}>
 							작성자
-						</label> <span class="blue_window"> 
-						<input type="text"
+						</label> <span class="blue_window"> <input type="text"
 							id="searchValue" name="searchValue" class="input_text"
 							value="${param.searchValue}" />
 						</span>
 						<button type="submit" class="sch_smit">검색</button>
 					</div>
 				</form>
+
 				<!-- 검색창 종료 -->
 
 				<div id="improtant">총 조회 건수 ${ count }건</div>
@@ -146,6 +147,35 @@ a {
 				<!-- table-responsive div -->
 			</div>
 			<!-- pageContent div -->
+			<nav aria-label="Page navigation example">
+				<ul class="pagination justify-content-center">
+
+					<!-- 이전 페이지 -->
+					<li class="page-item"><a class="page-link"
+						href="${path}/infoboard?page=${pageInfo.prevPage}"
+						aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+					</a></li>
+
+					<!-- 페이지 목록 -->
+					<c:forEach begin="${pageInfo.startPage}" end="${pageInfo.lastPage}"
+						step="1" var="page">
+						<c:if test="${page == pageInfo.currentPage}">
+							<li class="page-item active"><span class="page-link">${page}</span>
+							</li>
+						</c:if>
+						<c:if test="${page != pageInfo.currentPage}">
+							<li class="page-item"><a class="page-link"
+								href="${path}/infoboard?page=${page}">${page}</a></li>
+						</c:if>
+					</c:forEach>
+
+					<!-- 다음 페이지 -->
+					<li class="page-item"><a class="page-link"
+						href="${path}/infoboard?page=${pageInfo.nextPage}"
+						aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+					</a></li>
+				</ul>
+			</nav>
 		</div>
 		<!-- content div -->
 	</div>
