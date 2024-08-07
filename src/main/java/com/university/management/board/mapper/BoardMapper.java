@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.university.management.board.dto.Board;
 
@@ -24,6 +23,13 @@ public interface BoardMapper {
 	int readCount(int no);
 
 	// 공지사항 추가
-	List<Board> boardInfoInsert(String title, String file, String detail);
+	int insertWrite(Board board);
+
+	int empSelect(String loginname);
+
+	// page 기능
+	//List<Board> selectBoardListPage(Map<String, String> params);
+
+	List<Board> selectBoardListPage(int limit, int offset, Map<String, String> params);
 
 }
