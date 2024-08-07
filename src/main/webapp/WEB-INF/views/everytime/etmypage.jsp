@@ -24,9 +24,9 @@
 	    <div id="menuBar">
         <div id="sub-menuBar" style="height: 150px;">
             <ul id="menulist">
-                <li><a href="passwordchange">자유게시판</a></li>
-                <li><a href="#">내글 보기</a></li>
-                <li><a href="management">HOT게시판</a></li>
+                <li><a href="etmainpage">자유게시판</a></li>
+                <li><a href="etmypage">내글 보기</a></li>
+                <li><a href="everytimehot">HOT게시판</a></li>
             </ul>
         </div>
     </div>
@@ -50,7 +50,7 @@
             </div>
 
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action list-group-item-large" aria-current="true"
+                <a href="etaupdate" class="list-group-item list-group-item-action list-group-item-large" aria-current="true"
                     style="margin-top: 5px;">제목이었던 것</a>
                 <a href="#" class="list-group-item list-group-item-action list-group-item-small disabled">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내용이었던 것 내용이었던 것 내용이었던 것 내용이었던 것
