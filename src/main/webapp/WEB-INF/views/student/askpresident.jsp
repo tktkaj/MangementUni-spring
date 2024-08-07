@@ -91,7 +91,7 @@ row row-cols-1 {
 				<li><a href="objection">성적 조회</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
 				<li><a href="courseregistrationpage">수강신청 페이지</a></li>
-				<li><a href="askpresident">총장님께 바랍니다</a></li>
+				<li><a href="askpresident">총장님께 부탁드립니다</a></li>
 				<li><a href="idcard">학생증</a></li>
 			</ul>
 		</div>

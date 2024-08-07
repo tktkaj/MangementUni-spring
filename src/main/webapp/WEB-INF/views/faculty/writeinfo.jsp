@@ -38,7 +38,7 @@ h1 {
 			</ul>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container" style="height: 1000px; margin-top: 100px;">
 		<div class="row">
 			<div class="col-12">
 				<div id="content">
@@ -51,7 +51,7 @@ h1 {
 						style="margin-bottom: 20px;">
 						<table>
 							<tr>
-								<th width="50"><span>제목</span></th>
+								<th ><span>제목</span></th>
 								<td><input type="text" placeholder="제목을 입력하세요" name="title"></td>
 							</tr>
 							<tr>
