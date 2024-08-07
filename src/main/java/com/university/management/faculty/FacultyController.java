@@ -131,7 +131,7 @@ public class FacultyController {
 
 	@RequestMapping("/scholarlist")
 	public String scholarList() {
-		return "scholarship/scholarList";
+		return "scholarship/scholarlist";
 	}
 
 }
