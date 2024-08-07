@@ -16,7 +16,6 @@ public class PageInfo {
 
 	// 전체 페이지 중 가장 마지막 페이지
 	public int getMaxPage() {
-
 		return (int) Math.ceil((double) this.listCount / this.listLimit);
 	}
 

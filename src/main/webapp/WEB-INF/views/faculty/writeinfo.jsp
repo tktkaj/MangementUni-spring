@@ -27,6 +27,13 @@ h1 {
 <title>공지사항 작성</title>
 </head>
 <body>
+	<c:if test="${not empty msg}">
+		<script>
+			alert('${msg}');
+		</script>
+		<c:remove var=" msg" />
+	</c:if>
+	
 	<div><jsp:include page="../common/header.jsp" /></div>
 	<div id="menuBar">
 		<div id="sub-menubar">
@@ -47,7 +54,7 @@ h1 {
 						<h1>공지사항 작성</h1>
 					</div>
 					<!-- content view -->
-					<form action="informationboard" method="post"
+					<form action="writeinfoPro" method="post"
 						style="margin-bottom: 20px;">
 						<table>
 							<tr>
@@ -63,12 +70,12 @@ h1 {
 								<td><textarea placeholder="내용을 입력하세요" name="detail"></textarea></td>
 							</tr>
 							<tr class="table-secondary">
-								<td colspan="3" align="center">
-								<input class="btn btn-outline-primary btn-sm" type="submit" value="등록"
-									style="font-size: 13px;" /> 
-								<input class="btn btn-outline-danger btn-sm" type="reset" value="다시쓰기"
-									style="font-size: 13px;" /> 
-								<input class="btn btn-outline-warning btn-sm" type="button"
+								<td colspan="3" align="center"><input
+									class="btn btn-outline-primary btn-sm" type="submit" value="등록"
+									style="font-size: 13px;" /> <input
+									class="btn btn-outline-danger btn-sm" type="reset" value="다시쓰기"
+									style="font-size: 13px;" /> <input
+									class="btn btn-outline-warning btn-sm" type="button"
 									value="돌아가기" style="font-size: 13px;" onclick="history.back()" />
 								</td>
 							</tr>
