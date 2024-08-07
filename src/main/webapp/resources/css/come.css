@@ -4,13 +4,16 @@ html, body {
 	padding: 0;
 	display: flex;
 	flex-direction: column;
-	
+}
+
+.stations a {
+	text-decoration: none;
+	color: #333;
 }
 
 body {
 	justify-content: space-between;
 	background-color: #f0f0f0;
-	
 }
 
 .container1 {
@@ -20,9 +23,6 @@ body {
 	width: 1200px;
 	text-align: center;
 	margin: 80px auto 100px auto;
-	
-	
-	
 }
 
 .map {
@@ -33,8 +33,6 @@ body {
 	align-items: center;
 	font-size: 2em;
 	color: #333;
-	
-	
 }
 
 .info {
@@ -44,8 +42,8 @@ body {
 .address1 {
 	display: flex;
 	justify-content: space-between;
-	background-color: RGB(231, 240, 254);
-	border: 1px solid #024C86;
+	background-color: white;
+	border: 1px solid #ccc;
 	border-radius: 5px;
 	padding: 10px 0;
 	font-weight: bolder;
@@ -106,23 +104,23 @@ body {
 }
 
 .line-sinbundang {
-	background-color: rgba(255, 0, 0, 0.8);
+	background-color: #cd023a;
 }
 
 .line-3 {
-	background-color: rgba(255, 165, 0, 0.8);
+	background-color: #e8791c;
 }
 
 .line-2 {
-	background-color: rgba(0, 128, 0, 0.8);
+	background-color: #009944;
 }
 
 .blue {
-	background-color: rgba(0, 0, 255, 0.8);
+	background-color: #1f85ea;
 }
 
 .red {
-	background-color: rgba(255, 0, 0, 0.8);
+	background-color: #ff4123;
 }
 
 .green {
