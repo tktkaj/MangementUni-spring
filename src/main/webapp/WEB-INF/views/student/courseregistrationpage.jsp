@@ -74,8 +74,7 @@
 							<td>
 						 <c:if test="${stuinfo.SUB_STATUS eq 'n'}">
 								<button type="button" class="apply2" 
-									onclick="submitForm('${stuinfo.SUB_STATUS}','${stuinfo.SUB_CODE}','${stuinfo.SUB_NAME}', '${stuinfo.PROF_NAME}', '${deptname}', '${stuinfo.CO_CONTENT}','${stuinfo.SMT}','${stuinfo.YEAR}')">신청</button>
-							
+									onclick="submitForm('${stuinfo.SUB_STATUS}','${stuinfo.SUB_CODE}','${stuinfo.SUB_NAME}', '${stuinfo.PROF_NAME}', '${deptname}', '${stuinfo.CO_CONTENT}','${stuinfo.SMT}','${stuinfo.YEAR}')">신청</button>		
 							</c:if>
 							 <c:if test="${stuinfo.SUB_STATUS eq 'y'}">
 								<button type="button" class="apply2" 

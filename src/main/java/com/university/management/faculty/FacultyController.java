@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.university.management.board.dto.Board;
 import com.university.management.board.dto.PageInfo;
 import com.university.management.faculty.service.FacultyService;
+import com.university.management.scholar.dto.Scholar;
 import com.university.management.scholar.dto.ScholarList;
 import com.university.management.scholar.service.ScholarService;
 
@@ -150,14 +152,46 @@ public class FacultyController {
 		
 		System.out.println("장학금 리스트: " + scholarList);
 		
-		model.addAttribute("scholarList",scholarList);
-		
-
-	model.addAttribute("department",department_type);
-	model.addAttribute("scholarship_type",scholarship_type);
-	model.addAttribute("grade",grade);
+	model.addAttribute("scholarList",scholarList);
+	session.setAttribute("department",department_type);
+	session.setAttribute("scholarship_type",scholarship_type);
+	session.setAttribute("grade",grade);
 		
 		return "scholarship/scholarlist";
 	}
 
+	@PostMapping("/scholarlistInfo")
+	@ResponseBody
+	public Map<String, Object> scholarlistInfo(@RequestBody Map<String, String> requestBody) {
+	    Map<String, Object> response = new HashMap<>();
+	    try {
+	        String schStatus = requestBody.get("SCH_STATUS");
+	        int year = Integer.parseInt(requestBody.get("YEAR"));
+	        int smt = Integer.parseInt(requestBody.get("SMT"));
+	        int stuNo = Integer.parseInt(requestBody.get("STU_NO"));
+	        int schNo = Integer.parseInt(requestBody.get("SCH_NO"));
+	        String deptCode = requestBody.get("DEPT_CODE");
+
+	        // 장학금 승인/취소 처리 로직 추가
+	        boolean success = processScholarlistInfo(schStatus, year, smt, stuNo, schNo, deptCode);
+	        response.put("success", success);
+
+	    } catch (NumberFormatException e) {
+	        response.put("success", false);
+	        response.put("error", "잘못된 데이터 형식입니다.");
+	    } catch (Exception e) {
+	        response.put("success", false);
+	        response.put("error", "처리 중 오류가 발생했습니다.");
+	    }
+	    return response;
+	}
+
+    private boolean processScholarlistInfo(String schStatus, int year, int smt, int stuNo, int schNo, String deptCode) {
+        // 장학금 승인/취소 처리 로직 (예: 데이터베이스 업데이트)
+    	System.out.println("확인"+schStatus+" "+year+" "+smt+" "+stuNo+" "+schNo+" "+deptCode);
+        // 성공적으로 처리되었으면 true, 실패하면 false를 반환
+        return true;
+    }
+	
+	
 }

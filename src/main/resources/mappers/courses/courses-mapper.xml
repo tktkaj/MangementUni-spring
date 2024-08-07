@@ -3,9 +3,9 @@
 <mapper
 	namespace="com.university.management.courses.mapper.CoursesMapper">
 
-<select id="coursesList" parameterType="String" resultType="com.university.management.courses.dto.CoursesList">
+<select id="coursesList" parameterType="com.university.management.courses.dto.CoursesList" resultType="com.university.management.courses.dto.CoursesList">
 
-select * from COURSES where STU_NO=${loginNo}
+ select * from COURSES where STU_NO=#{STU_NO} and year=#{YEAR} and smt=#{SMT}
 
 </select>
 

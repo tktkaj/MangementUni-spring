@@ -112,7 +112,28 @@ public class StudentController {
 	@RequestMapping("/myCoursesPage")
 	public String MyCoursesPage(Model model) {
 		int loginNo = (int)session.getAttribute("studentno");
-	  List<CoursesList> coursesList= courservice.coursesList(loginNo);
+	
+		CoursesList cour= new CoursesList();
+		
+		// 현재 날짜를 가져옵니다.
+		LocalDate today = LocalDate.now();
+		// 현재 월을 가져옵니다.
+		int month = today.getMonthValue();
+
+		// 월에 따라서 값을 결정합니다
+		int smt = 0;
+		if (month >= 1 && month <= 7) {
+			smt = 1;
+		} else if (month >= 8 && month <= 12) {
+			smt = 2;
+		}
+		int year = today.getYear();
+		
+		cour.setSTU_NO(loginNo);
+		cour.setSMT(smt);
+		cour.setYEAR(year);
+		
+	  List<CoursesList> coursesList= courservice.coursesList(cour);
 		System.out.println("myCoursesPage실행:"+coursesList );
 		model.addAttribute("courlist", coursesList);
 		
@@ -133,7 +154,8 @@ public class StudentController {
 	public String courseregistrationpage(Model model) {
 		Integer loginNo = (Integer) session.getAttribute("studentno");
 		List<Student> studentInfo = stuservice.stuInfoSelect(loginNo);
-		Courseregistrationpage cour = new Courseregistrationpage(); // 현재 날짜를 가져옵니다.
+		Courseregistrationpage cour = new Courseregistrationpage(); 
+		// 현재 날짜를 가져옵니다.
 		LocalDate today = LocalDate.now();
 
 		// 현재 월을 가져옵니다.

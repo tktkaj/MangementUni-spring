@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CoursesList {
 	private int STU_NO; // 학번 참조
-	private String YEAR; // -- 학년도
+	private int YEAR; // -- 학년도
 	private int SMT; // -- 학기
 	private String DEPT_NAME; // -- 학과명
 	private String PROF_NAME; // -- 교수명

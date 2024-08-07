@@ -17,5 +17,6 @@ public class ScholarList {
     private String STU_NAME; //학생명
     private double RESULTSAVG; //성적평균
     private String SCH_NAME; //장학금명
-	
+    private int SCH_NO;//장학금 유형번호
+	private String SCH_STATUS;//장학금 상태
 }
