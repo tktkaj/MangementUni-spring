@@ -1,3 +1,5 @@
+-- everytime2.css --
+
 .menuBar {
     height: 100px;
 }
@@ -5,6 +7,7 @@
 .input-group-text {
     background-color: #f8f9fa;
     border-color: black;
+    height:100%;
 }
 
 .form-control {
@@ -145,9 +148,9 @@ h1 {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    border: 2px solid rgb(2, 76, 134);
+    border:none;
     background-color: #f8f9fa;
-    border-top: none;
+   
 }
 
 .form-controls-container .file-upload-section {
@@ -156,7 +159,7 @@ h1 {
 }
 
 .form-controls-container .form-check {
-    margin-left: 20px;
+    
 }
 
 .form-controls-container .btn {
