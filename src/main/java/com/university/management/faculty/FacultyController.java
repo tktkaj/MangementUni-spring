@@ -129,7 +129,7 @@ public class FacultyController {
 	 * return service.objectionFilterData(department, subject, grade); }
 	 */
 
-	@RequestMapping("/scholarList")
+	@RequestMapping("/scholarlist")
 	public String scholarList() {
 		return "scholarship/scholarList";
 	}

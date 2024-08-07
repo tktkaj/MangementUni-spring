@@ -48,7 +48,7 @@
 								<th scope="col">학과</th>
 								<th scope="col">강좌명</th>
 								<th scope="col">교수명</th>
-<<<<<<< HEAD
+
 							
 							</tr>
 						</thead>
@@ -63,31 +63,10 @@
 									<td>${list.PROF_NAME}</td>
 								</tr>
 							</c:forEach>
-=======
-							</tr>
-						</thead>
-						<tbody class="table-group-divider">
-							<tr>
-								<th scope="row">1</th>
-								<td>Mark</td>
-								<td><a href="myCoursesList">Otto</a></td>
-								<td>@mdo</td>
 
 							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>Jacob</td>
-								<td>Thornton</td>
-								<td>@mdo</td>
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<td>@twitter</td>
-								<td>@twitter</td>
-								<td>@twitter</td>
-							</tr>
->>>>>>> master
-						</tbody>
+						</thead>
+						
 					</table>
 				</div>
 				<!-- table-responsive div -->
