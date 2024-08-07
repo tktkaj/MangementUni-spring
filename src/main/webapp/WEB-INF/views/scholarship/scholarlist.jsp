@@ -7,13 +7,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <link href="${path}/resources/css/scholarlist.css" rel="stylesheet" />
 <title>장학금 관리</title>
 </head>
 <body>
+	
 	<jsp:include page="../common/header.jsp" />
-	<div id="menuBar">
+	<div id="menuBar" >
 		<div id="sub-menubar"  style="height: 150px;">
 			<ul id="menulist">
 				<li><a href="infoboard">공지사항 관리</a></li>
@@ -22,10 +24,10 @@
 			</ul>
 		</div>
 	</div>
-	<div class="container" style="height: 750px; margin-top:100px;">
+	<div class="container" style="height: 750px; margin-top:50px;">
 
 		<div id="content">
-
+<!-- title view -->
 			<div id="pagetitle">
 				<h1>장학금 관리</h1>
 			</div>

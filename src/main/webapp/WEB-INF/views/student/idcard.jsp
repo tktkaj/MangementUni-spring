@@ -103,12 +103,10 @@ body {
 </style>
 </head>
 <jsp:include page="../common/header.jsp" />
-<body>
 	<div id="menuBar">
 		<div id="sub-menuBar">
 			<ul id="menulist">
 				<li><a href="studentstatus">학적 조회</a></li>
-				<li><a href="studentinfo">학생 정보 조회</a></li>
 				<li><a href="passwordchange">학생 정보 변경</a></li>
 				<li><a href="objection">성적 조회</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
@@ -118,7 +116,6 @@ body {
 			</ul>
 		</div>
 	</div>
-
 	<div class="container" style="height: 600px; margin-top: 100px;">
 		<div id="content">
 			<!-- title view -->

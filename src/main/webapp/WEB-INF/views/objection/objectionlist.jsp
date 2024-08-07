@@ -18,7 +18,7 @@
 #sub-menubar {
 	margin-left: 50px;
 	background-color: #024C86;
-	margin-top: 110px;
+	margin-top: 160px;
 	width: 200px;
 	height: 150px;
 	float: left;
@@ -65,8 +65,9 @@
 		</div>
 	</div>
 
-	<div class="container" style="height: 750px; margin-top: 100px;">
+	<div class="container" style="height: 750px; margin-top: 50px;">
 		<div id="content">
+		<!-- title view -->
 			<div id="pagetitle">
 				<h1>성적 이의 신청 목록</h1>
 			</div>
