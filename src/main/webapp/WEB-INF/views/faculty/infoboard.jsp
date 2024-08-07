@@ -170,7 +170,7 @@ a {
 					</a></li>
 
 					<!-- 페이지 목록 -->
-					<c:forEach begin="${pageInfo.startPage}" end="${pageInfo.lastPage}"
+					<c:forEach begin="${pageInfo.firstPage}" end="${pageInfo.lastPage}"
 						step="1" var="page">
 						<c:if test="${page == pageInfo.currentPage}">
 							<li class="page-item active"><span class="page-link">${page}</span>
