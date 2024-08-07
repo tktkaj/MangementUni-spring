@@ -1,12 +1,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page session="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
-<jsp:include page="../common/header.jsp" />
+
 <html>
 <head>
 <style>
@@ -14,8 +13,8 @@
 	margin-left: 50px;
 	background-color: #024C86;
 	margin-top: 110px;
-	width: 200px;
-	height: 150px;
+	width: 250px; /* 넓이 조절 */
+	height: 200px; /* 높이 조절 */
 	float: left;
 }
 
@@ -62,6 +61,7 @@ a {
 <title>공지사항</title>
 </head>
 <body>
+<jsp:include page="../common/header.jsp" />
 	<!-- 만약 아무것도 없다면 checked를 타이틀로 지정하기 위해서 if문을 작성한 것이다.  -->
 	<c:set var="searchType" value="${param.searchType}" />
 	<c:if test="${empty searchType }">
@@ -88,11 +88,8 @@ a {
 		</div>
 	</c:if>
 
-
-	<div class="container1">
-
+	<div class="container" style="height: 750px; margin-top:100px;">
 		<div id="content">
-
 			<!-- title view -->
 			<div id="pageTitle">
 				<h1>공지사항 목록</h1>
@@ -100,7 +97,6 @@ a {
 
 			<!-- content view -->
 			<div id="pageContent">
-
 				<!-- 검색창 시작 -->
 				<form action="${path}/board/infoboard" method="get">
 					<div style="text-align: center;">
@@ -159,7 +155,6 @@ a {
 						<button onclick="location.href='writeinfo'"
 							style="float: right; width: 80px; background-color: #024C86; color: white; border: none; padding: 5px; border-radius: 10px">글작성</button>
 					</c:if>
-
 				</div>
 				<!-- table-responsive div -->
 			</div>
