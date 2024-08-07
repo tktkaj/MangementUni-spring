@@ -91,7 +91,7 @@ row row-cols-1 {
 				<li><a href="objection">성적 조회</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
 				<li><a href="courseregistrationpage">수강신청 페이지</a></li>
-				<li><a href="askpresident">총장님께 부탁드립니다</a></li>
+				<li><a href="askpresident">총장님께 바랍니다</a></li>
 				<li><a href="idcard">학생증</a></li>
 			</ul>
 		</div>
@@ -100,7 +100,7 @@ row row-cols-1 {
 		<div id="content">
 			<!-- title view -->
 			<div id="pageTitle">
-				<h1>총장님께 부탁드립니다</h1>
+				<h1>총장님께 바랍니다</h1>
 			</div>
 			<div class="custom">
 				<h5 class="mt-4" style="text-align: left; color: red;">이 글은
@@ -108,14 +108,14 @@ row row-cols-1 {
 				<!-- Privacy Notice Section -->
 				<div class="privacy-box">
 					<h2>개인정보 활용 동의</h2>
-					<p>총장님께 부탁드립니다에 수집된 개인정보는 목적 이외의 용도로는 이용되지 않으며, 수집 목적 외 이용 및
+					<p>총장님께 바랍니다에 수집된 개인정보는 목적 이외의 용도로는 이용되지 않으며, 수집 목적 외 이용 및
 						제3자 제공 시에는 사전에 알리고 동의를 받을 예정입니다.</p>
 					<ol>
 						<li>개인정보 수집목적: 제안 의견 처리</li>
 						<li>개인정보 수집항목: 성명, 이메일 주소, 연락처</li>
 						<li>개인정보 보유 및 이용기간: 관련 법령이 정한 기간 동안</li>
 						<li>거부권 및 불이익: 개인정보 수집 이용에 동의하지 않을 권리가 있으며 동의하지 않는 경우에는 '총장님께
-							바란다' 제안 서비스를 이용하실 수 없습니다.</li>
+							바랍니다' 제안 서비스를 이용하실 수 없습니다.</li>
 					</ol>
 					<p>위와 같이 본인의 개인정보를 수집·이용하는 것에 동의합니다.</p>
 				</div>

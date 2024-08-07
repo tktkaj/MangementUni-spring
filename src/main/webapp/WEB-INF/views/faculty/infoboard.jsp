@@ -9,14 +9,7 @@
 <html>
 <head>
 <style>
-#sub-menubar {
-	margin-left: 50px;
-	background-color: #024C86;
-	margin-top: 110px;
-	width: 250px; /* 넓이 조절 */
-	height: 200px; /* 높이 조절 */
-	float: left;
-}
+
 
 #menulist {
 	text-decoration: none;
@@ -36,14 +29,8 @@
 	border-bottom-color: white;
 }
 
-#menulist li {
-	margin: 20px 0px;
-}
 
-.container1 {
-	width: 1200px;
-	margin: 150px auto 100px auto;
-}
+
 
 .sch_smit {
 	border: none;
@@ -78,7 +65,7 @@ a {
 
 	<c:if test="${login == 'Employee'}">
 		<div id="menuBar">
-			<div id="sub-menubar">
+			<div id="sub-menubar" style="height: 150px;">
 				<ul id="menulist">
 					<li><a href="infoboard">공지사항 관리</a></li>
 					<li><a href="scholarlist">장학금 관리</a></li>
