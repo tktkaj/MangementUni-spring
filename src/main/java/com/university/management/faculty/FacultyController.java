@@ -19,6 +19,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.university.management.board.dto.Board;
 import com.university.management.board.dto.PageInfo;
 import com.university.management.faculty.service.FacultyService;
+import com.university.management.scholar.dto.ScholarList;
+import com.university.management.scholar.service.ScholarService;
 
 @Controller
 public class FacultyController {
@@ -29,6 +31,9 @@ public class FacultyController {
 	@Autowired
 	private FacultyService service;
 
+	@Autowired
+	private ScholarService scholarservice;
+	
 	@RequestMapping("/infoboard")
 	public String infoboard(HttpSession session, Model model) {
 		System.out.println("FacultyController-infoboard() 실행");
@@ -130,7 +135,28 @@ public class FacultyController {
 	 */
 
 	@RequestMapping("/scholarlist")
-	public String scholarList() {
+	public String scholarList(Model model,String scholarship_type,String department_type,String grade) {
+		System.out.println("facultycontroller안에scholarlist실행");
+		
+		// Map 생성
+				Map<String,String> params = new HashMap<>();
+				params.put("scholarship_type", scholarship_type);
+				params.put("DEPT_CODE", department_type);
+				params.put("STU_GRADE", grade);
+		
+				System.out.println(params);
+				
+		List<ScholarList> scholarList= scholarservice.scholarlistSelect(params);
+		
+		System.out.println("장학금 리스트: " + scholarList);
+		
+		model.addAttribute("scholarList",scholarList);
+		
+
+	model.addAttribute("department",department_type);
+	model.addAttribute("scholarship_type",scholarship_type);
+	model.addAttribute("grade",grade);
+		
 		return "scholarship/scholarlist";
 	}
 

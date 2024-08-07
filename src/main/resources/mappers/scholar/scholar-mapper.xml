@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.university.management.scholar.mapper.ScholarMapper">
+	<select id="scholarlistSelect" parameterType="map"
+		resultType="com.university.management.scholar.dto.ScholarList">
+
+		WITH RankedStudents AS (
+		SELECT
+		s.DEPT_CODE,
+		r.YEAR,
+		r.SMT,
+		d.DEPT_NAME,
+		s.STU_NO,
+		s.STU_GRADE,
+		s.STU_NAME,
+		ROUND(AVG(CASE
+		WHEN r.GRADE = 'A+' THEN 4.5
+		WHEN r.GRADE = 'A' THEN 4.0
+		WHEN r.GRADE = 'B+' THEN 3.5
+		WHEN r.GRADE = 'B' THEN 3.0
+		WHEN r.GRADE = 'C+' THEN 2.5
+		WHEN r.GRADE = 'C' THEN 2.0
+		WHEN r.GRADE = 'D+' THEN 1.5
+		WHEN r.GRADE = 'D' THEN 1.0
+		WHEN r.GRADE = 'F' THEN 0.0
+		END), 1) AS RESULTSAVG,
+		ROW_NUMBER() OVER (
+		PARTITION BY s.DEPT_CODE, s.STU_GRADE
+		ORDER BY ROUND(AVG(CASE
+		WHEN r.GRADE = 'A+' THEN 4.5
+		WHEN r.GRADE = 'A' THEN 4.0
+		WHEN r.GRADE = 'B+' THEN 3.5
+		WHEN r.GRADE = 'B' THEN 3.0
+		WHEN r.GRADE = 'C+' THEN 2.5
+		WHEN r.GRADE = 'C' THEN 2.0
+		WHEN r.GRADE = 'D+' THEN 1.5
+		WHEN r.GRADE = 'D' THEN 1.0
+		WHEN r.GRADE = 'F' THEN 0.0
+		END), 1) DESC
+		) AS r
+		FROM
+		university.RESULTS r
+		JOIN
+		university.STUDENT s ON r.STU_NO = s.STU_NO
+		JOIN
+		university.DEPARTMENT d ON s.DEPT_CODE = d.DEPT_CODE
+		WHERE
+		r.YEAR = 2024 AND r.SMT = 1
+		GROUP BY
+		s.DEPT_CODE, d.DEPT_NAME, s.STU_NO, s.STU_NAME, s.STU_GRADE, r.YEAR, r.SMT
+		)
+		SELECT
+		DEPT_CODE,
+		YEAR,
+		SMT,
+		DEPT_NAME,
+		STU_NO,
+		STU_GRADE,
+		STU_NAME,
+		RESULTSAVG,
+		CASE
+		WHEN r = 1 THEN '최우수 장학금'
+		WHEN r = 2 THEN '우수 장학금'
+		WHEN r = 3 THEN '장려 장학금'
+		ELSE NULL
+		END AS SCH_NAME
+		FROM
+		RankedStudents
+		WHERE
+		r &lt; 4
+		
+		
+		 <if test="DEPT_CODE != null">
+		  <if test="DEPT_CODE != deptall">
+                AND DEPT_CODE = #{DEPT_CODE}
+                </if>
+            </if>
+          
+              
+            <if test="scholarship_type != null">
+              <if test="scholarship_type != 0">
+                AND r = #{scholarship_type}
+            </if>
+            </if>
+            
+            <if test="STU_GRADE != null">
+             <if test="STU_GRADE != gradeall">
+                AND STU_GRADE = #{STU_GRADE}
+            </if>
+           </if>
+		ORDER BY
+		DEPT_CODE, STU_GRADE, r
+
+
+	</select>
+</mapper>
