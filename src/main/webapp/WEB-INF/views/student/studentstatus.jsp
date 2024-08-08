@@ -85,6 +85,38 @@
 					</div>
 				</div>
 				<div id="courselist1">
+					<h5 id="midtitle">&gt; 등록금 조회</h5>
+					<div>
+						<table class="table mt-2 mb-4">
+							<thead>
+								<tr>
+									<th scope="col"></th>
+									<th scope="col">학년도</th>
+									<th scope="col">학기</th>
+									<th scope="col">학과</th>
+									<th scope="col">등록금액</th>
+								</tr>
+							</thead>
+							<tbody class="table-group-divider">
+								<tr>
+									<th scope="row">1</th>
+									<td>2024</td>
+									<td>1</td>
+									<td>@mdo</td>
+									<td>@mdo</td>
+								</tr>
+								<tr>
+									<th scope="row">1</th>
+									<td>2024</td>
+									<td>1</td>
+									<td>@mdo</td>
+									<td>@mdo</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div id="courselist1">
 					<h5 id="midtitle">&gt; 장학금 수혜 조회</h5>
 					<div>
 						<table class="table mt-2 mb-4">
