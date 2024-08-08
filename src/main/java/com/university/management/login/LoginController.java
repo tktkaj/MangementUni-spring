@@ -100,8 +100,7 @@ public class LoginController {
 	String email=(String)session.getAttribute("email");
 	String phone=(String)session.getAttribute("phone");
 	String password=(String)session.getAttribute("loginPassword");
-		System.out.println(email);
-		System.out.println(phone);
+
 		model.addAttribute("id",id);
 		model.addAttribute("name",name);
 		model.addAttribute("deptname",deptname);
@@ -113,13 +112,16 @@ public class LoginController {
 	}
 	
 	@RequestMapping("/passwordchangeInfo")
-	public String passwordchangeInfo(Model model, int STU_NO, String STU_PASSWORD) {
+	public String passwordchangeInfo(Model model, String STU_PASSWORD) {
+		
+		System.out.println("passwordchangeInfo실행"+STU_PASSWORD);
+		int STU_NO=(int)session.getAttribute("studentno");
 		  Map<String, Object> params = new HashMap<>();  
 	        params.put("STU_PASSWORD", STU_PASSWORD);
 	        params.put("STU_NO", STU_NO);
-		System.out.println(params);
+		System.out.println("params:"+params);
 	loginService.pwschange(params);
-		
+	logout(session, model);
 
 		return "home";
 	}

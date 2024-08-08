@@ -4,7 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
-<c:set var="pw" value="${password}"/>
+<c:set var="pw" value="${password}" />
 <!DOCTYPE html>
 <html lang="kr">
 
@@ -85,7 +85,8 @@ header, footer {
 		</div>
 	</div>
 	<div class="container" style="height: 750px; margin-top: 100px;">
-		<form action="${path}/passwordchangeInfo" method="post" onsubmit="return chkpw()">
+		<form id="passwordChangeForm" action="${path}/passwordchangeInfo"
+			method="post" onsubmit="return chkpw()">
 			<div id="content">
 				<!-- title view -->
 				<div id="pageTitle">
@@ -97,46 +98,44 @@ header, footer {
 						<div class="container text-center">
 							<div class="row row-cols-1">
 								<div class="input-group mb-3">
-									<span class="input-group-text" id="basic-addon1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;학번&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-									<input type="text" class="form-control"
-										aria-describedby="basic-addon1" name="STU_NO" placeholder="${id}" readonly>
+									<span class="input-group-text">학번</span> <input type="text"
+										class="form-control" aria-describedby="basic-addon1"
+										name="STU_NO" placeholder="${id}" readonly>
 								</div>
 								<div class="input-group mb-3">
-									<span class="input-group-text" id="basic-addon1">&nbsp;사용자명&nbsp;</span>
-									<input type="text" class="form-control"
-										aria-describedby="basic-addon1" placeholder="${name}" readonly>
+									<span class="input-group-text">사용자명</span> <input type="text"
+										class="form-control" aria-describedby="basic-addon1"
+										placeholder="${name}" readonly>
 								</div>
 								<div class="input-group mb-3">
-									<span class="input-group-text" id="basic-addon1">&nbsp;&nbsp;학과명&nbsp;&nbsp;&nbsp;</span>
-									<input type="text" class="form-control"
-										aria-describedby="basic-addon1" placeholder="${deptname}"
-										readonly>
+									<span class="input-group-text">학과명</span> <input type="text"
+										class="form-control" aria-describedby="basic-addon1"
+										placeholder="${deptname}" readonly>
 								</div>
 								<div class="input-group mb-3">
-									<span class="input-group-text" id="basic-addon1">&nbsp;&nbsp;이메일&nbsp;&nbsp;&nbsp;</span>
-									<input type="text" class="form-control"
-										aria-describedby="basic-addon1" placeholder="${email}"
-										readonly>
+									<span class="input-group-text">이메일</span> <input type="text"
+										class="form-control" aria-describedby="basic-addon1"
+										placeholder="${email}" readonly>
 								</div>
 								<div class="input-group mb-3">
-									<span class="input-group-text" id="basic-addon1">&nbsp;전화번호&nbsp;</span>
-									<input type="text" class="form-control"
-										aria-describedby="basic-addon1" placeholder="${phone}"
-										readonly>
+									<span class="input-group-text">전화번호</span> <input type="text"
+										class="form-control" aria-describedby="basic-addon1"
+										placeholder="${phone}" readonly>
 								</div>
 								<div class="input-group mb-3">
-									<span class="input-group-text" id="basic-addon1">&nbsp;이전PW&nbsp;&nbsp;</span>
-									<input type="text" class="form-control"
+									<span class="input-group-text">이전PW</span> <input
+										type="password" class="form-control"
 										aria-describedby="basic-addon1" id="pwcheck">
 								</div>
 								<div class="input-group mb-3">
-									<span class="input-group-text" id="basic-addon1">변경할PW</span> <input
-										type="text" class="form-control"
-										aria-describedby="basic-addon1" id="password" name="STU_PASSWORD">
+									<span class="input-group-text">변경할PW</span> <input
+										type="password" class="form-control"
+										aria-describedby="basic-addon1" id="password"
+										name="STU_PASSWORD">
 								</div>
 								<div class="input-group mb-3">
-									<span class="input-group-text" id="basic-addon1">&nbsp;PW확인&nbsp;&nbsp;</span>
-									<input type="text" class="form-control"
+									<span class="input-group-text">PW확인</span> <input
+										type="password" class="form-control"
 										aria-describedby="basic-addon1" id="confirmPassword">
 								</div>
 							</div>
@@ -156,9 +155,9 @@ header, footer {
 	    var password = document.getElementById("password").value;
 	    var confirmPassword = document.getElementById("confirmPassword").value;
 		var pw = "${pw}";
-		var pwcheck=document.getElementById("pwcheck").value;
-		
-		 // 비밀번호와 확인 비밀번호가 일치하는지 확인
+		var pwcheck = document.getElementById("pwcheck").value;
+
+	    // 비밀번호와 확인 비밀번호가 일치하는지 확인
 	    if (pw !== pwcheck) {
 	        alert("이전 비밀번호가 일치하지 않습니다.");
 	        return false;
@@ -179,7 +178,7 @@ header, footer {
 	    // 비밀번호 유효성 검사
 	    var num = password.search(/[0-9]/g);
 	    var eng = password.search(/[a-z]/ig);
-	    var spe = password.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+	    var spe = password.search(/[`~!@#$%^&*|₩'";:/?]/gi);
 
 	    if (password.length < 10 || password.length > 20) {
 	        alert("비밀번호는 10자리 ~ 20자리 이내로 입력해주세요.");
@@ -191,8 +190,8 @@ header, footer {
 	        alert("영문, 숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.");
 	        return false;
 	    } else {
+	        // 비밀번호가 성공적으로 변경됨을 알리고 폼을 제출합니다.
 	        alert("비밀번호가 성공적으로 변경되었습니다.");
-	        // 폼이 제출되도록 합니다.
 	        return true;
 	    }
 	}

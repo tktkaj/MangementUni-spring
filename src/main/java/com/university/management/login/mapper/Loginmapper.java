@@ -16,6 +16,7 @@ public interface Loginmapper {
 	//학생 로그인
 	Student studentLogin(Map<String, String> params);
 
+	//학생 비밀번호 찾기
 	void pwschange(Map<String, Object> params);
 
 }
