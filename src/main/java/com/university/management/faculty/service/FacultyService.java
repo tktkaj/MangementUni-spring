@@ -19,12 +19,12 @@ public class FacultyService {
 	@Autowired
 	private BoardMapper mapper;
 
-	// 총 게시글 갯수	
-	public int getBoardCount() {		
+	// 총 게시글 갯수
+	public int getBoardCount() {
 		return mapper.selectBoardCount();
 	}
-	
-	public int getBoardListCount(Map<String,String> map) {
+
+	public int getBoardListCount(Map<String, String> map) {
 		return mapper.getBoardListCount(map);
 	}
 
@@ -54,22 +54,41 @@ public class FacultyService {
 	}
 
 	// 공지사항 리스트 추출 및 페이징 처리
-	public List<Board> selectBoardList(Map<String,String> params) {
+	public List<Board> selectBoardList(Map<String, String> params) {
 		System.out.println("service selectBoardList : " + params);
-	
-		String limitNo = params.get("startNo");
-		String endNo = params.get("endNo");
+
+		// 값이 제대로 있는지 확인
+		if (params.get("firstRow") == null) {
+			throw new IllegalArgumentException("firstRow 값 = null");
+		} else if (params.get("listLimit") == null) {
+			throw new IllegalArgumentException("listLimit 값 =  null");
+		}
+
+		String searchType = params.get("searchType");
+		String searchValue = params.get("searchValue");
 		
-		Map<String,String> map = new HashMap<>();
+		if ("title".equals(searchType) && (searchValue == null || searchValue.trim().isEmpty())) {
+	        throw new IllegalArgumentException("제목 검색 시 키워드를 입력해야 합니다.");
+	    } 
 		
-		map.put("limitNo", limitNo);
-		map.put("endNo", endNo);
-		//map.put("params", params);
+		if ("writer".equals(searchType) && (searchValue == null || searchValue.trim().isEmpty())) {
+	    	throw new IllegalArgumentException("작성자 검색 시 키워드를 입력해야 합니다.");
+	    }
 		
+		int firstRow = Integer.parseInt(params.get("firstRow"));
+		int listLimit = Integer.parseInt(params.get("listLimit"));
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("firstRow", firstRow);
+		map.put("listLimit", listLimit);
+		map.put("searchType", searchType);
+		map.put("searchValue", searchValue);
+
+		System.out.println("Parsed firstRow: " + firstRow);
+		System.out.println("Parsed listLimit: " + listLimit);
+
 		return mapper.selectBoardList(map);
 	}
-
-
-
 
 }

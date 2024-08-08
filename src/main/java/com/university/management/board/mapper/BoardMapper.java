@@ -31,7 +31,8 @@ public interface BoardMapper {
 	int empSelect(String loginname);
 
 	// page 기능
-	List<Board> selectBoardList(Map<String,String> params);
+
+	List<Board> selectBoardList(Map<String, Object> map);
 
 
 }
