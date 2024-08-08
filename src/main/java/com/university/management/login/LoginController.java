@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.mysql.cj.Session;
 import com.university.management.employee.dto.Employee;
 import com.university.management.login.service.LoginService;
 import com.university.management.student.dto.Student;
@@ -14,6 +16,9 @@ import com.university.management.student.dto.Student;
 @Controller
 public class LoginController {
 
+	@Autowired
+	private HttpSession session;
+	
 	@Autowired
 	private LoginService loginService;
 
@@ -52,8 +57,11 @@ public class LoginController {
 				session.setAttribute("loginname", student.getSTU_NAME());
 				session.setAttribute("studentno", student.getSTU_NO());
 				session.setAttribute("stugrade", student.getSTU_GRADE());
+				session.setAttribute("studeptname", student.getDEPT_NAME());
+				session.setAttribute("email", student.getSTU_EMAIL());
+				session.setAttribute("phone", student.getSTU_PHONE());
+				session.setAttribute("loginPassword", student.getSTU_PASSWORD());
 				model.addAttribute("msg", student.getSTU_NAME() + "학생 로그인 되었습니다.");
-				
 				session.setAttribute("login",login);
 				return "home";
 			} else {
@@ -84,7 +92,37 @@ public class LoginController {
 	}
 
 	@RequestMapping("/passwordchange")
-	public String passwordChange() {
+	public String passwordChange(Model model ) {
+		
+	int id=(int)session.getAttribute("studentno");
+	String name=(String)session.getAttribute("loginname");
+	String deptname=(String)session.getAttribute("studeptname");
+	String email=(String)session.getAttribute("email");
+	String phone=(String)session.getAttribute("phone");
+	String password=(String)session.getAttribute("loginPassword");
+		System.out.println(email);
+		System.out.println(phone);
+		model.addAttribute("id",id);
+		model.addAttribute("name",name);
+		model.addAttribute("deptname",deptname);
+		model.addAttribute("email",email);
+		model.addAttribute("phone",phone);
+		model.addAttribute("password",password);
+		
 		return "login/passwordchange";
 	}
+	
+	@RequestMapping("/passwordchangeInfo")
+	public String passwordchangeInfo(Model model, int STU_NO, String STU_PASSWORD) {
+		  Map<String, Object> params = new HashMap<>();  
+	        params.put("STU_PASSWORD", STU_PASSWORD);
+	        params.put("STU_NO", STU_NO);
+		System.out.println(params);
+	loginService.pwschange(params);
+		
+
+		return "home";
+	}
+	
+	
 }

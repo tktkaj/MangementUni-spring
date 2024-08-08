@@ -94,7 +94,17 @@ public class StudentController {
 	
 	
 	@RequestMapping("/idcard")
-	public String idcard() {
+	public String idcard(Model model) {
+		
+	int stuno=(int)session.getAttribute("studentno");
+	String name=(String)session.getAttribute("loginname");
+	String deptname=(String)session.getAttribute("studeptname");
+	
+
+		model.addAttribute("stuno", stuno);
+		model.addAttribute("name", name);
+		model.addAttribute("deptname", deptname);
+		
 		return "student/idcard";
 	}
 

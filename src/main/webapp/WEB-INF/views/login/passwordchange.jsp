@@ -4,6 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
+<c:set var="pw" value="${password}"/>
 <!DOCTYPE html>
 <html lang="kr">
 
@@ -65,8 +66,6 @@
 header, footer {
 	padding: 20px 0;
 }
-
-
 </style>
 </head>
 
@@ -85,67 +84,119 @@ header, footer {
 			</ul>
 		</div>
 	</div>
-	<div class="container" style="height: 750px; margin-top:100px;">
-		<div id="content">
-			<!-- title view -->
-			<div id="pageTitle">
-				<h1>학생 정보 변경</h1>
-			</div>
-			<div id="pageContent">
-				<!-- content view -->
-				<div class="input-background">
-					<div class="container text-center">
-						<div class="row row-cols-1">
-							<div class="input-group mb-3">
-								<span class="input-group-text" id="basic-addon1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-								<input type="text" class="form-control"
-									aria-describedby="basic-addon1">
-							</div>
-							<div class="input-group mb-3">
-								<span class="input-group-text" id="basic-addon1">&nbsp;사용자명&nbsp;</span>
-								<input type="text" class="form-control"
-									aria-describedby="basic-addon1">
-							</div>
-							<div class="input-group mb-3">
-								<span class="input-group-text" id="basic-addon1">&nbsp;&nbsp;학과명&nbsp;&nbsp;&nbsp;</span>
-								<input type="text" class="form-control"
-									aria-describedby="basic-addon1">
-							</div>
-							<div class="input-group mb-3">
-								<span class="input-group-text" id="basic-addon1">&nbsp;&nbsp;이메일&nbsp;&nbsp;&nbsp;</span>
-								<input type="text" class="form-control"
-									aria-describedby="basic-addon1">
-							</div>
-							<div class="input-group mb-3">
-								<span class="input-group-text" id="basic-addon1">&nbsp;전화번호&nbsp;</span>
-								<input type="text" class="form-control"
-									aria-describedby="basic-addon1">
-							</div>
-							<div class="input-group mb-3">
-								<span class="input-group-text" id="basic-addon1">&nbsp;이전PW&nbsp;&nbsp;</span>
-								<input type="text" class="form-control"
-									aria-describedby="basic-addon1">
-							</div>
-							<div class="input-group mb-3">
-								<span class="input-group-text" id="basic-addon1">변경할PW</span> <input
-									type="text" class="form-control"
-									aria-describedby="basic-addon1">
-							</div>
-							<div class="input-group mb-3">
-								<span class="input-group-text" id="basic-addon1">&nbsp;PW확인&nbsp;&nbsp;</span>
-								<input type="text" class="form-control"
-									aria-describedby="basic-addon1">
+	<div class="container" style="height: 750px; margin-top: 100px;">
+		<form action="${path}/passwordchangeInfo" method="post" onsubmit="return chkpw()">
+			<div id="content">
+				<!-- title view -->
+				<div id="pageTitle">
+					<h1>학생 정보 변경</h1>
+				</div>
+				<div id="pageContent">
+					<!-- content view -->
+					<div class="input-background">
+						<div class="container text-center">
+							<div class="row row-cols-1">
+								<div class="input-group mb-3">
+									<span class="input-group-text" id="basic-addon1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;학번&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+									<input type="text" class="form-control"
+										aria-describedby="basic-addon1" name="STU_NO" placeholder="${id}" readonly>
+								</div>
+								<div class="input-group mb-3">
+									<span class="input-group-text" id="basic-addon1">&nbsp;사용자명&nbsp;</span>
+									<input type="text" class="form-control"
+										aria-describedby="basic-addon1" placeholder="${name}" readonly>
+								</div>
+								<div class="input-group mb-3">
+									<span class="input-group-text" id="basic-addon1">&nbsp;&nbsp;학과명&nbsp;&nbsp;&nbsp;</span>
+									<input type="text" class="form-control"
+										aria-describedby="basic-addon1" placeholder="${deptname}"
+										readonly>
+								</div>
+								<div class="input-group mb-3">
+									<span class="input-group-text" id="basic-addon1">&nbsp;&nbsp;이메일&nbsp;&nbsp;&nbsp;</span>
+									<input type="text" class="form-control"
+										aria-describedby="basic-addon1" placeholder="${email}"
+										readonly>
+								</div>
+								<div class="input-group mb-3">
+									<span class="input-group-text" id="basic-addon1">&nbsp;전화번호&nbsp;</span>
+									<input type="text" class="form-control"
+										aria-describedby="basic-addon1" placeholder="${phone}"
+										readonly>
+								</div>
+								<div class="input-group mb-3">
+									<span class="input-group-text" id="basic-addon1">&nbsp;이전PW&nbsp;&nbsp;</span>
+									<input type="text" class="form-control"
+										aria-describedby="basic-addon1" id="pwcheck">
+								</div>
+								<div class="input-group mb-3">
+									<span class="input-group-text" id="basic-addon1">변경할PW</span> <input
+										type="text" class="form-control"
+										aria-describedby="basic-addon1" id="password" name="STU_PASSWORD">
+								</div>
+								<div class="input-group mb-3">
+									<span class="input-group-text" id="basic-addon1">&nbsp;PW확인&nbsp;&nbsp;</span>
+									<input type="text" class="form-control"
+										aria-describedby="basic-addon1" id="confirmPassword">
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="d-flex justify-content-center mt-4">
-						<button type="button" class="button btn-wide custom-button">암호변경</button>
+						<div class="d-flex justify-content-center mt-4">
+							<button type="submit" class="button btn-wide custom-button">
+								암호변경</button>
+						</div>
 					</div>
 				</div>
 			</div>
-
-		</div>
+		</form>
 	</div>
+	<script type="text/javascript">
+	function chkpw() {
+	    // 입력 필드 값 가져오기
+	    var password = document.getElementById("password").value;
+	    var confirmPassword = document.getElementById("confirmPassword").value;
+		var pw = "${pw}";
+		var pwcheck=document.getElementById("pwcheck").value;
+		
+		 // 비밀번호와 확인 비밀번호가 일치하는지 확인
+	    if (pw !== pwcheck) {
+	        alert("이전 비밀번호가 일치하지 않습니다.");
+	        return false;
+	    }
+		
+	    // 비밀번호와 확인 비밀번호가 모두 입력되었는지 확인
+	    if (!password || !confirmPassword) {
+	        alert("비밀번호와 확인 비밀번호를 모두 입력해주세요.");
+	        return false;
+	    }
+
+	    // 비밀번호와 확인 비밀번호가 일치하는지 확인
+	    if (password !== confirmPassword) {
+	        alert("비밀번호와 확인 비밀번호가 일치하지 않습니다.");
+	        return false;
+	    }
+
+	    // 비밀번호 유효성 검사
+	    var num = password.search(/[0-9]/g);
+	    var eng = password.search(/[a-z]/ig);
+	    var spe = password.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+
+	    if (password.length < 10 || password.length > 20) {
+	        alert("비밀번호는 10자리 ~ 20자리 이내로 입력해주세요.");
+	        return false;
+	    } else if (password.search(/\s/) != -1) {
+	        alert("비밀번호는 공백 없이 입력해주세요.");
+	        return false;
+	    } else if ((num < 0 && eng < 0) || (eng < 0 && spe < 0) || (spe < 0 && num < 0)) {
+	        alert("영문, 숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.");
+	        return false;
+	    } else {
+	        alert("비밀번호가 성공적으로 변경되었습니다.");
+	        // 폼이 제출되도록 합니다.
+	        return true;
+	    }
+	}
+    </script>
 
 	<footer>
 		<jsp:include page="/WEB-INF/views/common/footer.jsp" />

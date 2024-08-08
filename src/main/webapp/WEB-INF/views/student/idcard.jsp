@@ -133,9 +133,9 @@ body {
 						<div class="col-md-6">
 							<div class="card-body">
 								<div class="sin">
-									<p class="card-text">유제욱</p>
-									<p class="card-text">20240730</p>
-									<p class="card-text" style="font-size: 18px;">화학과</p>
+									<p class="card-text">${stuno }</p>
+									<p class="card-text">${name }</p>
+									<p class="card-text" style="font-size: 18px;">${deptname }</p>
 								</div>
 								<div class="sin1">
 									<p class="card-text" style="font-size: 12px;">MONTH/YEAR</p>
