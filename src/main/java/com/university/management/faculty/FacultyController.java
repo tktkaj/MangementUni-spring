@@ -30,61 +30,59 @@ public class FacultyController {
 	private FacultyService service;
 
 	// 공지사항 목록처리
-	@GetMapping("/infoboardPro")
-	public String infoboardPro(Model model, @RequestParam Map<String, String> param,
+	@GetMapping("/infoboard")
+	public String infoboard(Model model, @RequestParam Map<String, String> param,
 			@RequestParam(value = "page", defaultValue = "1") int page) {
-		System.out.println("FacultyController-infoboardPro() 실행");
+		System.out.println("FacultyController-infoboard() 실행");
 
 		String login = (String) session.getAttribute("login");
 		System.out.println("login : " + login);
 
-		Map<String, String> params = new HashMap<String, String>();
-		String searchValue = param.get("searchValue");
+		Map<String,String> params = new HashMap<String,String>();
 		String searchType = param.get("searchType");
+		String searchValue = param.get("searchValue");
+		System.out.println("searchType : " + searchType);
+		System.out.println("searchValue : " + searchValue);
 		
-//		String writer = param.get("writer");
-//		String content = param.get("content");
-
-		if (searchType != null && searchValue != null && !searchValue.trim().isEmpty()) {
-			params.put(searchType, searchValue);
-		} else {
-			model.addAttribute("msg", "다시 선택해주세요");
+		try {
+			if (searchType != null && searchValue != null && !searchValue.trim().isEmpty()) {
+				params.put(searchType, searchValue);
+				System.out.println("if문 실행");
+			} 
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+	
+		
+		int listLimit = 5; // 한 페이지에 보여질 게시글 수
+		int totalRowCount = service.getBoardListCount(params); // 전체 게시글의 수
+		System.out.println("totalRowCount : " + totalRowCount);
 
+		// 페이지네이션 설정	
+		PageInfo pageSettings = new PageInfo(page, listLimit, totalRowCount, 5);
+		//PageInfo pageSettings = new PageInfo(5, totalRowCount, page);
+		//pageSettings.setCurrentPage(page);
+		int firstRow = pageSettings.getFirstRow();
+		int lastRow = pageSettings.getLastRow();
+		
+		pageSettings.pageSetting(totalRowCount);
+		
+		params.put("firstRow", String.valueOf(firstRow));
+		params.put("lastRow", String.valueOf(lastRow));
+
+		// 데이터 가져오기
+		List<Board> boardList = service.selectBoardList(params);
+		System.out.println("boardlist : " + boardList);
+		
+		// 데이터와 페이지 정보 모델에 추가하기
+		model.addAttribute("login", login);
+		model.addAttribute("boardList", boardList);
+		model.addAttribute("pageInfo", pageSettings);
+		model.addAttribute("count", totalRowCount);
 		model.addAttribute("param", param);
 
 		return "faculty/infoboard";
 	}
-	
-	@GetMapping("/infoboard")
-	public String infoboard(@RequestParam(defaultValue = "1") int page, Model model) {
-		String login = (String) session.getAttribute("login");
-		System.out.println("login : " + login);
-		
-	    int listLimit = 5; // 한 페이지에 보여질 게시글 수
-	    int totalRowCount = service.getBoardCount(); // 전체 게시글의 수
-	    
-	    
-	    // 페이지네이션 설정
-	    PageInfo pageSettings = new PageInfo();
-	    pageSettings.setCurrentPage(page);
-	    pageSettings.pageSetting(totalRowCount);
-	    int nextPage = pageSettings.getNextPage();
-	    int prevPage = pageSettings.getPrevPage();
-
-	    // 데이터 가져오기
-	    List<Board> boardList = service.selectBoardListPage(pageSettings.getFirstRow(), listLimit);
-
-	    // 데이터와 페이지 정보 모델에 추가하기
-	    model.addAttribute("login", login);
-	    model.addAttribute("boardList", boardList);
-	    model.addAttribute("prevPage", prevPage);
-	    model.addAttribute("nextPage", nextPage);
-	    model.addAttribute("pageInfo", pageSettings);
-
-	    return "faculty/infoboard";
-	}
-
 
 	// 공지사항 상세 페이지
 	@RequestMapping("/infodetail")
