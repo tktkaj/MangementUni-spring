@@ -9,15 +9,16 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-<<<<<<< HEAD
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-=======
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
->>>>>>> master
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.university.management.board.dto.Board;
@@ -38,7 +39,7 @@ public class FacultyController {
 	@Autowired
 	private FacultyService service;
 
-<<<<<<< HEAD
+
 	@Autowired
 	private ScholarService scholarservice;
 	
@@ -46,18 +47,13 @@ public class FacultyController {
 	private StudentService stuservice;
 	
 	
-	@RequestMapping("/infoboard")
-	public String infoboard(HttpSession session, Model model) {
-		System.out.println("FacultyController-infoboard() 실행");
 
-		Map<String, String> params = new HashMap<>();
-=======
 	// 공지사항 목록처리
 	@GetMapping("/infoboardPro")
 	public String infoboardPro(Model model, @RequestParam Map<String, String> param,
 			@RequestParam(value = "page", defaultValue = "1") int page) {
 		System.out.println("FacultyController-infoboardPro() 실행");
->>>>>>> master
+
 
 		String login = (String) session.getAttribute("login");
 		System.out.println("login : " + login);
