@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.university.management.board.dto.Board;
 
@@ -12,7 +11,8 @@ import com.university.management.board.dto.Board;
 public interface BoardMapper {
 
 	// 게시글 갯수
-	int selectBoardCount(Map<String, String> boardlist);
+	//int selectBoardCount(Map<String, String> boardlist);
+	int selectBoardCount();
 
 	// 게시글 전체 조회
 	List<Board> selectBoardList();
@@ -24,6 +24,16 @@ public interface BoardMapper {
 	int readCount(int no);
 
 	// 공지사항 추가
-	List<Board> boardInfoInsert(String title, String file, String detail);
+	int insertWrite(Board board);
+
+	int empSelect(String loginname);
+
+	// page 기능
+	//List<Board> selectBoardListPage(Map<String, String> params);
+	//List<Board> selectBoardListPage(Map<String, String> params);
+
+//	List<Board> selectBoardListPage(int firstRow, int listLimit);
+	List<Board> selectBoardListPage(Map<String, String> params);
+
 
 }

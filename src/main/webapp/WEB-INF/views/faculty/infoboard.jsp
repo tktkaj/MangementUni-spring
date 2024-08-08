@@ -1,23 +1,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page session="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
-<jsp:include page="../common/header.jsp" />
+
 <html>
 <head>
 <style>
-#sub-menubar {
-	margin-left: 50px;
-	background-color: #024C86;
-	margin-top: 110px;
-	width: 200px;
-	height: 200px;
-	float: left;
-}
+
 
 #menulist {
 	text-decoration: none;
@@ -37,14 +29,8 @@
 	border-bottom-color: white;
 }
 
-#menulist li {
-	margin: 20px 0px;
-}
 
-.container1 {
-	width: 1200px;
-	margin: 150px auto 100px auto;
-}
+
 
 .sch_smit {
 	border: none;
@@ -62,6 +48,7 @@ a {
 <title>공지사항</title>
 </head>
 <body>
+<jsp:include page="../common/header.jsp" />
 	<!-- 만약 아무것도 없다면 checked를 타이틀로 지정하기 위해서 if문을 작성한 것이다.  -->
 	<c:set var="searchType" value="${param.searchType}" />
 	<c:if test="${empty searchType }">
@@ -69,7 +56,7 @@ a {
 	</c:if>
 
 	<!-- 없는 게시글을 상세 페이지로 이동하기 위해 클릭할 때, alert창 띄우기 위해 코드 작성 -->
-	<c:if test="${not empty msg }">
+	<c:if test="${not empty msg}">
 		<script>
 			alert('${msg}');
 		</script>
@@ -78,22 +65,18 @@ a {
 
 	<c:if test="${login == 'Employee'}">
 		<div id="menuBar">
-			<div id="sub-menubar">
+			<div id="sub-menubar" style="height: 150px;">
 				<ul id="menulist">
 					<li><a href="infoboard">공지사항 관리</a></li>
 					<li><a href="scholarlist">장학금 관리</a></li>
 					<li><a href="objectionlist">성적 관리</a></li>
-					<li><a href="calendar">학사 일정</a></li>
 				</ul>
 			</div>
 		</div>
 	</c:if>
 
-
-	<div class="container1">
-
+	<div class="container" style="height: 750px; margin-top:100px;">
 		<div id="content">
-
 			<!-- title view -->
 			<div id="pageTitle">
 				<h1>공지사항 목록</h1>
@@ -101,23 +84,23 @@ a {
 
 			<!-- content view -->
 			<div id="pageContent">
-
 				<!-- 검색창 시작 -->
-				<form action="${path}/board/infoboard" method="get">
+				<form action="${path}/infoboardPro" method="get">
 					<div style="text-align: center;">
 						<label> <input type="radio" name="searchType"
-							value="title" ${searchType=='title' ? 'checked':''}> 제목</label> 
-						<label> <input type="radio" name="searchType"
-							value="writer" ${searchType=='content' ? 'checked':''}>
+							value="title" ${searchType == 'title' ? 'checked' : ''}>
+							제목
+						</label> <label> <input type="radio" name="searchType"
+							value="writer" ${searchType == 'writer' ? 'checked' : ''}>
 							작성자
-						</label> <span class="blue_window"> 
-						<input type="text"
+						</label> <span class="blue_window"> <input type="text"
 							id="searchValue" name="searchValue" class="input_text"
 							value="${param.searchValue}" />
 						</span>
 						<button type="submit" class="sch_smit">검색</button>
 					</div>
 				</form>
+
 				<!-- 검색창 종료 -->
 
 				<div id="improtant">총 조회 건수 ${ count }건</div>
@@ -160,11 +143,39 @@ a {
 						<button onclick="location.href='writeinfo'"
 							style="float: right; width: 80px; background-color: #024C86; color: white; border: none; padding: 5px; border-radius: 10px">글작성</button>
 					</c:if>
-
 				</div>
 				<!-- table-responsive div -->
 			</div>
 			<!-- pageContent div -->
+			<nav aria-label="Page navigation example">
+				<ul class="pagination justify-content-center">
+
+					<!-- 이전 페이지 -->
+					<li class="page-item"><a class="page-link"
+						href="${path}/infoboard?page=${pageInfo.prevPage}"
+						aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+					</a></li>
+
+					<!-- 페이지 목록 -->
+					<c:forEach begin="${pageInfo.firstPage}" end="${pageInfo.lastPage}"
+						step="1" var="page">
+						<c:if test="${page == pageInfo.currentPage}">
+							<li class="page-item active"><span class="page-link">${page}</span>
+							</li>
+						</c:if>
+						<c:if test="${page != pageInfo.currentPage}">
+							<li class="page-item"><a class="page-link"
+								href="${path}/infoboard?page=${page}">${page}</a></li>
+						</c:if>
+					</c:forEach>
+
+					<!-- 다음 페이지 -->
+					<li class="page-item"><a class="page-link"
+						href="${path}/infoboard?page=${pageInfo.nextPage}"
+						aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+					</a></li>
+				</ul>
+			</nav>
 		</div>
 		<!-- content div -->
 	</div>

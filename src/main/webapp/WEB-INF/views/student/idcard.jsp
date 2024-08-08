@@ -13,7 +13,7 @@
 <link
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 	rel="stylesheet">
-
+<link href="${path}/resources/css/courses.css" rel="stylesheet" />
 <style>
 .card-text {
 	margin-bottom: 0.25rem;
@@ -34,16 +34,12 @@
 	z-index: 2;
 }
 
-
-
 .dragon-img {
 	width: 2.5rem;
 	height: auto;
 	position: absolute;
 	right: 2px;
 }
-
-
 
 .barcode-img {
 	width: auto;
@@ -57,7 +53,7 @@
 	display: flex;
 	align-items: center;
 	position: relative;
-	z-index: 99;
+	z-index: 2;
 	margin-top: 15px;
 	transform: translate(25%, -50%);
 }
@@ -94,22 +90,19 @@ img {
 	padding: 0;
 }
 
-
-.로고 {
-		width: 80px;
-	height: 20px;
-	
+.d-flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
 }
 
- body{
- width:100%;
- }
-
+body {
+	width: 100%;
+}
 </style>
 </head>
-
-<body>
-	<jsp:include page="../common/header.jsp" />
+<jsp:include page="../common/header.jsp" />
 	<div id="menuBar">
 		<div id="sub-menuBar">
 			<ul id="menulist">
@@ -123,16 +116,14 @@ img {
 			</ul>
 		</div>
 	</div>
-
-	<div class="container" style="height: 550px; margin-top: 100px;">
+	<div class="container" style="height: 600px; margin-top: 100px;">
 		<div id="content">
 			<!-- title view -->
 			<div id="pageTitle">
 				<h1>학생증</h1>
 			</div>
 			<!-- 카드 -->
-			<div class="card mb-3" style="max-width: 540px;">
-
+			<div class="card mb-3" style="max-width: 540px; margin-top: 100px; margin-left: 300px;">
 				<div class="background">
 					<div class="row no-gutters">
 						<div class="col-md-4">
@@ -144,32 +135,34 @@ img {
 								<div class="sin">
 									<p class="card-text">유제욱</p>
 									<p class="card-text">20240730</p>
-									<p class="card-text">화학과</p>
+									<p class="card-text" style="font-size: 18px;">화학과</p>
 								</div>
 								<div class="sin1">
-									<p class="card-text">MONTH/YEAR</p>
-									<p class="card-text">04/30</p>
+									<p class="card-text" style="font-size: 12px;">MONTH/YEAR</p>
+									<p class="card-text" style="font-size: 12px;">04/30</p>
 								</div>
 								<div class="title-container">
-									
-									<h5 class="card-title mb-1">미르대학교학생처장</h5>
-									<%-- <img src="${path}/resources/img/logo2.png" class="로고" alt="설명"> --%>
+									<h5 class="card-title mb-0">
+										<b>미르대학교 총장</b>
+									</h5>
+
 								</div>
 								<div class="text-container">
-									<p class="card-text mb-0">
-										<small class="text-muted">mirr university</small>
-									</p>
+
+									<img src="${path}/resources/img/logo2.png"
+										class="img-fluid logo2-img" alt="설명">
 								</div>
 								<img src="${path}/resources/img//바코드.png"
 									class="img-fluid rounded-start barcode-img" alt="설명">
-							</div>
 
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
 
 	<!-- Bootstrap JS and dependencies -->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -178,5 +171,7 @@ img {
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-</html>
 <jsp:include page="../common/footer.jsp" />
+
+</html>
+

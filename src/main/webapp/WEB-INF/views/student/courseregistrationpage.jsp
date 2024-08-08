@@ -7,7 +7,7 @@
 	value="${pageContext
 	   		   .request
 	   		   .contextPath}" />
-	   		   
+
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -18,22 +18,26 @@
 <link rel="stylesheet" type="text/css" href="courses.css">
 
 </head>
+
 <body>
+<div style="margin-top:76px"></div>
 	<jsp:include page="../common/header.jsp" />
-	<form id="dataForm" action="${path}/courInfo" method="post">
-		<div id="menuBar">
-			<div id="sub-menuBar">
-				<ul id="menulist">
-					<li><a href="passwordchange">사용자 정보 관리</a></li>
-					<li><a href="studentstatus">학적 관리</a></li>
-					<li><a href="objection">성적 관리</a></li>
-					<li><a href="myCoursesPage">나의 수강 페이지</a></li>
-					<li><a href="askpresident">총장님께 바랍니다</a></li>
-					<li><a href="idcard">학생증</a></li>
-				</ul>
-			</div>
+	<div id="menuBar">
+		<div id="sub-menuBar">
+			<ul id="menulist">
+				<li><a href="studentstatus">학적 조회</a></li>
+				<li><a href="passwordchange">학생 정보 변경</a></li>
+				<li><a href="objection">성적 조회</a></li>
+				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
+				<li><a href="courseregistrationpage">수강신청 페이지</a></li>
+				<li><a href="askpresident">총장님께 바랍니다</a></li>
+				<li><a href="idcard">학생증</a></li>
+			</ul>
 		</div>
-		<div class="container2" id="content">
+	</div>
+	<div class="container" style="height: 1000px; margin-top: 76px;">
+
+		<div id="content">
 			<!-- title view -->
 			<div id="pageTitle">
 				<h1>수강 신청 페이지</h1>
@@ -71,6 +75,7 @@
 							<input type="hidden" id="SMT" name="SMT" />
 							<input type="hidden" id="YEAR" name="YEAR" />
 							<input type="hidden" id="SUB_STATUS" name="SUB_STATUS" />
+<<<<<<< HEAD
 							<td>
 						 <c:if test="${stuinfo.SUB_STATUS eq 'n'}">
 								<button type="button" class="apply2" 
@@ -81,24 +86,33 @@
 									onclick="submitForm('${stuinfo.SUB_STATUS}','${stuinfo.SUB_CODE}','${stuinfo.SUB_NAME}', '${stuinfo.PROF_NAME}', '${deptname}', '${stuinfo.CO_CONTENT}','${stuinfo.SMT}','${stuinfo.YEAR}')">취소</button>
 							</c:if>
 							</td>
+=======
+							<td><c:if test="${stuinfo.SUB_STATUS eq 'n'}">
+									<button type="button" class="apply2"
+										onclick="submitForm('${stuinfo.SUB_STATUS}','${stuinfo.SUB_CODE}','${stuinfo.SUB_NAME}', '${stuinfo.PROF_NAME}', '${deptname}', '${stuinfo.CO_CONTENT}','${stuinfo.SMT}','${stuinfo.YEAR}')">신청</button>
+
+								</c:if> <c:if test="${stuinfo.SUB_STATUS eq 'y'}">
+									<button type="button" class="apply2"
+										onclick="submitForm('${stuinfo.SUB_STATUS}','${stuinfo.SUB_CODE}','${stuinfo.SUB_NAME}', '${stuinfo.PROF_NAME}', '${deptname}', '${stuinfo.CO_CONTENT}','${stuinfo.SMT}','${stuinfo.YEAR}')">취소</button>
+								</c:if></td>
+>>>>>>> master
 						</tr>
-						</c:forEach>
-						<tr>
-						
-						<td>
-						학점: ${total }
-						</td>
-						
-						</tr>
-						
-					
-				
+					</c:forEach>
+					<tr>
+
+						<td>학점: ${total }</td>
+
+					</tr>
+
+
+
 				</tbody>
 			</table>
 		</div>
-	</form>
+	</div>
 	<script>
-		function submitForm(sub_status,sub_Code,subName, profName, deptName, coContent,smt,year) {
+		function submitForm(sub_status, sub_Code, subName, profName, deptName,
+				coContent, smt, year) {
 			document.getElementById('SUB_STATUS').value = sub_status;
 			document.getElementById('SUB_CODE').value = sub_Code;
 			document.getElementById('SUB_NAME').value = subName;
@@ -110,6 +124,7 @@
 			document.getElementById('dataForm').submit();
 		}
 	</script>
+
+	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 </body>
 </html>
-<jsp:include page="/WEB-INF/views/common/footer.jsp" />

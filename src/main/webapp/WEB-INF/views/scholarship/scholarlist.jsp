@@ -8,26 +8,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <link href="${path}/resources/css/scholarlist.css" rel="stylesheet" />
 <title>장학금 관리</title>
 </head>
 <body>
+	
 	<jsp:include page="../common/header.jsp" />
-	<div id="menuBar">
-		<div id="sub-menubar">
+	<div id="menuBar" >
+		<div id="sub-menubar"  style="height: 150px;">
 			<ul id="menulist">
-				<li><a href="#">공지사항 관리</a></li>
+				<li><a href="infoboard">공지사항 관리</a></li>
 				<li><a href="scholarlist">장학금 관리</a></li>
 				<li><a href="objectionlist">성적 관리</a></li>
-				<li><a href="calendar">학사 일정</a></li>
 			</ul>
 		</div>
 	</div>
-	<div class="container" style="height: 500px;">
+	<div class="container" style="height: 750px; margin-top:50px;">
 
 		<div id="content">
-
+<!-- title view -->
 			<div id="pagetitle">
 				<h1>장학금 관리</h1>
 			</div>

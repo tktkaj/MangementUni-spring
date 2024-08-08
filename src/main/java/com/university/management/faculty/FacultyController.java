@@ -1,6 +1,5 @@
 package com.university.management.faculty;
 
-import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,15 +9,20 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+=======
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+>>>>>>> master
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.university.management.board.dto.Board;
 import com.university.management.board.dto.PageInfo;
+import com.university.management.employee.dto.Employee;
 import com.university.management.faculty.service.FacultyService;
 import com.university.management.scholar.dto.Scholar;
 import com.university.management.scholar.dto.ScholarList;
@@ -34,6 +38,7 @@ public class FacultyController {
 	@Autowired
 	private FacultyService service;
 
+<<<<<<< HEAD
 	@Autowired
 	private ScholarService scholarservice;
 	
@@ -46,41 +51,66 @@ public class FacultyController {
 		System.out.println("FacultyController-infoboard() 실행");
 
 		Map<String, String> params = new HashMap<>();
+=======
+	// 공지사항 목록처리
+	@GetMapping("/infoboardPro")
+	public String infoboardPro(Model model, @RequestParam Map<String, String> param,
+			@RequestParam(value = "page", defaultValue = "1") int page) {
+		System.out.println("FacultyController-infoboardPro() 실행");
+>>>>>>> master
 
 		String login = (String) session.getAttribute("login");
 		System.out.println("login : " + login);
 
-		/*
-		 * 
-		 * try { String searchValue = param.get("searchValue");
-		 * 
-		 * if (searchValue != null && searchValue.length() > 0) { String searchType =
-		 * param.get("searchType"); params.put(searchType, searchValue);
-		 * System.out.println("boardlist : " + params); }
-		 * 
-		 * } catch (Exception e) { e.printStackTrace(); }
-		 */
+		Map<String, String> params = new HashMap<String, String>();
+		String searchValue = param.get("searchValue");
+		String searchType = param.get("searchType");
+		
+//		String writer = param.get("writer");
+//		String content = param.get("content");
 
-		// 공지사항 목록 불러오기
-		List<Board> boardList = service.getBoardList();
+		if (searchType != null && searchValue != null && !searchValue.trim().isEmpty()) {
+			params.put(searchType, searchValue);
+		} else {
+			model.addAttribute("msg", "다시 선택해주세요");
+		}
 
-		// 총 게시글 수 가져오기
-		int boardcount = service.getBoardCount(params);
-		/*
-		 * PageInfo info = new PageInfo(page, 10, boardcount, 10);
-		 * 
-		 * // 페이징 처리할 수 있는 데이터 넘기기 List<Board> listpage = service.getBoardList(info,
-		 * boardlist);
-		 */
-
-		// model.addAttribute("params", params);
-		model.addAttribute("boardList", boardList);
-		model.addAttribute("count", boardcount);
-		model.addAttribute("login", login);
+		model.addAttribute("param", param);
 
 		return "faculty/infoboard";
 	}
+	
+	@GetMapping("/infoboard")
+	public String infoboard(@RequestParam(defaultValue = "1") int page, Model model) {
+		String login = (String) session.getAttribute("login");
+		System.out.println("login : " + login);
+		
+	    int listLimit = 5; // 한 페이지에 보여질 게시글 수
+	    int totalRowCount = service.getBoardCount(); // 전체 게시글의 수
+	    
+	    
+	    // 페이지네이션 설정
+	    PageInfo pageSettings = new PageInfo();
+	    pageSettings.setCurrentPage(page);
+	    pageSettings.pageSetting(totalRowCount);
+	    int nextPage = pageSettings.getNextPage();
+	    int prevPage = pageSettings.getPrevPage();
 
+	    // 데이터 가져오기
+	    List<Board> boardList = service.selectBoardListPage(pageSettings.getFirstRow(), listLimit);
+
+	    // 데이터와 페이지 정보 모델에 추가하기
+	    model.addAttribute("login", login);
+	    model.addAttribute("boardList", boardList);
+	    model.addAttribute("prevPage", prevPage);
+	    model.addAttribute("nextPage", nextPage);
+	    model.addAttribute("pageInfo", pageSettings);
+
+	    return "faculty/infoboard";
+	}
+
+
+	// 공지사항 상세 페이지
 	@RequestMapping("/infodetail")
 	public String infodetail(Model model, @RequestParam("bo_no") int no) {
 		System.out.println("FacultyController-infodetail() 실행");
@@ -100,25 +130,58 @@ public class FacultyController {
 		return "faculty/infodetail";
 	}
 
+	// 공지사항 작성
 	@RequestMapping("/writeinfo")
 	public String writeinfo() {
-
 		return "faculty/writeinfo";
 	}
 
-	@RequestMapping("/informationboard")
-	public String informationboard(@RequestParam Map<String, Object> param, Model model) {
-		System.out.println("FacultyController-informationboard() 실행");
-		
-		String title = (String) param.get("title");
-	    String file = (String) param.get("filename");
-	    String detail = (String) param.get("detail");
+	// 공지사항 작성 처리
+	@RequestMapping("/writeinfoPro")
+	public String writeinfoPro(Model model, @RequestParam Map<String, Object> param, @ModelAttribute Board board) {
+		System.out.println("FacultyController-writeinfoPro() 실행");
 
-	    List<Board> formlist = service.boardInfoInsert(title, file, detail);	
-	    System.out.println(formlist);
-	    
-	    model.addAttribute("boardList", formlist);
-		return "faculty/infoboard";
+		String loginname = (String) session.getAttribute("loginname");
+		System.out.println(loginname);
+
+		int loginNo = service.empSelect(loginname);
+		System.out.println("loginNO : " + loginNo);
+
+		String title = (String) param.get("title");
+		String file = (String) param.get("filename");
+		String detail = (String) param.get("detail");
+
+		System.out.println("title : " + title);
+		System.out.println("file : " + file);
+		System.out.println("detail : " + detail);
+
+		if (title != null && detail != null) {
+
+			file = (file != null || file != "") ? "-" : file; // filename이 null일 때 처리
+			System.out.println("file : " + file);
+
+			// param의 값을 Board 객체에 설정
+			board.setEmp_no(loginNo);
+			board.setTitle(title);
+			board.setContent(detail);
+			board.setOriginalFilename(file);
+
+			int res = service.insertWrite(board);
+
+			if (res > 0) {
+				System.out.println("글이 추가 되었습니다");
+				model.addAttribute("msg", "글이 추가 되었습니다");
+			} else {
+				System.out.println("글 추가를 실패하였습니다");
+				model.addAttribute("msg", "글 추가를 실패하였습니다");
+			}
+
+		} else {
+			// 빈칸일 경우 alert창 띄움
+			model.addAttribute("msg", "내용을 입력해주세요.");
+		}
+
+		return "redirect:/infoboard";
 	}
 
 	@RequestMapping("/updateinfo")

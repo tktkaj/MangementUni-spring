@@ -3,8 +3,7 @@
 <mapper
 	namespace="com.university.management.board.mapper.BoardMapper">
 
-	<resultMap type="com.university.management.board.dto.Board"
-		id="boardListResultMap">
+	<resultMap type="com.university.management.board.dto.Board" id="boardListResultMap">
 		<id property="bo_no" column="BO_NO" />                         		<!-- 게시판 인덱스 -->
 		<result property="stu_no" column="STU_NO" />                   		<!-- 학번 -->
 		<result property="emp_no" column="EMP_NO" />       					<!-- 교직원 번호 -->
@@ -32,22 +31,29 @@
 		resultMap="boardReplyResultMap" columnPrefix="R_" /> </resultMap> -->
 
 	<!-- 공지사항 전체 목록 갯수 조회 -->
-	<select id="selectBoardCount" parameterType="int"
-		resultType="int">
+	<select id="selectBoardCount" resultType="int">
 		SELECT COUNT(*) FROM BOARD
 		WHERE TYPE = 'G';
 	</select>
 
 	<!-- 공지사항 전체 목록 조회 -->
-	<select id="selectBoardList"
-		resultType="com.university.management.board.dto.Board">
+	<select id="selectBoardListPage" parameterType="java.util.Map" resultType="com.university.management.board.dto.Board">
 		SELECT B.BO_NO,
-		E.EMP_NAME,B.TITLE,B.CONTENT,B.READCOUNT,B.CREATE_DATE, B.MODIFY_DATE,
+		E.EMP_NAME, B.TITLE, B.CONTENT, B.READCOUNT,
+		B.CREATE_DATE, B.MODIFY_DATE,
 		B.BO_LIKE
 		FROM BOARD B
-		JOIN EMPLOYEE E ON B.EMP_NO = E.EMP_NO
-		WHERE TYPE
-		= "G";
+		JOIN EMPLOYEE E ON
+		B.EMP_NO = E.EMP_NO
+		WHERE TYPE = 'G'
+		<!-- 		<if test="writer != null">
+			AND E.EMP_NAME LIKE CONCAT('%', ${writer}, '%') 
+		</if>
+		<if test="title != null">
+			AND B.TITLE LIKE CONCAT('%', ${title}, '%')
+		</if>  -->
+		ORDER BY BO_NO DESC
+		LIMIT #{listLimit} OFFSET #{firstRow}
 	</select>
 
 	<!-- 상세페이지 이동을 위한 게시글 번호 조회 -->
@@ -59,38 +65,28 @@
 		FROM BOARD B
 		JOIN EMPLOYEE E ON B.EMP_NO = E.EMP_NO
 		WHERE TYPE
-		= "G" AND BO_NO = ${no};
+		= "G" AND BO_NO = ${no}
 	</select>
 
 	<!-- 조회수 -->
 	<update id="readCount" parameterType="int">
 		UPDATE BOARD SET READCOUNT
 		= READCOUNT+1
-		WHERE BO_NO = #{bo_no};
+		WHERE BO_NO = #{bo_no}
 	</update>
 
-	<insert id="boardInfoInsert" parameterType="Map">
-		INSERT INTO BOARD
-		(EMP_NO, TITLE, CONTENT, TYPE, ORIGINAL_FILENAME, CREATE_DATE) VALUES
-		(#{emp_no},#{title},#{content},'G',#{file})
-	</insert>
+	<select id="empSelect" parameterType="String" resultType="int">
+		SELECT
+		EMP_NO FROM EMPLOYEE
+		WHERE EMP_NAME = #{emp_name}
+	</select>
 
-<!-- 	<insert id="boardInfoInsert" parameterType="Map">
+	<!-- 공지사항 추가 -->
+	<insert id="insertWrite" parameterType="Board">
 		INSERT INTO BOARD
-		<selectKey keyProperty="id" resultType="int" order="BEFORE">
-			SELECT seq_board.NEXTVAL FROM dual
-		</selectKey>
-		<choose>
-			<when test="not empty emp_no">
-				(EMP_NO, TITLE, CONTENT, TYPE, ORIGINAL_FILENAME, CREATE_DATE)
-				VALUES (#{emp_no}, #{title}, #{content}, 'G', #{original_filename})
-			</when>
-			<when test="not empty stu_no">
-				(STU_NO, TITLE, CONTENT, TYPE, ORIGINAL_FILENAME, CREATE_DATE)
-				VALUES (#{stu_no}, #{title}, #{content}, 'G', #{original_filename})
-			</when>
-		</choose>
-	</insert> -->
+		(EMP_NO, TITLE, CONTENT, TYPE, ORIGINAL_FILENAME, READCOUNT) VALUES
+		(#{emp_no},#{title},#{content},'G',#{originalFilename}, 0)
+	</insert>
 
 
 
