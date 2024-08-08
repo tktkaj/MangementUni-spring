@@ -22,6 +22,7 @@
 <body>
 <div style="margin-top:76px"></div>
 	<jsp:include page="../common/header.jsp" />
+	<form id="dataForm" action="${path}/courInfo" method="post">
 	<div id="menuBar">
 		<div id="sub-menuBar">
 			<ul id="menulist">
@@ -75,6 +76,7 @@
 							<input type="hidden" id="SMT" name="SMT" />
 							<input type="hidden" id="YEAR" name="YEAR" />
 							<input type="hidden" id="SUB_STATUS" name="SUB_STATUS" />
+							
 							<td><c:if test="${stuinfo.SUB_STATUS eq 'n'}">
 									<button type="button" class="apply2"
 										onclick="submitForm('${stuinfo.SUB_STATUS}','${stuinfo.SUB_CODE}','${stuinfo.SUB_NAME}', '${stuinfo.PROF_NAME}', '${deptname}', '${stuinfo.CO_CONTENT}','${stuinfo.SMT}','${stuinfo.YEAR}')">신청</button>
@@ -83,6 +85,7 @@
 									<button type="button" class="apply2"
 										onclick="submitForm('${stuinfo.SUB_STATUS}','${stuinfo.SUB_CODE}','${stuinfo.SUB_NAME}', '${stuinfo.PROF_NAME}', '${deptname}', '${stuinfo.CO_CONTENT}','${stuinfo.SMT}','${stuinfo.YEAR}')">취소</button>
 								</c:if></td>
+
 						</tr>
 					</c:forEach>
 					<tr>
@@ -97,6 +100,7 @@
 			</table>
 		</div>
 	</div>
+	</form>
 	<script>
 		function submitForm(sub_status, sub_Code, subName, profName, deptName,
 				coContent, smt, year) {
