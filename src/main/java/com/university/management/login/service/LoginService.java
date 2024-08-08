@@ -26,5 +26,10 @@ public class LoginService {
 		System.out.println("loginService안에 studentLogin실행");
 		return mapper.studentLogin(params);
 	}
+//비밀번호 변경
+	public void pwschange(Map<String, Object> params) {
+		System.out.println("loginService안에 pwschange실행");
+		mapper.pwschange(params);
+	}
 
 }
