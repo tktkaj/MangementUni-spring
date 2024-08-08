@@ -40,7 +40,7 @@
 
 				<!--  학적 카드  -->
 				<div id="statuscard">
-					<div class="card" >
+					<div class="card">
 						<div class="info">
 							<div class="card-body">
 								<table style="text-align: left;">
@@ -51,37 +51,69 @@
 										<tr>
 											<th>이름</th>
 											<td>${stuinfo.STU_NAME}</td>
+											<th>이메일</th>
+											<td>${stuinfo.STU_EMAIL}</td>
 											<th>생년월일</th>
 											<td>${stuinfo.STU_JUMIN}</td>
 										</tr>
 										<tr>
-											<th>학번</th>
-											<td>${stuinfo.STU_NO}</td>
-											<th>연락처</th>
-											<td>${stuinfo.STU_PHONE}</td>
-										</tr>
-										<tr>
 											<th>학적 상태</th>
 											<td>${status}</td>
-											<th>이메일</th>
-											<td>${stuinfo.STU_EMAIL}</td>
+											<th>연락처</th>
+											<td>${stuinfo.STU_PHONE}</td>
+											<th>입학일</th>
+											<td>${stuinfo.STU_ADMISSION_DATE}</td>
 										</tr>
 										<tr>
 											<th>소속 학과</th>
 											<td>${stuinfo.DEPT_NAME}</td>
+											<th>계좌번호</th>
+											<td>${stuinfo.STU_BK_NUM}</td>
 											<th>거주지</th>
 											<td>${stuinfo.STU_ADDRESS}</td>
 										</tr>
 										<tr>
-											<th>입학일</th>
-											<td>${stuinfo.STU_ADMISSION_DATE}</td>
-											<th>계좌번호</th>
+											<th>학번</th>
+											<td>${stuinfo.STU_NO}</td>
+											<th>등록금</th>
 											<td>${stuinfo.STU_BK_NUM}</td>
 										</tr>
 									</c:forEach>
 								</table>
 							</div>
 						</div>
+					</div>
+				</div>
+				<div id="courselist1">
+					<h5 id="midtitle">&gt; 등록금 조회</h5>
+					<div>
+						<table class="table mt-2 mb-4">
+							<thead>
+								<tr>
+									<th scope="col"></th>
+									<th scope="col">학년도</th>
+									<th scope="col">학기</th>
+									<th scope="col">학과</th>
+									<th scope="col">등록금액</th>
+								</tr>
+							</thead>
+							<tbody class="table-group-divider">
+								<tr>
+									<th scope="row">1</th>
+									<td>2024</td>
+									<td>1</td>
+									<td>@mdo</td>
+									<td>@mdo</td>
+								</tr>
+								<tr>
+									<th scope="row">1</th>
+									<td>2024</td>
+									<td>1</td>
+									<td>@mdo</td>
+									<td>@mdo</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
 				<div id="courselist1">

@@ -13,6 +13,8 @@ public interface BoardMapper {
 	// 게시글 갯수
 	//int selectBoardCount(Map<String, String> boardlist);
 	int selectBoardCount();
+	
+	int getBoardListCount(Map<String,String> map);
 
 	// 게시글 전체 조회
 	List<Board> selectBoardList();
@@ -29,11 +31,7 @@ public interface BoardMapper {
 	int empSelect(String loginname);
 
 	// page 기능
-	//List<Board> selectBoardListPage(Map<String, String> params);
-	//List<Board> selectBoardListPage(Map<String, String> params);
-
-//	List<Board> selectBoardListPage(int firstRow, int listLimit);
-	List<Board> selectBoardListPage(Map<String, String> params);
+	List<Board> selectBoardList(Map<String,String> params);
 
 
 }

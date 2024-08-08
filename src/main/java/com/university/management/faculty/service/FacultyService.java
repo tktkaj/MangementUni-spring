@@ -19,22 +19,16 @@ public class FacultyService {
 	@Autowired
 	private BoardMapper mapper;
 
-	// 총 게시글 갯수
-	/*
-	 * public int getBoardCount(Map<String, String> boardlist) { int list =
-	 * mapper.selectBoardCount(boardlist); System.out.println("list : " + list);
-	 * return list; }
-	 */
-	
+	// 총 게시글 갯수	
 	public int getBoardCount() {		
 		return mapper.selectBoardCount();
 	}
+	
+	public int getBoardListCount(Map<String,String> map) {
+		return mapper.getBoardListCount(map);
+	}
 
 	// 전체 게시글 중에 첫번째 페이지에서 10개의 게시글 반환
-	/*
-	 * public List<Board> getBoardList(PageInfo info, Map<String, String> boardlist)
-	 * { return mapper.selectBoardList(boardlist); }
-	 */
 	public List<Board> getBoardList() {
 		System.out.println("FacultyService-getBoardList");
 		return mapper.selectBoardList();
@@ -59,17 +53,22 @@ public class FacultyService {
 		return mapper.empSelect(loginname);
 	}
 
-	// 공지사항 리스트 추출 및 페이징 처리, 키워드 검색 기능
-	public List<Board> selectBoardListPage(int firstRow, int listLimit) {
-		System.out.println("firstRow : " + firstRow);
-		System.out.println("listLimit : " + listLimit);
-//		return mapper.selectBoardListPage(firstRow,listLimit);
-		Map params = new HashMap();
-		params.put("firstRow", firstRow);
-		params.put("listLimit", listLimit);
+	// 공지사항 리스트 추출 및 페이징 처리
+	public List<Board> selectBoardList(Map<String,String> params) {
+		System.out.println("service selectBoardList : " + params);
+	
+		String limitNo = params.get("startNo");
+		String endNo = params.get("endNo");
 		
-		return mapper.selectBoardListPage(params);
+		Map<String,String> map = new HashMap<>();
+		
+		map.put("limitNo", limitNo);
+		map.put("endNo", endNo);
+		//map.put("params", params);
+		
+		return mapper.selectBoardList(map);
 	}
+
 
 
 
