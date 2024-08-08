@@ -131,7 +131,7 @@ header, footer {
 									<span class="input-group-text">변경할PW</span> <input
 										type="password" class="form-control"
 										aria-describedby="basic-addon1" id="password"
-										name="STU_PASSWORD">
+										name="STU_PASSWORD"placeholder="비밀번호 8자리 이상 영문, 숫자, 특수문자 중 2가지 이상을 혼합">
 								</div>
 								<div class="input-group mb-3">
 									<span class="input-group-text">PW확인</span> <input
@@ -180,8 +180,8 @@ header, footer {
 	    var eng = password.search(/[a-z]/ig);
 	    var spe = password.search(/[`~!@#$%^&*|₩'";:/?]/gi);
 
-	    if (password.length < 10 || password.length > 20) {
-	        alert("비밀번호는 10자리 ~ 20자리 이내로 입력해주세요.");
+	    if (password.length < 8 || password.length > 20) {
+	        alert("비밀번호는 8자리 ~ 20자리 이내로 입력해주세요.");
 	        return false;
 	    } else if (password.search(/\s/) != -1) {
 	        alert("비밀번호는 공백 없이 입력해주세요.");
