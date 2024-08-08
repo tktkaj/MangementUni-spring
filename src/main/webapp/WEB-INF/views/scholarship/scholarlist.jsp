@@ -103,22 +103,19 @@
 										<td>${list.STU_NAME}</td>
 										<td>${list.RESULTSAVG}</td>
 										<td>${list.SCH_NAME}</td>
-										<td> <c:if test="${list.SCH_STATUS eq 'n'}">
-        <button type="button" class="btn btn-xs" id="toggleButton"
-            name="approve" 
-            style="background-color: #024C86; color: white; padding: 2px 0 10px 0;"
-            onclick="submitForm('${list.SCH_STATUS}','${list.YEAR}','${list.SMT}', '${list.STU_NO}', '${list.SCH_NO}', '${list.DEPT_CODE}')">
-            승인
-        </button>
-    </c:if>
-    <c:if test="${list.SCH_STATUS eq 'y'}">
-        <button type="button" class="btn btn-xs" id="toggleButton"
-            name="approve" 
-            style="background-color: #024C86; color: white; padding: 2px 0 10px 0;"
-            onclick="submitForm('${list.SCH_STATUS}','${list.YEAR}','${list.SMT}', '${list.STU_NO}', '${list.SCH_NO}', '${list.DEPT_CODE}')">
-            취소
-        </button>
-    </c:if></td>
+										<td><c:if test="${list.SCH_STATUS eq 'n'}">
+												<button type="button" class="btn btn-xs" id="toggleButton"
+													name="approve"
+													style="background-color: #024C86; color: white; padding: 2px 0 10px 0;"
+													onclick="submitForm('${list.SCH_STATUS}','${list.YEAR}','${list.SMT}', '${list.STU_NO}', '${list.SCH_NO}', '${list.DEPT_CODE}')">
+													승인</button>
+											</c:if> <c:if test="${list.SCH_STATUS eq 'y'}">
+												<button type="button" class="btn btn-xs" id="toggleButton"
+													name="approve"
+													style="background-color: #024C86; color: white; padding: 2px 0 10px 0;"
+													disabled>
+													신청</button>
+											</c:if></td>
 									</tr>
 								</c:forEach>
 								<input type="hidden" id="YEAR" name="YEAR" />
@@ -159,10 +156,10 @@
 	            },
 	            body: JSON.stringify({
 	                SCH_STATUS: sch_status,
-	                YEAR: year.toString(), // Ensure it's a string
-	                SMT: smt.toString(),   // Ensure it's a string
-	                STU_NO: stu_no.toString(), // Ensure it's a string
-	                SCH_NO: sch_no.toString(), // Ensure it's a string
+	                YEAR: year.toString(), // String 타입변환
+	                SMT: smt.toString(),   // String 타입변환
+	                STU_NO: stu_no.toString(), //String 타입변환
+	                SCH_NO: sch_no.toString(),//String 타입변환
 	                DEPT_CODE: dept_code
 	            })
 	        })

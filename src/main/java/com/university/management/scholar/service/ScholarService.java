@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.university.management.scholar.dto.Scholar;
 import com.university.management.scholar.dto.ScholarList;
 import com.university.management.scholar.mapper.ScholarMapper;
 
@@ -17,6 +18,11 @@ public class ScholarService {
 	public List<ScholarList> scholarlistSelect(Map<String, String> params) {
 	
 		return mapper.scholarlistSelect(params);
+	}
+
+	public int scholarInsert(Scholar sch) {
+		System.out.println("ScholarService안에scholarInsert실행");
+		return mapper.scholarInsert(sch);
 	}
 
 }

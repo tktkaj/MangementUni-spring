@@ -13,6 +13,7 @@ public class Scholar {
 	private int SCH_NO; //장학금 번호
 	private int YEAR; //학년도
 	private int SMT; //학기
+    private String SUB_STATUS;//상태
 
 	
 	

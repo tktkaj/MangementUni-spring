@@ -23,6 +23,7 @@ import com.university.management.faculty.service.FacultyService;
 import com.university.management.scholar.dto.Scholar;
 import com.university.management.scholar.dto.ScholarList;
 import com.university.management.scholar.service.ScholarService;
+import com.university.management.student.service.StudentService;
 
 @Controller
 public class FacultyController {
@@ -35,6 +36,10 @@ public class FacultyController {
 
 	@Autowired
 	private ScholarService scholarservice;
+	
+	@Autowired
+	private StudentService stuservice;
+	
 	
 	@RequestMapping("/infoboard")
 	public String infoboard(HttpSession session, Model model) {
@@ -153,9 +158,9 @@ public class FacultyController {
 		System.out.println("장학금 리스트: " + scholarList);
 		
 	model.addAttribute("scholarList",scholarList);
-	session.setAttribute("department",department_type);
-	session.setAttribute("scholarship_type",scholarship_type);
-	session.setAttribute("grade",grade);
+	model.addAttribute("department",department_type);
+	model.addAttribute("scholarship_type",scholarship_type);
+	model.addAttribute("grade",grade);
 		
 		return "scholarship/scholarlist";
 	}
@@ -190,7 +195,14 @@ public class FacultyController {
         // 장학금 승인/취소 처리 로직 (예: 데이터베이스 업데이트)
     	System.out.println("확인"+schStatus+" "+year+" "+smt+" "+stuNo+" "+schNo+" "+deptCode);
         // 성공적으로 처리되었으면 true, 실패하면 false를 반환
-        return true;
+    	Scholar sch= new Scholar(stuNo, deptCode, schNo, year, smt, schStatus);
+    	boolean success= false;
+    	int result = scholarservice.scholarInsert(sch);
+    	if(result==1) {
+    		stuservice.studentUpdate(stuNo);
+    		success=true;
+    	}
+        return success;
     }
 	
 	
