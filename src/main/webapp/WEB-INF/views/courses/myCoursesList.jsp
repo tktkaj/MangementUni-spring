@@ -15,7 +15,7 @@
 <!-- 구글 아이콘 링크  -->
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-				
+
 <link href="${path}/resources/css/courses.css" rel="stylesheet" />
 
 </head>
@@ -34,7 +34,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="container" style="height: 1000px; margin-top: 100px;">
+	<div class="container" style="height: 2500px; margin-top: 100px;">
 		<div id="content">
 			<!-- title view -->
 			<div id="pageTitle">
@@ -73,8 +73,15 @@
 						<p id="online-title">1주차(2022-02-28 ~ 2022-03-01)</p>
 						<div id="onlien-cont">
 							<p>
-								<a href="online"><span class="material-symbols-outlined icon">play_circle
-								</span> 1. 동영상 강의 제목</a>
+								 <a href="http://192.168.100.7:5500/test2.html"
+									
+
+
+									
+									onclick="window.open(this.href, '_blank', 'width=1200, height=700','left=1000', 'top=2000', 'location: no', 'menubar:no',
+											'status:no','toolbar=no'); return false;"><span
+									class="material-symbols-outlined icon">play_circle </span> 1.
+									동영상 강의 제목</a>
 							</p>
 							<p>
 								<a href="#"><span class="material-symbols-outlined icon">play_circle
