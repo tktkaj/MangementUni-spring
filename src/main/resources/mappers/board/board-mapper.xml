@@ -44,11 +44,20 @@
 		FROM BOARD B
 		JOIN EMPLOYEE E ON B.EMP_NO = E.EMP_NO
 		WHERE TYPE = 'G'
-		<if test="writer != null">
-			AND E.EMP_NAME LIKE CONCAT ('%', #{writer}, '%')
-		</if>
-		<if test="title != null">
-			AND B.TITLE LIKE CONCAT ('%',#{title},'%')
+		<if
+			test="searchType != null and searchValue != null and searchValue.trim() != ''">
+			AND
+			<choose>
+				<when test="searchType == 'writer'">
+					E.EMP_NAME LIKE CONCAT('%', #{searchValue}, '%')
+				</when>
+				<when test="searchType == 'title'">
+					B.TITLE LIKE CONCAT('%', #{searchValue}, '%')
+				</when>
+				<otherwise>
+					1=1
+				</otherwise>
+			</choose>
 		</if>
 	</select>
 
@@ -66,17 +75,28 @@
 		B.MODIFY_DATE,
 		B.BO_LIKE
 		FROM BOARD B
-		JOIN EMPLOYEE E ON B.EMP_NO = E.EMP_NO
+		JOIN
+		EMPLOYEE E ON B.EMP_NO = E.EMP_NO
 		WHERE TYPE = 'G'
-		<if test="writer != null">
-			AND E.EMP_NAME LIKE CONCAT ('%', #{writer}, '%')
-		</if>
-		<if test="title != null">
-			AND B.TITLE LIKE CONCAT ('%',#{title},'%')
+		<if
+			test="searchType != null and searchValue != null and searchValue.trim() != ''">
+			AND
+			<choose>
+				<when test="searchType == 'writer'">
+					E.EMP_NAME LIKE CONCAT('%', #{searchValue}, '%')
+				</when>
+				<when test="searchType == 'title'">
+					B.TITLE LIKE CONCAT('%', #{searchValue}, '%')
+				</when>
+				<otherwise>
+					1=1
+				</otherwise>
+			</choose>
 		</if>
 		ORDER BY BO_NO DESC
-		) T1
-		LIMIT #{firstRow}, #{listLimit};
+		) T11
+		ORDER BY CREATE_DATE DESC
+		LIMIT #{listLimit} OFFSET #{firstRow}
 	</select>
 
 	<!-- 공지사항 전체 목록 조회 -->

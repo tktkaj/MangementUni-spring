@@ -54,41 +54,36 @@ public class FacultyController {
 			@RequestParam(value = "page", defaultValue = "1") int page) {
 		System.out.println("FacultyController-infoboard() 실행");
 
-
 		String login = (String) session.getAttribute("login");
 		System.out.println("login : " + login);
 
 		Map<String,String> params = new HashMap<String,String>();
 		String searchType = param.get("searchType");
 		String searchValue = param.get("searchValue");
-		System.out.println("searchType : " + searchType);
-		System.out.println("searchValue : " + searchValue);
 		
 		try {
 			if (searchType != null && searchValue != null && !searchValue.trim().isEmpty()) {
-				params.put(searchType, searchValue);
-				System.out.println("if문 실행");
+				params.put("searchType", searchType);
+				params.put("searchValue", searchValue);
 			} 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	
-		
 		int listLimit = 5; // 한 페이지에 보여질 게시글 수
 		int totalRowCount = service.getBoardListCount(params); // 전체 게시글의 수
 		System.out.println("totalRowCount : " + totalRowCount);
 
 		// 페이지네이션 설정	
 		PageInfo pageSettings = new PageInfo(page, listLimit, totalRowCount, 5);
-		//PageInfo pageSettings = new PageInfo(5, totalRowCount, page);
-		//pageSettings.setCurrentPage(page);
-		int firstRow = pageSettings.getFirstRow();
-		int lastRow = pageSettings.getLastRow();
-		
 		pageSettings.pageSetting(totalRowCount);
 		
+		int firstRow = pageSettings.getFirstRow();
+		
+		System.out.println("firstRow: " + firstRow);
+		
 		params.put("firstRow", String.valueOf(firstRow));
-		params.put("lastRow", String.valueOf(lastRow));
+		params.put("listLimit", String.valueOf(listLimit));
 
 		// 데이터 가져오기
 		List<Board> boardList = service.selectBoardList(params);
@@ -109,7 +104,8 @@ public class FacultyController {
 	public String infodetail(Model model, @RequestParam("bo_no") int no) {
 		System.out.println("FacultyController-infodetail() 실행");
 
-		/* boolean res = service.selectLogin(loginNo); */
+		String login = (String) session.getAttribute("login");
+		System.out.println("login : " + login);
 
 		Board board = service.findByNo(no);
 		System.out.println(board);
@@ -119,6 +115,8 @@ public class FacultyController {
 
 		model.addAttribute("board", board);
 		model.addAttribute("readCount", readCount);
+		model.addAttribute("login", login);
+		model.addAttribute("no", no);
 		// model.addAttribute("replyList", board.getReplies());
 
 		return "faculty/infodetail";
@@ -179,11 +177,27 @@ public class FacultyController {
 	}
 
 	@RequestMapping("/updateinfo")
-	public String updateinfo() {
+	public String updateinfo(Model model, @RequestParam("bo_no") int no) {
+		System.out.println("FacultyController-updateinfo() 실행");
+		
+		String login = (String) session.getAttribute("login");
+		System.out.println("login : " + login);
+		
+		Board board = service.findByNo(no);
+		
+		model.addAttribute("login", login);
+		model.addAttribute("board", board);
 
 		return "faculty/updateinfo";
 	}
-
+	
+	@RequestMapping("/deletePro")
+	public String deletePro(Model model) {
+		System.out.println("FacultyController-deletePro() 실행");
+		
+		return "redirect:/infoboard";
+	}
+	
 	@RequestMapping("/objectionlist")
 	public String objectionList() {
 		return "objection/objectionlist";
