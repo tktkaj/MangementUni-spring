@@ -33,14 +33,14 @@ public class CoursesService {
 	}
 
 	public void courdelete(String sub_name) {
-		System.out.println("courdelete실행");
+		System.out.println("CoursesService안에courdelete실행");
 		mapper.courdelete(sub_name);
 		
 	}
 
-	public List<CoursesList> coursesList(int loginNo) {
-		System.out.println("CoursesList실행");
-		return mapper.coursesList(loginNo);
+	public List<CoursesList> coursesList(CoursesList cour) {
+		System.out.println("CoursesService안에CoursesList실행");
+		return mapper.coursesList(cour);
 	}
 
 }

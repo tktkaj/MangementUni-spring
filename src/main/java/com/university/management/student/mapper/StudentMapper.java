@@ -11,4 +11,6 @@ public interface StudentMapper {
 
 	List<Student> stuInfoSelect(Integer loginNo);
 
+	void studentUpdate(int stuNo);
+
 }

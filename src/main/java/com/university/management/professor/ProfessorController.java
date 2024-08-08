@@ -24,7 +24,7 @@ public class ProfessorController {
     @RequestMapping("/professor")
     public String professor(Model model, String department) {
         System.out.println("실행");
-        System.out.println("옵션값" + "COMP");
+        System.out.println("옵션값" + department);
         List<Professor> prolist = proService.proselect(department);
 
         System.out.println(prolist);
