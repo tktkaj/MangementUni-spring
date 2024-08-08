@@ -40,5 +40,18 @@
 	</select>
 
 
+<select id="studentUpdate" parameterType="int" >
+
+ UPDATE student
+    SET SCH_STATUS = CASE
+      WHEN SCH_STATUS = 'n' THEN 'y'
+      WHEN SCH_STATUS = 'y' THEN 'n'
+      ELSE SCH_STATUS
+    END
+    WHERE stu_no = #{stu_no}
+
+</select>
+
+
 
 </mapper>

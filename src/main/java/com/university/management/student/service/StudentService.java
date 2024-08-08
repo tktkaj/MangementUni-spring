@@ -18,4 +18,9 @@ public class StudentService {
 		return mapper.stuInfoSelect(loginNo);
 	}
 
+	public void studentUpdate(int stuNo) {
+		mapper.studentUpdate(stuNo);
+		
+	}
+
 }

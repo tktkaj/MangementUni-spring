@@ -20,6 +20,6 @@ public interface CoursesMapper {
 
 	void courdelete(String sub_name);
 
-	List<CoursesList> coursesList(int loginNo);
+	List<CoursesList> coursesList(CoursesList cour);
 
 }
