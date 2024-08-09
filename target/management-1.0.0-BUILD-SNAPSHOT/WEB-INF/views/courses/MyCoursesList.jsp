@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
-<jsp:include page="/WEB-INF/views/common/header.jsp" />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,10 +15,12 @@
 <!-- 구글 아이콘 링크  -->
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 <link href="${path}/resources/css/courses.css" rel="stylesheet" />
 
 </head>
 <body>
+	<jsp:include page="../common/header.jsp" />
 	<div id="menuBar">
 		<div id="sub-menuBar">
 			<ul id="menulist">
@@ -26,13 +28,13 @@
 				<li><a href="passwordchange">학생 정보 변경</a></li>
 				<li><a href="objection">성적 조회</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
+				<li><a href="myCoursesPage">수강신청 페이지</a></li>
 				<li><a href="askpresident">총장님께 바랍니다</a></li>
 				<li><a href="idcard">학생증</a></li>
 			</ul>
 		</div>
 	</div>
-
-	<div class="container">
+	<div class="container" style="height: 2500px; margin-top: 100px;">
 		<div id="content">
 			<!-- title view -->
 			<div id="pageTitle">
@@ -71,13 +73,13 @@
 						<p id="online-title">1주차(2022-02-28 ~ 2022-03-01)</p>
 						<div id="onlien-cont">
 							<p>
-								<a href="#"><span class="material-symbols-outlined icon">play_circle
-								</span> 1. 동영상 강의 제목</a>
+								<a href= onlineviedeo
+									onclick="openPage(this.href, 1000px, 800px); return false;">
+									<span class="material-symbols-outlined icon">play_circle
+								</span> 1. 동영상 강의 제목
+								</a>
 							</p>
-							<p>
-								<a href="#"><span class="material-symbols-outlined icon">play_circle
-								</span> 1. 동영상 강의 제목</a>
-							</p>
+
 							<span class="material-symbols-outlined icon">description</span>[강의
 							자료]
 						</div>
@@ -193,8 +195,22 @@
 			</div>
 		</div>
 	</div>
+	<script>
+	function openPage() {
+        // 새 창의 크기와 위치 설정
+        const width = 1200;
+        const height = 700;
+        const screenWidth = window.screen.availWidth;
+        const screenHeight = window.screen.availHeight;
+        const left = (screenWidth - width) / 2;
+        const top = (screenHeight - height) / 2;
 
+        // 새 창 옵션
+        const options = `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`;
 
+        // 새 창 열기
+        const newWindow = window.open('', '_blank', options);
+	</script>
 </body>
 </html>
 <jsp:include page="../common/footer.jsp" />
