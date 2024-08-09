@@ -91,4 +91,23 @@ public class FacultyService {
 		return mapper.selectBoardList(map);
 	}
 
+	// 게시글 삭제하기
+	public int deleteByNo(int no) {
+		return mapper.deleteByNo(no);
+	}
+
+	// 게시글 업데이트
+	public int updateByNoList(Board board, int no) {
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("bo_no", no);
+		map.put("title", board.getTitle());
+		map.put("content", board.getContent());
+		map.put("uploadFile", board.getRenamedFilename());
+		map.put("loginname", board.getEmp_name());
+		map.put("loginNo", board.getEmp_no());
+		
+		return mapper.updateByNoList(map);
+	}
+
 }
