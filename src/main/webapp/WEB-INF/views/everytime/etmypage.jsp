@@ -46,7 +46,7 @@
                     <input type="text" id="searchBox" class="search-box" value="검색어를 입력해주세요"
                         onfocus="clearPlaceholder()" onblur="setPlaceholder()">
                 </div>
-                <input type="text" id="Box" class="box" value="&nbsp;내가 작성한 글">
+                <input type="text" id="Box" class="box" value="&nbsp;내가 작성한 글" readonly>
             </div>
 
             <div class="list-group">
@@ -57,9 +57,14 @@
                 </a>
                 <a href="#" class="list-group-item list-group-item-action list-group-item-small2 disabled">
                     <div style="display: flex; align-items: center;">
-                        <div style="padding: 1px; margin-right: 5px; font-size: 15px;">1초전</div>
-                        <img src="${pageContext.request.contextPath}/resources/images/msg.png" width="15" height="15">
-                        <div style="padding: 1px; margin-right: 5px; font-size: 15px;">20</div>
+                        <div style="padding: 1px; margin-right: 10px; font-size: 15px;">글
+							작성 1초전</div>
+						<img src="${pageContext.request.contextPath}/resources/img/msg.png" width="15" height="15">
+						<div style="padding: 1px; margin-right: 10px; font-size: 15px;">20</div>
+						<img src="${pageContext.request.contextPath}/resources/img/조회수.png" width="15" height="15">
+						<div style="padding: 1px; margin-right: 10px; font-size: 15px;">20</div>
+						<img src="${pageContext.request.contextPath}/resources/img/추천버튼.png" width="15" height="15">
+						<div style="padding: 1px; margin-right: 10px; font-size: 15px;">20</div>
                     </div>
                 </a>
             </div>
@@ -72,9 +77,14 @@
                 </a>
                 <a href="#" class="list-group-item list-group-item-action list-group-item-small2 disabled">
                     <div style="display: flex; align-items: center;">
-                        <div style="padding: 1px; margin-right: 5px; font-size: 15px;">1초전</div>
-                        <img src="${pageContext.request.contextPath}/resources/images/msg.png" width="15" height="15">
-                        <div style="padding: 1px; margin-right: 5px; font-size: 15px;">20</div>
+                        <div style="padding: 1px; margin-right: 10px; font-size: 15px;">글
+							작성 1초전</div>
+						<img src="${pageContext.request.contextPath}/resources/img/msg.png" width="15" height="15">
+						<div style="padding: 1px; margin-right: 10px; font-size: 15px;">20</div>
+						<img src="${pageContext.request.contextPath}/resources/img/조회수.png" width="15" height="15">
+						<div style="padding: 1px; margin-right: 10px; font-size: 15px;">20</div>
+						<img src="${pageContext.request.contextPath}/resources/img/추천버튼.png" width="15" height="15">
+						<div style="padding: 1px; margin-right: 10px; font-size: 15px;">20</div>
                     </div>
                 </a>
             </div>
@@ -87,9 +97,14 @@
                 </a>
                 <a href="#" class="list-group-item list-group-item-action list-group-item-small2 disabled">
                     <div style="display: flex; align-items: center;">
-                        <div style="padding: 1px; margin-right: 5px; font-size: 15px;">1초전</div>
-                        <img src="${pageContext.request.contextPath}/resources/images/msg.png" width="15" height="15">
-                        <div style="padding: 1px; margin-right: 5px; font-size: 15px;">20</div>
+                       <div style="padding: 1px; margin-right: 10px; font-size: 15px;">글
+							작성 1초전</div>
+						<img src="${pageContext.request.contextPath}/resources/img/msg.png" width="15" height="15">
+						<div style="padding: 1px; margin-right: 10px; font-size: 15px;">20</div>
+						<img src="${pageContext.request.contextPath}/resources/img/조회수.png" width="15" height="15">
+						<div style="padding: 1px; margin-right: 10px; font-size: 15px;">20</div>
+						<img src="${pageContext.request.contextPath}/resources/img/추천버튼.png" width="15" height="15">
+						<div style="padding: 1px; margin-right: 10px; font-size: 15px;">20</div>
                     </div>
                 </a>
             </div>
@@ -97,7 +112,7 @@
             <div class="btn-container">
                 <button type="button" class="btn2">▼&nbsp;더보기</button>
                 <div class="btn-list">
-                    <button type="button" class="btn3"><img src="${pageContext.request.contextPath}/resources/images/글목록.png" width="25" height="25">&nbsp;글 목록</button>
+                    <button type="button" class="btn3"><img src="${pageContext.request.contextPath}/resources/img/글목록.png" width="25" height="25">&nbsp;글 목록</button>
                 </div>
             </div>
         </div>

@@ -60,7 +60,7 @@ h1 {
     cursor: pointer;
     width: 120px;
     text-align: center;
-    margin-left: 450px;
+    
 }
 .btn2 {
     background-color: rgb(2, 76, 134);
@@ -80,7 +80,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5px;
+    margin-top: 30px;
 }
 
 .box {
@@ -108,6 +108,7 @@ h1 {
     font-size: 20px;
     padding-bottom: 500px;
     border-top: none;
+    border-bottom:none;
 }
 
 .file-upload-button,
@@ -127,8 +128,8 @@ h1 {
 
 .file-upload-button:hover,
 .custom-submit-button:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+    background-color: rgb(2, 76, 134);
+    border-color: rgb(2, 76, 134);
 }
 
 .file-upload-button input[type="file"] {
@@ -148,8 +149,10 @@ h1 {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    border:none;
-    background-color: #f8f9fa;
+    background-color: rgb(2, 76, 134);
+    
+    
+  
    
 }
 
@@ -162,6 +165,10 @@ h1 {
     
 }
 
+.checkbox{
+	
+	
+}
 .form-controls-container .btn {
     margin-left: 20px;
 }
