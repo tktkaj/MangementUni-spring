@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.university.management.scholar.dto.Scholar;
 import com.university.management.scholar.dto.ScholarList;
+import com.university.management.scholar.dto.StuScholar;
 import com.university.management.scholar.mapper.ScholarMapper;
 
 @Service
@@ -23,6 +24,11 @@ public class ScholarService {
 	public int scholarInsert(Scholar sch) {
 		System.out.println("ScholarService안에scholarInsert실행");
 		return mapper.scholarInsert(sch);
+	}
+
+	public List<StuScholar> stuScholarList(Integer loginNo) {
+		
+		return mapper.stuScholarList(loginNo);
 	}
 
 }

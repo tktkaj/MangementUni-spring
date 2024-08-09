@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.university.management.scholar.dto.Scholar;
 import com.university.management.scholar.dto.ScholarList;
+import com.university.management.scholar.dto.StuScholar;
 
 @Mapper
 public interface ScholarMapper {
@@ -14,5 +15,7 @@ public interface ScholarMapper {
 	List<ScholarList> scholarlistSelect(Map<String, String> params);
 
 	int scholarInsert(Scholar sch);
+
+	List<StuScholar> stuScholarList(Integer loginNo);
 
 }

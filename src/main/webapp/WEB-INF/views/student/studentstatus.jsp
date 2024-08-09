@@ -123,24 +123,19 @@
 									<th scope="col">학년도</th>
 									<th scope="col">학기</th>
 									<th scope="col">장학명</th>
-									<th scope="col">면제금액</th>
+									<th scope="col">면제율</th>
 								</tr>
 							</thead>
 							<tbody class="table-group-divider">
+								<c:forEach var="list" items="${StuScholarlist}" varStatus="status">
 								<tr>
-									<th scope="row">1</th>
-									<td>2024</td>
-									<td>1</td>
-									<td>@mdo</td>
-									<td>@mdo</td>
+									<th>${status.index + 1}</th>
+									<td>${list.YEAR}</td>
+									<td>${list.SMT}</td>
+									<td>${list.SCH_NAME}</td>
+									<td>${list.SCH_DISCOUNT}</td>
 								</tr>
-								<tr>
-									<th scope="row">1</th>
-									<td>2024</td>
-									<td>1</td>
-									<td>@mdo</td>
-									<td>@mdo</td>
-								</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>
@@ -161,23 +156,15 @@
 								</tr>
 							</thead>
 							<tbody class="table-group-divider">
-
+								<c:forEach var="list" items="${courlist}" varStatus="status">
 								<tr>
-									<th scope="row">1</th>
-									<td>2024</td>
-									<td>1</td>
-									<td>@mdo</td>
-									<td>@mdo</td>
-									<td>40%</td>
+									<th>${status.index + 1}</th>
+									<td>${list.YEAR}</td>
+									<td>${list.SMT}</td>
+									<td><a href="myCoursesList">${list.SUB_NAME}</a></td>
+									<td>${list.PROF_NAME}</td>
 								</tr>
-								<tr>
-									<th scope="row">1</th>
-									<td>2024</td>
-									<td>1</td>
-									<td>@mdo</td>
-									<td>@mdo</td>
-									<td>40%</td>
-								</tr>
+							</c:forEach>
 							</tbody>
 						</table>
 					</div>
@@ -199,22 +186,16 @@
 								</tr>
 							</thead>
 							<tbody class="table-group-divider">
+								<c:forEach var="courlist" items="${courseslist}" varStatus="status">
 								<tr>
-									<th scope="row">1</th>
-									<td>2023</td>
-									<td>1</td>
-									<td>@mdo</td>
-									<td>@mdo</td>
-									<td>90%</td>
+									<th>${status.index + 1}</th>
+									<td>${courlist.YEAR}</td>
+									<td>${courlist.SMT}</td>
+									<td>${courlist.SUB_NAME}</td>
+									<td>${courlist.PROF_NAME}</td>
 								</tr>
-								<tr>
-									<th scope="row">1</th>
-									<td>2023</td>
-									<td>2</td>
-									<td>@mdo</td>
-									<td>@mdo</td>
-									<td>70%</td>
-								</tr>
+								</c:forEach>
+							
 							</tbody>
 						</table>
 					</div>
