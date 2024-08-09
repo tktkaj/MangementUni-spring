@@ -40,7 +40,7 @@
 	<div class="container"
 		style="height: 1000px; width: 1000px; margin-top: 100px;">
 		<div id="content">
-			<input type="text" id="Box" class="box" value="&nbsp;글 수정">
+			<input type="text" id="Box" class="box" value="&nbsp;글 수정"readonly>
 
 			<div class="input-group mb-0">
 				<input type="text" class="form-control1"
