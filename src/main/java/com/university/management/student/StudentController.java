@@ -2,7 +2,9 @@ package com.university.management.student;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -112,7 +114,47 @@ public class StudentController {
 	public String popup() {
 		return "student/popup";
 	}
+	
+	
+	@RequestMapping("/studentinformation")
+	public String studentinformation(Model model) {
 
+		
+		int id=(int)session.getAttribute("studentno");
+		String name=(String)session.getAttribute("loginname");
+		String deptname=(String)session.getAttribute("studeptname");
+		String email=(String)session.getAttribute("email");
+		String phone=(String)session.getAttribute("phone");
+		String password=(String)session.getAttribute("loginPassword");
+		String address=(String)session.getAttribute("address");
+		
+		
+			model.addAttribute("id",id);
+			model.addAttribute("name",name);
+			model.addAttribute("deptname",deptname);
+			model.addAttribute("email",email);
+			model.addAttribute("phone",phone);
+			model.addAttribute("password",password);
+		    model.addAttribute("address",address);
+		return "student/studentinformation";
+	}
+	
+	
+	@RequestMapping("/studnetInformationchg")
+	public String studnetInformationchg(Model model, String address, String email, String phone) {
+		
+		System.out.println("studnetInformationchg실행"+address+ ""+ email+""+phone);
+		int STU_NO=(int)session.getAttribute("studentno");
+		  Map<String, Object> params = new HashMap<>(); 
+		    params.put("STU_NO", STU_NO);
+	        params.put("STU_ADDRESS", address);
+	        params.put("STU_EMAIL", email);
+	        params.put("STU_PHONE", phone);
+		System.out.println("STUparms:"+params);
+	stuservice.studentInfochange(params);
+		return "home";
+	}
+	
 	@RequestMapping("/myCoursesList")
 	public String MyCoursesList() {
 
