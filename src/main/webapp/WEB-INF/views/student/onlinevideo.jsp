@@ -1,10 +1,10 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page session="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="ko">
 <link href="${path}/resources/css/video.css" rel="stylesheet" />
@@ -19,8 +19,8 @@
 
 	<div class="player-container">
 		<div class="header">
-			<img src="logo2.png" alt="로고">
-			<source src="${path}/resources/img/logo2.png" type="img/png">
+		
+			<img src="${path}/resources/img/logo2.png" type="img/png">
 			<div class="header-title">
 				<h1>강의 제목</h1>
 				<h2>소제목</h2>

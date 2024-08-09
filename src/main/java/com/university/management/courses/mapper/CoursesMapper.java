@@ -2,6 +2,7 @@ package com.university.management.courses.mapper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -25,5 +26,7 @@ public interface CoursesMapper {
 	void classcapup(String sub_name);
 
 	void classcapdown(String sub_name);
+
+	List<Courses> coursesbeforlist(Map<String, Object> params);
 
 }
