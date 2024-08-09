@@ -53,7 +53,7 @@
 					<hr>
 					<div id="SubjectContent">
 						<p>강의 개요가 들어갈 텍스트</p>
-						<p>${ content }</p>
+						<p>${coment}</p>
 					</div>
 				</div>
 
