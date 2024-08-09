@@ -17,6 +17,8 @@ import com.university.management.courseregistrationpage.dto.Courseregistrationpa
 import com.university.management.courses.dto.Courses;
 import com.university.management.courses.dto.CoursesList;
 import com.university.management.courses.service.CoursesService;
+import com.university.management.scholar.dto.StuScholar;
+import com.university.management.scholar.service.ScholarService;
 import com.university.management.student.dto.Student;
 import com.university.management.student.service.StudentService;
 import com.university.management.tuition.dto.Tuition;
@@ -32,6 +34,9 @@ public class StudentController {
 	@Autowired
 	private CoursesService courservice;
 
+	@Autowired
+	private ScholarService schservice;
+	
 	@RequestMapping("/askpresident")
 	public String askpresident() {
 		return "student/askpresident";
@@ -86,15 +91,48 @@ public class StudentController {
 			model.addAttribute("studentInfo", studentInfo);
 			model.addAttribute("status",studentInfo.get(0).getR_STATUS());
 		} else {
-			
 			return "login/login";
 		}
 		
+		
+CoursesList cour= new CoursesList();
+		
+		// 현재 날짜를 가져옵니다.
+		LocalDate today = LocalDate.now();
+		// 현재 월을 가져옵니다.
+		int month = today.getMonthValue();
+
+		// 월에 따라서 값을 결정합니다
+		int smt = 0;
+		if (month >= 1 && month <= 7) {
+			smt = 1;
+		} else if (month >= 8 && month <= 12) {
+			smt = 2;
+		}
+		int year = today.getYear();
+		
+		cour.setSTU_NO(loginNo);
+		cour.setSMT(smt);
+		cour.setYEAR(year);
+		
+	  List<CoursesList> coursesList= courservice.coursesList(cour);
+		System.out.println("myCoursesPage실행:"+coursesList );
+		model.addAttribute("courlist", coursesList);
 		
 		
 		List<Tuition> tuitionlist= stuservice.tuitionSelect(loginNo);
 		model.addAttribute("tuitionlist",tuitionlist);
 		
+		Map<String, Object> params = new HashMap<>();
+		params.put("loginNo", loginNo);
+		params.put("year", year);
+
+		List<Courses> courseslist= courservice.coursesbeforlist(params);
+		model.addAttribute("courseslist", courseslist);
+		
+		List<StuScholar>StuScholarlist=schservice.stuScholarList(loginNo);
+		model.addAttribute("StuScholarlist", StuScholarlist);
+		System.out.println("장학금 목록"+StuScholarlist);
 		return "student/studentstatus";
 	}
 

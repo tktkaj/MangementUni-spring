@@ -3,11 +3,13 @@
 <mapper
 	namespace="com.university.management.courses.mapper.CoursesMapper">
 
-<select id="coursesList" parameterType="com.university.management.courses.dto.CoursesList" resultType="com.university.management.courses.dto.CoursesList">
+	<select id="coursesList"
+		parameterType="com.university.management.courses.dto.CoursesList"
+		resultType="com.university.management.courses.dto.CoursesList">
 
- select * from COURSES where STU_NO=#{STU_NO} and year=#{YEAR} and smt=#{SMT}
+		select * from COURSES where STU_NO=#{STU_NO} and year=#{YEAR} and smt=#{SMT}
 
-</select>
+	</select>
 
 
 
@@ -15,79 +17,100 @@
 		parameterType="com.university.management.courseregistrationpage.dto.Courseregistrationpage"
 		resultType="com.university.management.courses.dto.Courses">
 
-		SELECT s.SUB_CODE, s.SUB_NAME,p.PROF_NAME,s.CLASS_CAP,s.SUB_ST_TIME,s.SUB_END_TIME ,s.CO_CONTENT,s.SMT,s.YEAR,s.SUB_POINT,s.SMT,s.YEAR,s.SUB_STATUS
-		FROM subject s
+		SELECT s.SUB_CODE,
+		s.SUB_NAME,p.PROF_NAME,s.CLASS_CAP,s.SUB_ST_TIME,s.SUB_END_TIME
+		,s.CO_CONTENT,s.SMT,s.YEAR,s.SUB_POINT,s.SMT,s.YEAR,s.SUB_STATUS
+		FROM
+		subject s
 		JOIN department d ON s.dept_code = d.dept_code
-		JOIN PROFESSOR p ON p.PROF_NO = s.prof_no
+		JOIN PROFESSOR
+		p ON p.PROF_NO = s.prof_no
 		WHERE d.DEPT_NAME = #{DEPT_NAME}
-		AND s.SMT = #{SMT}
+		AND s.SMT =
+		#{SMT}
 		AND s.YEAR = #{YEAR}
-		AND SUBSTRING(s.SUB_CODE, 8, 1) = #{STU_GRADE}
+		AND SUBSTRING(s.SUB_CODE, 8, 1) =
+		#{STU_GRADE}
 
 
 	</select>
 
 	<insert id="courInsert"
-		parameterType="com.university.management.courses.dto.Courses"
-		>
-  INSERT INTO UNIVERSITY.COURSES (
-        STU_NO,
-        YEAR,
-        SMT,
-        DEPT_NAME,
-        PROF_NAME,
-        SUB_NAME,
-        CO_CONTENT
-    ) VALUES (
-        #{STU_NO},
-        #{YEAR},
-        #{SMT},
-        #{DEPT_NAME},
-        #{PROF_NAME},
-        #{SUB_NAME},
-        #{CO_CONTENT}
-    )
-	
+		parameterType="com.university.management.courses.dto.Courses">
+		INSERT INTO UNIVERSITY.COURSES (
+		STU_NO,
+		YEAR,
+		SMT,
+		DEPT_NAME,
+		PROF_NAME,
+		SUB_NAME,
+		CO_CONTENT
+		) VALUES (
+		#{STU_NO},
+		#{YEAR},
+		#{SMT},
+		#{DEPT_NAME},
+		#{PROF_NAME},
+		#{SUB_NAME},
+		#{CO_CONTENT}
+		)
+
 
 
 	</insert>
 
 
 
-<update id="coustatusupdate" parameterType="String">
+	<update id="coustatusupdate" parameterType="String">
 
-   UPDATE subject
-    SET sub_status = CASE
-      WHEN sub_status = 'n' THEN 'y'
-      WHEN sub_status = 'y' THEN 'n'
-      ELSE sub_status
-    END
-    WHERE sub_code = #{sub_code}
+		UPDATE subject
+		SET sub_status = CASE
+		WHEN sub_status = 'n' THEN 'y'
+		WHEN sub_status = 'y' THEN 'n'
+		ELSE sub_status
+		END
+		WHERE sub_code = #{sub_code}
 
-</update>
+	</update>
 
-<delete id="courdelete" parameterType="String">
+	<delete id="courdelete" parameterType="String">
 
-delete from COURSES where sub_name=#{sub_name}
-
-
-</delete>
+		delete from COURSES where sub_name=#{sub_name}
 
 
-<update id="classcapup" parameterType="String">
+	</delete>
 
-   UPDATE subject
-    SET  CLASS_CAP=CLASS_CAP+1
-    WHERE SUB_NAME = #{sub_name}
 
-</update>
+	<update id="classcapup" parameterType="String">
 
-<update id="classcapdown" parameterType="String">
+		UPDATE subject
+		SET CLASS_CAP=CLASS_CAP+1
+		WHERE SUB_NAME = #{sub_name}
 
-   UPDATE subject
-    SET  CLASS_CAP=CLASS_CAP-1
-    WHERE SUB_NAME = #{sub_name}
+	</update>
 
-</update>
+	<update id="classcapdown" parameterType="String">
+
+		UPDATE subject
+		SET CLASS_CAP=CLASS_CAP-1
+		WHERE SUB_NAME = #{sub_name}
+
+	</update>
+
+
+	<select id="coursesbeforlist" parameterType="map"
+		resultType="com.university.management.courses.dto.Courses">
+
+		SELECT *
+		FROM COURSES
+		WHERE STU_NO = #{loginNo}
+		AND year != #{year}
+
+
+	</select>
+
+
+
+
 
 </mapper>
