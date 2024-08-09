@@ -44,7 +44,8 @@
 		DEPT_NAME,
 		PROF_NAME,
 		SUB_NAME,
-		CO_CONTENT
+		CO_CONTENT,
+		SUB_CODE
 		) VALUES (
 		#{STU_NO},
 		#{YEAR},
@@ -52,7 +53,8 @@
 		#{DEPT_NAME},
 		#{PROF_NAME},
 		#{SUB_NAME},
-		#{CO_CONTENT}
+		#{CO_CONTENT},
+		#{SUB_CODE}
 		)
 
 

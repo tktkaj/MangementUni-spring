@@ -60,7 +60,7 @@
 									<td>${list.YEAR}</td>
 									<td>${list.SMT}</td>
 									<td>${list.DEPT_NAME}</td>
-									<td><a href="myCoursesList">${list.SUB_NAME}</a></td>
+									<td><a href="myCoursesList?sub_code=${list.SUB_CODE}">${list.SUB_NAME}</a></td>
 									<td>${list.PROF_NAME}</td>
 								</tr>
 							</c:forEach>
