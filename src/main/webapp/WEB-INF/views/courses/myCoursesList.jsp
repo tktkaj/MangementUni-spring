@@ -38,7 +38,7 @@
 		<div id="content">
 			<!-- title view -->
 			<div id="pageTitle">
-				<h1>파이썬 프로그래밍 실무</h1>
+				<h1>${sub_name }</h1>
 				<h1>${title}</h1>
 			</div>
 
