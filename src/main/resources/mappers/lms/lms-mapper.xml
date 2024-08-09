@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper
+	namespace="com.university.management.lms.mapper.LmsMapper">
+
+	<select id="lmsSelect" parameterType="String"
+		resultType="com.university.management.lms.dto.Lms">
+
+		select
+		l.LMS_NO,l.SUB_CODE,l.LMS_TITLE,l.LMS_FILE,l.LMS_DATE,l.LMS_CHECK,s.CO_CONTENT
+		from LMS l
+		join subject s on(s.SUB_CODE=l.SUB_CODE)
+		where l.sub_code=#{sub_code}
+
+	</select>
+
+
+
+</mapper>

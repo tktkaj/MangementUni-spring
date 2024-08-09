@@ -12,11 +12,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.university.management.courseregistrationpage.dto.Courseregistrationpage;
 import com.university.management.courses.dto.Courses;
 import com.university.management.courses.dto.CoursesList;
 import com.university.management.courses.service.CoursesService;
+import com.university.management.lms.dto.Lms;
+import com.university.management.lms.service.LmsService;
 import com.university.management.scholar.dto.StuScholar;
 import com.university.management.scholar.service.ScholarService;
 import com.university.management.student.dto.Student;
@@ -36,6 +39,9 @@ public class StudentController {
 
 	@Autowired
 	private ScholarService schservice;
+	
+	@Autowired
+	private LmsService lmsservice;
 	
 	@RequestMapping("/askpresident")
 	public String askpresident() {
@@ -200,8 +206,14 @@ CoursesList cour= new CoursesList();
 	}
 	
 	@RequestMapping("/myCoursesList")
-	public String MyCoursesList() {
-
+	public String MyCoursesList(Model model,@RequestParam("sub_code") String sub_code) {
+		System.out.println("myCoursesList subcode:"+sub_code);
+		List<Lms> lmslist= new ArrayList<Lms>();
+		lmslist= lmsservice.lmsSelect(sub_code);
+		System.out.println("제발해주세요..."+lmslist);
+		String coment=lmslist.get(0).getCO_CONTENT();
+		model.addAttribute("lmslist",lmslist);
+		model.addAttribute("coment", coment);
 		return "courses/myCoursesList";
 	}
 
@@ -231,8 +243,9 @@ CoursesList cour= new CoursesList();
 		
 	  List<CoursesList> coursesList= courservice.coursesList(cour);
 		System.out.println("myCoursesPage실행:"+coursesList );
+		int count = coursesList.size();
 		model.addAttribute("courlist", coursesList);
-		
+		model.addAttribute("count",count);
 		return "courses/myCoursesPage";
 	}
 
@@ -315,12 +328,14 @@ CoursesList cour= new CoursesList();
 		course.setPROF_NAME(PROF_NAME.substring(0, PROF_NAME.length() - 4));
 		course.setDEPT_NAME(DEPT_NAME.substring(0, DEPT_NAME.length() - 4));
 		course.setCO_CONTENT(CO_CONTENT.substring(0, CO_CONTENT.length() - 4));
+		course.setSUB_CODE(strsub_code);
 		course.setSMT(SMT);
 		course.setYEAR(YEAR);
-		System.out.println("확인용"+course);
+		System.out.println("확인용중요"+course);
 		if(strsubstatus.equals("n")) {
 		String strsubname=SUB_NAME.substring(0, SUB_NAME.length() - 4);
 		System.out.println("strsubname:"+strsubname);
+		System.out.println("제발"+course.getSUB_CODE());
 		courservice.courInsert(course);
 		courservice.classcapdown(strsubname);
 		}

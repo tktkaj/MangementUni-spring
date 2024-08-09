@@ -77,7 +77,6 @@
 							<input type="hidden" id="SMT" name="SMT" />
 							<input type="hidden" id="YEAR" name="YEAR" />
 							<input type="hidden" id="SUB_STATUS" name="SUB_STATUS" />
-							
 							<td><c:if test="${stuinfo.SUB_STATUS eq 'n'}">
 									<button type="button" class="apply2"
 										onclick="submitForm('${stuinfo.SUB_STATUS}','${stuinfo.SUB_CODE}','${stuinfo.SUB_NAME}', '${stuinfo.PROF_NAME}', '${deptname}', '${stuinfo.CO_CONTENT}','${stuinfo.SMT}','${stuinfo.YEAR}')">신청</button>
