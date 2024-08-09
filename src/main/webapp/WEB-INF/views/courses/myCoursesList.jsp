@@ -73,20 +73,13 @@
 						<p id="online-title">1주차(2022-02-28 ~ 2022-03-01)</p>
 						<div id="onlien-cont">
 							<p>
-								 <a href="http://192.168.100.7:5500/test2.html"
-									
-
-
-									
-									onclick="window.open(this.href, '_blank', 'width=1200, height=700','left=1000', 'top=2000', 'location: no', 'menubar:no',
-											'status:no','toolbar=no'); return false;"><span
-									class="material-symbols-outlined icon">play_circle </span> 1.
-									동영상 강의 제목</a>
+								<a href= onlineviedeo
+									onclick="openPage(this.href, 1000px, 800px); return false;">
+									<span class="material-symbols-outlined icon">play_circle
+								</span> 1. 동영상 강의 제목
+								</a>
 							</p>
-							<p>
-								<a href="#"><span class="material-symbols-outlined icon">play_circle
-								</span> 1. 동영상 강의 제목</a>
-							</p>
+
 							<span class="material-symbols-outlined icon">description</span>[강의
 							자료]
 						</div>
@@ -202,7 +195,22 @@
 			</div>
 		</div>
 	</div>
+	<script>
+	function openPage() {
+        // 새 창의 크기와 위치 설정
+        const width = 1200;
+        const height = 700;
+        const screenWidth = window.screen.availWidth;
+        const screenHeight = window.screen.availHeight;
+        const left = (screenWidth - width) / 2;
+        const top = (screenHeight - height) / 2;
 
+        // 새 창 옵션
+        const options = `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`;
+
+        // 새 창 열기
+        const newWindow = window.open('', '_blank', options);
+	</script>
 </body>
 </html>
 <jsp:include page="../common/footer.jsp" />
