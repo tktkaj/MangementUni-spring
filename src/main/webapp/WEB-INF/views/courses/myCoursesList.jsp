@@ -73,7 +73,7 @@
 						<p id="online-title">1주차(2022-02-28 ~ 2022-03-01)</p>
 						<div id="onlien-cont">
 							<a href="online" target="_blank"
-								onclick="return openPagePopup(this.href, 1600, 700);"> <span
+								onclick="return openPagePopup(this.href,190,700);"> <span
 								class="material-symbols-outlined icon"></span> 페이지 열기
 							</a> <span class="material-symbols-outlined icon"></span>[강의 자료]
 						</div>
@@ -199,10 +199,8 @@
 			const top = (screenHeight - height) / 2;
 
 			const popup = window
-					.open(
-							url,
-							'popupWindow',
-							`width=${width},height=${height},top=${top},left=${left},scrollbars=no,resizable=no`);
+					.open(url, 'popupWindow',
+							`width=1500,height=700,top=100,left=200,scrollbars=no,resizable=no`);
 
 			return false;
 		}
