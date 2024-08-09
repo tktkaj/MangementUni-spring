@@ -1,6 +1,7 @@
 package com.university.management.student.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,12 @@ public class StudentService {
 
 	public void studentUpdate(int stuNo) {
 		mapper.studentUpdate(stuNo);
+		
+	}
+
+	public void studentInfochange(Map<String, Object> params) {
+		System.out.println("studentservice안에studentInfochange실행");
+		mapper.studentInfochange(params);
 		
 	}
 
