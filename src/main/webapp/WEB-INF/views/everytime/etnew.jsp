@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -7,120 +7,99 @@
 <html lang="kr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>everytimemain</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>everytimemain</title>
 
-    <link href="${pageContext.request.contextPath}/resources/css/courses.css" rel="stylesheet" />
-    <link href="${pageContext.request.contextPath}/resources/css/everytime.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link
+	href="${pageContext.request.contextPath}/resources/css/courses.css"
+	rel="stylesheet" />
+<link
+	href="${pageContext.request.contextPath}/resources/css/everytime2.css"
+	rel="stylesheet" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+	crossorigin="anonymous">
 
-    
+
 </head>
 
 <body>
-    <jsp:include page="../common/header.jsp" />
-	    <div id="menuBar">
-        <div id="sub-menuBar" style="height: 150px;">
-            <ul id="menulist">
-                <li><a href="etmainpage">자유게시판</a></li>
-                <li><a href="etmypage">내글 보기</a></li>
-                <li><a href="everytimehot">HOT게시판</a></li>
-            </ul>
-        </div>
-    </div>
-	<div class="container" style="height: 1000px; margin-top:100px;">
-        <div id="content">
-            <!-- title view -->
-            <div class="list-group">
-                <div class="dropdown-container">
-                    <div class="dropdown">
-                        <button class="dropbtn">제목&nbsp;&nbsp;▼</button>
-                        <div class="dropdown-content">
-                            <a href="#">제목</a>
-                            <a href="#">작성자</a>
-                            <a href="#">내용</a>
-                        </div>
-                    </div>
-                    <input type="text" id="searchBox" class="search-box" value="검색어를 입력해주세요"
-                        onfocus="clearPlaceholder()" onblur="setPlaceholder()">
-                </div>
-                <input type="text" id="Box" class="box" value="&nbsp;내가 작성한 글">
-            </div>
+	<jsp:include page="../common/header.jsp" />
+	<div id="menuBar">
+		<div id="sub-menuBar" style="height: 150px;">
+			<ul id="menulist">
+				<li><a href="etmainpage">자유게시판</a></li>
+				<li><a href="etmypage">내글 보기</a></li>
+				<li><a href="everytimehot">HOT게시판</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="container"
+		style="height: 1000px; width: 1000px; margin-top: 100px;">
+		<div id="content">
+			<input type="text" id="Box" class="box" value="&nbsp;글 작성">
 
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action list-group-item-large" aria-current="true"
-                    style="margin-top: 5px;">제목이었던 것</a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-small disabled">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내용이었던 것 내용이었던 것 내용이었던 것 내용이었던 것
-                </a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-small2 disabled">
-                    <div style="display: flex; align-items: center;">
-                        <div style="padding: 1px; margin-right: 5px; font-size: 15px;">1초전</div>
-                        <img src="${pageContext.request.contextPath}/resources/images/msg.png" width="15" height="15">
-                        <div style="padding: 1px; margin-right: 5px; font-size: 15px;">20</div>
-                    </div>
-                </a>
-            </div>
+			<div class="input-group mb-0">
+				<input type="text" class="form-control1"
+					placeholder="&nbsp;&nbsp;글 작성" aria-label="Recipient's username"
+					aria-describedby="button-addon2">
+			</div>
 
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action list-group-item-large"
-                    aria-current="true">제목이었던 것</a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-small disabled">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내용이었던 것 내용이었던 것 내용이었던 것 내용이었던 것
-                </a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-small2 disabled">
-                    <div style="display: flex; align-items: center;">
-                        <div style="padding: 1px; margin-right: 5px; font-size: 15px;">1초전</div>
-                        <img src="${pageContext.request.contextPath}/resources/images/msg.png" width="15" height="15">
-                        <div style="padding: 1px; margin-right: 5px; font-size: 15px;">20</div>
-                    </div>
-                </a>
-            </div>
+			<div class="input-group mb-0" style="border-bottom: none;">
+				<input type="text" class="form-control2"
+					placeholder="&nbsp;&nbsp;글을 작성하시오" aria-label="Recipient's username"
+					aria-describedby="button-addon2">
+			</div>
 
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action list-group-item-large"
-                    aria-current="true">제목이었던 것</a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-small disabled">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내용이었던 것 내용이었던 것 내용이었던 것 내용이었던 것
-                </a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-small2 disabled">
-                    <div style="display: flex; align-items: center;">
-                        <div style="padding: 1px; margin-right: 5px; font-size: 15px;">1초전</div>
-                        <img src="${pageContext.request.contextPath}/resources/images/msg.png" width="15" height="15">
-                        <div style="padding: 1px; margin-right: 5px; font-size: 15px;">20</div>
-                    </div>
-                </a>
-            </div>
+			<div class="form-controls-container">
+				<div class="file-upload-section">
+					<form>
+						<label for="file-upload" class="file-upload-button"> <span>첨부파일</span>
+							<input type="file" id="file-upload" name="file-upload"
+							onchange="updateFilePath()">
+						</label>
+					</form>
+					<span id="file-path" class="file-upload-path">첨부된 파일이 없습니다</span>
+				</div>
+				<div class="오른쪽정렬">
+					<div class="form-check d-inline">
+						<input class="form-check-input"
+							style="font-weight: bolder; border: 2px solid rgb(2, 76, 134)"
+							type="checkbox" value="" id="flexCheckDefault"> <label
+							class="form-check-label" style="font-weight: bolder;"
+							for="flexCheckDefault">익명</label>
+					</div>
+					<div class="d-flex align-items-center">
+						<button class="custom-submit-button" type="button"
+							id="button-addon2">글 작성</button>
+					</div>
+				</div>
+			</div>
 
-            <div class="btn-container">
-                <button type="button" class="btn2">▼&nbsp;더보기</button>
-                <div class="btn-list">
-                    <button type="button" class="btn3"><img src="${pageContext.request.contextPath}/resources/images/글목록.png" width="25" height="25">&nbsp;글 목록</button>
-                </div>
-            </div>
-        </div>
-    </div>
+			<div class="btn-container">
 
-    <script>
-        function clearPlaceholder() {
-            var searchBox = document.getElementById('searchBox');
-            if (searchBox.value === '검색어를 입력해주세요') {
-                searchBox.value = '';
-                searchBox.style.color = 'black';
-            }
-        }
+				<button type="button" class="btn1">◀뒤로가기</button>
+			</div>
+		</div>
+	</div>
 
-        function setPlaceholder() {
-            var searchBox = document.getElementById('searchBox');
-            if (searchBox.value === '') {
-                searchBox.value = '검색어를 입력해주세요';
-                searchBox.style.color = 'grey';
-            }
-        }
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+	<script>
+		function updateFilePath() {
+			const fileInput = document.getElementById('file-upload');
+			const filePath = document.getElementById('file-path');
+			if (fileInput.files.length > 0) {
+				filePath.textContent = fileInput.files[0].name;
+			} else {
+				filePath.textContent = '첨부된 파일이 없습니다';
+			}
+		}
+	</script>
+
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>everytimemain</title>
+<title>evereytimeupdate</title>
 
 <link
 	href="${pageContext.request.contextPath}/resources/css/courses.css"
@@ -50,8 +50,8 @@
 
 			<div class="input-group mb-0" style="border-bottom: none;">
 				<input type="text" class="form-control2"
-					placeholder="&nbsp;&nbsp;수정수정수정수정크리스탈"
-					aria-label="Recipient's username" aria-describedby="button-addon2">
+					placeholder="&nbsp;&nbsp;글을 수정하시오" aria-label="Recipient's username"
+					aria-describedby="button-addon2">
 			</div>
 
 			<div class="form-controls-container">
@@ -64,20 +64,22 @@
 					</form>
 					<span id="file-path" class="file-upload-path">첨부된 파일이 없습니다</span>
 				</div>
-
-				<div class="form-check d-inline">
-					<input class="form-check-input"
-						style="font-weight: bolder; border: 2px solid rgb(2, 76, 134)"
-						type="checkbox" value="" id="flexCheckDefault"> <label
-						class="form-check-label" style="font-weight: bolder;"
-						for="flexCheckDefault">익명</label>
+				<div class="오른쪽정렬1">
+					<div class="form-check d-inline">
+						<input class="form-check-input"
+							style="font-weight: bolder; border: 2px solid rgb(2, 76, 134)"
+							type="checkbox" value="" id="flexCheckDefault"> <label
+							class="form-check-label" style="font-weight: bolder;"
+							for="flexCheckDefault">익명</label>
+					</div>
+					<div class="d-flex align-items-center">
+						<button class="custom-submit-button" type="button"
+							id="button-addon2" style="width:100px" >수정</button>
+					</div>
 				</div>
-				<div class="d-flex align-items-center">
-					<button class="custom-submit-button" type="button"
-						id="button-addon2">글작성</button>
-				</div>
-				<button type="button" class="btn1 center-delete">글 삭제</button>
+					<button type="button" class="btn1 center-delete"style="margin-left:50px; width:100px;">삭제</button>
 			</div>
+
 			<div class="btn-container">
 
 				<button type="button" class="btn1">◀뒤로가기</button>

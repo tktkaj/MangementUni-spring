@@ -147,10 +147,11 @@ h1 {
 .form-controls-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    background-color: rgb(2, 76, 134);
     
+   padding:20px;
+    background-color: #c9c9c9;
+	 border: 2px solid rgb(2, 76, 134);
+	 border-top: none;
     
   
    
@@ -170,7 +171,7 @@ h1 {
 	
 }
 .form-controls-container .btn {
-    margin-left: 20px;
+    margin-left: 200px;
 }
 
 .form-check-input {
@@ -178,6 +179,7 @@ h1 {
     height: 20px;
     border: 2px solid rgb(2, 76, 134);
     background-color: #fff;
+    margin-left: 200px;
 }
 
 .form-check-input:checked {
@@ -188,4 +190,17 @@ h1 {
 .form-check-label {
     font-weight: bold;
     font-size: 18px;
+    
+}
+.오른쪽정렬{
+	 display: flex;
+    align-items: center;
+	margin-left: 350px;
+	gap:50px;
+}
+.오른쪽정렬1{
+	 display: flex;
+    align-items: center;
+	margin-left: 200px;
+	gap:50px;
 }
