@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.university.management.courses.dto.Courses;
 import com.university.management.student.dto.Student;
 import com.university.management.tuition.dto.Tuition;
 
@@ -19,6 +20,8 @@ public interface StudentMapper {
 	void studentInfochange(Map<String, Object> params);
 
 	List<Tuition> tuitionSelect(Integer loginNo);
+
+	
 
 
 

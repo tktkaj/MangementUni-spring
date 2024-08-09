@@ -2,6 +2,7 @@ package com.university.management.courses.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,6 +52,11 @@ public class CoursesService {
 	public void classcapdown(String sub_name) {
 		mapper.classcapdown(sub_name);
 		
+	}
+
+	public List<Courses> coursesbeforlist(Map<String, Object> params) {
+		
+		return mapper.coursesbeforlist(params);
 	}
 
 }
