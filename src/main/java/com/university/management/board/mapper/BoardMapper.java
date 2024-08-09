@@ -30,9 +30,15 @@ public interface BoardMapper {
 
 	int empSelect(String loginname);
 
-	// page 기능
-
+	// page 기능으로 공지사항 목록 출력
 	List<Board> selectBoardList(Map<String, Object> map);
+
+	// 게시글 삭제하기
+	int deleteByNo(int no);
+
+	// 게시글 업로드
+	int updateByNoList(Map<String, Object> map);
+	
 
 
 }

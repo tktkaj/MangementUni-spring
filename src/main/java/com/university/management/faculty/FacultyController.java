@@ -1,5 +1,7 @@
 package com.university.management.faculty;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +22,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.university.management.board.dto.Board;
 import com.university.management.board.dto.PageInfo;
@@ -39,17 +43,14 @@ public class FacultyController {
 	@Autowired
 	private FacultyService service;
 
-
 	@Autowired
 	private ScholarService scholarservice;
-	
+
 	@Autowired
 	private StudentService stuservice;
-	
-	
 
 	// 공지사항 목록처리
-	@GetMapping("/infoboard")
+	@RequestMapping("/infoboard")
 	public String infoboard(Model model, @RequestParam Map<String, String> param,
 			@RequestParam(value = "page", defaultValue = "1") int page) {
 		System.out.println("FacultyController-infoboard() 실행");
@@ -57,38 +58,38 @@ public class FacultyController {
 		String login = (String) session.getAttribute("login");
 		System.out.println("login : " + login);
 
-		Map<String,String> params = new HashMap<String,String>();
+		Map<String, String> params = new HashMap<String, String>();
 		String searchType = param.get("searchType");
 		String searchValue = param.get("searchValue");
-		
+
 		try {
 			if (searchType != null && searchValue != null && !searchValue.trim().isEmpty()) {
 				params.put("searchType", searchType);
 				params.put("searchValue", searchValue);
-			} 
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	
+
 		int listLimit = 5; // 한 페이지에 보여질 게시글 수
 		int totalRowCount = service.getBoardListCount(params); // 전체 게시글의 수
 		System.out.println("totalRowCount : " + totalRowCount);
 
-		// 페이지네이션 설정	
+		// 페이지네이션 설정
 		PageInfo pageSettings = new PageInfo(page, listLimit, totalRowCount, 5);
 		pageSettings.pageSetting(totalRowCount);
-		
+
 		int firstRow = pageSettings.getFirstRow();
-		
+
 		System.out.println("firstRow: " + firstRow);
-		
+
 		params.put("firstRow", String.valueOf(firstRow));
 		params.put("listLimit", String.valueOf(listLimit));
 
 		// 데이터 가져오기
 		List<Board> boardList = service.selectBoardList(params);
 		System.out.println("boardlist : " + boardList);
-		
+
 		// 데이터와 페이지 정보 모델에 추가하기
 		model.addAttribute("login", login);
 		model.addAttribute("boardList", boardList);
@@ -173,31 +174,107 @@ public class FacultyController {
 			model.addAttribute("msg", "내용을 입력해주세요.");
 		}
 
-		return "redirect:/infoboard";
+		return "faculty/infoboard";
 	}
 
 	@RequestMapping("/updateinfo")
 	public String updateinfo(Model model, @RequestParam("bo_no") int no) {
 		System.out.println("FacultyController-updateinfo() 실행");
-		
+
 		String login = (String) session.getAttribute("login");
 		System.out.println("login : " + login);
-		
+
 		Board board = service.findByNo(no);
-		
+
 		model.addAttribute("login", login);
 		model.addAttribute("board", board);
 
 		return "faculty/updateinfo";
 	}
-	
+
+	@RequestMapping("/updateinfoPro")
+	public String updateinfoPro(Model model, @RequestParam("bo_no") int no, @RequestParam Map<String, Object> param,
+			@ModelAttribute Board board, // Board DTO로 받아오기 
+			@RequestParam("uploadFile") MultipartFile uploadFile,
+			HttpSession session, RedirectAttributes redirectAttributes) {
+		System.out.println("FacultyController-updateinfoPro() 실행");
+
+		// 세션에서 로그인 정보 가져오기
+		String loginname = (String) session.getAttribute("loginname");
+		if (loginname == null) {
+			// 로그인하지 않은 경우 처리 - redirect 등 수행
+			return "redirect:/login"; // 로그인 페이지로 리디렉션
+		}
+
+		System.out.println("로그인 이름: " + loginname);
+
+		// 로그인한 사원 정보 가져오기
+		int loginNo = service.empSelect(loginname);
+		System.out.println("로그인 번호 : " + loginNo);
+
+		// 파라미터에서 값을 가져오기
+		String title = (String) param.get("title");
+		String content = (String) param.get("content");
+
+		System.out.println("제목 : " + title);
+		System.out.println("파일 : " + uploadFile);
+		System.out.println("내용 : " + content);
+
+		// 파일이 선택되었는지 확인
+		if (!uploadFile.isEmpty()) {
+			// 파일 처리 로직 (예: 파일 저장)
+			String originalFilename = uploadFile.getOriginalFilename();
+			String filePath = "C:\\fullstack\\part4\\src\\MangementUni-spring\\src\\main\\webapp\\resources/" + originalFilename; // 파일이 저장될 경로 지정
+
+			try {
+				// 파일 저장
+				uploadFile.transferTo(new File(filePath));
+				board.setOriginalFilename(originalFilename); // 파일명 설정
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		} else {
+			// 파일이 선택되지 않았다면 적절한 처리
+			board.setOriginalFilename(""); // 설정할 필요에 따라
+		}
+
+		// Board 객체에 파라미터 값 설정
+		board.setEmp_name(loginname);
+		board.setEmp_no(loginNo);
+		board.setBo_no(no); // bo_no 설정
+		board.setTitle(title);
+		board.setContent(content);
+
+		// 업데이트 수행
+		int res = service.updateByNoList(board, no);
+
+		if (res > 0) {
+			System.out.println("글이 수정되었습니다.");
+			session.setAttribute("msg", "정상적으로 업로드되었습니다.");
+		} else {
+			System.out.println("글 수정을 실패하였습니다.");
+			session.setAttribute("msg", "정상적으로 업로드되지 않았습니다.");
+		}
+
+		return "redirect:/infoboard"; // 리디렉션
+	}
+
 	@RequestMapping("/deletePro")
-	public String deletePro(Model model) {
+	public String deletePro(Model model, @RequestParam("bo_no") int no, HttpSession session) {
 		System.out.println("FacultyController-deletePro() 실행");
-		
+		System.out.println("deletePro no : " + no);
+
+		int res = service.deleteByNo(no);
+
+		if (res > 0) {
+			session.setAttribute("msg", "정상적으로 삭제되었습니다.");
+		} else {
+			session.setAttribute("msg", "정상적으로 삭제되지 않았습니다.");
+		}
+
 		return "redirect:/infoboard";
 	}
-	
+
 	@RequestMapping("/objectionlist")
 	public String objectionList() {
 		return "objection/objectionlist";
@@ -213,68 +290,67 @@ public class FacultyController {
 	 */
 
 	@RequestMapping("/scholarlist")
-	public String scholarList(Model model,String scholarship_type,String department_type,String grade) {
+	public String scholarList(Model model, String scholarship_type, String department_type, String grade) {
 		System.out.println("facultycontroller안에scholarlist실행");
-		
+
 		// Map 생성
-				Map<String,String> params = new HashMap<>();
-				params.put("scholarship_type", scholarship_type);
-				params.put("DEPT_CODE", department_type);
-				params.put("STU_GRADE", grade);
-		
-				System.out.println(params);
-				
-		List<ScholarList> scholarList= scholarservice.scholarlistSelect(params);
-		
+		Map<String, String> params = new HashMap<>();
+		params.put("scholarship_type", scholarship_type);
+		params.put("DEPT_CODE", department_type);
+		params.put("STU_GRADE", grade);
+
+		System.out.println(params);
+
+		List<ScholarList> scholarList = scholarservice.scholarlistSelect(params);
+
 		System.out.println("장학금 리스트: " + scholarList);
-		
-	model.addAttribute("scholarList",scholarList);
-	model.addAttribute("department",department_type);
-	model.addAttribute("scholarship_type",scholarship_type);
-	model.addAttribute("grade",grade);
-		
+
+		model.addAttribute("scholarList", scholarList);
+		model.addAttribute("department", department_type);
+		model.addAttribute("scholarship_type", scholarship_type);
+		model.addAttribute("grade", grade);
+
 		return "scholarship/scholarlist";
 	}
 
 	@PostMapping("/scholarlistInfo")
 	@ResponseBody
 	public Map<String, Object> scholarlistInfo(@RequestBody Map<String, String> requestBody) {
-	    Map<String, Object> response = new HashMap<>();
-	    try {
-	        String schStatus = requestBody.get("SCH_STATUS");
-	        int year = Integer.parseInt(requestBody.get("YEAR"));
-	        int smt = Integer.parseInt(requestBody.get("SMT"));
-	        int stuNo = Integer.parseInt(requestBody.get("STU_NO"));
-	        int schNo = Integer.parseInt(requestBody.get("SCH_NO"));
-	        String deptCode = requestBody.get("DEPT_CODE");
+		Map<String, Object> response = new HashMap<>();
+		try {
+			String schStatus = requestBody.get("SCH_STATUS");
+			int year = Integer.parseInt(requestBody.get("YEAR"));
+			int smt = Integer.parseInt(requestBody.get("SMT"));
+			int stuNo = Integer.parseInt(requestBody.get("STU_NO"));
+			int schNo = Integer.parseInt(requestBody.get("SCH_NO"));
+			String deptCode = requestBody.get("DEPT_CODE");
 
-	        // 장학금 승인/취소 처리 로직 추가
-	        boolean success = processScholarlistInfo(schStatus, year, smt, stuNo, schNo, deptCode);
-	        response.put("success", success);
+			// 장학금 승인/취소 처리 로직 추가
+			boolean success = processScholarlistInfo(schStatus, year, smt, stuNo, schNo, deptCode);
+			response.put("success", success);
 
-	    } catch (NumberFormatException e) {
-	        response.put("success", false);
-	        response.put("error", "잘못된 데이터 형식입니다.");
-	    } catch (Exception e) {
-	        response.put("success", false);
-	        response.put("error", "처리 중 오류가 발생했습니다.");
-	    }
-	    return response;
+		} catch (NumberFormatException e) {
+			response.put("success", false);
+			response.put("error", "잘못된 데이터 형식입니다.");
+		} catch (Exception e) {
+			response.put("success", false);
+			response.put("error", "처리 중 오류가 발생했습니다.");
+		}
+		return response;
 	}
 
-    private boolean processScholarlistInfo(String schStatus, int year, int smt, int stuNo, int schNo, String deptCode) {
-        // 장학금 승인/취소 처리 로직 (예: 데이터베이스 업데이트)
-    	System.out.println("확인"+schStatus+" "+year+" "+smt+" "+stuNo+" "+schNo+" "+deptCode);
-        // 성공적으로 처리되었으면 true, 실패하면 false를 반환
-    	Scholar sch= new Scholar(stuNo, deptCode, schNo, year, smt, schStatus);
-    	boolean success= false;
-    	int result = scholarservice.scholarInsert(sch);
-    	if(result==1) {
-    		stuservice.studentUpdate(stuNo);
-    		success=true;
-    	}
-        return success;
-    }
-	
-	
+	private boolean processScholarlistInfo(String schStatus, int year, int smt, int stuNo, int schNo, String deptCode) {
+		// 장학금 승인/취소 처리 로직 (예: 데이터베이스 업데이트)
+		System.out.println("확인" + schStatus + " " + year + " " + smt + " " + stuNo + " " + schNo + " " + deptCode);
+		// 성공적으로 처리되었으면 true, 실패하면 false를 반환
+		Scholar sch = new Scholar(stuNo, deptCode, schNo, year, smt, schStatus);
+		boolean success = false;
+		int result = scholarservice.scholarInsert(sch);
+		if (result == 1) {
+			stuservice.studentUpdate(stuNo);
+			success = true;
+		}
+		return success;
+	}
+
 }

@@ -151,9 +151,10 @@ h1 {
 .dropbtn {
 	background-color: rgb(2, 76, 134);
 	color: white;
-	padding: 16px;
+	
 	font-size: 16px;
 	width: 130px;
+	height: 50px;
 	border: none;
 	cursor: pointer;
 }
@@ -185,7 +186,7 @@ h1 {
 }
 
 .search-box {
-	padding: 14px;
+	
 	width: 500px;
 	font-size: 16px;
 	color: grey;
