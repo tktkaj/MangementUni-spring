@@ -19,6 +19,7 @@ import com.university.management.courses.dto.CoursesList;
 import com.university.management.courses.service.CoursesService;
 import com.university.management.student.dto.Student;
 import com.university.management.student.service.StudentService;
+import com.university.management.tuition.dto.Tuition;
 
 @Controller
 public class StudentController {
@@ -38,7 +39,7 @@ public class StudentController {
 
 	@RequestMapping("/studentstatus")
 	public String studentstatus(Model model) {
-
+		Tuition tuition= new Tuition();
 		System.out.println("studentstatus실행");
 
 		// 세션에서 loginname을 가져옴
@@ -88,7 +89,12 @@ public class StudentController {
 			
 			return "login/login";
 		}
-
+		
+		
+		
+		List<Tuition> tuitionlist= stuservice.tuitionSelect(loginNo);
+		model.addAttribute("tuitionlist",tuitionlist);
+		
 		return "student/studentstatus";
 	}
 
@@ -255,10 +261,12 @@ public class StudentController {
 		String strsubstatus=SUB_STATUS.substring(0, SUB_STATUS.length() - 4);
 		System.out.println(SUB_STATUS);
 		if(strsubstatus.equals("y")) {
-			String strsubname=SUB_NAME.substring(0, SUB_NAME.length() - 4);
 			System.out.println("수강리스트 취소 실행 "+SUB_NAME);
-		
+			String strsubname=SUB_NAME.substring(0, SUB_NAME.length() - 4);
+			System.out.println("strsubname:"+strsubname);
 			courservice.courdelete(strsubname);
+			courservice.classcapup(strsubname);
+			
 		}
 		
 		System.out.println("courInfo실행"+strsub_code);
@@ -273,7 +281,10 @@ public class StudentController {
 		course.setYEAR(YEAR);
 		System.out.println("확인용"+course);
 		if(strsubstatus.equals("n")) {
+		String strsubname=SUB_NAME.substring(0, SUB_NAME.length() - 4);
+		System.out.println("strsubname:"+strsubname);
 		courservice.courInsert(course);
+		courservice.classcapdown(strsubname);
 		}
 		
 		
