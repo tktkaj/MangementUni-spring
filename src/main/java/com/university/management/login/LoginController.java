@@ -61,8 +61,10 @@ public class LoginController {
 				session.setAttribute("email", student.getSTU_EMAIL());
 				session.setAttribute("phone", student.getSTU_PHONE());
 				session.setAttribute("loginPassword", student.getSTU_PASSWORD());
+				session.setAttribute("address", student.getSTU_ADDRESS());
 				model.addAttribute("msg", student.getSTU_NAME() + "학생 로그인 되었습니다.");
 				session.setAttribute("login",login);
+				
 				return "home";
 			} else {
 				model.addAttribute("msg", "아이디와 비밀번호를 제대로 입력하세요.");
@@ -103,9 +105,6 @@ public class LoginController {
 
 		model.addAttribute("id",id);
 		model.addAttribute("name",name);
-		model.addAttribute("deptname",deptname);
-		model.addAttribute("email",email);
-		model.addAttribute("phone",phone);
 		model.addAttribute("password",password);
 		
 		return "login/passwordchange";

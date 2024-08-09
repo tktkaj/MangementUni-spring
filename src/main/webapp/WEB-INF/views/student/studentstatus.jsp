@@ -15,10 +15,11 @@
 
 	<jsp:include page="../common/header.jsp" />
 	<div id="menuBar">
-		<div id="sub-menuBar">
+	<div id="sub-menuBar" style="height: 380px">
 			<ul id="menulist">
 				<li><a href="studentstatus">학적 조회</a></li>
-				<li><a href="passwordchange">학생 정보 변경</a></li>
+				<li><a href="passwordchange">학생 비밀번호 변경</a></li>
+				<li><a href="studentinformation">학생 정보 변경</a></li>
 				<li><a href="objection">성적 조회</a></li>
 				<li><a href="myCoursesPage">나의 수강 페이지</a></li>
 				<li><a href="courseregistrationpage">수강신청 페이지</a></li>
@@ -76,7 +77,7 @@
 											<th>학번</th>
 											<td>${stuinfo.STU_NO}</td>
 											<th>등록금</th>
-											<td>${stuinfo.STU_BK_NUM}</td>
+											<td>${stuinfo.TU_PRICE}</td>
 										</tr>
 									</c:forEach>
 								</table>
@@ -98,20 +99,16 @@
 								</tr>
 							</thead>
 							<tbody class="table-group-divider">
+							<c:forEach var="list" items="${tuitionlist}" varStatus="status">
 								<tr>
-									<th scope="row">1</th>
-									<td>2024</td>
-									<td>1</td>
-									<td>@mdo</td>
-									<td>@mdo</td>
+									<th>${status.index + 1}</th>
+									<td>${list.YEAR}</td>
+									<td>${list.SMT}</td>
+									<td>${list.DEPT_NAME}</td>
+									<td>${list.TU_PRICE}</td>
 								</tr>
-								<tr>
-									<th scope="row">1</th>
-									<td>2024</td>
-									<td>1</td>
-									<td>@mdo</td>
-									<td>@mdo</td>
-								</tr>
+								</c:forEach>
+								
 							</tbody>
 						</table>
 					</div>

@@ -6,52 +6,79 @@
 	<select id="stuInfoSelect" parameterType="int"
 		resultType="com.university.management.student.dto.Student">
 
-	SELECT
-	s.STU_NO ,
-	d.DEPT_NAME ,
-	s.STU_NAME ,
-	s.STU_PHONE ,
-	ss.R_STATUS ,
-	s.STU_GRADE ,
-	s.STU_BK_NUM ,
-	s.STU_JUMIN,
-	s.STU_EMAIL,
-	s.STU_ADMISSION,
-	s.STU_ADDRESS,
-	s.STU_ADMISSION_DATE ,
-	COALESCE(sch.SCH_DISCOUNT, '없음')
-	FROM
-	university.STUDENT s
-	JOIN
-	university.DEPARTMENT d ON s.DEPT_CODE =
-	d.DEPT_CODE
-	LEFT JOIN
-	university.STUDENT_STATUS ss ON s.STU_NO =
-	ss.STU_NO
-	AND ss.YEAR = YEAR(CURDATE())
-	AND ss.SMT = MONTH(CURDATE())
-	DIV 6 + 1
-	LEFT JOIN
-	university.SCHOLARLIST sl ON s.STU_NO = sl.STU_NO
-	LEFT JOIN
-	university.SCHOLARSHIP sch ON sl.SCH_NO = sch.SCH_NO
-	WHERE
-	s.STU_NO = '${loginNo}'
+	
+SELECT
+		s.STU_NO ,
+		d.DEPT_NAME ,
+		s.STU_NAME ,
+		s.STU_PHONE ,
+		ss.R_STATUS ,
+		s.STU_GRADE ,
+		s.STU_BK_NUM ,
+		s.STU_JUMIN,
+		s.STU_EMAIL,
+		s.STU_ADMISSION,
+		s.STU_ADDRESS,
+		s.STU_ADMISSION_DATE ,
+      CONCAT(FORMAT(t.TU_PRICE, 0), ' 원') AS TU_PRICE,
+		COALESCE(sch.SCH_DISCOUNT, '없음')
+		FROM
+		university.STUDENT s
+		JOIN
+		university.DEPARTMENT d ON s.DEPT_CODE =
+		d.DEPT_CODE
+		LEFT JOIN
+		university.STUDENT_STATUS ss ON s.STU_NO =
+		ss.STU_NO
+		AND ss.YEAR = YEAR(CURDATE())
+		AND ss.SMT = MONTH(CURDATE())
+		DIV 6 + 1
+		LEFT JOIN
+		university.SCHOLARLIST sl ON s.STU_NO = sl.STU_NO
+		LEFT JOIN
+		university.SCHOLARSHIP sch ON sl.SCH_NO = sch.SCH_NO
+        LEFT JOIN
+      university.tuition t on t.DEPT_CODE=d.DEPT_CODE
+		WHERE
+		s.STU_NO = '${loginNo}'
 	</select>
 
 
-<select id="studentUpdate" parameterType="int" >
+	<select id="studentUpdate" parameterType="int">
 
- UPDATE student
-    SET SCH_STATUS = CASE
-      WHEN SCH_STATUS = 'n' THEN 'y'
-      WHEN SCH_STATUS = 'y' THEN 'n'
-      ELSE SCH_STATUS
-    END
-    WHERE stu_no = #{stu_no}
+		UPDATE student
+		SET SCH_STATUS = CASE
+		WHEN SCH_STATUS = 'n' THEN 'y'
+		WHEN SCH_STATUS = 'y' THEN 'n'
+		ELSE SCH_STATUS
+		END
+		WHERE stu_no = #{stu_no}
 
+	</select>
+
+
+	<update id="studentInfochange" parameterType="map">
+
+		update student set
+		STU_EMAIL=#{STU_EMAIL},
+		 STU_ADDRESS=#{STU_ADDRESS}
+		,STU_PHONE=#{STU_PHONE}
+		 where stu_no=#{STU_NO}
+
+
+	</update>
+
+
+
+<select id="tuitionSelect" parameterType="int" resultType="com.university.management.tuition.dto.Tuition" >
+
+
+
+select year,smt,d.DEPT_NAME,  CONCAT(FORMAT(t.TU_PRICE, 0), ' 원') AS TU_PRICE from STUDENT_STATUS ss
+join student s on(ss.stu_no= s.stu_no)
+join department d on(d.DEPT_CODE = s.DEPT_CODE)
+join TUITION t on(d.DEPT_CODE= t.DEPT_CODE)
+where s.stu_no=${loginNo}
+order by year desc
 </select>
-
-
-
 </mapper>

@@ -43,4 +43,14 @@ public class CoursesService {
 		return mapper.coursesList(cour);
 	}
 
+	public void classcapup(String sub_name) {
+		mapper.classcapup(sub_name);
+		
+	}
+
+	public void classcapdown(String sub_name) {
+		mapper.classcapdown(sub_name);
+		
+	}
+
 }

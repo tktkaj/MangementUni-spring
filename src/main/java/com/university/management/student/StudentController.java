@@ -2,7 +2,9 @@ package com.university.management.student;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -17,6 +19,7 @@ import com.university.management.courses.dto.CoursesList;
 import com.university.management.courses.service.CoursesService;
 import com.university.management.student.dto.Student;
 import com.university.management.student.service.StudentService;
+import com.university.management.tuition.dto.Tuition;
 
 @Controller
 public class StudentController {
@@ -36,7 +39,7 @@ public class StudentController {
 
 	@RequestMapping("/studentstatus")
 	public String studentstatus(Model model) {
-
+		Tuition tuition= new Tuition();
 		System.out.println("studentstatus실행");
 
 		// 세션에서 loginname을 가져옴
@@ -86,7 +89,12 @@ public class StudentController {
 			
 			return "login/login";
 		}
-
+		
+		
+		
+		List<Tuition> tuitionlist= stuservice.tuitionSelect(loginNo);
+		model.addAttribute("tuitionlist",tuitionlist);
+		
 		return "student/studentstatus";
 	}
 
@@ -112,7 +120,47 @@ public class StudentController {
 	public String popup() {
 		return "student/popup";
 	}
+	
+	
+	@RequestMapping("/studentinformation")
+	public String studentinformation(Model model) {
 
+		
+		int id=(int)session.getAttribute("studentno");
+		String name=(String)session.getAttribute("loginname");
+		String deptname=(String)session.getAttribute("studeptname");
+		String email=(String)session.getAttribute("email");
+		String phone=(String)session.getAttribute("phone");
+		String password=(String)session.getAttribute("loginPassword");
+		String address=(String)session.getAttribute("address");
+		
+		
+			model.addAttribute("id",id);
+			model.addAttribute("name",name);
+			model.addAttribute("deptname",deptname);
+			model.addAttribute("email",email);
+			model.addAttribute("phone",phone);
+			model.addAttribute("password",password);
+		    model.addAttribute("address",address);
+		return "student/studentinformation";
+	}
+	
+	
+	@RequestMapping("/studnetInformationchg")
+	public String studnetInformationchg(Model model, String address, String email, String phone) {
+		
+		System.out.println("studnetInformationchg실행"+address+ ""+ email+""+phone);
+		int STU_NO=(int)session.getAttribute("studentno");
+		  Map<String, Object> params = new HashMap<>(); 
+		    params.put("STU_NO", STU_NO);
+	        params.put("STU_ADDRESS", address);
+	        params.put("STU_EMAIL", email);
+	        params.put("STU_PHONE", phone);
+		System.out.println("STUparms:"+params);
+	stuservice.studentInfochange(params);
+		return "home";
+	}
+	
 	@RequestMapping("/myCoursesList")
 	public String MyCoursesList() {
 
@@ -213,10 +261,12 @@ public class StudentController {
 		String strsubstatus=SUB_STATUS.substring(0, SUB_STATUS.length() - 4);
 		System.out.println(SUB_STATUS);
 		if(strsubstatus.equals("y")) {
-			String strsubname=SUB_NAME.substring(0, SUB_NAME.length() - 4);
 			System.out.println("수강리스트 취소 실행 "+SUB_NAME);
-		
+			String strsubname=SUB_NAME.substring(0, SUB_NAME.length() - 4);
+			System.out.println("strsubname:"+strsubname);
 			courservice.courdelete(strsubname);
+			courservice.classcapup(strsubname);
+			
 		}
 		
 		System.out.println("courInfo실행"+strsub_code);
@@ -231,7 +281,10 @@ public class StudentController {
 		course.setYEAR(YEAR);
 		System.out.println("확인용"+course);
 		if(strsubstatus.equals("n")) {
+		String strsubname=SUB_NAME.substring(0, SUB_NAME.length() - 4);
+		System.out.println("strsubname:"+strsubname);
 		courservice.courInsert(course);
+		courservice.classcapdown(strsubname);
 		}
 		
 		
