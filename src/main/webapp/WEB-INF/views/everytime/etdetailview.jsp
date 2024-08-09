@@ -32,7 +32,7 @@
             </ul>
         </div>
     </div>
-    <div class="container" style="height: 1600px; margin-top: 100px;">
+    <div class="container" style="height: 1600px; margin-top: 100px; margin-left: 450px;">
         <div type="box" id="content" class="header2">
             <input type="text" id="Box" class="box" value="&nbsp;자유게시판" readonly>
 

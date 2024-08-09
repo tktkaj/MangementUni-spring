@@ -74,4 +74,20 @@ delete from COURSES where sub_name=#{sub_name}
 </delete>
 
 
+<update id="classcapup" parameterType="String">
+
+   UPDATE subject
+    SET  CLASS_CAP=CLASS_CAP+1
+    WHERE SUB_NAME = #{sub_name}
+
+</update>
+
+<update id="classcapdown" parameterType="String">
+
+   UPDATE subject
+    SET  CLASS_CAP=CLASS_CAP-1
+    WHERE SUB_NAME = #{sub_name}
+
+</update>
+
 </mapper>
