@@ -73,19 +73,11 @@
 		<c:set var="searchType" value="title" />
 	</c:if>
 
-	<div id="menuBar">
-		<div id="sub-menubar" style="height: 150px;">
-			<ul id="menulist">
-				<li><a href="infoboard">공지사항 관리</a></li>
-				<li><a href="scholarlist">장학금 관리</a></li>
-				<li><a href="objectionlist">성적 관리</a></li>
-			</ul>
-		</div>
-	</div>
+	
 
-	<div class="container" style="height: 850px; margin-top: 100px;">
+	<div class="container" style="height: 1100px;  margin-top: 100px;">
 		<div id="content">
-			<div id="pageTitle" style="margin-bottom: 50px;">
+			<div id="pageTitle">
 				<h1>공지사항 수정</h1>
 			</div>
 			<div id="pageContent">
@@ -141,7 +133,7 @@
 							<div class="button-group">
 								<button type="button" id="btnUpdate">수정</button>
 								<button type="button" id="btnDelete">삭제</button>
-								<button type="button" id="btnCancel">취소</button>
+								<button type="button" id="btnCancel">목록</button>
 							</div>
 						</td>
 					</tr>
