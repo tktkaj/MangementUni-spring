@@ -67,10 +67,10 @@
 					class="list-group-item list-group-item-action list-group-item-large"
 					aria-current="true" style="margin-top: 5px;"> <span
 					style="font-size: 20px; vertical-align: middle;">👑</span> 1st
-					제목이었던 것
+					제목
 				</a> <a href="#"
 					class="list-group-item list-group-item-action list-group-item-small disabled">
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내용이었던 것 내용이었던 것 내용이었던 것 내용이었던 것 </a> <a
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내용 미리보기 </a> <a
 					href="#"
 					class="list-group-item list-group-item-action list-group-item-small2 disabled">
 					<div style="display: flex; align-items: center;">
@@ -91,8 +91,10 @@
 					class="list-group-item list-group-item-action list-group-item-large"
 					aria-current="true" style="margin-top: 5px;"> <span
 					style="font-size: 20px; vertical-align: middle;">👑</span> 2st
-					제목이었던 것
-				</a> <a
+					제목
+				</a> <a href="#"
+					class="list-group-item list-group-item-action list-group-item-small disabled">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내용 미리보기 </a> <a
 					href="#"
 					class="list-group-item list-group-item-action list-group-item-small2 disabled">
 					<div style="display: flex; align-items: center;">
@@ -113,12 +115,13 @@
 					class="list-group-item list-group-item-action list-group-item-large"
 					aria-current="true" style="margin-top: 5px;"> <span
 					style="font-size: 20px; vertical-align: middle;">👑</span> 3st
-					제목이었던 것
+					제목
 				</a> <a href="#"
 					class="list-group-item list-group-item-action list-group-item-small disabled">
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내용이었던 것 내용이었던 것 내용이었던 것 내용이었던 것 </a> <a
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내용 미리보기 </a> <a
 					href="#"
 					class="list-group-item list-group-item-action list-group-item-small2 disabled">
+					
 					<div style="display: flex; align-items: center;">
 						<div style="padding: 1px; margin-right: 10px; font-size: 15px;">글
 							작성 1초전</div>
