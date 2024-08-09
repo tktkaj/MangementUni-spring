@@ -6,7 +6,8 @@
 	<select id="stuInfoSelect" parameterType="int"
 		resultType="com.university.management.student.dto.Student">
 
-		SELECT
+	
+SELECT
 		s.STU_NO ,
 		d.DEPT_NAME ,
 		s.STU_NAME ,
@@ -19,6 +20,7 @@
 		s.STU_ADMISSION,
 		s.STU_ADDRESS,
 		s.STU_ADMISSION_DATE ,
+      CONCAT(FORMAT(t.TU_PRICE, 0), ' 원') AS TU_PRICE,
 		COALESCE(sch.SCH_DISCOUNT, '없음')
 		FROM
 		university.STUDENT s
@@ -35,6 +37,8 @@
 		university.SCHOLARLIST sl ON s.STU_NO = sl.STU_NO
 		LEFT JOIN
 		university.SCHOLARSHIP sch ON sl.SCH_NO = sch.SCH_NO
+        LEFT JOIN
+      university.tuition t on t.DEPT_CODE=d.DEPT_CODE
 		WHERE
 		s.STU_NO = '${loginNo}'
 	</select>
@@ -66,10 +70,15 @@
 
 
 
+<select id="tuitionSelect" parameterType="int" resultType="com.university.management.tuition.dto.Tuition" >
 
 
 
-
-
-
+select year,smt,d.DEPT_NAME,  CONCAT(FORMAT(t.TU_PRICE, 0), ' 원') AS TU_PRICE from STUDENT_STATUS ss
+join student s on(ss.stu_no= s.stu_no)
+join department d on(d.DEPT_CODE = s.DEPT_CODE)
+join TUITION t on(d.DEPT_CODE= t.DEPT_CODE)
+where s.stu_no=${loginNo}
+order by year desc
+</select>
 </mapper>

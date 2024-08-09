@@ -28,7 +28,7 @@ public class Student {
 	private int SMT; // 학기
 	private String R_STATUS; // 상태	
     private String SCH_NAME;// 장학금 이름
-
+    private String TU_PRICE; // 등록금
 	
 	}
 

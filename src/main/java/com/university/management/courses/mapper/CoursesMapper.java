@@ -22,4 +22,8 @@ public interface CoursesMapper {
 
 	List<CoursesList> coursesList(CoursesList cour);
 
+	void classcapup(String sub_name);
+
+	void classcapdown(String sub_name);
+
 }
