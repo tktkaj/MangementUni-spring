@@ -1,6 +1,7 @@
 package com.university.management.everytime;
 
 
+import com.university.management.board.dto.Board;
 import com.university.management.board.dto.BoardDTO;
 import com.university.management.board.dto.PageInfo;
 import com.university.management.board.service.BoardService;
@@ -37,7 +38,7 @@ public class EverytimeController {
 	@RequestMapping("/etmainpage")
 	public String etmainpage(Model model) {
 
-		List<BoardDTO> list = service.getAllEtaList();
+		List<Board> list = service.getAllEtaList();
 
 		model.addAttribute("list", list);
 
@@ -52,7 +53,7 @@ public class EverytimeController {
 	@RequestMapping("/etdetailview")
 	public String etdetailview(Model model, @RequestParam("no") int boNo) {
 
-		BoardDTO etaboard = service.getEtaBoardByNo(boNo);
+		Board etaboard = service.getEtaBoardByNo(boNo);
 
 		model.addAttribute("board", etaboard);
 
@@ -62,7 +63,7 @@ public class EverytimeController {
 	@RequestMapping("/everytimehot")
 	public String ethot(Model model) {
 
-		List<BoardDTO> list = service.getAllEtaHotList();
+		List<Board> list = service.getAllEtaHotList();
 		model.addAttribute("list", list);
 		System.out.println(list);
 
@@ -72,7 +73,7 @@ public class EverytimeController {
 	@RequestMapping("/etmypage")
 	public String etmypage(Model model, @RequestParam("stuno") int stu_no) {
 
-		List<BoardDTO> list = service.getAllEtaListByStuNo(stu_no);
+		List<Board> list = service.getAllEtaListByStuNo(stu_no);
 
 		model.addAttribute("list", list);
 
@@ -87,82 +88,14 @@ public class EverytimeController {
 
 	/*-------------------------기능---------------*/
 
-	@PostMapping("/insertBoard")
-	public String insertBoard(HttpSession session, @RequestParam("title") String title,
-			@RequestParam("content") String content, Model model) {
-		try {
-			// 세션에서 stuNo와 empNo 값 가져오기
-			Integer stuNo = (Integer) session.getAttribute("studentno");
-			Integer empNo = (Integer) session.getAttribute("empNO");
-
-			// BoardDTO 객체 생성 및 필드 설정
-			BoardDTO boardDTO = new BoardDTO();
-			boardDTO.setStuNo(stuNo);
-			boardDTO.setEmpNo(empNo);
-			boardDTO.setTitle(title);
-			boardDTO.setContent(content);
-			boardDTO.setType("E"); // 타입 고정
-
-			// 게시글 저장
-			service.insertBoard(boardDTO);
-
-			// 성공 메시지 설정
-			model.addAttribute("message", "게시글이 성공적으로 등록되었습니다.");
-			return "redirect:/everytime/etmainpage"; // 리디렉션 없이 바로 뷰를 반환
-
-		} catch (Exception e) {
-			// 실패 시 예외 처리
-			e.printStackTrace();
-			model.addAttribute("message", "게시글 등록에 성공했습니다.");
-			return "/everytime/etnew"; // 리디렉션 없이 바로 뷰를 반환
-		}
-	}
-
-	/*
-	 * // 일반 파일 저장 File dest = new File(uploadDir + File.separator + fileReadName);
-	 * file.transferTo(dest); // 파일 저장
-	 * 
-	 * // 이미지 파일 저장 if (!imageFile.isEmpty()) { //String uniqueImgName =
-	 * System.currentTimeMillis() + "_" + imgReadName; // 고유한 이름 File destImg = new
-	 * File(uploadDir + File.separator + imgReadName);
-	 * imageFile.transferTo(destImg); // 이미지 파일 저장
-	 * board.setRenameFilename(imgReadName); }
-	 * 
-	 * board.setOriginalFilename(fileReadName); // 일반 파일명 설정
-	 * System.out.println("파일 저장 성공"); } catch (IOException e) {
-	 * e.printStackTrace(); // 오류 처리 추가 redirectAttributes.addFlashAttribute("msg",
-	 * "파일 업로드 중 오류가 발생했습니다."); return "redirect:/infoboard"; // 오류 발생 시 리디렉션 } }
-	 * else { fileReadName = "-";
-	 * 
-	 * 
-	 * // param의 값을 Board 객체에 설정 board.setEmp_no(loginNo); board.setTitle(title);
-	 * board.setContent(detail); board.setOriginalFilename(fileReadName);
-	 * 
-	 * int res = service.insertWrite(board);
-	 * 
-	 * if (res > 0) { System.out.println("res :  " + res);
-	 * session.setAttribute("msg", "정상적으로 업로드되었습니다."); } else {
-	 * session.setAttribute("msg", "정상적으로 업로드되지 않았습니다."); }
-	 * 
-	 * } else { // 빈칸일 경우 alert창 띄움 model.addAttribute("msg", "내용을 입력해주세요."); }
-	 * 
-	 * return "redirect:/infoboard"; // 리디렉션 }
-	 */
-	/*
-	 * // 게시글 조회
-	 * 
-	 * @GetMapping("/view/{BO_NO}") public String viewBoard(("BO_NO") int boNo,
-	 * Model model) { BoardDTO boardDTO = Service.getEtaBoardByNo(boNo);
-	 * Service.incrementReadCount(boNo); // 조회수 증가 model.addAttribute("board",
-	 * boardDTO); return "etdetailview"; }
-	 */
+	
 
 	// 게시글 수정 폼 이동
 
 	@GetMapping("/edit/{BO_NO}")
 	public String editForm(@PathVariable("BO_NO") int boNo, Model model) {
 	    // 게시글 정보 가져오기
-	    BoardDTO boardDTO = service.getEtaBoardByNo(boNo);
+	    Board boardDTO = service.getEtaBoardByNo(boNo);
 	    
 	    // 모델에 게시글 정보 추가
 	    model.addAttribute("boardDTO", boardDTO);
@@ -172,31 +105,20 @@ public class EverytimeController {
 	}
 
     
-	// 게시글 수정
-	@PostMapping("/editBoard")
-	public String editBoard(@ModelAttribute BoardDTO boardDTO, RedirectAttributes redirectAttributes) {
-	    try {
-	        service.updateBoard(boardDTO);
-	        redirectAttributes.addFlashAttribute("message", "게시글이 성공적으로 수정되었습니다.");
-	        return "redirect:/etmypage?stuno=" + boardDTO.getStuNo();
-	    } catch (Exception e) {
-	        redirectAttributes.addFlashAttribute("message", "게시글 수정에 실패했습니다.");
-	        return "everytimeupdate";
-	    }
-	}
+//	// 게시글 수정
+//	@PostMapping("/editBoard")
+//	public String editBoard(@ModelAttribute BoardDTO boardDTO, RedirectAttributes redirectAttributes) {
+//	    try {
+//	        service.updateBoard(boardDTO);
+//	        redirectAttributes.addFlashAttribute("message", "게시글이 성공적으로 수정되었습니다.");
+//	        return "redirect:/etmypage?stuno=" + boardDTO.getStuNo();
+//	    } catch (Exception e) {
+//	        redirectAttributes.addFlashAttribute("message", "게시글 수정에 실패했습니다.");
+//	        return "everytimeupdate";
+//	    }
+//	}
 
-	// 게시글 삭제
-	@PostMapping("/deleteBoard/{boNo}")
-	public String deleteBoard(@PathVariable("boNo") int boNo, RedirectAttributes redirectAttributes) {
-	    try {
-	        service.deleteBoard(boNo);
-	        redirectAttributes.addFlashAttribute("message", "게시글이 성공적으로 삭제되었습니다.");
-	        return "redirect:/etmypage";
-	    } catch (Exception e) {
-	        redirectAttributes.addFlashAttribute("message", "게시글 삭제에 실패했습니다.");
-	        return "everytimeupdate";
-	    }
-	}
+	
 
 	// 게시글 신고
 	@PostMapping("/report/{boNo}")

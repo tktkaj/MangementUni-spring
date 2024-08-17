@@ -1,6 +1,7 @@
 package com.university.management.everytime.service;
 
 import com.university.management.board.dto.Board;
+import com.university.management.board.dto.BoardDTO;
 import com.university.management.everytime.mapper.EverytimeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,19 @@ public class EverytimeService {
 
 	public List<Board> getAllEtaHotList() {
 		return mapper.getAllEtaHotList();
+	}
+
+	public void updateBoard(BoardDTO boardDTO) {
+		
+		
+	}
+
+	public void reportBoard(int bO_NO, String user) {
+		
+		
+	}
+
+	public void likeBoard(int bO_NO, String user) {
+		
 	}
 }

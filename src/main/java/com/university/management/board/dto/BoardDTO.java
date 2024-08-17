@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BoardDTO {
-    private Integer boNo; // 게시글 번호
+    private Integer bo_no; // 게시글 번호
     private Integer stuNo; // 학생 번호
     private Integer empNo; // 교직원 번호
     private String title; // 제목
