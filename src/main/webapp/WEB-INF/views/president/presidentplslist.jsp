@@ -134,7 +134,7 @@
 				<li
 					class="page-item <c:if test="${pageInfo.prevPage == 0}">disabled</c:if>">
 					<button class="page-link" type="button"
-						onclick="if(${pageInfo.prevPage} > 0) { window.location.href='${path}/infoboard?searchType=${searchType}&searchValue=${searchValue}&page=${pageInfo.prevPage}'; } else { return false; }"
+						onclick="if(${pageInfo.prevPage} > 0) { window.location.href='${path}/presidentplslist?&page=${pageInfo.prevPage}'; } else { return false; }"
 						aria-label="Previous">
 						<span aria-hidden="true">&laquo;</span>
 					</button>
@@ -149,7 +149,7 @@
 					<c:if test="${page != pageInfo.currentPage}">
 						<li class="page-item"><span class="page-link"
 							style="cursor: pointer;"
-							onclick="window.location.href='${path}/infoboard?searchType=${searchType}&searchValue=${searchValue}&page=${page}';">
+							onclick="window.location.href='${path}/presidentplslist?&page=${page}';">
 								${page}</span></li>
 					</c:if>
 				</c:forEach>
@@ -158,7 +158,7 @@
 				<li
 					class="page-item <c:if test="${pageInfo.nextPage == 0}">disabled</c:if>">
 					<button class="page-link" type="button"
-						onclick="if(${pageInfo.nextPage} > 0) { window.location.href='${path}/infoboard?searchType=${searchType}&searchValue=${searchValue}&page=${pageInfo.nextPage}'; } else { return false; }"
+						onclick="if(${pageInfo.nextPage} > 0) { window.location.href='${path}/presidentplslist?&page=${pageInfo.nextPage}'; } else { return false; }"
 						aria-label="Next">
 						<span aria-hidden="true">&raquo;</span>
 					</button>
@@ -177,7 +177,7 @@
 		}
 
 		// 페이지 변경 시 호출되는 함수
-		function goToPage(page) {
+	/* 	function goToPage(page) {
 			let newUrl = `${window.location.pathname}?page=${page}`; // 기본 URL 구성
 
 			// searchType과 searchValue가 비어 있지 않은 경우에만 추가
@@ -205,7 +205,7 @@
 				event.preventDefault(); // 폼 제출 방지
 				return; // 함수 종료
 			}
-		};
+		}; */
 	</script>
 </body>
 </html>

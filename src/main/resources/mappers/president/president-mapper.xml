@@ -3,16 +3,30 @@
 <mapper
 	namespace="com.university.management.president.mapper.PresidentMapper">
 
-	<select id="getAllList" resultType="com.university.management.board.dto.Board">
-		SELECT * FROM board WHERE TYPE = "c" ORDER BY CREATE_DATE DESC
+	<select id="getAllList" parameterType="map"
+		resultType="com.university.management.board.dto.Board">
+		SELECT * FROM board WHERE TYPE = "c" ORDER BY CREATE_DATE
+		DESC
+		LIMIT #{listLimit}
+		OFFSET #{firstRow}
 	</select>
-	
-	<select id="getBoardByNo" parameterType="int" resultType="com.university.management.board.dto.Board">
+
+	<select id="getBoardByNo" parameterType="int"
+		resultType="com.university.management.board.dto.Board">
 		SELECT * FROM board WHERE TYPE = "c" AND BO_NO = #{bo_no}
 	</select>
 
-	<insert id="insertboard" parameterType="com.university.management.board.dto.Board">
-		INSERT INTO BOARD(stu_no, title, content, type, create_date) VALUES (#{stu_no},#{title},#{content},"C", default)
+	<insert id="insertboard"
+		parameterType="com.university.management.board.dto.Board">
+		INSERT INTO BOARD(stu_no, title, content, type,
+		create_date) VALUES (#{stu_no},#{title},#{content},"C", default)
 	</insert>
-	
+
+	<select id="getPresidentCount" resultType="int">
+		SELECT COUNT(*)
+		FROM BOARD B
+		WHERE TYPE = 'C'
+	</select>
+
+
 </mapper>
